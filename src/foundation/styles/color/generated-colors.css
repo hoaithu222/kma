@@ -1,0 +1,88 @@
+/* This file is generated. DO NOT EDIT.
+ * Edit "colors.json" instead.
+ */
+
+:root {
+  --color-primary-1: #FDE9E9;
+  --color-primary-2: #F9C0BF;
+  --color-primary-3: #F49893;
+  --color-primary-4: #EF6E66;
+  --color-primary: #EE2E29;
+  --color-primary-6: #CC1F1A;
+  --color-primary-7: #AA1511;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #FFC400;
+  --color-secondary-1: #FFF7DB;
+  --color-secondary-5: #F59E0B;
+  --color-secondary-6: #D97706;
+  --color-secondary-foreground: #1F1F1F;
+  --color-accent-1: #FFF3CD;
+  --color-accent-5: #FFC4;
+  --color-accent-foreground: #1A1A1A;
+  --color-muted-1: #F9FAFB;
+  --color-muted-2: #F5F5F7;
+  --color-muted-foreground: #6B7280;
+  --color-background-base: #F5F5FA;
+  --color-background-surface: #FFFFFF;
+  --color-background-subtle: #F0F0F5;
+  --color-text-primary: #1F1F1F;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #9CA3AF;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-primary-soft: #FFEDED;
+  --color-bg-navbar: #1F1F1F;
+  --color-text-navbar: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-border-subtle: #F3F4F6;
+  --color-divide: #E2E8F0;
+  --color-error: #DC2626;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-info: #3B82F6;
+  --color-gradient-primary: linear-gradient(135deg, #EE2E29, #FFC4);
+  --color-gradient-subtle: linear-gradient(135deg, #FDEEF0, #FFF5DB);
+  --color-gradient-cool: linear-gradient(135deg, #EE2E29, #8241DD);
+  --color-gradient-dark: linear-gradient(135deg, #2A2A2E, #1A1A1D);
+  --color-gradient-inverse: linear-gradient(135deg, #FFFFFF, #F3F4F6);
+}
+
+.dark {
+  --color-primary-1: #3B0D0C;
+  --color-primary-2: #5F1412;
+  --color-primary-3: #801A17;
+  --color-primary-4: #AA1511;
+  --color-primary: #EE2E29;
+  --color-primary-6: #F85751;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #FFC400;
+  --color-secondary-1: #3321;
+  --color-secondary-5: #FBBF24;
+  --color-secondary-foreground: #1A1A1A;
+  --color-bg-navbar: #1F1F1F;
+  --color-text-navbar: #2A2A2E;
+  --color-accent-1: #3B2F;
+  --color-accent-5: #FFD54F;
+  --color-accent-foreground: #9CA3AF;
+  --color-muted-1: #2A2A2E;
+  --color-muted-foreground: #9CA3AF;
+  --color-background-base: #1A1A1D;
+  --color-background-surface: #222227;
+  --color-background-subtle: #2C2C30;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #D1D5DB;
+  --color-text-muted: #9CA3AF;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-primary-soft: #FFD9D9;
+  --color-border: #3F3F46;
+  --color-border-subtle: #2F2F37;
+  --color-divide: #4B5563;
+  --color-error: #F87171;
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-info: #60A5FA;
+  --color-gradient-primary: linear-gradient(135deg, #EE2E29, #FFC4);
+  --color-gradient-subtle: linear-gradient(135deg, #442020, #665C44);
+  --color-gradient-cool: linear-gradient(135deg, #EE2E29, #8241DD);
+  --color-gradient-dark: linear-gradient(135deg, #2A2A2E, #1A1A1D);
+  --color-gradient-inverse: linear-gradient(135deg, #FFFFFF, #F3F4F6);
+}

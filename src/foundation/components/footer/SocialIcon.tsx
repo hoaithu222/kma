@@ -1,0 +1,22 @@
+import React from "react";
+
+const SocialIcon = ({ icon, href = "#", label }: { icon: React.ReactNode; href?: string; label: string }) => {
+  // const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <a
+      href={href}
+      aria-label={label}
+      // onMouseEnter={() => setIsHovered(true)}
+      // onMouseLeave={() => setIsHovered(false)}
+      className="relative flex items-center justify-center w-10 h-10 overflow-hidden transition-all duration-300 rounded-full bg-primary-5 hover:bg-white group hover:rotate-180"
+    >
+      <span className="absolute inset-0 transition-transform duration-500 rounded-full opacity-0 bg-secondary group-hover:opacity-10 group-hover:scale-110"></span>
+      {React?.cloneElement(icon as React.ReactElement, {
+        size: 18,
+        className: "transition-all duration-300 text-white group-hover:text-primary "
+      })}
+    </a>
+  );
+};
+export default SocialIcon;

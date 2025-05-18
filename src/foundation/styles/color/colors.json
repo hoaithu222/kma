@@ -1,0 +1,103 @@
+{
+  "light": {
+    "primary-1": "#FDE9E9",
+    "primary-2": "#F9C0BF",
+    "primary-3": "#F49893",
+    "primary-4": "#EF6E66",
+    "primary": "#EE2E29",
+    "primary-6": "#CC1F1A",
+    "primary-7": "#AA1511",
+    "primary-foreground": "#FFFFFF",
+
+    "secondary": "#FFC400",
+    "secondary-1": "#FFF7DB",
+    "secondary-5": "#F59E0B",
+    "secondary-6": "#D97706",
+    "secondary-foreground": "#1F1F1F",
+
+    "accent-1": "#FFF3CD",
+    "accent-5": "#FFC4",
+    "accent-foreground": "#1A1A1A",
+
+    "muted-1": "#F9FAFB",
+    "muted-2": "#F5F5F7",
+    "muted-foreground": "#6B7280",
+
+    "background-base": "#F5F5FA",
+    "background-surface": "#FFFFFF",
+    "background-subtle": "#F0F0F5",
+
+    "text-primary": "#1F1F1F",
+    "text-secondary": "#4B5563",
+    "text-muted": "#9CA3AF",
+    "text-on-primary": "#FFFFFF",
+    "text-on-primary-soft": "#FFEDED",
+
+    "bg-navbar": "#1F1F1F",
+    "text-navbar": "#FFFFFF",
+
+    "border": "#E5E7EB",
+    "border-subtle": "#F3F4F6",
+    "divide": "#E2E8F0",
+
+    "error": "#DC2626",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "info": "#3B82F6",
+
+    "gradient-primary": "linear-gradient(135deg, #EE2E29, #FFC4)",
+    "gradient-subtle": "linear-gradient(135deg, #FDEEF0, #FFF5DB)",
+    "gradient-cool": "linear-gradient(135deg, #EE2E29, #8241DD)",
+    "gradient-dark": "linear-gradient(135deg, #2A2A2E, #1A1A1D)",
+    "gradient-inverse": "linear-gradient(135deg, #FFFFFF, #F3F4F6)"
+  },
+
+  "dark": {
+    "primary-1": "#3B0D0C",
+    "primary-2": "#5F1412",
+    "primary-3": "#801A17",
+    "primary-4": "#AA1511",
+    "primary": "#EE2E29",
+    "primary-6": "#F85751",
+    "primary-foreground": "#FFFFFF",
+
+    "secondary": "#FFC400",
+    "secondary-1": "#3321",
+    "secondary-5": "#FBBF24",
+    "secondary-foreground": "#1A1A1A",
+    "bg-navbar": "#1F1F1F",
+    "text-navbar": "#2A2A2E",
+
+    "accent-1": "#3B2F",
+    "accent-5": "#FFD54F",
+    "accent-foreground": "#9CA3AF",
+
+    "muted-1": "#2A2A2E",
+    "muted-foreground": "#9CA3AF",
+
+    "background-base": "#1A1A1D",
+    "background-surface": "#222227",
+    "background-subtle": "#2C2C30",
+
+    "text-primary": "#FFFFFF",
+    "text-secondary": "#D1D5DB",
+    "text-muted": "#9CA3AF",
+    "text-on-primary": "#FFFFFF",
+    "text-on-primary-soft": "#FFD9D9",
+
+    "border": "#3F3F46",
+    "border-subtle": "#2F2F37",
+    "divide": "#4B5563",
+
+    "error": "#F87171",
+    "success": "#34D399",
+    "warning": "#FBBF24",
+    "info": "#60A5FA",
+
+    "gradient-primary": "linear-gradient(135deg, #EE2E29, #FFC4)",
+    "gradient-subtle": "linear-gradient(135deg, #442020, #665C44)",
+    "gradient-cool": "linear-gradient(135deg, #EE2E29, #8241DD)",
+    "gradient-dark": "linear-gradient(135deg, #2A2A2E, #1A1A1D)",
+    "gradient-inverse": "linear-gradient(135deg, #FFFFFF, #F3F4F6)"
+  }
+}
