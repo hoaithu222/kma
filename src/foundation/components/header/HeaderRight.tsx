@@ -43,17 +43,17 @@ const HeaderRight = () => {
         )}
         {language === "vi" ? (
           <div
-            className="w-8 h-6 cursor-pointer hover:scale-110 transition-all duration-300"
+            className="w-8 h-6 transition-all duration-300 cursor-pointer hover:scale-110"
             onClick={() => dispatch(setLanguage("en"))}
           >
-            <img src={En} alt="en" className="w-full h-full object-cover" />
+            <img src={En} alt="en" className="object-cover w-full h-full" />
           </div>
         ) : (
           <div
-            className="w-8 h-6 cursor-pointer hover:scale-110 transition-all duration-300"
+            className="w-8 h-6 transition-all duration-300 cursor-pointer hover:scale-110"
             onClick={() => dispatch(setLanguage("vi"))}
           >
-            <img src={Vi} alt="vi" className="w-full h-full object-cover" />
+            <img src={Vi} alt="vi" className="object-cover w-full h-full" />
           </div>
         )}
       </div>
