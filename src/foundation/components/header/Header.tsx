@@ -1,22 +1,23 @@
 import clsx from "clsx";
 import Logo from "./Logo";
 import HeaderRight from "./HeaderRight";
+import Navbar from "../navbar/Navbar";
 
 const Header = () => {
   return (
     <div
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 ",
+        "fixed top-0 left-0 right-0 z-50 p-3 ",
         "flex items-center",
-        "shadow-sm h-24 bg-primary-4 shadow-primary-4",
-        "bg-gradient-to-r from-primary-2 via-primary-3 to-primary-6"
+        "shadow-lg shadow-header-border bg-header-bg h-36 "
       )}
     >
-      <div className="container flex items-center justify-between mx-auto">
-        <div className="grid w-full grid-cols-2 gap-2">
+      <div className="container flex flex-col items-center justify-between mx-auto">
+        <div className="grid w-full grid-cols-2 gap-2 border-b-2 border-header-border">
           <Logo />
           <HeaderRight />
         </div>
+        <Navbar />
       </div>
     </div>
   );

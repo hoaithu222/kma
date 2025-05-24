@@ -7,5 +7,6 @@ export const HOME_PATH = {
   getMenu: `${BASE_PATH}/menu_items`,
   // get all post
   getAllPost: `${BASE_PATH}/posts`,
-  // get post by id
+  // get category
+  getCategory: `/api/get-category`,
 };

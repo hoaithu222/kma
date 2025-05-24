@@ -14,3 +14,12 @@ export const fetchPostsApi = async (params: IRequestBanner) => {
     return { ok: false, error };
   }
 };
+
+export const getCategory = async () => {
+  try {
+    const response = await Axios.get(HOME_PATH.getCategory);
+    return { ok: true, data: response.data };
+  } catch (error) {
+    return { ok: false, error };
+  }
+};

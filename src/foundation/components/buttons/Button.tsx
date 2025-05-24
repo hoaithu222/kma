@@ -66,33 +66,33 @@ const Button = ({
   // Variant classes
   const variantClasses = {
     primary:
-      "bg-primary text-white border-transparent hover:bg-primary-6 disabled:bg-primary-2 disabled:text-gray-400",
+      "bg-primary text-on-primary border-transparent hover:bg-primary-dark disabled:bg-primary-light disabled:text-disabled",
     secondary:
-      "bg-secondary text-text-primary border-transparent hover:bg-secondary-6 disabled:bg-secondary-1 disabled:text-gray-400",
+      "bg-secondary text-on-secondary border-transparent hover:bg-secondary-dark disabled:bg-secondary-light disabled:text-disabled",
     outlined:
-      "bg-transparent border border-primary-1 text-text-on-primary hover:border-border-subtle disabled:bg-gray-200 disabled:text-gray-400",
-    text: "bg-transparent text-blue-600 hover:underline disabled:bg-gray-200 disabled:text-gray-400",
-    textSecondary: "bg-transparent text-gray-900 hover:opacity-90",
+      "bg-transparent border border-primary text-primary hover:border-primary-dark disabled:bg-gray-200 disabled:text-disabled",
+    text: "bg-transparent text-primary hover:underline disabled:bg-gray-200 disabled:text-disabled",
+    textSecondary: "bg-transparent text-secondary hover:opacity-90",
     outlinedSecondary:
-      "bg-transparent border border-border text-text-primary hover:border-info focus:border-info hover:opacity-90",
+      "bg-transparent border border-secondary text-secondary hover:border-info focus:border-info hover:opacity-90",
     success:
-      "bg-green-500 text-white border-transparent hover:bg-green-600 disabled:bg-green-200 disabled:text-gray-400",
+      "bg-success text-on-success border-transparent hover:bg-success-dark disabled:bg-success-light disabled:text-disabled",
     danger:
-      "bg-red-500 text-white border-transparent hover:bg-red-600 disabled:bg-red-200 disabled:text-gray-400",
+      "bg-error text-on-error border-transparent hover:bg-error-dark disabled:bg-error-light disabled:text-disabled",
     warning:
-      "bg-yellow-500 text-white border-transparent hover:bg-yellow-600 disabled:bg-yellow-200 disabled:text-gray-400",
+      "bg-warning text-on-warning border-transparent hover:bg-warning-dark disabled:bg-warning-light disabled:text-disabled",
     gradientPrimary:
-      "bg-gradient-to-r from-primary-3 via-primary-4 to-primary-6 text-white border-transparent hover:from-primary-6 hover:to-primary-4 disabled:bg-primary-2 disabled:text-gray-400",
+      "bg-gradient-to-r from-primary via-primary-dark to-primary-darker text-white border-transparent hover:from-primary-dark hover:to-primary disabled:bg-primary-light disabled:text-disabled",
     gradientSubtle:
-      "bg-gradient-to-r from-secondary via-secondary-1 to-secondary-5 text-text-primary border-transparent hover:from-secondary-5 hover:to-secondary-1 disabled:bg-secondary-1 disabled:text-gray-400",
+      "bg-gradient-to-r from-secondary via-secondary-light to-secondary-dark text-on-secondary border-transparent hover:from-secondary-dark hover:to-secondary-light disabled:bg-secondary-light disabled:text-disabled",
     gradientCool:
-      "bg-gradient-to-r from-secondary via-primary-4 to-primary-6 text-white border-transparent hover:from-primary-6 hover:to-primary-4 disabled:bg-primary-2 disabled:text-gray-400",
+      "bg-gradient-to-r from-secondary via-primary to-primary-dark text-white border-transparent hover:from-primary-dark hover:to-primary disabled:bg-primary-light disabled:text-disabled",
     gradientDark:
-      "bg-gradient-to-r from-primary-4 to-primary-6 text-white border-transparent hover:from-primary-6 hover:to-primary-4 disabled:bg-primary-2 disabled:text-gray-400",
+      "bg-gradient-to-r from-primary-dark to-primary-darker text-white border-transparent hover:from-primary-darker hover:to-primary disabled:bg-primary-light disabled:text-disabled",
     gradientInverse:
-      "bg-gradient-to-r from-primary-4 to-primary-6 text-white border-transparent hover:from-primary-6 hover:to-primary-4 disabled:bg-primary-2 disabled:text-gray-400",
+      "bg-gradient-to-r from-gray-700 to-gray-900 text-white border-transparent hover:from-gray-900 hover:to-gray-700 disabled:bg-gray-300 disabled:text-disabled",
     gradientFire:
-      "bg-gradient-to-r from-primary-4 to-primary-6 text-white border-transparent hover:from-primary-6 hover:to-primary-4 disabled:bg-primary-2 disabled:text-gray-400",
+      "bg-gradient-to-r from-red-500 to-orange-500 text-white border-transparent hover:from-orange-600 hover:to-red-600 disabled:bg-red-200 disabled:text-disabled",
   };
 
   // Size-specific styling

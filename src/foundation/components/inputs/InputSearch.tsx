@@ -7,7 +7,7 @@ interface InputSearchProps {
   icon?: React.ReactNode;
   value: string;
   className?: string;
-  size?: "sm" | "md" | "lg"; // Thêm prop size với 3 kích thước
+  size?: "sm" | "md" | "lg";
 }
 
 const InputSearch = ({
@@ -17,9 +17,8 @@ const InputSearch = ({
   icon,
   value,
   className,
-  size = "md", // Mặc định là kích thước trung bình
+  size = "md",
 }: InputSearchProps) => {
-  // Xác định các lớp CSS dựa trên kích thước
   const sizeClasses = {
     sm: {
       input: "py-1 px-3 text-sm",
@@ -43,36 +42,39 @@ const InputSearch = ({
   return (
     <div className={clsx("relative", className)}>
       <div className="relative">
-        {/* Gradient border container */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 p-[1px]">
-          <div className="w-full h-full rounded-full"></div>
+        {/* Viền gradient với màu info-light */}
+        <div className="absolute inset-0 rounded-full border border-border-strong p-[1px]">
+          <div className="w-full h-full rounded-full" />
         </div>
 
         {/* Input */}
         <input
-          type="text"
-          placeholder={placeholder}
           name={name}
+          value={value}
           onChange={onChange}
+          placeholder={placeholder}
           className={clsx(
-            "relative  rounded-full w-full bg-white/10",
+            "relative rounded-full w-full",
             selectedSize.input,
             selectedSize.pl,
-            "focus:ring-2 focus:ring-primary-1",
-            "focus:outline-none",
-            "placeholder:text-primary-foreground",
-            "text-primary-foreground"
+            "focus:ring-2 focus:outline-none",
+            "transition-all duration-200 ease-in-out",
+            "border border-info-light",
+            "bg-background-muted",
+            "text-info-light",
+            "focus:ring-info-light"
           )}
-          value={value}
         />
       </div>
 
+      {/* Icon nếu có */}
       {icon && (
         <div
           className={clsx(
-            "absolute -translate-y-1/2 top-1/2",
+            "absolute -translate-y-1/2 top-1/2 pointer-events-none",
             size === "sm" ? "left-1.5" : size === "md" ? "left-2" : "left-3",
-            selectedSize.iconContainer
+            selectedSize.iconContainer,
+            "text-info-light"
           )}
         >
           {icon}

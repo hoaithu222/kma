@@ -1,8 +1,15 @@
 import { all, call, put, takeLatest } from "redux-saga/effects";
-import { getPosts, getPostsError, getPostsSuccess } from "./home.slice";
+import {
+  getCategoryError,
+  getCategorySuccess,
+  getCategory,
+  getPosts,
+  getPostsError,
+  getPostsSuccess,
+} from "./home.slice";
 
 // import { IRequestBanner } from "@/core/api/home/types";
-import { fetchPostsApi } from "@/core/api/home";
+import { fetchPostsApi, getCategory as getCategoryApi } from "@/core/api/home";
 
 function* fetchPosts(
   action: ReturnType<typeof getPosts>
@@ -18,11 +25,26 @@ function* fetchPosts(
     yield put(getPostsError(error));
   }
 }
+function* fetchCategory(): Generator<any, void, any> {
+  try {
+    const response = yield call(getCategoryApi);
+    if (response.ok) {
+      yield put(getCategorySuccess(response.data));
+    } else {
+      yield put(getCategoryError(response.error));
+    }
+  } catch (error) {
+    yield put(getCategoryError(error));
+  }
+}
+function* watchGetCategory() {
+  yield takeLatest(getCategory.type, fetchCategory);
+}
 
 function* watchGetPosts() {
   yield takeLatest(getPosts.type, fetchPosts);
 }
 
 export function* homeSaga() {
-  yield all([watchGetPosts()]);
+  yield all([watchGetPosts(), watchGetCategory()]);
 }

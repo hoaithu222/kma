@@ -13,3 +13,7 @@ export const selectFilter = createSelector(
   [selectHome],
   (state) => state.filter
 );
+export const selectCategory = createSelector(
+  [selectHome],
+  (state) => state.category
+);

@@ -7,10 +7,10 @@ const Navbar = () => {
   const navClass = ({ isActive }: { isActive: boolean }) =>
     isActive
       ? "text-primary font-bold"
-      : "text-text-navbar font-medium hover:text-primary-4";
+      : "text-navbar-text font-medium hover:text-primary-dark";
 
   return (
-    <div className="container flex justify-center p-4 mx-auto">
+    <div className="container flex justify-center pt-2 mx-auto">
       <div className="flex items-center justify-center gap-4 ">
         <NavLink to="/" className={navClass}>
           {t("navigation.home")}

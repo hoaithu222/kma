@@ -5,14 +5,14 @@ const Logo = () => {
   const { t } = useTranslation("home");
   return (
     <div className="flex items-center gap-2">
-      <div className="w-20 h-20">
+      <div className="w-16 h-16">
         <img src={logo} alt="logo" className="object-contain w-full h-full" />
       </div>
       <div className="flex flex-col items-start gap-2">
-        <h1 className="text-2xl font-bold text-primary hover:text-primary-6">
+        <h1 className="text-xl font-bold text-primary hover:text-primary-dark">
           {t("header.title")}
         </h1>
-        <p className="text-sm text-text-on-primary hover:text-secondary-5">
+        <p className="text-sm text-text-secondary hover:text-accent">
           {t("header.description")}
         </p>
       </div>

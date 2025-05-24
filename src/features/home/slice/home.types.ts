@@ -9,6 +9,7 @@ interface initialStateType {
     page: number;
     size: number;
   };
+  category: any;
 }
 
 export type { initialStateType };

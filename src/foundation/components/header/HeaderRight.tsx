@@ -5,8 +5,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { toggleTheme } from "@/app/store/slices/theme";
-import Button from "../buttons/Button";
+
 import { setLanguage } from "@/app/store/slices/language";
+import Vi from "@/assets/vi.png";
+import En from "@/assets/en.png";
 
 const HeaderRight = () => {
   const [search, setSearch] = useState("");
@@ -25,39 +27,34 @@ const HeaderRight = () => {
         name="search"
         onChange={handleSearch}
         value={search}
-        icon={<SearchIcon className="w-6 h-6 text-white" />}
-        size={"lg"}
+        icon={<SearchIcon className="w-6 h-6 text-text-link-hover" />}
       />
       <div className="flex items-center gap-2">
         {theme === "light" ? (
           <SunIcon
-            className="w-8 h-8 text-white"
+            className="w-8 h-8 text-text-secondary"
             onClick={() => dispatch(toggleTheme())}
           />
         ) : (
           <MoonIcon
-            className="w-8 h-8 text-white"
+            className="w-8 h-8 text-text-secondary"
             onClick={() => dispatch(toggleTheme())}
           />
         )}
         {language === "vi" ? (
-          <Button
-            variant="outlined"
+          <div
+            className="w-8 h-6 cursor-pointer hover:scale-110 transition-all duration-300"
             onClick={() => dispatch(setLanguage("en"))}
-            shape="round"
-            size="large"
           >
-            en
-          </Button>
+            <img src={En} alt="en" className="w-full h-full object-cover" />
+          </div>
         ) : (
-          <Button
-            variant="outlined"
+          <div
+            className="w-8 h-6 cursor-pointer hover:scale-110 transition-all duration-300"
             onClick={() => dispatch(setLanguage("vi"))}
-            shape="round"
-            size="large"
           >
-            vi
-          </Button>
+            <img src={Vi} alt="vi" className="w-full h-full object-cover" />
+          </div>
         )}
       </div>
     </div>

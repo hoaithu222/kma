@@ -12,6 +12,14 @@
     "contact": "Contact",
     "forum": "Forum"
   },
+  "banner": {
+    "title1": "Faculty of Information Technology",
+    "description1": "Academy of Cryptography Techniques",
+    "title2": "Computer Science",
+    "description2": "Academy of Cryptography Techniques",
+    "title3": "Computer Science",
+    "description3": "Academy of Cryptography Techniques"
+  },
   "footer": {
     "units": {
       "title": "Departments",

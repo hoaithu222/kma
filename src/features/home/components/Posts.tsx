@@ -1,7 +1,16 @@
 // import { useHome } from "../hooks/useHook";
 
+import { useEffect } from "react";
+import { useHome } from "../hooks/useHook";
+
 const Posts = () => {
-  // const { getPostsDispatch, posts, filter } = useHome();
+  const { getPostsDispatch, posts, filter, getCategoryDispatch, category } =
+    useHome();
+
+  useEffect(() => {
+    getCategoryDispatch();
+  }, [getCategoryDispatch]);
+  console.log(category);
 
   // // useEffect(() => {
   // //   getPostsDispatch({

@@ -23,3 +23,6 @@ export interface IPost {
 export interface IResponseBanner {
   data: IPost[];
 }
+export interface IResponseCategory {
+  data: any;
+}

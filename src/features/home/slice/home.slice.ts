@@ -11,6 +11,7 @@ const initialState: initialStateType = {
     page: PAGE_SIZE_SMALL,
     size: PAGE_SIZE,
   },
+  category: [],
 };
 
 const { slice, reducer } = createResettableSlice({
@@ -28,8 +29,25 @@ const { slice, reducer } = createResettableSlice({
     getPostsError: (state, action) => {
       state.error = action.payload;
     },
+    getCategory: (state) => {
+      state.status = ReduxStateType.LOADING;
+    },
+    getCategorySuccess: (state, action) => {
+      state.category = action.payload;
+      state.status = ReduxStateType.SUCCESS;
+    },
+    getCategoryError: (state, action) => {
+      state.error = action.payload;
+    },
   },
 });
 
-export const { getPosts, getPostsSuccess, getPostsError } = slice.actions;
+export const {
+  getPosts,
+  getPostsSuccess,
+  getPostsError,
+  getCategory,
+  getCategorySuccess,
+  getCategoryError,
+} = slice.actions;
 export default reducer;
