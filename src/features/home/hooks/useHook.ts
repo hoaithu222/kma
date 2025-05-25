@@ -7,7 +7,6 @@ import {
   selectFilter,
   selectPosts,
 } from "../slice/home.selector";
-import { IRequestBanner } from "@/core/api/home/types";
 
 export const useHome = () => {
   const dispatch = useDispatch();
@@ -15,12 +14,9 @@ export const useHome = () => {
   const posts = useSelector(selectPosts);
   const category = useSelector(selectCategory);
 
-  const getPostsDispatch = useCallback(
-    (filter: IRequestBanner) => {
-      dispatch(getPosts(filter));
-    },
-    [dispatch]
-  );
+  const getPostsDispatch = useCallback(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
 
   const getCategoryDispatch = useCallback(() => {
     dispatch(getCategory());

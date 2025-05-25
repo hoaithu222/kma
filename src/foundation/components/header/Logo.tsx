@@ -1,10 +1,11 @@
 import logo from "@/assets/logo.png";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   const { t } = useTranslation("home");
   return (
-    <div className="flex items-center gap-2">
+    <Link to="/" className="flex items-center gap-2">
       <div className="w-16 h-16">
         <img src={logo} alt="logo" className="object-contain w-full h-full" />
       </div>
@@ -16,7 +17,7 @@ const Logo = () => {
           {t("header.description")}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

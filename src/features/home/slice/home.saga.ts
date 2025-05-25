@@ -9,13 +9,14 @@ import {
 } from "./home.slice";
 
 // import { IRequestBanner } from "@/core/api/home/types";
-import { fetchPostsApi, getCategory as getCategoryApi } from "@/core/api/home";
+import {
+  getArticlesHome,
+  getCategory as getCategoryApi,
+} from "@/core/api/home";
 
-function* fetchPosts(
-  action: ReturnType<typeof getPosts>
-): Generator<any, void, any> {
+function* fetchArticlesHome(): Generator<any, void, any> {
   try {
-    const response = yield call(fetchPostsApi, action.payload);
+    const response = yield call(getArticlesHome);
     if (response.ok) {
       yield put(getPostsSuccess(response.data));
     } else {
@@ -42,7 +43,7 @@ function* watchGetCategory() {
 }
 
 function* watchGetPosts() {
-  yield takeLatest(getPosts.type, fetchPosts);
+  yield takeLatest(getPosts.type, fetchArticlesHome);
 }
 
 export function* homeSaga() {

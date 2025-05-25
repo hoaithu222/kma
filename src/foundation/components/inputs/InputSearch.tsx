@@ -42,7 +42,6 @@ const InputSearch = ({
   return (
     <div className={clsx("relative", className)}>
       <div className="relative">
-        {/* Viền gradient với màu info-light */}
         <div className="absolute inset-0 rounded-full border border-border-strong p-[1px]">
           <div className="w-full h-full rounded-full" />
         </div>

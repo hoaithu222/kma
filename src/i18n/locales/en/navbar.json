@@ -1,0 +1,48 @@
+{
+  "about": "About",
+  "about-overview": "Overview",
+  "about-structure": "Training Structure",
+  "about-organizations": "Organizations",
+
+  "training": "Training",
+  "training-overview": "Overview",
+  "training-undergraduate": "Undergraduate Program",
+  "training-master": "Master Program",
+  "training-doctor": "Doctoral Program",
+
+  "departments": "Departments",
+  "department-it": "Information Technology",
+  "department-security": "Information Security",
+  "department-telecom": "Telecommunication",
+
+  "research": "Research",
+  "research-overview": "Overview",
+  "research-projects": "Research Projects",
+  "research-publications": "Scientific Publications",
+
+  "admission": "Admission",
+  "admission-overview": "Overview",
+  "admission-undergraduate": "Undergraduate Program",
+  "admission-master": "Master Program",
+  "admission-doctor": "Doctoral Program",
+
+  "student": "Student",
+  "student-forms": "Student Rules",
+  "student-registration": "Register Learning",
+  "student-research": "Student Research",
+  "student-internship": "Internship",
+  "student-project-practice": "Practice Project",
+  "student-thesis": "Thesis",
+
+  "contact": "Contact",
+  "contact-introduction": "Introduction",
+  "contact-info": "Contact",
+
+  "article": "Articles",
+  "article-news": "News",
+  "article-posts": "Articles",
+
+  "event": "Events",
+  "event-upcoming": "Upcoming Events",
+  "event-past": "Past Events"
+}

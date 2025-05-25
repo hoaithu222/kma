@@ -1,0 +1,48 @@
+{
+  "about": "Giới thiệu",
+  "about-overview": "Tổng quan",
+  "about-structure": "Cơ cấu đào tạo",
+  "about-organizations": "Tổ chức",
+
+  "training": "Đào tạo",
+  "training-overview": "Tổng quan",
+  "training-undergraduate": "Chương trình Đại học",
+  "training-master": "Chương trình Thạc sĩ",
+  "training-doctor": "Chương trình Tiến sĩ",
+
+  "departments": "Khoa - Trung tâm",
+  "department-it": "Công nghệ thông tin",
+  "department-security": "An toàn thông tin",
+  "department-telecom": "Viễn thông",
+
+  "research": "Nghiên cứu",
+  "research-overview": "Tổng quan",
+  "research-projects": "Đề tài nghiên cứu",
+  "research-publications": "Công bố khoa học",
+
+  "admission": "Tuyển sinh",
+  "admission-overview": "Tổng quan",
+  "admission-undergraduate": "Tuyển sinh Đại học",
+  "admission-master": "Tuyển sinh Thạc sĩ",
+  "admission-doctor": "Tuyển sinh Tiến sĩ",
+
+  "student": "Sinh viên",
+  "student-forms": "Quy định sinh viên",
+  "student-registration": "Đăng ký học",
+  "student-research": "Nghiên cứu sinh viên",
+  "student-internship": "Thực tập",
+  "student-project-practice": "Đồ án - Thực hành",
+  "student-thesis": "Khóa luận",
+
+  "contact": "Liên hệ",
+  "contact-introduction": "Giới thiệu",
+  "contact-info": "Thông tin liên hệ",
+
+  "article": "Bài viết",
+  "article-news": "Tin tức",
+  "article-posts": "Bài viết",
+
+  "event": "Sự kiện",
+  "event-upcoming": "Sự kiện sắp tới",
+  "event-past": "Sự kiện đã diễn ra"
+}

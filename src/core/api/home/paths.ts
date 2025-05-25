@@ -1,12 +1,11 @@
-export const BASE_PATH = `/api/public`;
+export const BASE_PATH = `api/v1`;
 //  định nghĩa các endpoint cụ thể
 export const HOME_PATH = {
-  //  get banner
-  getBanner: `${BASE_PATH}/posts/latest`,
-  // menu item
-  getMenu: `${BASE_PATH}/menu_items`,
-  // get all post
-  getAllPost: `${BASE_PATH}/posts`,
+  //  get article home
+  getArticlesHome: `${BASE_PATH}/article/home`,
+  // search article
+  searchArticles: `${BASE_PATH}/article/search`,
+
   // get category
-  getCategory: `/api/get-category`,
+  getCategory: `${BASE_PATH}/category/filter`,
 };

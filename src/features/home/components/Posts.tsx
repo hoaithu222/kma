@@ -1,26 +1,19 @@
-// import { useHome } from "../hooks/useHook";
+import { useHome } from "../hooks/useHook";
 
-// import { useEffect } from "react";
-// import { useHome } from "../hooks/useHook";
+import { useEffect } from "react";
 
 const Posts = () => {
-  // const { getPostsDispatch, posts, filter, getCategoryDispatch, category } =
-  //   useHome();
+  const { getPostsDispatch, posts, filter } = useHome();
 
   // useEffect(() => {
   //   getCategoryDispatch();
   // }, [getCategoryDispatch]);
   // console.log(category);
 
-  // // useEffect(() => {
-  // //   getPostsDispatch({
-  // //     sort: "",
-  // //     order: "",
-  // //     page: filter.page,
-  // //     size: filter.size,
-  // //   });
-  // // }, [getPostsDispatch, filter]);
-  // console.log(posts);
+  useEffect(() => {
+    getPostsDispatch();
+  }, [getPostsDispatch, filter]);
+  console.log(posts);
 
   return (
     <div className="w-full h-full">

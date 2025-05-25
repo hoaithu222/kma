@@ -18,8 +18,7 @@ const { slice, reducer } = createResettableSlice({
   name: AppReducerType.HOME,
   initialState,
   reducers: {
-    getPosts: (state, action) => {
-      state.filter = action.payload;
+    getPosts: (state) => {
       state.status = ReduxStateType.LOADING;
     },
     getPostsSuccess: (state, action) => {
