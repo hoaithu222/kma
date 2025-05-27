@@ -17,7 +17,7 @@ const ModalConfirm = ({
   message = "Bạn có chắc chắn muốn thực hiện hành động này?",
   confirmText = "Xác nhận",
   cancelText = "Hủy",
-  type = "default", // default, danger, warning, success
+  type = "default", // default, danger, warning,
   loading = false,
 }: ModalConfirmProps) => {
   if (!isOpen) return null;
