@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { Outlet } from "react-router-dom";
 import Button from "./foundation/components/buttons/Button";
 import { ArrowUpIcon } from "lucide-react";
+import { ToastProvider } from "./foundation/components/notification/Toast";
 // import ToastContainer from "./widgets/toast/ToastContainer";
 
 /**
@@ -23,9 +24,11 @@ const AppShell = () => {
       )}
     >
       {/* Outlet se được render layout tương ứng với router hiện tại (main,login,extension) */}
-      <div className="flex flex-col flex-1 overflow-hidden">
-        <Outlet />
-      </div>
+      <ToastProvider position="top-right" maxToasts={3}>
+        <div className="flex flex-col flex-1 overflow-hidden">
+          <Outlet />
+        </div>
+      </ToastProvider>
       {/* Scroll to top button */}
       <Button
         variant="gradientPrimary"
@@ -39,7 +42,6 @@ const AppShell = () => {
         <ArrowUpIcon />
       </Button>
       {/* Các Modal,Toast,Dialog,Tooltip,Popover, sẽ được render ở đây */}
-      {/* <ToastContainer /> */}
     </div>
   );
 };

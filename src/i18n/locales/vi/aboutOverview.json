@@ -1,0 +1,88 @@
+{
+  "menu": {
+    "about-overview": "Tổng quan",
+    "about-structure": "Cơ cấu đào tạo",
+    "about-organizations": "Tổ chức"
+  },
+  "aboutAcademy": {
+    "title": "Giới thiệu Học viện",
+    "content": [
+      "Học viện Kỹ thuật Mật mã là cơ sở đào tạo trọng điểm quốc gia trong lĩnh vực an toàn thông tin và mật mã, trực thuộc Ban Cơ yếu Chính phủ.",
+      "Trải qua hơn 40 năm xây dựng và phát triển, Học viện đã khẳng định vị thế hàng đầu trong lĩnh vực đào tạo, nghiên cứu và ứng dụng công nghệ an toàn thông tin tại Việt Nam.",
+      "Học viện không ngừng đổi mới nội dung, chương trình đào tạo, đầu tư cơ sở vật chất, trang thiết bị hiện đại để đáp ứng yêu cầu ngày càng cao của xã hội và quốc phòng - an ninh."
+    ]
+  },
+  "trainingContent": {
+    "title": "Đào tạo",
+    "content": [
+      "Học viện đào tạo các trình độ: Đại học, Thạc sĩ và Tiến sĩ trong các lĩnh vực: An toàn thông tin, Công nghệ thông tin, Kỹ thuật điện tử - viễn thông, Toán ứng dụng,...",
+      "Chương trình đào tạo được xây dựng bám sát thực tiễn, cập nhật công nghệ mới và đạt chuẩn quốc tế.",
+      "Sinh viên được trang bị kiến thức chuyên sâu, kỹ năng thực hành vững vàng, đáp ứng tốt nhu cầu của các cơ quan, tổ chức và doanh nghiệp.",
+      "Ngoài ra, Học viện còn tổ chức các lớp bồi dưỡng nghiệp vụ chuyên môn, các khóa đào tạo ngắn hạn theo nhu cầu xã hội và quốc phòng."
+    ]
+  },
+  "researchContent": {
+    "title": "Nghiên cứu khoa học và chuyển giao công nghệ",
+    "content": [
+      "Tổ chức các hội thảo khoa học cấp quốc gia và quốc tế nhằm trao đổi học thuật, cập nhật các thành tựu mới trong lĩnh vực mật mã và an toàn thông tin.",
+      "Thực hiện các đề tài nghiên cứu ứng dụng phục vụ quốc phòng, an ninh và phát triển kinh tế - xã hội.",
+      "Hợp tác nghiên cứu với các đơn vị trong và ngoài nước nhằm nâng cao chất lượng và khả năng chuyển giao công nghệ.",
+      "Thúc đẩy tinh thần sáng tạo trong nghiên cứu, khuyến khích sinh viên, giảng viên tham gia dự án khởi nghiệp công nghệ."
+    ]
+  },
+  "internationalContent": {
+    "title": "Hợp tác đối ngoại",
+    "content": [
+      "Thiết lập quan hệ hợp tác đào tạo, nghiên cứu với nhiều trường đại học, viện nghiên cứu và tổ chức quốc tế.",
+      "Tham gia các chương trình trao đổi sinh viên, giảng viên và học bổng quốc tế nhằm nâng cao năng lực đào tạo và nghiên cứu.",
+      "Chủ động tiếp cận công nghệ tiên tiến thông qua hợp tác song phương, đa phương và dự án tài trợ nước ngoài.",
+      "Là thành viên tích cực trong các tổ chức, diễn đàn quốc tế về an toàn thông tin và chuyển đổi số."
+    ]
+  },
+  "alumniContent": {
+    "title": "Cựu sinh viên",
+    "content": [
+      "Cựu sinh viên Học viện giữ nhiều vị trí quan trọng tại các cơ quan Đảng, Nhà nước, quốc phòng - an ninh và doanh nghiệp công nghệ lớn trong và ngoài nước.",
+      "Nhiều người đã trở thành chuyên gia đầu ngành trong lĩnh vực an toàn thông tin, mật mã và CNTT.",
+      "Học viện duy trì mạng lưới cựu sinh viên nhằm kết nối, chia sẻ kinh nghiệm và hỗ trợ thế hệ sinh viên hiện tại.",
+      "Cựu sinh viên là cầu nối quan trọng, góp phần quảng bá hình ảnh, uy tín và phát triển thương hiệu Học viện."
+    ]
+  },
+  "organizationContent": {
+    "title": "Tổ chức bộ máy",
+    "description": "Học viện sở hữu đội ngũ giảng viên và cán bộ có trình độ cao, nhiều người đạt học hàm, học vị như Giáo sư, Phó Giáo sư, Tiến sĩ. Đội ngũ này không chỉ giảng dạy mà còn tham gia tích cực vào các hoạt động nghiên cứu khoa học, phát triển công nghệ và hợp tác quốc tế, góp phần nâng cao chất lượng đào tạo và uy tín của Học viện.",
+    "board": {
+      "title": "Ban Giám đốc Học viện",
+      "director": {
+        "position": "Giám đốc",
+        "name": "Tiến sĩ Hoàng Văn Thức"
+      },
+      "viceDirectors": [
+        {
+          "position": "Phó Giám đốc",
+          "name": "Phó Giáo sư, Tiến sĩ Lương Thế Dũng"
+        },
+        {
+          "position": "Phó Giám đốc",
+          "name": "Tiến sĩ Nguyễn Tân Đăng"
+        },
+        {
+          "position": "Phó Giám đốc",
+          "name": "Giáo sư, Tiến sĩ Nguyễn Hiếu Minh"
+        }
+      ]
+    },
+    "departments": {
+      "title": "Các phòng, ban chức năng",
+      "list": [
+        "Phòng Chính trị – Tổ chức",
+        "Phòng Đào tạo",
+        "Phòng Khảo thí và Đảm bảo chất lượng đào tạo",
+        "Phòng Sau đại học",
+        "Phòng Hành chính",
+        "Phòng Kế hoạch – Tài chính",
+        "Phòng Thiết bị – Quản trị"
+      ]
+    }
+  }
+}

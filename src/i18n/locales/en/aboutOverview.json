@@ -1,0 +1,88 @@
+{
+  "menu": {
+    "about-overview": "Overview",
+    "about-structure": "Training Structure",
+    "about-organizations": "Organization"
+  },
+  "aboutAcademy": {
+    "title": "Introduction to the Academy",
+    "content": [
+      "The Academy of Cryptography Techniques is a national key institution in the field of information security and cryptography, under the Government Cipher Committee.",
+      "With over 40 years of development, the Academy has affirmed its leading position in training, research, and application of information security technology in Vietnam.",
+      "The Academy constantly innovates its training content and programs, invests in modern facilities and equipment to meet the increasing demands of society and national defense - security."
+    ]
+  },
+  "trainingContent": {
+    "title": "Training",
+    "content": [
+      "The Academy offers Bachelor's, Master's, and Doctoral programs in Information Security, Information Technology, Electronics and Telecommunications Engineering, Applied Mathematics, etc.",
+      "Training programs are designed to be practical, updated with new technologies, and aligned with international standards.",
+      "Students are equipped with in-depth knowledge and strong practical skills to meet the needs of agencies, organizations, and businesses.",
+      "In addition, the Academy organizes professional training courses and short-term programs based on the needs of society and national defense."
+    ]
+  },
+  "researchContent": {
+    "title": "Scientific Research and Technology Transfer",
+    "content": [
+      "Organizes national and international scientific conferences to exchange academic ideas and update new achievements in cryptography and information security.",
+      "Carries out applied research projects serving national defense, security, and socio-economic development.",
+      "Collaborates with domestic and international units to improve the quality and capability of technology transfer.",
+      "Promotes innovation in research and encourages students and lecturers to participate in tech startup projects."
+    ]
+  },
+  "internationalContent": {
+    "title": "International Cooperation",
+    "content": [
+      "Establishes training and research cooperation with universities, research institutes, and international organizations.",
+      "Participates in student and faculty exchange programs and international scholarships to enhance training and research capacity.",
+      "Proactively accesses advanced technologies through bilateral, multilateral cooperation and foreign-funded projects.",
+      "Actively participates in international organizations and forums on information security and digital transformation."
+    ]
+  },
+  "alumniContent": {
+    "title": "Alumni",
+    "content": [
+      "The Academy’s alumni hold important positions in Party and State agencies, national defense and security sectors, and major tech enterprises both in Vietnam and abroad.",
+      "Many have become leading experts in information security, cryptography, and information technology.",
+      "The Academy maintains an alumni network to connect, share experiences, and support current students.",
+      "Alumni serve as a vital bridge, contributing to the promotion of the Academy's image, reputation, and brand development."
+    ]
+  },
+  "organizationContent": {
+    "title": "Organizational Structure",
+    "description": "The Academy possesses a highly qualified team of lecturers and staff, many of whom hold academic titles and degrees such as Professors, Associate Professors, and Doctors. This team is actively involved in teaching, scientific research, technology development, and international cooperation, contributing to improving training quality and the Academy’s reputation.",
+    "board": {
+      "title": "Academy Board of Directors",
+      "director": {
+        "position": "Director",
+        "name": "Dr. Hoang Van Thuc"
+      },
+      "viceDirectors": [
+        {
+          "position": "Vice Director",
+          "name": "Assoc. Prof. Dr. Luong The Dung"
+        },
+        {
+          "position": "Vice Director",
+          "name": "Dr. Nguyen Tan Dang"
+        },
+        {
+          "position": "Vice Director",
+          "name": "Prof. Dr. Nguyen Hieu Minh"
+        }
+      ]
+    },
+    "departments": {
+      "title": "Functional Departments",
+      "list": [
+        "Political – Organizational Department",
+        "Training Department",
+        "Testing and Quality Assurance Department",
+        "Postgraduate Department",
+        "Administrative Department",
+        "Planning – Finance Department",
+        "Equipment – Management Department"
+      ]
+    }
+  }
+}

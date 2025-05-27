@@ -1,8 +1,22 @@
-import AboutPage from "@/features/about/AboutPage";
-import BlogPage from "@/features/blog/BlogPage";
-import ContactPage from "@/features/contact/ContactPage";
+import AboutOverview from "@/features/about/components/about-overview";
+import Organizations from "@/features/about/components/organizations";
+import TrainingStructure from "@/features/about/components/training-structure";
+import AdmissionDoctorProgram from "@/features/admission/components/doctor-program";
+import AdmissionMasterProgram from "@/features/admission/components/master-program";
+import AdmissionUndergraduateProgram from "@/features/admission/components/undergraduate-program";
+
+import IntroductionContact from "@/features/contact/components/introduction";
+
+import InformationSecurity from "@/features/departments/components/information-security";
+import InformationTechnology from "@/features/departments/components/information-technology";
+import Telecommunication from "@/features/departments/components/telecommunication";
 import ForumPage from "@/features/forum/ForumPage";
 import NewsPage from "@/features/news/NewsPage";
+import ResearchProjects from "@/features/research/components/research-projects";
+import ScientificPublications from "@/features/research/components/scientific-publications";
+import TrainingDoctorProgram from "@/features/training/components/doctor-program";
+import TrainingMasterProgram from "@/features/training/components/master-program";
+import TrainingUndergraduateProgram from "@/features/training/components/undergraduate-program";
 import { lazy } from "react";
 
 const HomePage = lazy(() => import("@/features/home/HomePage.tsx"));
@@ -30,30 +44,113 @@ export const ROUTE = {
     layout: "login",
     options: defaultAuthOptions,
   },
-  about: {
-    path: "/about",
-    element: <AboutPage />,
+
+  // giới thiệu
+  aboutOverview: {
+    path: "/about/overview",
+    element: <AboutOverview />,
     layout: "main",
     options: defaultOptions,
   },
-  blog: {
-    path: "/blog",
-    element: <BlogPage />,
+  aboutTrainingStructure: {
+    path: "/about/training-structure",
+    element: <TrainingStructure />,
     layout: "main",
     options: defaultOptions,
   },
+  aboutOrganizations: {
+    path: "/about/organizations",
+    element: <Organizations />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  // đào tạo
+  trainingUndergraduateProgram: {
+    path: "/training/undergraduate-program",
+    element: <TrainingUndergraduateProgram />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  trainingMasterProgram: {
+    path: "/training/master-program",
+    element: <TrainingMasterProgram />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  trainingDoctorProgram: {
+    path: "/training/doctor-program",
+    element: <TrainingDoctorProgram />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  // khoa trung tâm
+  centerDepartmentInformationTechnology: {
+    path: "/center-department/information-technology",
+    element: <InformationTechnology />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  centerDepartmentInformationSecurity: {
+    path: "/center-department/information-security",
+    element: <InformationSecurity />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  centerDepartmentTelecommunication: {
+    path: "/center-department/telecommunication",
+    element: <Telecommunication />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  // nghiên cứu
+  researchProjects: {
+    path: "/research/projects",
+    element: <ResearchProjects />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  researchPublications: {
+    path: "/research/publications",
+    element: <ScientificPublications />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  // tuyển sinh
+  admissionUndergraduateProgram: {
+    path: "/admission/undergraduate-program",
+    element: <AdmissionUndergraduateProgram />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  admissionMasterProgram: {
+    path: "/admission/master-program",
+    element: <AdmissionMasterProgram />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  admissionDoctorProgram: {
+    path: "/admission/doctor-program",
+    element: <AdmissionDoctorProgram />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  // liên hệ
+  contactIntroduction: {
+    path: "/contact/introduction",
+    element: <IntroductionContact />,
+    layout: "main",
+    options: defaultOptions,
+  },
+
+  // blog
+
   news: {
     path: "/news",
     element: <NewsPage />,
     layout: "main",
     options: defaultOptions,
   },
-  contact: {
-    path: "/contact",
-    element: <ContactPage />,
-    layout: "main",
-    options: defaultOptions,
-  },
+
   forum: {
     path: "/forum",
     element: <ForumPage />,
