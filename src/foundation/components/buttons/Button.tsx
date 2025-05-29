@@ -99,20 +99,20 @@ const Button = ({
   const sizeClasses = {
     small:
       shape === "round" || shape === "square"
-        ? "h-8 w-8 text-sm p-0"
-        : "h-8 px-3 text-sm",
+        ? "w-4 h-4 md:w-6 md:h-6 lg:h-8 lg:w-8 text-xs md:text-sm lg:text-base p-0"
+        : "h-6 md:h-7 lg:h-8 px-2 md:px-2.5 lg:px-3 text-xs md:text-sm lg:text-base",
     medium:
       shape === "round" || shape === "square"
-        ? "h-10 w-10 text-base p-0"
-        : "h-10 min-w-[100px] px-4 text-base",
+        ? "h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10 text-xs md:text-sm lg:text-base p-0"
+        : "h-8 md:h-9 lg:h-10 min-w-[100px] px-2 md:px-3 lg:px-4 text-xs md:text-sm lg:text-base",
     large:
       shape === "round" || shape === "square"
-        ? "h-12 w-12 text-lg p-0"
-        : "h-12 px-4 py-3 text-lg",
+        ? "h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 text-xs md:text-sm lg:text-base p-0"
+        : "h-8 md:h-9 lg:h-10 min-w-[100px] px-2 md:px-3 lg:px-4 text-xs md:text-sm lg:text-base",
     xl:
       shape === "round" || shape === "square"
-        ? "h-16 w-16 text-xl p-0"
-        : "h-16 px-6 py-4 text-xl",
+        ? "h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 text-xs md:text-sm lg:text-base p-0"
+        : "h-10 md:h-11 lg:h-12 min-w-[100px] px-2 md:px-3 lg:px-4 text-xs md:text-sm lg:text-base",
   };
 
   // Combine all classes

@@ -94,7 +94,7 @@ const Banner = () => {
     textAnimations[currentIndex % textAnimations.length];
 
   return (
-    <div className="relative w-full overflow-hidden h-96">
+    <div className="relative w-full h-48 overflow-hidden lg:h-96 sm:h-60 md:h-72">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -105,17 +105,17 @@ const Banner = () => {
           <img
             src={images[currentIndex].image}
             alt={`Banner ${images[currentIndex].id}`}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full rounded-lg"
           />
           <motion.div
             {...currentTextAnimation}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute w-[26%] h-[60%] p-5 rounded-md shadow-lg bg-secondary-light opacity-90 left-20 top-10"
+            className="absolute w-[30%] lg:w-[26%] h-[60%] p-2 md:p-3 lg:p-5 rounded-md shadow-lg bg-secondary-light opacity-90 left-20 top-10"
           >
-            <h1 className="text-2xl font-bold text-primary">
+            <h2 className="text-sm font-bold sm:text-lg md:text-xl lg:text-2xl text-primary">
               {t(`banner.title${images[currentIndex].id}`)}
-            </h1>
-            <p className="text-sm text-muted">
+            </h2>
+            <p className="text-xs sm:text-sm md:text-base lg:text-sm text-muted">
               {t(`banner.description${images[currentIndex].id}`)}
             </p>
           </motion.div>
@@ -129,7 +129,7 @@ const Banner = () => {
           className="absolute transform -translate-y-1/2 left-4 top-1/2 opacity-70 hover:opacity-100"
           onClick={handlePrevious}
         >
-          <ArrowLeftIcon className="w-4 h-4" />
+          <ArrowLeftIcon className="w-2 h-2 lg:w-4 lg:h-4 " />
         </Button>
         <Button
           variant="gradientCool"
@@ -137,7 +137,7 @@ const Banner = () => {
           className="absolute transform -translate-y-1/2 right-4 top-1/2 opacity-70 hover:opacity-100"
           onClick={handleNext}
         >
-          <ArrowRightIcon className="w-4 h-4" />
+          <ArrowRightIcon className="w-2 h-2 lg:w-4 lg:h-4" />
         </Button>
       </div>
 
@@ -147,7 +147,7 @@ const Banner = () => {
           <button
             key={index}
             className={`h-2 w-2 rounded-full flex ${
-              currentIndex === index ? "bg-white " : "bg-gray-400 h-2 w-2"
+              currentIndex === index ? "bg-primary " : "bg-text-primary h-2 w-2"
             }`}
             onClick={() => setCurrentIndex(index)}
           />

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Check, X, AlertTriangle } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export type FloatingInputVariant =
   | "default"
@@ -21,6 +22,7 @@ export interface FloatingInputProps
   fullWidth?: boolean;
   showPasswordToggle?: boolean;
   className?: string;
+  error?: string;
 }
 
 const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
@@ -39,6 +41,7 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
       type = "text",
       disabled = false,
       value,
+      error,
       ...props
     },
     ref
@@ -71,9 +74,12 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
     };
 
     const sizeClasses = {
-      small: "h-10 px-3 text-sm",
-      medium: "h-12 px-4 text-base",
-      large: "h-14 px-4 text-lg",
+      small:
+        "h-8 md:h-9 lg:h-10 px-2 md:px-3 lg:px-4 text-xs md:text-sm lg:text-base",
+      medium:
+        "h-10 md:h-11 lg:h-12 px-3 md:px-4 lg:px-5 text-sm md:text-base lg:text-lg",
+      large:
+        "h-12 md:h-13 lg:h-14 px-4 md:px-5 lg:px-6 text-base md:text-lg lg:text-xl",
     };
 
     const statusClasses = {
@@ -86,16 +92,19 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
     // Label positioning based on size and floating state
     const labelClasses = {
       small: {
-        floating: "-top-3 text-xs",
-        default: "top-3 text-sm",
+        floating:
+          "-top-2 md:-top-2.5 lg:-top-3 text-xs md:text-sm lg:text-base",
+        default: "top-2 md:top-2.5 lg:top-3 text-xs md:text-sm lg:text-base",
       },
       medium: {
-        floating: "-top-3.5 text-xs",
-        default: "top-3.5 text-base",
+        floating:
+          "-top-2.5 md:-top-3 lg:-top-3.5 text-xs md:text-sm lg:text-base",
+        default: "top-2.5 md:top-3 lg:top-3.5 text-sm md:text-base lg:text-lg",
       },
       large: {
-        floating: "-top-4 text-xs",
-        default: "top-4 text-lg",
+        floating:
+          "-top-3 md:-top-3.5 lg:-top-4 text-xs md:text-sm lg:text-base",
+        default: "top-3 md:top-3.5 lg:top-4 text-base md:text-lg lg:text-xl",
       },
     };
 
@@ -103,11 +112,17 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
     const getStatusIcon = () => {
       switch (status) {
         case "success":
-          return <Check className="w-4 h-4 text-success" />;
+          return (
+            <Check className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-success" />
+          );
         case "error":
-          return <X className="w-4 h-4 text-error" />;
+          return (
+            <X className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-error" />
+          );
         case "warning":
-          return <AlertTriangle className="w-4 h-4 text-warning" />;
+          return (
+            <AlertTriangle className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-warning" />
+          );
         default:
           return null;
       }
@@ -156,7 +171,11 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
           <input
             ref={ref}
             type={inputType}
-            className={inputClasses}
+            className={cn(
+              inputClasses,
+              error ? "border-destructive" : "",
+              "peer w-full px-3 md:px-4 lg:px-5 py-2 md:py-2.5 lg:py-3 text-sm md:text-base bg-transparent border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            )}
             disabled={disabled}
             value={value}
             onFocus={() => setIsFocused(true)}
@@ -182,24 +201,19 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
           />
           {label && (
             <label
-              className={`
-                absolute left-4 pointer-events-none transition-all duration-200
-
-                ${iconLeft ? `left-12 ${iconLeft ? "ml-8" : "-ml-1"}` : "left-4"}
-                ${
-                  isFloating
-                    ? labelClasses[size].floating
-                    : labelClasses[size].default
-                }
-                ${status !== "default" ? labelColor[status] : labelColor.default}
-                ${
-                  isFloating && variant === "outlined"
-                    ? `bg-transparent px-1 rounded-lg  -ml-1  ${iconLeft ? "-ml-2" : "-ml-1"}`
-                    : isFloating && variant === "filled"
-                      ? "bg-transparent px-1 -ml-1"
-                      : ""
-                }
-              `}
+              className={cn(
+                "absolute left-3 md:left-4 lg:left-5 top-2 md:top-2.5 lg:top-3 text-sm md:text-base text-muted-foreground transition-all duration-200 transform -translate-y-4 scale-75 origin-[0] bg-background px-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4",
+                error ? "text-destructive" : "",
+                isFloating
+                  ? labelClasses[size].floating
+                  : labelClasses[size].default,
+                status !== "default" ? labelColor[status] : labelColor.default,
+                isFloating && variant === "outlined"
+                  ? `bg-transparent px-1 rounded-lg  -ml-1  ${iconLeft ? "-ml-2" : "-ml-1"}`
+                  : isFloating && variant === "filled"
+                    ? "bg-transparent px-1 -ml-1"
+                    : ""
+              )}
             >
               {label}
             </label>
@@ -228,6 +242,9 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
           <p className={`mt-1 text-xs ${helperTextColor[status]} `}>
             {helperText}
           </p>
+        )}
+        {error && (
+          <p className="mt-1 text-xs md:text-sm text-destructive">{error}</p>
         )}
       </div>
     );

@@ -19,6 +19,7 @@ export enum AppReducerType {
   TOAST = "toast",
   THEME = "theme",
   HOME = "home",
+  NAVBAR = "navbar",
 }
 export enum ReduxStateType {
   INIT = "init",

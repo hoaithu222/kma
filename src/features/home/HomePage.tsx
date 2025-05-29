@@ -4,7 +4,7 @@ import Posts from "./components/Posts";
 
 const HomePage = () => {
   return (
-    <div className="w-full overflow-hidden pt-36">
+    <div className="w-full pt-16 overflow-hidden md:pt-24 lg:pt-36">
       {/* Banner */}
       <Banner />
       {/* Tin tức*/}

@@ -35,9 +35,17 @@ export const imagesMobile = [
   {
     id: 1,
     image: image,
+    content: {
+      title: "title1",
+      description: "description1",
+    },
   },
   {
     id: 2,
     image: image2,
+    content: {
+      title: "title2",
+      description: "description2",
+    },
   },
 ];

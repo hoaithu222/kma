@@ -1,196 +1,53 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import image from "@/assets/about/imageOverview.png";
 
-import {
-  GraduationCapIcon,
-  UsersIcon,
-  BookOpenIcon,
-  GlobeIcon,
-} from "lucide-react";
-import {
-  Accordion,
-  AccordionItem,
-} from "@/foundation/components/accordion/Accordion";
+import News from "./components/News";
+import AccordionContentTab from "./components/AccordionContentTab";
+
+import { GraduationCapIcon } from "lucide-react";
 
 const AboutOverview = () => {
   const { t: tAboutOverview } = useTranslation("aboutOverview");
 
   return (
-    <div className="grid grid-cols-12 gap-6 p-8 px-4 mt-36">
-      <div className="col-span-3">
-        <div className="p-6 rounded-lg shadow-lg bg-background-elevated">
-          <h2 className="mb-4 text-xl font-bold text-text-primary">
-            {tAboutOverview("menu.about-overview")}
-          </h2>
-          <nav className="space-y-3">
-            <Link
-              to="/about/overview"
-              className="block p-3 transition-colors rounded-md text-primary bg-primary-light hover:bg-primary"
-            >
-              {tAboutOverview("menu.about-overview")}
-            </Link>
-            <Link
-              to="/about/training-structure"
-              className="block p-3 transition-colors rounded-md text-text-secondary hover:text-primary hover:bg-background-muted"
-            >
-              {tAboutOverview("menu.about-structure")}
-            </Link>
-            <Link
-              to="/about/organizations"
-              className="block p-3 transition-colors rounded-md text-text-secondary hover:text-primary hover:bg-background-muted"
-            >
-              {tAboutOverview("menu.about-organizations")}
-            </Link>
-          </nav>
-        </div>
-      </div>
-
+    <div className="grid grid-cols-12 gap-3 py-6 mt-16 sm:mt-20 md:mt-24 lg:mt-36">
       {/* Main Content */}
-      <div className="col-span-6">
-        <div className="space-y-8">
-          {/* Academy Introduction */}
-          <div className="p-8 rounded-lg shadow-lg bg-background-elevated">
+      <div className="col-span-12 mb-4 lg:col-span-9">
+        <div className="mb-4 space-y-4">
+          {/* Academy Overview */}
+          <div className="p-4 rounded-lg shadow-lg bg-background-elevated">
             <div className="flex items-center mb-6">
-              <GraduationCapIcon className="w-8 h-8 mr-3 text-primary" />
-              <h1 className="text-2xl font-bold text-text-primary">
-                {tAboutOverview("aboutAcademy.title")}
+              <GraduationCapIcon className="w-6 h-6 mr-3 text-primary sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+              <h1 className="text-sm font-bold sm:text-lg md:text-xl lg:text-2xl text-text-primary">
+                {tAboutOverview("academyOverview.title")}
               </h1>
             </div>
-            <div className="space-y-4">
+            <div className="w-full h-full p-2 overflow-hidden rounded-md">
+              <img src={image} alt="" className="object-cover w-full h-full" />
+            </div>
+            <div className="mt-2 space-y-2 sm:mt-4 sm:space-y-4 lg:mt-6">
               {(
-                tAboutOverview("aboutAcademy.content", {
+                tAboutOverview("academyOverview.content", {
                   returnObjects: true,
                 }) as string[]
               ).map((paragraph: string, index: number) => (
-                <p key={index} className="leading-relaxed text-text-secondary">
+                <p
+                  key={index}
+                  className="text-xs leading-relaxed text-text-secondary sm:text-sm lg:text-base"
+                >
                   {paragraph}
                 </p>
               ))}
             </div>
           </div>
-
-          {/* Accordion for detailed sections */}
-          <Accordion
-            type="multiple"
-            variant="bordered"
-            size="lg"
-            className="space-y-4"
-          >
-            <AccordionItem
-              value="training"
-              title={tAboutOverview("trainingContent.title")}
-              icon={<BookOpenIcon className="w-6 h-6 text-success" />}
-            >
-              <div className="pt-4 space-y-3">
-                {(
-                  tAboutOverview("trainingContent.content", {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((item: string, index: number) => (
-                  <p
-                    key={index}
-                    className="leading-relaxed text-text-secondary"
-                  >
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </AccordionItem>
-
-            {/* Research Section */}
-            <AccordionItem
-              value="research"
-              title={tAboutOverview("researchContent.title")}
-              icon={<BookOpenIcon className="w-6 h-6 text-accent" />}
-            >
-              <div className="pt-4 space-y-3">
-                {(
-                  tAboutOverview("researchContent.content", {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((item: string, index: number) => (
-                  <p
-                    key={index}
-                    className="leading-relaxed text-text-secondary"
-                  >
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </AccordionItem>
-
-            {/* International Cooperation Section */}
-            <AccordionItem
-              value="international"
-              title={tAboutOverview("internationalContent.title")}
-              icon={<GlobeIcon className="w-6 h-6 text-warning" />}
-            >
-              <div className="pt-4 space-y-3">
-                {(
-                  tAboutOverview("internationalContent.content", {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((item: string, index: number) => (
-                  <p
-                    key={index}
-                    className="leading-relaxed text-text-secondary"
-                  >
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </AccordionItem>
-
-            {/* Alumni Section */}
-            <AccordionItem
-              value="alumni"
-              title={tAboutOverview("alumniContent.title")}
-              icon={<UsersIcon className="w-6 h-6 text-error" />}
-            >
-              <div className="pt-4 space-y-3">
-                {(
-                  tAboutOverview("alumniContent.content", {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((item: string, index: number) => (
-                  <p
-                    key={index}
-                    className="leading-relaxed text-text-secondary"
-                  >
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </AccordionItem>
-          </Accordion>
         </div>
+        {/* Accordion Sections */}
+        <AccordionContentTab />
       </div>
 
       {/* News Sidebar */}
-      <div className="col-span-3">
-        <div className="p-6 rounded-lg shadow-lg bg-background-elevated">
-          <h2 className="mb-4 text-xl font-bold text-text-primary">
-            Các tin tức nổi bật
-          </h2>
-          <div className="space-y-4">
-            <div className="p-4 transition-colors rounded-lg cursor-pointer bg-background-muted hover:bg-background-subtle">
-              <h4 className="mb-2 font-semibold text-text-primary">
-                Tin tức mẫu 1
-              </h4>
-              <p className="text-sm text-text-secondary">
-                Mô tả ngắn về tin tức...
-              </p>
-            </div>
-            <div className="p-4 transition-colors rounded-lg cursor-pointer bg-background-muted hover:bg-background-subtle">
-              <h4 className="mb-2 font-semibold text-text-primary">
-                Tin tức mẫu 2
-              </h4>
-              <p className="text-sm text-text-secondary">
-                Mô tả ngắn về tin tức...
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className="hidden lg:block lg:col-span-3">
+        <News />
       </div>
     </div>
   );

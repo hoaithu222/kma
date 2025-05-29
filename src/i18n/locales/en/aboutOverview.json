@@ -1,88 +1,181 @@
 {
   "menu": {
-    "about-overview": "Overview",
-    "about-structure": "Training Structure",
-    "about-organizations": "Organization"
+    "overview": "Academy Overview",
+    "history": "Brief History",
+    "structureAndTeam": "Organizational Structure and Team",
+    "researchAndTransfer": "Scientific Research and Technology Transfer",
+    "externalCooperation": "External Cooperation",
+    "alumni": "Alumni"
   },
-  "aboutAcademy": {
-    "title": "Introduction to the Academy",
+  "academyOverview": {
+    "title": "Introduction to the Academy of Cryptography Engineering",
     "content": [
-      "The Academy of Cryptography Techniques is a national key institution in the field of information security and cryptography, under the Government Cipher Committee.",
-      "With over 40 years of development, the Academy has affirmed its leading position in training, research, and application of information security technology in Vietnam.",
-      "The Academy constantly innovates its training content and programs, invests in modern facilities and equipment to meet the increasing demands of society and national defense - security."
+      "The Academy of Cryptography Engineering (ACT) is a public higher education institution under the Government Cipher Committee, playing a pioneering role in training high-quality human resources and conducting in-depth scientific research in cryptography, information security, and information technology.",
+      "Over nearly 50 years of formation and development, from a cryptography cadre training school with initial difficulties, the Academy has continuously grown to become a prestigious training and research center, making significant contributions to national security protection and the country's socio-economic development.",
+      "With a strategic vision, the Academy of Cryptography Engineering aims to become a multidisciplinary, research-oriented university focused on innovation, international integration, and one of Vietnam's leading educational institutions in information security and digital technology."
     ]
   },
-  "trainingContent": {
-    "title": "Training",
-    "content": [
-      "The Academy offers Bachelor's, Master's, and Doctoral programs in Information Security, Information Technology, Electronics and Telecommunications Engineering, Applied Mathematics, etc.",
-      "Training programs are designed to be practical, updated with new technologies, and aligned with international standards.",
-      "Students are equipped with in-depth knowledge and strong practical skills to meet the needs of agencies, organizations, and businesses.",
-      "In addition, the Academy organizes professional training courses and short-term programs based on the needs of society and national defense."
-    ]
-  },
-  "researchContent": {
-    "title": "Scientific Research and Technology Transfer",
-    "content": [
-      "Organizes national and international scientific conferences to exchange academic ideas and update new achievements in cryptography and information security.",
-      "Carries out applied research projects serving national defense, security, and socio-economic development.",
-      "Collaborates with domestic and international units to improve the quality and capability of technology transfer.",
-      "Promotes innovation in research and encourages students and lecturers to participate in tech startup projects."
-    ]
-  },
-  "internationalContent": {
-    "title": "International Cooperation",
-    "content": [
-      "Establishes training and research cooperation with universities, research institutes, and international organizations.",
-      "Participates in student and faculty exchange programs and international scholarships to enhance training and research capacity.",
-      "Proactively accesses advanced technologies through bilateral, multilateral cooperation and foreign-funded projects.",
-      "Actively participates in international organizations and forums on information security and digital transformation."
-    ]
-  },
-  "alumniContent": {
-    "title": "Alumni",
-    "content": [
-      "The Academy’s alumni hold important positions in Party and State agencies, national defense and security sectors, and major tech enterprises both in Vietnam and abroad.",
-      "Many have become leading experts in information security, cryptography, and information technology.",
-      "The Academy maintains an alumni network to connect, share experiences, and support current students.",
-      "Alumni serve as a vital bridge, contributing to the promotion of the Academy's image, reputation, and brand development."
-    ]
-  },
-  "organizationContent": {
-    "title": "Organizational Structure",
-    "description": "The Academy possesses a highly qualified team of lecturers and staff, many of whom hold academic titles and degrees such as Professors, Associate Professors, and Doctors. This team is actively involved in teaching, scientific research, technology development, and international cooperation, contributing to improving training quality and the Academy’s reputation.",
-    "board": {
-      "title": "Academy Board of Directors",
-      "director": {
-        "position": "Director",
-        "name": "Dr. Hoang Van Thuc"
+  "briefHistory": {
+    "title": "Brief History",
+    "timeline": [
+      {
+        "year": 1976,
+        "event": "The Cryptography Cadre Training School was established under the decision of the Central Cipher Committee (now the Government Cipher Committee) with the initial goal of training cryptographic technical officers, serving cipher work and information security in the armed forces and state agencies."
       },
-      "viceDirectors": [
+      {
+        "year": 1995,
+        "event": "The school was renamed the Cryptography Technical High School, beginning to upgrade its training programs."
+      },
+      {
+        "year": 2001,
+        "event": "The Government officially authorized the school to offer full-time university education."
+      },
+      {
+        "year": 2007,
+        "event": "Upgraded to the Academy of Cryptography Engineering by the Prime Minister's decision."
+      },
+      {
+        "milestone": "The Academy developed into a multidisciplinary institution while maintaining its core role in training cryptography techniques, information security, and security technology for national defense and security."
+      },
+      {
+        "milestone": "Opened an additional training campus in Ho Chi Minh City, expanding enrollment scale and international cooperation."
+      },
+      {
+        "milestone": "Authorized to offer Master's degrees in Information Security, meeting the high demand for high-quality human resources in the security field."
+      },
+      {
+        "status": "Currently, the Academy is the only institution directly under the Government Cipher Committee with the function of providing undergraduate and postgraduate education specializing in cryptography, cipher work, and information security."
+      },
+      {
+        "reputation": "Recognized as the leading training center for cryptographic technical officers and security personnel in Vietnam."
+      }
+    ],
+    "summary": "Over 48 years of formation and development, from a training school for the Cipher sector with a staff of just over ten people and rudimentary, inadequate facilities, the Academy has continuously developed and expanded its facilities to become a multidisciplinary training institution, providing human resources for the Cipher sector and socio-economic needs. It boasts a team of highly qualified and dedicated officials and lecturers, and modern, spacious facilities at two campuses in Hanoi and Ho Chi Minh City. This has firmly established the Academy's position as a center for high-level cadre training for the entire Cipher sector and a pioneering university in training human resources for security and information safety for the socio-economic field.",
+    "futureGoals": "The Academy of Cryptography Engineering aims in the near future to build the Academy into a high-quality training institution for Cryptography Engineering and Information Security, meeting the human resource needs of the cipher sector and socio-economic demands. It is oriented towards developing the Academy into a center for innovation, digital transformation, and using digital infrastructure to provide personalized training services for learners. Simultaneously, the Academy will be developed as both a high-quality training institution and a strategic research agency on national security and information safety, significantly contributing to building a revolutionary, regular, and modern Vietnamese Cipher sector."
+  },
+  "organizationalStructureAndTeam": {
+    "title": "Organizational Structure and Team",
+    "introduction": "The Academy boasts a highly qualified team of lecturers and staff, many of whom have achieved academic titles such as Professor, Associate Professor, and Doctor. This team not only teaches but also actively participates in scientific research, technology development, and international cooperation, contributing to enhancing the training quality and reputation of the Academy.",
+    "boardOfDirectors": {
+      "title": "Academy's Board of Directors",
+      "members": [
         {
-          "position": "Vice Director",
-          "name": "Assoc. Prof. Dr. Luong The Dung"
+          "name": "Dr. Hoang Van Thuc",
+          "position": "Director",
+          "specialization": "Expert in Information Security and Cryptography"
         },
         {
-          "position": "Vice Director",
-          "name": "Dr. Nguyen Tan Dang"
+          "name": "Assoc. Prof. Dr. Luong The Dung",
+          "position": "Deputy Director",
+          "specialization": "Expert in System Security"
         },
         {
-          "position": "Vice Director",
-          "name": "Prof. Dr. Nguyen Hieu Minh"
+          "name": "Dr. Nguyen Tan Dang",
+          "position": "Deputy Director",
+          "specialization": "Expert in Cryptography Technology"
+        },
+        {
+          "name": "Prof. Dr. Nguyen Hieu Minh",
+          "position": "Deputy Director",
+          "specialization": "Expert in Information Security and Data Security"
         }
-      ]
+      ],
+      "description": "This is the highest leadership team, responsible for strategic direction, management, and operation of all Academy activities."
     },
-    "departments": {
-      "title": "Functional Departments",
+    "functionalDepartments": {
+      "title": "Functional Departments and Offices",
+      "introduction": "The Academy has functional departments and offices supporting management and training, including:",
       "list": [
-        "Political – Organizational Department",
+        "Political - Organizational Office",
         "Training Department",
-        "Testing and Quality Assurance Department",
+        "Testing and Training Quality Assurance Department",
         "Postgraduate Department",
-        "Administrative Department",
-        "Planning – Finance Department",
-        "Equipment – Management Department"
-      ]
+        "Administrative Office",
+        "Planning - Finance Department",
+        "Equipment - Administration Department"
+      ],
+      "description": "These departments and offices have advisory, organizational, and managerial functions for the Academy's professional, administrative, financial, and facility-related activities."
+    },
+    "specializedFaculties": {
+      "title": "Specialized Faculties",
+      "description": "The Academy organizes training and scientific research through specialized faculties, aligned with its development orientation and the demand for high-quality human resources in information security and cryptography."
     }
+  },
+  "scientificResearchAndTechnologyTransfer": {
+    "title": "Scientific Research and Technology Transfer",
+    "activities": [
+      {
+        "id": 1,
+        "activityTitle": "Organizing national and international scientific conferences",
+        "description": "The Academy regularly organizes scientific conferences to update and share new knowledge in cryptography and information security. For example, the 'Cryptography and Information Security Application Research - CryptoJS 2022' conference gathered many leading domestic and international experts, creating a forum for academic exchange and promoting basic and applied scientific research cooperation in cryptography and information security in Vietnam."
+      },
+      {
+        "id": 2,
+        "activityTitle": "Research cooperation with institutes and universities",
+        "description": "The Academy has collaborated with the Institute of Information Technology, Vietnam National University, Hanoi in fields such as semiconductor chip design, big data security, and artificial intelligence. Both sides also coordinate in organizing training classes, co-supervising PhD students, and collaborating on projects related to innovation and entrepreneurship."
+      },
+      {
+        "id": 3,
+        "activityTitle": "Developing and transferring security solutions",
+        "description": "The Academy has implemented research and development projects for security solutions applied in the cipher field and developed security solutions for big data. Cooperation with units like the Institute of Information Technology, Vietnam National University, Hanoi helps the Academy leverage and optimize the strengths of both sides, contributing to the orientation for sustainable and long-term development."
+      },
+      {
+        "id": 4,
+        "activityTitle": "Training and fostering high-quality human resources",
+        "description": "The Academy is the first institution in the country authorized to train Information Security engineers and also the first authorized to offer Master's degrees in this major. In addition, the Academy also trains officials for friendly countries and focuses on scientific research cooperation, contributing to developing information security human resources for society in response to new development requirements."
+      }
+    ]
+  },
+  "externalCooperation": {
+    "title": "External Cooperation",
+    "cooperations": [
+      {
+        "id": 1,
+        "event": "Strategic Human Resources Alliance for implementing Resolution 57-NQ/TW",
+        "date": "May 7, 2025",
+        "description": "The Academy of Cryptography Engineering, along with the Ho Chi Minh National Academy of Politics, University of Engineering and Technology (VNU Hanoi), Hanoi University of Science and Technology, and FPT University, signed an agreement to establish the Strategic Human Resources Alliance. This alliance aims to build a high-quality workforce ready to adapt to the digital transformation era."
+      },
+      {
+        "id": 2,
+        "event": "Cooperation with Da Nang Center for Research, Training in IC Design and Artificial Intelligence",
+        "date": "March 7, 2025",
+        "description": "The Academy signed an MOU with the Da Nang Center for Research, Training in IC Design and Artificial Intelligence. The goal is to cooperate in research and training in the fields of semiconductor microcircuits and artificial intelligence, contributing to the development of this field in Da Nang and the whole country."
+      },
+      {
+        "id": 3,
+        "event": "Working with Japan Advanced Institute of Science and Technology (JAIST)",
+        "date": "February 27, 2023",
+        "description": "The Academy welcomed and worked with a delegation from the Japan Advanced Institute of Science and Technology (JAIST). Both sides discussed possibilities for cooperation in research and training, especially in advanced technology fields."
+      }
+    ]
+  },
+  "alumni": {
+    "title": "Alumni",
+    "achievements": [
+      {
+        "id": 1,
+        "category": "Holding important positions in state agencies",
+        "description": "Many alumni of the Academy of Cryptography Engineering currently hold key positions in state management agencies for cybersecurity, national defense, public security, and ministries related to information technology. They play an important role in developing policies, laws, and implementing solutions to protect national security in cyberspace. Examples include senior officials in the Authority of Information Security, Ministry of Information and Communications, and cybersecurity units of the Ministry of Public Security and Ministry of National Defence."
+      },
+      {
+        "id": 2,
+        "category": "Leading experts in information security",
+        "details": [
+          "ACT is a cradle for many highly qualified information security experts, recognized by domestic and international communities.",
+          "Participation in international competitions: Many alumni have been and are core members of prestigious CTF (Capture The Flag) teams, winning high prizes in major international competitions such as DEF CON CTF, Pwn2Own, etc. These competitions require extensive knowledge and practical security skills.",
+          "Research and development: Some alumni have become researchers, developing advanced security technologies, contributing to building defense systems, encryption, and attack detection for Vietnam.",
+          "Lecturers, scientists: Many return to the Academy or work at other universities and research institutes to impart knowledge and experience to the younger generation, while also participating in specialized scientific research projects."
+        ]
+      },
+      {
+        "id": 3,
+        "category": "Success in the business sector",
+        "details": [
+          "Many ACT alumni have founded or hold leadership and senior management positions in large technology corporations and leading security companies in Vietnam.",
+          "They bring their knowledge and experience in information security to build high-quality security products and services for businesses, organizations, and individual users.",
+          "Some alumni have successfully started businesses, building companies specializing in cybersecurity, consulting, and implementing security solutions, contributing to the development of Vietnam's technology ecosystem."
+        ]
+      }
+    ]
   }
 }

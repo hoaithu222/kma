@@ -290,7 +290,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
       ${gradient ? "bg-gradient-to-r from-background-elevated to-background-muted" : "bg-background-elevated"}
     `,
     bordered: `
-      border-2 border-border-secondary
+      border-1 lg:border-2 border-border-secondary
       ${rounded ? "rounded-xl" : ""}
       divide-y divide-border-primary
       ${shadow ? "shadow-md" : ""}
@@ -316,7 +316,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
     `,
     minimal: `
       border-l-4 border-primary
-      pl-4 space-y-1
+      pl-2 md:pl-3 lg:pl-4 space-y-1
       ${gradient ? "bg-gradient-to-r from-primary-light/50 to-transparent" : ""}
     `,
     modern: `
@@ -375,7 +375,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
       : React.Children.toArray(children);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 sm:space-y-3 md:space-y-4">
       {/* Search bar */}
       {searchable && (
         <div className="relative">
@@ -384,7 +384,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 pl-10 border rounded-lg border-border-primary focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="w-full px-2 py-1 pl-10 border rounded-lg sm:px-3 md:px-4 sm:py-2 md:py-3 border-border-primary focus:ring-2 focus:ring-primary focus:border-transparent"
           />
           <HelpCircle className="absolute left-3 top-2.5 w-4 h-4 text-text-muted" />
         </div>
@@ -608,7 +608,7 @@ const AccordionItem: React.FC<
     <Accordion.Item value={value} disabled={disabled} className="relative">
       {/* Timeline connector */}
       {timeline && numbered && (
-        <div className="absolute left-0 z-10 flex items-center justify-center w-8 h-8 text-sm font-medium border-2 rounded-full bg-background-elevated border-border-primary top-3">
+        <div className="absolute left-0 z-10 flex items-center justify-center w-4 h-4 text-xs font-medium border-2 rounded-full md:w-6 md:h-6 md:text-sm lg:w-8 lg:h-8 lg:text-sm bg-background-elevated border-border-primary top-3">
           {numbered}
         </div>
       )}
@@ -625,7 +625,7 @@ const AccordionItem: React.FC<
             {/* Content */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center space-x-2">
-                <span className="font-medium truncate text-text-primary">
+                <span className="text-sm font-medium truncate md:text-lg lg:text-xl text-text-primary">
                   {title}
                 </span>
 
@@ -636,6 +636,7 @@ const AccordionItem: React.FC<
                       ${sizeClasses[size].badge}
                       ${priorityColors[priority]}
                       border rounded-full font-medium
+                      text-xs md:text-sm lg:text-base
                     `}
                   >
                     {badge}
@@ -650,7 +651,7 @@ const AccordionItem: React.FC<
 
               {/* Subtitle */}
               {subtitle && (
-                <p className="mt-1 text-sm truncate text-text-secondary">
+                <p className="mt-1 text-xs truncate md:text-sm lg:text-base text-text-secondary">
                   {subtitle}
                 </p>
               )}
