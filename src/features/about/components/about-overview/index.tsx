@@ -10,15 +10,15 @@ const AboutOverview = () => {
   const { t: tAboutOverview } = useTranslation("aboutOverview");
 
   return (
-    <div className="grid grid-cols-12 gap-3 py-6 mt-16 sm:mt-20 md:mt-24 lg:mt-36">
+    <div className="grid grid-cols-12 gap-3 py-4 mt-12 sm:py-6 sm:mt-16 md:mt-20 lg:mt-24">
       {/* Main Content */}
       <div className="col-span-12 mb-4 lg:col-span-9">
         <div className="mb-4 space-y-4">
           {/* Academy Overview */}
-          <div className="p-4 rounded-lg shadow-lg bg-background-elevated">
-            <div className="flex items-center mb-6">
-              <GraduationCapIcon className="w-6 h-6 mr-3 text-primary sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
-              <h1 className="text-sm font-bold sm:text-lg md:text-xl lg:text-2xl text-text-primary">
+          <div className="p-3 rounded-lg shadow-lg sm:p-4 bg-background-elevated">
+            <div className="flex items-center mb-4 sm:mb-6">
+              <GraduationCapIcon className="w-5 h-5 mr-2 text-primary sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" />
+              <h1 className="text-base font-bold text-text-primary sm:text-lg md:text-xl lg:text-2xl">
                 {tAboutOverview("academyOverview.title")}
               </h1>
             </div>
@@ -33,7 +33,7 @@ const AboutOverview = () => {
               ).map((paragraph: string, index: number) => (
                 <p
                   key={index}
-                  className="text-xs leading-relaxed text-text-secondary sm:text-sm lg:text-base"
+                  className="text-sm leading-relaxed text-text-secondary sm:text-base lg:text-lg"
                 >
                   {paragraph}
                 </p>

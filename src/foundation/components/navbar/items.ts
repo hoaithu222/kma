@@ -8,7 +8,7 @@ interface INavbarItem {
 export const NavbarItems: INavbarItem[] = [
   {
     label: "about",
-    path: "/about",
+    path: "/about/overview",
     icon: "FaBookOpen",
     children: [
       {
@@ -30,7 +30,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "training",
-    path: "/training",
+    path: "/training/overview",
     icon: "FaChalkboardTeacher",
     children: [
       {
@@ -52,7 +52,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "departments",
-    path: "/center-department",
+    path: "/center-department/information-technology",
     icon: "FaBuilding",
     children: [
       {
@@ -74,7 +74,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "research",
-    path: "/research",
+    path: "/research/research-projects",
     icon: "FaFlask",
     children: [
       {
@@ -91,7 +91,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "admission",
-    path: "/admission",
+    path: "/admission/undergraduate-program",
     icon: "FaUserPlus",
     children: [
       {
@@ -113,7 +113,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "student",
-    path: "/student",
+    path: "/student/student-rules",
     icon: "FaUser",
     children: [
       {
@@ -150,7 +150,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "contact",
-    path: "/contact",
+    path: "/contact/introduction",
     icon: "FaPhoneAlt",
     children: [
       {
@@ -163,7 +163,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "article",
-    path: "/article",
+    path: "/article/news",
     icon: "FaNewspaper",
     children: [
       { label: "article-news", path: "/article/news", icon: "FaBell" },
@@ -172,7 +172,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "event",
-    path: "/event",
+    path: "/event/event-upcoming",
     icon: "FaCalendarAlt",
     children: [
       {

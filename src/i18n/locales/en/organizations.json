@@ -1,0 +1,33 @@
+{
+  "academy_name": "Academy of Cryptography Techniques",
+  "organizational_chart": "Organizational Chart",
+  "school_council_title": "School Council",
+  "science_education_council": "Science and Education Council",
+  "management_board": "Management Board",
+  "international_advisory_council": "International Advisory Council",
+  "education_block": "Education Block",
+  "organizational_structure": {
+    "introduction": "Academy of Cryptography Techniques – includes:",
+    "faculties": {
+      "count": 3,
+      "description": "undertake professional work in teaching and scientific research"
+    },
+    "research_centers": {
+      "count": 4,
+      "description": "Research Centers"
+    },
+    "support_centers": {
+      "count": 2,
+      "description": "support training activities (practice), scientific research, technology transfer, and innovation"
+    },
+    "administrative_department": {
+      "count": 1,
+      "name": "administrative – school office department",
+      "role": "assisting the Board of Rectors as well as supporting departments and centers in implementing professional activities"
+    }
+  },
+  "school_council": {
+    "title": "School Council",
+    "description": "The School Council is an agency established by the decision of the Rector of the Academy of Cryptography Techniques to advise the Rector in implementing the management and operational tasks of the Academy."
+  }
+}

@@ -9,6 +9,10 @@ import enNavbar from "./locales/en/navbar.json";
 import viNavbar from "./locales/vi/navbar.json";
 import enAboutOverview from "./locales/en/aboutOverview.json";
 import viAboutOverview from "./locales/vi/aboutOverview.json";
+import enTrainingStructure from "./locales/en/trainingStructure.json";
+import viTrainingStructure from "./locales/vi/trainingStructure.json";
+import enOrganizations from "./locales/en/organizations.json";
+import viOrganizations from "./locales/vi/organizations.json";
 
 i18n
   .use(LanguageDetector)
@@ -19,11 +23,15 @@ i18n
         home: enHome,
         navbar: enNavbar,
         aboutOverview: enAboutOverview,
+        trainingStructure: enTrainingStructure,
+        organizations: enOrganizations,
       },
       vi: {
         home: viHome,
         navbar: viNavbar,
         aboutOverview: viAboutOverview,
+        trainingStructure: viTrainingStructure,
+        organizations: viOrganizations,
       },
     },
     fallbackLng: "en",
