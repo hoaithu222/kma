@@ -1,0 +1,56 @@
+{
+  "programName": "Undergraduate Regular Education Program in Information Security",
+  "trainingLevel": "Undergraduate",
+  "degreeAwarded": "Bachelor and Engineer",
+  "major": "Information Security",
+  "majorName": "Information Security",
+  "majorCode": "7.48.02.02",
+  "trainingType": "Full-time",
+  "degreeTitle": "Degree Title",
+  "programDuration": "4 years or 4.5 years",
+  "totalCredits": "153 credits",
+  "specializations": {
+    "title": "Training Specializations",
+    "KM.A.2.1": "Information Systems Security",
+    "KM.A.2.2.1": "Network Security Engineering",
+    "KM.A.2.3.1": "Secure Software Technology"
+  },
+  "trainingObjectives": {
+    "title": "Training Objectives",
+    "generalObjectives": "The regular undergraduate programs in Information Security will equip learners with:",
+    "generalPoints": [
+      "General knowledge suitable for the training field, ensuring compatibility with other training programs of the Academy and other institutions.",
+      "Fundamental knowledge in Information Security to understand the structure and operation of IT systems, recognize potential security threats, and apply methods to prevent them.",
+      "Specialized knowledge and skills to work professionally in the field of information security based on their chosen specialization."
+    ],
+    "specificObjectives": {
+      "title": "Specific Objectives",
+      "systemSecurity": {
+        "title": "Information Systems Security Specialization",
+        "description": "This specialization equips learners with in-depth knowledge and skills to: design and implement security solutions for information systems; consult for security solutions; operate security hardware and software tools; and handle security incidents during system operations."
+      },
+      "networkSecurityEngineering": {
+        "title": "Network Security Engineering Specialization",
+        "description": "This specialization provides learners with advanced knowledge and skills to work in and implement deep-level tasks related to information security and network security, such as malware analysis, system security monitoring, vulnerability detection and exploitation, security evaluation and assessment of information systems, and offensive/defensive security operations. Additionally, learners will be capable of designing, developing, and deploying security solutions, consulting on security technologies, operating security tools, and resolving incidents arising during system operation."
+      },
+      "secureSoftwareTechnology": {
+        "title": "Secure Software Technology Specialization",
+        "description": "This specialization provides both fundamental and advanced knowledge in software engineering and secure software technology, including: safe software development processes, software maintenance, security technology solutions, and the analysis, design, and management of secure software projects. Graduates will be capable of organizing, managing, and executing tasks in the field of secure software technology; modeling and applying secure software principles in practice; and analyzing, verifying, testing, and evaluating secure software."
+      }
+    }
+  },
+  "admissionInfo": {
+    "title": "Admission Information",
+    "targetApplicantsTitle": "Eligible Applicants",
+    "targetApplicants": "Vietnamese citizens who are admitted via the national university entrance exam (or equivalent evaluation).",
+    "admissionMethodTitle": "Admission Method",
+    "admissionMethod": "Admission is based on the results of the national high school graduation exam. The admission score is the total of one of the following subject combinations: Mathematics, Physics, Chemistry (A00); Mathematics, Physics, English (A01); Mathematics, Natural Sciences, English (D90)."
+  },
+  "additionalInfo": {
+    "title": "Additional Information",
+    "graduationRequirementsTitle": "Graduation Requirements",
+    "outcomeReferenceTitle": "Learning Outcomes Reference"
+  },
+  "graduationRequirements": "According to the undergraduate training regulations of the Ministry of Education and Training and the regulations of the Academy of Cryptography Techniques.",
+  "outcomeReference": "Learning outcomes and detailed training programs can be found in the Information Security training program."
+}

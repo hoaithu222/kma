@@ -1,0 +1,82 @@
+{
+  "degreeTitle": "Bằng cấp",
+  "programDuration": "Thời gian",
+  "programCredits": "Tín chỉ",
+  "admissionInfo": "Mục tiêu đào tạo",
+  "graduationRequirements": "Mục tiêu cụ thể",
+  "knowledgeInfo": "Kiến thức",
+  "technicalSkills": "Kỹ năng chuyên môn",
+  "ethicalQualities": "Phẩm chất chính trị và đạo đức",
+  "generalTrainingGoals": "Mục tiêu chung",
+
+  "programInfo": {
+    "programName": "Chương trình giáo dục đại học hệ Chính quy ngành Công nghệ thông tin",
+    "trainingLevel": "Đại học",
+    "degreeAwarded": "Cử nhân và Kỹ sư",
+    "major": "Công nghệ thông tin",
+    "majorCode": "7.48.01.01",
+    "specialization": "Kỹ thuật phần mềm nhúng và phần mềm di động",
+    "trainingType": "Chính quy",
+    "programCode": "KMC.1.1.1",
+    "framework": "Chương trình được xây dựng theo hướng tiếp cận chuẩn đầu ra CDIO (Conceive – Design – Implement – Operate)"
+  },
+
+  "trainingObjectives": {
+    "general": {
+      "introduction": "Mục tiêu của Chương trình giáo dục đại học chính quy ngành Công nghệ thông tin, chuyên ngành Kỹ thuật phần mềm nhúng và di động (Mobile and Embedded Software Engineering - MESE) là trang bị cho người học:",
+      "item1": "Phẩm chất chính trị, đạo đức nghề nghiệp để đáp ứng yêu cầu hoạt động trong khu vực an ninh, quốc phòng, và kinh tế xã hội;",
+      "item2": "Kiến thức đại cương về khoa học tự nhiên, xã hội và kiến thức cơ sở, nền tảngvề điện tử viễn thông và công nghệ thông tin;",
+      "item3": "Khối kiến thức nền tảng về công nghệ phần mềm, đáp ứng được các công việc của kỹ sư phát triển phần mềm;",
+      "item4": "Kiến thức lý thuyết và kỹ năng thực hành về chuyên ngành Kỹ thuật phần mềm nhúng và di động theo hai hướng chuyên sâu: kỹ sư phát triển phần mềm cho các thiết bị di động và kỹ sư phát triển phần mềm trong các hệ thống nhúng;",
+      "item5": "Kỹ năng xã hội cần thiết, khả năng tự học, tự nghiên cứu để thành công trong cuộc sống và nghề nghiệp;",
+      "item6": "Chương trình đào tạo cho phép khả năng chuyển đổi linh động giữa hai chuyên ngành “An toàn thông tin” và “Kỹ thuật phần mềm nhúng và di động”."
+    },
+    "specific": {
+      "introduction": "Sau khi tốt nghiệp, kỹ sư Kỹ thuật phần mềm nhúng và di động phải có được:",
+      "ethicalQualities": {
+        "eq1": "Tuyệt đối trung thành với Tổ quốc, với nhân dân, với mục tiêu lý tưởng và đường lối cách mạng của Đảng Cộng sản Việt Nam; có lòng yêu nước, yêu chủ nghĩa xã hội; có tinh thần trách nhiệm cao, có ý thức vươn lên trong cuộc sống và công việc;",
+        "eq2": "Có ý thức tổ chức kỷ luật, nghiêm chỉnh chấp hành chủ trương, đường lối của Đảng, chính sách, pháp luật của Nhà nước. Có phẩm chất đạo đức tốt, lối sống lành mạnh, giản dị. Có tác phong làm việc khoa học, chính xác, chặt chẽ."
+      },
+      "knowledge": {
+        "kn1": "Hiểu biết cơ bản về Chủ nghĩa Mác - Lênin và tư tưởng Hồ Chí Minh.Xây dựng được thế giới quan, nhân sinh quan và phương pháp luận khoa học. Nắm được các chủ trương, đường lối của Đảng, chính sách, pháp luật của Nhà nước;",
+        "kn2": "Nắm được các kiến thức cơ bản về toán học, vật lý học. Nắm được các kiến thức cơ sở chuyên ngành về công nghệ thông tin, điện tử viễn thông;",
+        "kn3": "Nắm được các kiến thức cơ bản của chuyên ngành Kỹ thuật phần mềm;",
+        "kn4": "Nắm được phương pháp, kỹ thuật và các kỹ năng phát triển phần mềm trên các hệ thống nhúng theo các lĩnh vực ứng dụng khác nhau;",
+        "kn5": "Nắm được phương pháp, kỹ thuật và các kỹ năng phát triển phần mềm trên các thiết bị di động;",
+        "kn6": "Có thể giao tiếp, sử dụng tiếng Anh trong công việc;",
+        "kn7": "Có đủ kiến thức để học tiếp lên bậc học cao hơn."
+      },
+      "skills": {
+        "s1_softwareEngineer_title": "Kỹ sư phát triển phần mềm thông thường",
+        "s2_mobileEngineer_title": "Kỹ sư phát triển phần mềm di động",
+        "s3_embeddedEngineer_title": "Kỹ sư phát triển phần mềm nhúng",
+        "s1_softwareEngineer": " Sau 3,5 năm đầu (đã học hết các học phần cần thiết chuyên ngành kỹ thuật phần mềm + thực tập cơ sở), sinh viên có khả năng phân tích, thiết kế, lập trình, kiểm thử, triển khai các dự án phần mềm ứng dụng, websites; có khả năng sử dụng các phương pháp, kỹ thuật và công cụ hiện đại trong phát triển phần mềm.",
+        "s2_mobileEngineer": "Sinh viên theo hướng phát triển phần mềm di động có khả năng phát triển phần mềm cho các thiết bị di động trên cả 3 nền tảng công nghệ phổ biến nhất là: Android, iOS, Windows Phone.",
+        "s3_embeddedEngineer": "Sinh viên theo hướng phát triển phần mềm nhúng mức thấp có thể làm việc trong các lĩnh vực như: Phát triển phần mềm trong các hệ thống nhúng dân dụng (máy bán hàng tự động, máy thanh toán thẻ, máy ảnh số, tivi thông minh, máy nghe nhạc, v.v.), Phát triển phần mềm nhúng trong các hệ thống, thiết bị truyền thông (modem, firewall, v.v.), Phát triển phần mềm nhúng trong công nghiệp (lập trình PLC trong dây truyền sản xuất tự động, mạng công nghiệp, v.v), Phát triển phần mềm nhúng trong các hệ thống giám sát và điều khiển (ngôi nhà thông minh, hệ thống báo động, hệ thống phòng cháy, v.v.), Lập trình đa phương tiện trong các thiết bị nhúng (thiết bị nghe nhạc, xem phim, cầm tay, đầu đọc mã vạch, v.v.)."
+      }
+    }
+  },
+
+  "programDurationDetails": {
+    "totalTime": "4 hoặc 5 năm."
+  },
+
+  "programCreditDetails": {
+    "totalCredits": "176 tín chỉ."
+  },
+
+  "admissionDetails": {
+    "admissionInfo": "Thông tin tuyển sinh",
+    "targetApplicants": "Công dân Việt Nam trúng tuyển kỳ thi (hoặc xét tuyển) đại học. Việc xét tuyển căn cứ kết quả thi của kỳ thi THPT quốc gia. Điểm xét tuyển là tổng điểm của một trong ba tổ hợp gồm 03 môn/bài thi (kỳ thi THPT quốc gia): Toán, Vật lý, Hóa học (A00); Toán, Vật lý, Tiếng Anh (A01); Toán, Khoa học tự nhiên, Tiếng Anh (D90)."
+  },
+
+  "graduationRequirementsDetails": {
+    "title": "Thông tin bổ sung",
+    "details": "Theo qui chế hiện hành của Bộ Giáo dục và Đào tạo và các quy định của Học viện Kỹ thuật mật mã."
+  },
+
+  "knowledgeReference": {
+    "knowledgeReference": "Tham khảo kiến thức",
+    "outcomeReference": "Chuẩn đầu ra và chi tiết chương trình đào tạo xem tại Chương trình đào tạo ngành Công nghệ thông tin."
+  }
+}

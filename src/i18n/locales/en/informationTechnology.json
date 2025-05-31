@@ -1,0 +1,75 @@
+{
+  "degreeTitle": "Degree",
+  "programDuration": "Duration",
+  "programCredits": "Credits",
+  "admissionInfo": "Training Objectives",
+  "graduationRequirements": "Specific Objectives",
+  "knowledgeInfo": "Knowledge",
+  "technicalSkills": "Professional Skills",
+  "ethicalQualities": "Political and Ethical Qualities",
+  "generalTrainingGoals": "General Goals",
+  "programInfo": {
+    "programName": "Full-time Undergraduate Program in Information Technology",
+    "trainingLevel": "Undergraduate",
+    "degreeAwarded": "Bachelor and Engineer",
+    "major": "Information Technology",
+    "majorCode": "7.48.01.01",
+    "specialization": "Embedded Software and Mobile Software Engineering",
+    "trainingType": "Full-time",
+    "programCode": "KMC.1.1.1",
+    "framework": "The program is built using the CDIO (Conceive – Design – Implement – Operate) output standard approach."
+  },
+  "trainingObjectives": {
+    "general": {
+      "introduction": "The objectives of the full-time undergraduate program in Information Technology, specializing in Mobile and Embedded Software Engineering (MESE), are to equip students with:",
+      "item1": "Political and professional ethics to meet the requirements of working in national security, defense, and socio-economic sectors;",
+      "item2": "General knowledge of natural and social sciences, and fundamental knowledge of electronics, telecommunications, and information technology;",
+      "item3": "A foundational knowledge base in software technology, enabling them to work as software development engineers;",
+      "item4": "Theoretical knowledge and practical skills in Mobile and Embedded Software Engineering, with two specialized directions: software development engineer for mobile devices and software development engineer in embedded systems;",
+      "item5": "Necessary social skills, self-study, and research abilities to succeed in life and career;",
+      "item6": "The training program allows for flexible chuyển đổi between the two specializations: “Information Security” and “Embedded and Mobile Software Engineering.”"
+    },
+    "specific": {
+      "introduction": "Upon graduation, Mobile and Embedded Software Engineers must possess:",
+      "ethicalQualities": {
+        "eq1": "Absolute loyalty to the Fatherland, to the people, to the ideals and revolutionary path of the Communist Party of Vietnam; patriotism, love for socialism; high sense of responsibility, desire to excel in life and work;",
+        "eq2": "A sense of organizational discipline, strict adherence to the Party's guidelines, and the State's policies and laws. Good moral character, healthy and simple lifestyle. Scientific, precise, and meticulous work ethic."
+      },
+      "knowledge": {
+        "kn1": "Basic understanding of Marxism-Leninism and Ho Chi Minh's thought. Ability to establish a worldview, philosophy of life, and scientific methodology. Grasping the Party's guidelines, and the State's policies and laws;",
+        "kn2": "Understanding of basic knowledge in mathematics and physics. Understanding of fundamental specialized knowledge in information technology, electronics, and telecommunications;",
+        "kn3": "Understanding of basic knowledge of Software Engineering specialization;",
+        "kn4": "Understanding of methods, techniques, and skills for software development on embedded systems across various application areas;",
+        "kn5": "Understanding of methods, techniques, and skills for software development on mobile devices;",
+        "kn6": "Ability to communicate and use English in their work;",
+        "kn7": "Sufficient knowledge to pursue higher education."
+      },
+      "skills": {
+        "s1_softwareEngineer_title": "General Software Development Engineer",
+        "s2_mobileEngineer_title": "Mobile Device Software Development Engineer",
+        "s3_embeddedEngineer_title": "Embedded Software Development Engineer",
+        "s1_softwareEngineer": "After the first 3.5 years (having completed all necessary software engineering specialized modules + basic internship), students will be capable of analyzing, designing, programming, testing, and deploying application software projects and websites; capable of using modern methods, techniques, and tools in software development.",
+        "s2_mobileEngineer": "Students specializing in mobile software development will be capable of developing software for mobile devices across the three most popular technology platforms: Android, iOS, and Windows Phone.",
+        "s3_embeddedEngineer": "Students specializing in low-level embedded software development can work in areas such as: Software development in civil embedded systems (vending machines, card payment machines, digital cameras, smart TVs, music players, etc.), Embedded software development in communication systems and devices (modems, firewalls, etc.), Embedded software development in industry (PLC programming in automated production lines, industrial networks, etc.), Embedded software development in monitoring and control systems (smart homes, alarm systems, fire protection systems, etc.), Multimedia programming in embedded devices (music players, video players, handheld devices, barcode readers, etc.)."
+      }
+    }
+  },
+  "programDurationDetails": {
+    "totalTime": "4 or 5 years."
+  },
+  "programCreditDetails": {
+    "totalCredits": "176 credits."
+  },
+  "admissionDetails": {
+    "admissionInfo": "Admission Information",
+    "targetApplicants": "Vietnamese citizens who pass the university entrance examination (or admission review). Admission is based on the results of the national high school graduation examination. The admission score is the total score of one of three combinations of 03 subjects/tests (national high school graduation examination): Mathematics, Physics, Chemistry (A00); Mathematics, Physics, English (A01); Mathematics, Natural Sciences, English (D90)."
+  },
+  "graduationRequirementsDetails": {
+    "title": "Additional Information",
+    "details": "According to the current regulations of the Ministry of Education and Training and the regulations of the Cryptography Technical Academy."
+  },
+  "knowledgeReference": {
+    "knowledgeReference": "Knowledge Reference",
+    "outcomeReference": "For detailed output standards and curriculum, please refer to the Information Technology program."
+  }
+}

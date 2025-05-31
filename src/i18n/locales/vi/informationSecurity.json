@@ -1,0 +1,56 @@
+{
+  "programName": "Chương trình giáo dục đại học hệ Chính quy ngành An toàn thông tin",
+  "trainingLevel": "Đại học",
+  "degreeAwarded": "Cử nhân và Kỹ sư",
+  "major": "An toàn thông tin",
+  "majorName": "Mã ngành",
+  "majorCode": "7.48.02.02",
+  "trainingType": "Chính quy",
+  "degreeTitle": "Bằng cấp",
+  "programDuration": "4 năm hoặc 4,5 năm",
+  "totalCredits": "153 TC",
+  "specializations": {
+    "title": "Chuyên ngành đào tạo",
+    "KM.A.2.1": "An toàn hệ thống thông tin",
+    "KM.A.2.2.1": "Kỹ nghệ an toàn mạng",
+    "KM.A.2.3.1": "Công nghệ phần mềm an toàn"
+  },
+  "trainingObjectives": {
+    "title": "Mục tiêu đào tạo",
+    "generalObjectives": "Các chương trình đào tạo đại học chính quy ngành An toàn thông tin sẽ trang bị cho người học:",
+    "generalPoints": [
+      "Kiến thức đại cương phù hợp với khối ngành đào tạo, đảm bảo tính liên thông với các chương trình đào tạo khác của Học viện và của các cơ sở đào tạo khác.",
+      "Kiến thức cơ sở ngành An toàn thông tin để người học hiểu được cấu trúc, hoạt động của các hệ thống công nghệ thông tin, nắm bắt được các hiểm họa an toàn đối với các hệ thống công nghệ thông tin, cũng như các phương pháp để phòng chống các hiểm họa đó.",
+      "Kiến thức và kỹ năng chuyên sâu để tác nghiệp trong lĩnh vực an toàn thông tin ứng với chuyên ngành được đào tạo."
+    ],
+    "specificObjectives": {
+      "title": "Mục tiêu cụ thể",
+      "systemSecurity": {
+        "title": "Chuyên ngành An toàn hệ thống thông tin",
+        "description": "Chương trình đào tạo theo chuyên ngành An toàn hệ thống thông tin trang bị cho người học kiến thức, kỹ năng chuyên sâu để có thể: thiết kế, triển khai giải pháp đảm bảo an toàn cho một hệ thống thông tin; tư vấn giải pháp an toàn thông tin cho các cơ quan, tổ chức; vận hành các công cụ phần cứng, phần mềm nhằm đảm bảo an toàn cho hệ thống thông tin; và giải quyết các sự cố an toàn thông tin phát sinh trong quá trình vận hành hệ thống."
+      },
+      "networkSecurityEngineering": {
+        "title": "Chuyên ngành Kỹ nghệ an toàn mạng",
+        "description": "Chương trình đào tạo theo chuyên ngành Kỹ nghệ an toàn mạng trang bị cho người học kiến thức, kỹ năng chuyên sâu để có thể: tác nghiệp, triển khai các nghiệp vụ chuyên sâu liên quan đến an toàn thông tin, an toàn các hệ thống mạng như: phân tích mã độc, giám sát an toàn hệ thống thông tin, phát hiện và khai thác lỗ hổng phần mềm, đánh giá và kiểm định an toàn hệ thống thông tin, các tác vụ liên quan đến tấn công và phòng thủ hệ thống mạng… Ngoài ra, chương trình đào tạo này cũng cung cấp khả năng thiết kế, phát triển, triển khai các giải pháp đảm bảo an toàn thông tin; tư vấn các giải pháp công nghệ an toàn thông tin; vận hành các công cụ phần cứng, phần mềm nhằm đảm bảo an toàn cho hệ thống thông tin; đồng thời có khả năng giải quyết các sự cố an toàn thông tin phát sinh trong quá trình vận hành hệ thống."
+      },
+      "secureSoftwareTechnology": {
+        "title": "Chuyên ngành Công nghệ phần mềm an toàn",
+        "description": "Chương trình đào tạo theo chuyên ngành Công nghệ phần mềm an toàn trang bị cho người học kiến thức cơ bản và chuyên sâu về công nghệ phần mềm, công nghệ phần mềm an toàn, giải pháp công nghệ an toàn: quy trình xây dựng, quản lý và bảo trì phần mềm an toàn, giải pháp công nghệ an toàn; phân tích, thiết kế và quản lý các dự án phần mềm an toàn/giải pháp công nghệ an toàn. Kỹ sư chuyên ngành Công nghệ phần mềm an toàn có khả năng tổ chức thực hiện và quản lý được các công việc trong lĩnh vực công nghệ phần mềm an toàn, có khả năng xây dựng mô hình và áp dụng các nguyên tắc của công nghệ phần mềm an toàn vào thực tế; Phân tích, kiểm chứng, kiểm thử, đánh giá phần mềm an toàn."
+      }
+    }
+  },
+  "admissionInfo": {
+    "title": "Thông tin tuyển sinh",
+    "targetApplicantsTitle": "Đối tượng tuyển sinh",
+    "targetApplicants": "Công dân Việt Nam trúng tuyển kỳ thi (hoặc xét tuyển) đại học.",
+    "admissionMethodTitle": "Phương thức tuyển sinh",
+    "admissionMethod": "Việc xét tuyển căn cứ kết quả thi của kỳ thi THPT quốc gia. Điểm xét tuyển là tổng điểm của một trong ba tổ hợp gồm 03 môn/bài thi (kỳ thi THPT quốc gia): Toán, Vật lý, Hóa học (A00); Toán, Vật lý, Tiếng Anh (A01); Toán, Khoa học tự nhiên, Tiếng Anh (D90)."
+  },
+  "additionalInfo": {
+    "title": "Thông tin bổ sung",
+    "graduationRequirementsTitle": "Yêu cầu tốt nghiệp",
+    "outcomeReferenceTitle": "Tham chiếu chuẩn đầu ra"
+  },
+  "graduationRequirements": "Theo quy chế đào tạo trình độ đại học của Bộ Giáo dục và Đào tạo và các quy định của Học viện Kỹ thuật mật mã.",
+  "outcomeReference": "Chuẩn đầu ra và chi tiết chương trình đào tạo xem tại Chương trình đào tạo ngành An toàn thông tin."
+}

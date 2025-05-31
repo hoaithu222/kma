@@ -30,7 +30,7 @@ export const NavbarItems: INavbarItem[] = [
   },
   {
     label: "training",
-    path: "/training/overview",
+    path: "/training/undergraduate-program",
     icon: "FaChalkboardTeacher",
     children: [
       {
@@ -42,11 +42,6 @@ export const NavbarItems: INavbarItem[] = [
         label: "training-master",
         path: "/training/master-program",
         icon: "FaUserGraduate",
-      },
-      {
-        label: "training-doctor",
-        path: "/training/doctor-program",
-        icon: "FaUserMd",
       },
     ],
   },

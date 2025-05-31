@@ -13,6 +13,14 @@ import enTrainingStructure from "./locales/en/trainingStructure.json";
 import viTrainingStructure from "./locales/vi/trainingStructure.json";
 import enOrganizations from "./locales/en/organizations.json";
 import viOrganizations from "./locales/vi/organizations.json";
+import enUndergraduateProgram from "./locales/en/undergraduateProgram.json";
+import viUndergraduateProgram from "./locales/vi/undergraduateProgram.json";
+import enMasterProgram from "./locales/en/masterProgram.json";
+import viMasterProgram from "./locales/vi/masterProgram.json";
+import enInformationTechnology from "./locales/en/informationTechnology.json";
+import viInformationTechnology from "./locales/vi/informationTechnology.json";
+import enInformationSecurity from "./locales/en/informationSecurity.json";
+import viInformationSecurity from "./locales/vi/informationSecurity.json";
 
 i18n
   .use(LanguageDetector)
@@ -25,6 +33,10 @@ i18n
         aboutOverview: enAboutOverview,
         trainingStructure: enTrainingStructure,
         organizations: enOrganizations,
+        undergraduateProgram: enUndergraduateProgram,
+        masterProgram: enMasterProgram,
+        informationTechnology: enInformationTechnology,
+        informationSecurity: enInformationSecurity,
       },
       vi: {
         home: viHome,
@@ -32,6 +44,10 @@ i18n
         aboutOverview: viAboutOverview,
         trainingStructure: viTrainingStructure,
         organizations: viOrganizations,
+        undergraduateProgram: viUndergraduateProgram,
+        masterProgram: viMasterProgram,
+        informationTechnology: viInformationTechnology,
+        informationSecurity: viInformationSecurity,
       },
     },
     fallbackLng: "en",
