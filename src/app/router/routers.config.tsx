@@ -196,13 +196,13 @@ export const ROUTE = {
     options: defaultOptions,
   },
   event: {
-    path: "/event/:id",
+    path: "/events/:id",
     element: <EventPage />,
     layout: "main",
     options: defaultOptions,
   },
   post: {
-    path: "/post/:id",
+    path: "/posts/:id",
     element: <PostPage />,
     layout: "main",
     options: defaultOptions,

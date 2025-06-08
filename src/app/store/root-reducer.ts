@@ -5,6 +5,8 @@ import { AppReducerType } from "./types";
 import homeReducer from "@/features/home/slice/home.slice.ts";
 import navbarReducer from "./slices/navbar";
 import studentReducer from "@/features/student/slice/student.slice";
+import postReducer from "@/features/posts/slice/post.slice";
+import eventReducer from "@/features/event/slice/event.slice";
 
 export const rootReducer = combineReducers({
   [AppReducerType.LANGUAGE]: languageReducer,
@@ -12,4 +14,6 @@ export const rootReducer = combineReducers({
   [AppReducerType.HOME]: homeReducer,
   [AppReducerType.NAVBAR]: navbarReducer,
   [AppReducerType.STUDENT]: studentReducer,
+  [AppReducerType.POST]: postReducer,
+  [AppReducerType.EVENT]: eventReducer,
 });
