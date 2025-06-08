@@ -50,3 +50,27 @@ export const selectStatusSubMajor = createSelector(
   [selectHome],
   (state) => state.statusSubMajor
 );
+export const selectBannerPost = createSelector(
+  [selectHome],
+  (state) => state.bannerPost
+);
+export const selectNewsPost = createSelector(
+  [selectHome],
+  (state) => state.newsPost
+);
+export const selectEventPostNew = createSelector(
+  [selectHome],
+  (state) => state.eventPostNew
+);
+export const selectEventPostAdmission = createSelector(
+  [selectHome],
+  (state) => state.eventPostAdmission
+);
+export const selectStudentPost = createSelector(
+  [selectHome],
+  (state) => state.studentPost
+);
+export const selectCooperationPost = createSelector(
+  [selectHome],
+  (state) => state.cooperationPost
+);

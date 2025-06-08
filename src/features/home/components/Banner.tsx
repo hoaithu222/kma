@@ -1,11 +1,9 @@
-import { useMediaQuery } from "react-responsive";
-import { imagesDesktop } from "../utils/image";
-import { imagesMobile } from "../utils/image";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import Button from "@/foundation/components/buttons/Button";
-import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
+import { useHome } from "../hooks/useHook";
+import clsx from "clsx";
 
 const animations = [
   {
@@ -54,11 +52,20 @@ const textAnimations = [
 ];
 
 const Banner = () => {
-  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
-  const images = isDesktop ? imagesDesktop : imagesMobile;
+  const { bannerPost, getBannerPostDispatch } = useHome();
+  useEffect(() => {
+    getBannerPostDispatch();
+  }, []);
+
+  const images = bannerPost?.content?.map((item: any) => ({
+    id: item.id,
+    image: `${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`,
+    title: item.title,
+    summary: item.summary,
+  }));
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const { t } = useTranslation("home");
 
   const handleNext = () => {
     if (isTransitioning) return;
@@ -89,6 +96,10 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, [isTransitioning]);
 
+  if (!images || images.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   const currentAnimation = animations[currentIndex % animations.length];
   const currentTextAnimation =
     textAnimations[currentIndex % textAnimations.length];
@@ -110,29 +121,71 @@ const Banner = () => {
           <motion.div
             {...currentTextAnimation}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute w-[30%] lg:w-[26%] h-[60%] p-2 md:p-3 lg:p-5 rounded-md shadow-lg bg-secondary-light opacity-90 left-20 top-10"
+            className={clsx(
+              "absolute w-[20%] sm:w-[25%] lg:w-[30%] h-[85%] sm:h-[80%]",
+              "p-3 md:p-4 lg:p-6 rounded-xl shadow-2xl bg-transparent backdrop-blur-sm left-2 sm:left-5 lg:left-18 top-2 sm:top-5 lg:top-8 overflow-hidden",
+              "left-2 sm:left-5 lg:left-20 top-2 sm:top-5 lg:top-10"
+            )}
           >
-            <h2 className="text-sm font-bold sm:text-lg md:text-xl lg:text-2xl text-primary">
-              {t(`banner.title${images[currentIndex].id}`)}
-            </h2>
-            <p className="text-xs sm:text-sm md:text-base lg:text-sm text-muted">
-              {t(`banner.description${images[currentIndex].id}`)}
-            </p>
+            <div
+              className="relative flex flex-col h-full p-4 text-white"
+              // style={{
+              //   backgroundImage: `url(${images[currentIndex].image})`,
+              //   backgroundSize: "cover",
+              //   backgroundPosition: "center",
+              // }}
+            >
+              {/* Nội dung chữ */}
+              <div className="relative z-10 flex flex-col h-full">
+                <h2 className="mb-2 text-sm font-bold leading-tight text-shadow sm:text-base md:text-2xl lg:text-3xl line-clamp-2">
+                  {images[currentIndex].title}
+                </h2>
+
+                {images[currentIndex].summary && (
+                  <p className="flex-grow mb-4 text-xs leading-relaxed text-shadow sm:text-sm lg:text-base line-clamp-3">
+                    {images[currentIndex].summary}
+                  </p>
+                )}
+
+                <div className="mt-auto space-y-3">
+                  <Button
+                    variant="primary"
+                    className="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium transition-all duration-200 transform rounded-lg shadow-md sm:text-sm hover:shadow-lg hover:scale-105"
+                  >
+                    <span>Xem chi tiết</span>
+                    <svg
+                      className="w-3 h-3 sm:w-4 sm:h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </Button>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </AnimatePresence>
 
+      {/* Navigation Buttons */}
       <div className="absolute top-0 left-0 w-full h-full">
         <Button
-          variant="gradientCool"
+          variant="primary"
           shape="round"
           className="absolute transform -translate-y-1/2 left-4 top-1/2 opacity-70 hover:opacity-100"
           onClick={handlePrevious}
         >
-          <ArrowLeftIcon className="w-2 h-2 lg:w-4 lg:h-4 " />
+          <ArrowLeftIcon className="w-2 h-2 lg:w-4 lg:h-4" />
         </Button>
         <Button
-          variant="gradientCool"
+          variant="primary"
           shape="round"
           className="absolute transform -translate-y-1/2 right-4 top-1/2 opacity-70 hover:opacity-100"
           onClick={handleNext}
@@ -146,8 +199,10 @@ const Banner = () => {
         {images.map((_, index) => (
           <button
             key={index}
-            className={`h-2 w-2 rounded-full flex ${
-              currentIndex === index ? "bg-primary " : "bg-text-primary h-2 w-2"
+            className={`h-2 w-2 rounded-full transition-all duration-200 ${
+              currentIndex === index
+                ? "bg-blue-600 w-6"
+                : "bg-white/60 hover:bg-white/80"
             }`}
             onClick={() => setCurrentIndex(index)}
           />

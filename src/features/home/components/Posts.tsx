@@ -3,7 +3,7 @@ import { useHome } from "../hooks/useHook";
 import { useEffect } from "react";
 
 const Posts = () => {
-  const { getPostsDispatch, posts, filter } = useHome();
+  const { getPostsDispatch, filter } = useHome();
 
   // useEffect(() => {
   //   getCategoryDispatch();
@@ -13,7 +13,6 @@ const Posts = () => {
   useEffect(() => {
     getPostsDispatch();
   }, [getPostsDispatch, filter]);
-  console.log(posts);
 
   return (
     <div className="w-full h-full">

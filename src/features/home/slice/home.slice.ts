@@ -16,6 +16,38 @@ const initialState: initialStateType = {
   subCategory: [],
   major: [],
   subMajor: [],
+
+  bannerPost: {
+    content: [],
+    totalPages: 0,
+    totalItems: 0,
+  },
+  newsPost: {
+    content: [],
+    totalPages: 0,
+    totalItems: 0,
+  },
+  eventPostNew: {
+    content: [],
+    totalPages: 0,
+    totalItems: 0,
+  },
+  eventPostAdmission: {
+    content: [],
+    totalPages: 0,
+    totalItems: 0,
+  },
+  studentPost: {
+    content: [],
+    totalPages: 0,
+    totalItems: 0,
+  },
+  cooperationPost: {
+    content: [],
+    totalPages: 0,
+    totalItems: 0,
+  },
+
   statusLecturer: ReduxStateType.INIT,
   statusCategory: ReduxStateType.INIT,
   statusSubCategory: ReduxStateType.INIT,
@@ -106,9 +138,68 @@ const { slice, reducer } = createResettableSlice({
       state.error = action.payload;
       state.statusSubMajor = ReduxStateType.ERROR;
     },
+    // lấy banner với id subCategory 53
+    getBannerPost: () => {},
+    getBannerPostSuccess: (state, action) => {
+      state.bannerPost = action.payload;
+    },
+    getBannerPostError: (state, action) => {
+      state.error = action.payload;
+    },
+    // lấy tin tức mới nhất với id subCategory  50
+    getNewsPost: () => {},
+    getNewsPostSuccess: (state, action) => {
+      state.newsPost = action.payload;
+    },
+    getNewsPostError: (state, action) => {
+      state.error = action.payload;
+    },
+    // lấy sụ kiện mới nhất với id 49
+    getEventPostNew: () => {},
+    getEventPostNewSuccess: (state, action) => {
+      state.eventPostNew = action.payload;
+    },
+    getEventPostNewError: (state, action) => {
+      state.error = action.payload;
+    },
+    // lấy các bài post liên quan đến đào tạo tuyển sinh id 51
+    getEventPostAdmission: () => {},
+    getEventPostAdmissionSuccess: (state, action) => {
+      state.eventPostAdmission = action.payload;
+    },
+    getEventPostAdmissionError: (state, action) => {
+      state.error = action.payload;
+    },
+    // lấy các bài post liên quan đến cựu sinh viên id 52
+    getStudentPost: () => {},
+    getStudentPostSuccess: (state, action) => {
+      state.studentPost = action.payload;
+    },
+    getStudentPostError: (state, action) => {
+      state.error = action.payload;
+    },
+    // lấy các bài post liên quan đến hợp tác đối ngoại id 40
+    getCooperationPost: () => {},
+    getCooperationPostSuccess: (state, action) => {
+      state.cooperationPost = action.payload;
+    },
+    getCooperationPostError: (state, action) => {
+      state.error = action.payload;
+    },
   },
   persist: {
-    whitelist: ["category", "subCategory", "major", "subMajor"],
+    whitelist: [
+      "category",
+      "subCategory",
+      "major",
+      "subMajor",
+      "bannerPost",
+      "newsPost",
+      "eventPostNew",
+      "eventPostAdmission",
+      "studentPost",
+      "cooperationPost",
+    ],
   },
 });
 
@@ -133,5 +224,23 @@ export const {
   getSubMajorError,
   getSubMajorHome,
   getSubMajorHomeSuccess,
+  getBannerPost,
+  getBannerPostSuccess,
+  getBannerPostError,
+  getNewsPost,
+  getNewsPostSuccess,
+  getNewsPostError,
+  getEventPostNew,
+  getEventPostNewSuccess,
+  getEventPostNewError,
+  getEventPostAdmission,
+  getEventPostAdmissionSuccess,
+  getEventPostAdmissionError,
+  getStudentPost,
+  getStudentPostSuccess,
+  getStudentPostError,
+  getCooperationPost,
+  getCooperationPostSuccess,
+  getCooperationPostError,
 } = slice.actions;
 export default reducer;

@@ -19,6 +19,43 @@ interface initialStateType {
     size: number;
   };
   category: IResponseCategory[];
+  // lấy banner với id subCategory 53
+  bannerPost: {
+    content: IResponsePublicArticle[];
+    totalPages: number;
+    totalItems: number;
+  };
+  // lấy tin tức mới nhất với id subCategory  50
+  newsPost: {
+    content: IResponsePublicArticle[];
+    totalPages: number;
+    totalItems: number;
+  };
+  // lấy sụ kiện mới nhất với id 49
+  eventPostNew: {
+    content: IResponsePublicArticle[];
+    totalPages: number;
+    totalItems: number;
+  };
+  // lấy các bài post liên quan đến đào tạo tuyển sinh id 51
+  eventPostAdmission: {
+    content: IResponsePublicArticle[];
+    totalPages: number;
+    totalItems: number;
+  };
+  // lấy các bài post liên quan đến cựu sinh viên id 52
+  studentPost: {
+    content: IResponsePublicArticle[];
+    totalPages: number;
+    totalItems: number;
+  };
+  // lấy các bài post liên quan đến hợp tác đối ngoại id 40
+  cooperationPost: {
+    content: IResponsePublicArticle[];
+    totalPages: number;
+    totalItems: number;
+  };
+
   statusLecturer: ReduxStateType;
   statusCategory: ReduxStateType;
   statusSubCategory: ReduxStateType;
