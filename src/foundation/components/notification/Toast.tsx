@@ -127,20 +127,29 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
 
   const getPositionStyles = (index: number) => {
     const baseIndex = 1000;
-    const offset = 80; // Height offset between toasts
+    const offset = 60; // Reduced offset for mobile
+    const mobileOffset = 70; // Specific offset for mobile
+
+    const getOffset = () => {
+      if (window.innerWidth < 640) {
+        // sm breakpoint
+        return mobileOffset;
+      }
+      return offset;
+    };
 
     switch (position) {
       case "top-left":
         return {
           position: "fixed" as const,
-          top: `${16 + index * offset}px`,
-          left: "16px",
+          top: `${12 + index * getOffset()}px`,
+          left: "12px",
           zIndex: baseIndex - index,
         };
       case "top-center":
         return {
           position: "fixed" as const,
-          top: `${16 + index * offset}px`,
+          top: `${12 + index * getOffset()}px`,
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: baseIndex - index,
@@ -148,21 +157,21 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
       case "top-right":
         return {
           position: "fixed" as const,
-          top: `${16 + index * offset}px`,
-          right: "16px",
+          top: `${12 + index * getOffset()}px`,
+          right: "12px",
           zIndex: baseIndex - index,
         };
       case "bottom-left":
         return {
           position: "fixed" as const,
-          bottom: `${16 + index * offset}px`,
-          left: "16px",
+          bottom: `${12 + index * getOffset()}px`,
+          left: "12px",
           zIndex: baseIndex - index,
         };
       case "bottom-center":
         return {
           position: "fixed" as const,
-          bottom: `${16 + index * offset}px`,
+          bottom: `${12 + index * getOffset()}px`,
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: baseIndex - index,
@@ -170,15 +179,15 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
       case "bottom-right":
         return {
           position: "fixed" as const,
-          bottom: `${16 + index * offset}px`,
-          right: "16px",
+          bottom: `${12 + index * getOffset()}px`,
+          right: "12px",
           zIndex: baseIndex - index,
         };
       default:
         return {
           position: "fixed" as const,
-          top: `${16 + index * offset}px`,
-          right: "16px",
+          top: `${12 + index * getOffset()}px`,
+          right: "12px",
           zIndex: baseIndex - index,
         };
     }
@@ -193,7 +202,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
             key={toast.id}
             className={`
               ${getToastStyles(toast.type)}
-              p-4 rounded-lg border shadow-lg min-w-80 max-w-md
+              p-3 sm:p-4 rounded-lg border shadow-lg w-[calc(100%-2rem)] sm:min-w-80 sm:max-w-md
               data-[state=open]:animate-slideIn
               data-[state=closed]:animate-slideOut
               data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)]
@@ -203,26 +212,26 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
             duration={toast.duration}
             style={getPositionStyles(index)}
           >
-            <div className="flex items-start gap-3">
+            <div className="flex items-start gap-2 sm:gap-3">
               <div className="flex-shrink-0">
                 {getToastIcon(toast.type, toast.icon)}
               </div>
 
               <div className="flex-1 min-w-0">
-                <Toast.Title className="text-sm font-medium">
+                <Toast.Title className="text-xs font-medium sm:text-sm">
                   {toast.title}
                 </Toast.Title>
 
                 {toast.description && (
-                  <Toast.Description className="mt-1 text-sm opacity-90">
+                  <Toast.Description className="mt-0.5 sm:mt-1 text-xs sm:text-sm opacity-90">
                     {toast.description}
                   </Toast.Description>
                 )}
 
                 {toast.action && (
-                  <div className="mt-3">
+                  <div className="mt-2 sm:mt-3">
                     <Toast.Action
-                      className="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md bg-white/20 hover:bg-white/30 transition-colors"
+                      className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium rounded-md bg-white/20 hover:bg-white/30 transition-colors"
                       altText={toast.action.label}
                       onClick={toast.action.onClick}
                     >
@@ -232,8 +241,8 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
                 )}
               </div>
 
-              <Toast.Close className="flex-shrink-0 p-1 transition-colors rounded-md hover:bg-black/10">
-                <X className="w-4 h-4" />
+              <Toast.Close className="flex-shrink-0 p-0.5 sm:p-1 transition-colors rounded-md hover:bg-black/10">
+                <X className="w-3 h-3 sm:w-4 sm:h-4" />
               </Toast.Close>
             </div>
           </Toast.Root>

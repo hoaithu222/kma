@@ -1,8 +1,14 @@
 export interface IRequestArticle {
-  sort: string;
-  order: string;
-  page: number;
-  size: number;
+  keyword?: string | null;
+  page?: number;
+  size?: number;
+  categoryId?: number | null;
+  subCategoryId?: string | null;
+  status?: "draft" | "published" | null;
+  isPrivate?: boolean | null;
+  tag?: string[] | null;
+  sort?: "viewCount" | "publishedAt" | "createdAt" | null;
+  order?: "asc" | "desc" | null;
 }
 
 export interface IArticle {

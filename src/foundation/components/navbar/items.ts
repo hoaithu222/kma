@@ -5,6 +5,14 @@ interface INavbarItem {
   children?: INavbarItem[];
 }
 
+// Remove the direct useSelector call
+// const category = useSelector(selectCategory);
+
+// const studentSubCategory = category.find(
+//   (item: IResponseCategory) => item.slug === "sinh-vien"
+// );
+// console.log("studentSubCategory", category);
+
 export const NavbarItems: INavbarItem[] = [
   {
     label: "about",
@@ -106,43 +114,44 @@ export const NavbarItems: INavbarItem[] = [
       },
     ],
   },
-  {
-    label: "student",
-    path: "/student/student-rules",
-    icon: "FaUser",
-    children: [
-      {
-        label: "student-forms",
-        path: "/student/student-rules",
-        icon: "FaFileAlt",
-      },
-      {
-        label: "student-registration",
-        path: "/student/register-learning",
-        icon: "FaClipboardList",
-      },
-      {
-        label: "student-research",
-        path: "/student/student-research",
-        icon: "FaLightbulb",
-      },
-      {
-        label: "student-internship",
-        path: "/student/internship",
-        icon: "FaBriefcase",
-      },
-      {
-        label: "student-project-practice",
-        path: "/student/practice-project",
-        icon: "FaTasks",
-      },
-      {
-        label: "student-thesis",
-        path: "/student/thesis",
-        icon: "FaFileSignature",
-      },
-    ],
-  },
+  // lấy từ api
+  // {
+  //   label: "student",
+  //   path: "/student/student-rules",
+  //   icon: "FaUser",
+  //   children: [
+  //     {
+  //       label: "student-forms",
+  //       path: "/student/student-rules",
+  //       icon: "FaFileAlt",
+  //     },
+  //     {
+  //       label: "student-registration",
+  //       path: "/student/register-learning",
+  //       icon: "FaClipboardList",
+  //     },
+  //     {
+  //       label: "student-research",
+  //       path: "/student/student-research",
+  //       icon: "FaLightbulb",
+  //     },
+  //     {
+  //       label: "student-internship",
+  //       path: "/student/internship",
+  //       icon: "FaBriefcase",
+  //     },
+  //     {
+  //       label: "student-project-practice",
+  //       path: "/student/practice-project",
+  //       icon: "FaTasks",
+  //     },
+  //     {
+  //       label: "student-thesis",
+  //       path: "/student/thesis",
+  //       icon: "FaFileSignature",
+  //     },
+  //   ],
+  // },
   {
     label: "contact",
     path: "/contact/introduction",
@@ -156,30 +165,30 @@ export const NavbarItems: INavbarItem[] = [
       { label: "contact-info", path: "/contact/contact", icon: "FaEnvelope" },
     ],
   },
-  {
-    label: "article",
-    path: "/article/news",
-    icon: "FaNewspaper",
-    children: [
-      { label: "article-news", path: "/article/news", icon: "FaBell" },
-      { label: "article-posts", path: "/article/article", icon: "FaFileAlt" },
-    ],
-  },
-  {
-    label: "event",
-    path: "/event/event-upcoming",
-    icon: "FaCalendarAlt",
-    children: [
-      {
-        label: "event-upcoming",
-        path: "/event/event-upcoming",
-        icon: "FaCalendarPlus",
-      },
-      {
-        label: "event-past",
-        path: "/event/event-past",
-        icon: "FaCalendarCheck",
-      },
-    ],
-  },
+  // {
+  //   label: "article",
+  //   path: "/article/news",
+  //   icon: "FaNewspaper",
+  //   children: [
+  //     { label: "article-news", path: "/article/news", icon: "FaBell" },
+  //     { label: "article-posts", path: "/article/article", icon: "FaFileAlt" },
+  //   ],
+  // },
+  // {
+  //   label: "event",
+  //   path: "/event/event-upcoming",
+  //   icon: "FaCalendarAlt",
+  //   children: [
+  //     {
+  //       label: "event-upcoming",
+  //       path: "/event/event-upcoming",
+  //       icon: "FaCalendarPlus",
+  //     },
+  //     {
+  //       label: "event-past",
+  //       path: "/event/event-past",
+  //       icon: "FaCalendarCheck",
+  //     },
+  //   ],
+  // },
 ];

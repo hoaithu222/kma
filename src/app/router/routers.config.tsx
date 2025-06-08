@@ -1,26 +1,57 @@
-import AboutOverview from "@/features/about/components/about-overview";
-import Organizations from "@/features/about/components/organizations";
-import TrainingStructure from "@/features/about/components/training-structure";
-import AdmissionDoctorProgram from "@/features/admission/components/doctor-program";
-import AdmissionMasterProgram from "@/features/admission/components/master-program";
-import AdmissionUndergraduateProgram from "@/features/admission/components/undergraduate-program";
-
-import IntroductionContact from "@/features/contact/components/introduction";
-
-import InformationSecurity from "@/features/departments/components/information-security";
-import InformationTechnology from "@/features/departments/components/information-technology";
-import Telecommunication from "@/features/departments/components/telecommunication";
-import ForumPage from "@/features/forum/ForumPage";
-import NewsPage from "@/features/news/NewsPage";
-import ResearchProjects from "@/features/research/components/research-projects";
-import ScientificPublications from "@/features/research/components/scientific-publications";
-import TrainingDoctorProgram from "@/features/training/components/doctor-program";
-import TrainingMasterProgram from "@/features/training/components/master-program";
-import TrainingUndergraduateProgram from "@/features/training/components/undergraduate-program";
 import { lazy } from "react";
 
 const HomePage = lazy(() => import("@/features/home/HomePage.tsx"));
 const LoginPage = lazy(() => import("@/features/auth/Login.tsx"));
+const EventPage = lazy(() => import("@/features/event/EventPage.tsx"));
+const PostPage = lazy(() => import("@/features/posts/PostPage.tsx"));
+const StudentPage = lazy(() => import("@/features/student/StudentPage.tsx"));
+const NewsPage = lazy(() => import("@/features/news/NewsPage.tsx"));
+const ForumPage = lazy(() => import("@/features/forum/ForumPage.tsx"));
+const AboutOverview = lazy(
+  () => import("@/features/about/components/about-overview")
+);
+const Organizations = lazy(
+  () => import("@/features/about/components/organizations")
+);
+const TrainingStructure = lazy(
+  () => import("@/features/about/components/training-structure")
+);
+const AdmissionDoctorProgram = lazy(
+  () => import("@/features/admission/components/doctor-program")
+);
+const AdmissionMasterProgram = lazy(
+  () => import("@/features/admission/components/master-program")
+);
+const AdmissionUndergraduateProgram = lazy(
+  () => import("@/features/admission/components/undergraduate-program")
+);
+const InformationSecurity = lazy(
+  () => import("@/features/departments/components/information-security")
+);
+const InformationTechnology = lazy(
+  () => import("@/features/departments/components/information-technology")
+);
+const Telecommunication = lazy(
+  () => import("@/features/departments/components/telecommunication")
+);
+const ResearchProjects = lazy(
+  () => import("@/features/research/components/research-projects")
+);
+const ScientificPublications = lazy(
+  () => import("@/features/research/components/scientific-publications")
+);
+const TrainingDoctorProgram = lazy(
+  () => import("@/features/training/components/doctor-program")
+);
+const TrainingMasterProgram = lazy(
+  () => import("@/features/training/components/master-program")
+);
+const TrainingUndergraduateProgram = lazy(
+  () => import("@/features/training/components/undergraduate-program")
+);
+const IntroductionContact = lazy(
+  () => import("@/features/contact/components/introduction")
+);
 
 const defaultOptions = {
   requireAuth: true,
@@ -154,6 +185,25 @@ export const ROUTE = {
   forum: {
     path: "/forum",
     element: <ForumPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  // router động
+  student: {
+    path: "/student/:id",
+    element: <StudentPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  event: {
+    path: "/event/:id",
+    element: <EventPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  post: {
+    path: "/post/:id",
+    element: <PostPage />,
     layout: "main",
     options: defaultOptions,
   },

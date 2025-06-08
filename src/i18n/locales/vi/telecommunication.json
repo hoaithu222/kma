@@ -1,0 +1,99 @@
+{
+  "programName": "Chương trình giáo dục đại học hệ Chính quy ngành Điện tử viễn thông",
+  "trainingLevel": "Đại học",
+  "degreeAwarded": "Cử nhân và Kỹ sư",
+  "major": "Điện tử viễn thông",
+  "majorName": "Mã ngành",
+  "majorCode": "7.52.02.07",
+  "specialization": "Hệ thống nhúng và điều khiển tự động",
+  "trainingType": "Chính quy",
+  "programCode": "KM.D.2.1",
+  "programDurationTitle": "Thời gian đào tạo",
+  "programDuration": "4 và 4,5 năm",
+  "totalCreditsTitle": "Tổng số tín chỉ",
+  "totalCredits": "169 tín chỉ",
+  "degreeTitle": "Bằng cấp",
+  "trainingObjectives": {
+    "general": {
+      "introduction": "Mục tiêu của Chương trình giáo dục đại học chính quy ngành Kỹ thuật điện tử, truyền thông, chuyên ngành Hệ thống nhúng và điều khiển tự động (Embedded Systems and Automatic Control) là trang bị cho người học:",
+      "points": [
+        "Phẩm chất chính trị, đạo đức nghề nghiệp để đáp ứng yêu cầu hoạt động trong khu vực kinh tế xã hội và an ninh, quốc phòng.",
+        "Kiến thức cơ sở chuyên môn vững chắc để thích ứng tốt với những công việc trong lĩnh vực Kỹ thuật điện tử, truyền thông.",
+        "Có năng lực tham gia xây dựng và phát triển hệ thống điện tử, viễn thông, thiết kế chế tạo các sản phẩm điện tử, hệ thống nhúng và hệ thống PLC, phục vụ ngành Cơ yếu nói riêng và xã hội nói chung trong bối cảnh phát triển rất nhanh của ngành Kỹ thuật điện tử, truyền thông.",
+        "Kỹ năng xã hội cần thiết, khả năng tự học, tự nghiên cứu để thành công trong cuộc sống và nghề nghiệp.",
+        "Chương trình đào tạo cho phép khả năng chuyển đổi linh hoạt giữa các chuyên ngành trong ngành Kỹ thuật Điện tử, Truyền thông."
+      ],
+      "framework": "Chương trình giáo dục đại học chính quy ngành Kỹ thuật điện tử, truyền thông, chuyên ngành Hệ thống nhúng và điều khiển tự động được xây dựng trên cơ sở khung chương trình đào tạo ngành Kỹ thuật điện tử, truyền thông của Bộ Giáo dục và Đào tạo, cùng với sự tham khảo chương trình khung của một số trường đại học trong và ngoài nước: Đại học Bách khoa Hà Nội; Học viện Công nghệ Bưu chính Viễn thông; Học viện KTQS; Đại học Quốc gia TPHCM; Đại học Brunel London (Brunel University London) – Vương quốc Anh; Đại học Aalborg (Aalborg University) – Đan Mạch; Đại học Nottingham Ningbo China (University of Nottingham Ningbo China) – Trung Quốc; Đại học Quốc gia Ireland (National University of Ireland) – Ai Len; Đại học Leeds (University of Leeds) – Vương quốc Anh,... Kết hợp với quá trình khảo sát thực tế tại một số doanh nghiệp: Tập đoàn SAMSUNG, Foxconn, Viettel, LG Việt Nam."
+    },
+    "specific": {
+      "ethicalQualities": {
+        "title": "Về phẩm chất chính trị, đạo đức nghề nghiệp",
+        "postGraduationNote": "Sau khi tốt nghiệp, kỹ sư Hệ thống nhúng và điều khiển tự động phải có được:",
+        "objectives": [
+          "MT1: Tuyệt đối trung thành với Tổ quốc, với mục tiêu lý tưởng và đường lối cách mạng của Đảng cộng sản Việt Nam; có lòng yêu nước, yêu chủ nghĩa xã hội; có tinh thần trách nhiệm cao, có ý thức vươn lên trong cuộc sống và công việc.",
+          "MT2: Có ý thức tổ chức kỷ luật, nghiêm chỉnh chấp hành đường lối chủ trương chính sách của Đảng, pháp luật của Nhà nước. Có phẩm chất đạo đức tốt, lối sống lành mạnh, giản dị. Có tác phong làm việc khoa học, chính xác, chặt chẽ.",
+          "MT3: Có thế giới quan, nhân sinh quan đúng đắn và có khả năng nhận thức đánh giá các hiện tượng một cách logic và tích cực."
+        ]
+      },
+      "professionalKnowledge": {
+        "title": "Về kiến thức chuyên môn",
+        "objectives": [
+          "MT4: Hiểu biết về các nguyên lý cơ bản của chủ nghĩa Mác - Lênin, Đường lối cách mạng của Đảng Cộng sản Việt Nam, Tư tưởng Hồ Chí Minh.",
+          "MT5: Có khả năng áp dụng kiến thức cơ sở toán học, vật lý để tính toán, mô phỏng các hệ thống Điện tử, Truyền thông; các quá trình thiết kế và chế tạo sản phẩm trong lĩnh vực Điện tử, Truyền thông.",
+          "MT6: Tiếng Anh đạt trình độ tương đương Toeic 400.",
+          "MT7: Khả năng áp dụng kiến thức cốt lõi ngành (lý thuyết mạch, linh kiện điện tử, điện tử tương tự, điện tử số, vi xử lý, tín hiệu và hệ thống, ...) kết hợp với khả năng khai thác, sử dụng các phương pháp, công cụ hiện đại (công cụ mô phỏng, trợ giúp thiết kế, công cụ thiết kế mạch in điện tử) để thiết kế và đánh giá các thiết bị, hệ thống điện tử, truyền thông.",
+          "MT8: Khả năng thiết kế, phát triển các hệ thống nhúng sử dụng các bộ vi xử lý, vi điều khiển, DSP, FPGA,…",
+          "MT9: Phát triển hệ thống điều khiển PLC, mạng truyền thông công nghiệp.",
+          "MT10: Có kiến thức nền tảng về các hệ thống mạch vi điện tử mật độ tích hợp rất cao (VLSI): vi mạch số, vi mạch tương tự,… dùng trong các thiết bị điện tử dân dụng và chuyên dụng."
+        ]
+      },
+      "professionalSkills": {
+        "title": "Về kỹ năng nghề nghiệp",
+        "description": "Có kỹ năng chuyên nghiệp và phẩm chất cá nhân cần thiết để thành công trong nghề nghiệp:",
+        "objectives": [
+          "MT11: Lập luận phân tích và giải quyết vấn đề kỹ thuật.",
+          "MT12: Khả năng lập kế hoạch và tổ chức công việc.",
+          "MT13: Khả năng nghiên cứu, thử nghiệm và khám phá tri thức.",
+          "MT14: Tính năng động, sáng tạo và kỷ luật.",
+          "MT15: Đạo đức và trách nhiệm nghề nghiệp.",
+          "MT16: Hiểu biết các vấn đề đương đại và ý thức học suốt đời."
+        ]
+      },
+      "socialSkills": {
+        "title": "Về kỹ năng xã hội",
+        "objectives": [
+          "MT17: Kỹ năng làm việc nhóm.",
+          "MT18: Kỹ năng giao tiếp thông qua việc tạo lập văn bản, thuyết trình, thảo luận, đàm phán, làm chủ tình huống.",
+          "MT19: Kỹ năng sử dụng hiệu quả các công cụ và phương tiện hiện đại."
+        ]
+      }
+    },
+    "careerProspects": {
+      "title": "Vị trí làm việc sau tốt nghiệp",
+      "description": "Sau khi tốt nghiệp ra trường các kỹ sư chuyên ngành Hệ thống nhúng và điều khiển tự động, ngành Kỹ thuật điện tử, truyền thông có thể đảm nhiệm các vị trí sau:",
+      "positions": [
+        "Giảng dạy các môn liên quan đến ngành Kỹ thuật điện tử, truyền thông tại các trường đại học, cao đẳng, trung học chuyên nghiệp.",
+        "Nghiên cứu khoa học thuộc các lĩnh vực về Kỹ thuật điện tử, truyền thông tại các viện nghiên cứu, các trung tâm nghiên cứu và phát triển (R&D) của các tập đoàn điện tử như SAMSUNG, LG, Viettel, …",
+        "Làm việc tại các bộ phận thiết kế, bảo trì các hệ thống điện tử trong công nghiệp, dân dụng và chuyên dụng của các công ty và tổ chức trong và ngoài nước.",
+        "Làm việc trong các lĩnh vực chuyên sâu về thiết kế các hệ thống nhúng, thiết kế hệ thống điều khiển công nghiệp và thiết kế vi mạch cho các công ty, tổ chức và các Viện nghiên cứu.",
+        "Làm việc tại các cơ quan, đơn vị trong ngành Cơ yếu về các lĩnh vực như triển khai và phát triển các sản phẩm mật mã chuyên dụng."
+      ]
+    },
+    "futureDevelopment": {
+      "title": "Hướng phát triển",
+      "description": "Có khả năng tiếp tục học tập nghiên cứu ở các trình độ cao hơn."
+    }
+  },
+  "admissionInfo": {
+    "targetApplicantsTitle": "Đối tượng tuyển sinh",
+    "targetApplicants": "Công dân Việt Nam trúng tuyển kỳ thi (hoặc xét tuyển) đại học.",
+    "admissionMethodTitle": "Phương thức xét tuyển",
+    "admissionMethod": "Việc xét tuyển căn cứ kết quả thi của kỳ thi THPT quốc gia. Điểm xét tuyển là tổng điểm của một trong ba tổ hợp gồm 03 môn/bài thi (kỳ thi THPT quốc gia): Toán, Vật lý, Hóa học (A00); Toán, Vật lý, Tiếng Anh (A01); Toán, Khoa học tự nhiên, Tiếng Anh (D90)."
+  },
+  "graduationRequirements": "Theo quy chế hiện hành của Bộ Giáo dục và Đào tạo và các quy định của Học viện Kỹ thuật mật mã.",
+  "outcomeReference": "Chuẩn đầu ra và chi tiết chương trình đào tạo xem tại Chương trình đào tạo ngành ĐT-VT.",
+  "footer": {
+    "title": "Học Viện Kỹ thuật Mật Mã",
+    "description": "Chương trình đào tạo chất lượng cao - Định hướng nghiên cứu và ứng dụng"
+  }
+}

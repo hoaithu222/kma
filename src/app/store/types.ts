@@ -20,13 +20,17 @@ export enum AppReducerType {
   THEME = "theme",
   HOME = "home",
   NAVBAR = "navbar",
+  STUDENT = "student",
+  EVENT = "event",
+  POST = "post",
 }
 export enum ReduxStateType {
   INIT = "init",
   LOADING = "loading",
+  VERIFYING = "verifying",
   LOADED = "loaded",
-  SUCCESS = "success",
   ERROR = "error",
   CANCELLED = "cancelled",
+  SUCCESS = "success",
   LIMIT = "limit",
 }

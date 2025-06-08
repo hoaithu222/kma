@@ -27,9 +27,9 @@ const InformationSecurity = () => {
               <Shield className="w-6 h-6 text-white sm:w-8 sm:h-8" />
             </div>
             <div>
-              <h1 className="mb-2 text-2xl font-bold sm:text-3xl text-text-primary">
+              <h2 className="mb-2 text-2xl font-bold sm:text-3xl text-text-primary">
                 {t("programName")}
-              </h1>
+              </h2>
               <p className="text-base sm:text-lg text-text-secondary">
                 {t("majorName")}:{t("majorCode")}
               </p>
@@ -40,7 +40,7 @@ const InformationSecurity = () => {
             <div className="p-3 border rounded-lg sm:p-4 bg-background-subtle border-border-primary">
               <div className="flex items-center mb-2">
                 <Award className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-primary" />
-                <span className="text-sm font-semibold sm:text-base text-text-primary">
+                <span className="text-sm font-semibold sm:text-base text-text-primary ">
                   {t("degreeTitle")}
                 </span>
               </div>
