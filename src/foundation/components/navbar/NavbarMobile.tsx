@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsMobileMenuOpen } from "@/app/store/slices/navbar";
 import clsx from "clsx";
 import { isMobileMenuOpenSelector } from "@/app/store/slices/navbar/selectors";
+import { IResponseCategory } from "@/core/api/category/types";
+import { selectCategory } from "@/features/home/slice/home.selector";
 
 const NavbarMobile = () => {
   const { t } = useTranslation("navbar");
@@ -30,6 +32,53 @@ const NavbarMobile = () => {
         ? "bg-primary text-text-on-primary shadow-lg"
         : "text-text-primary hover:bg-background-surface hover:text-primary"
     }`;
+  const category: any = useSelector(selectCategory);
+  const studentSubCategory = category.find(
+    (item: IResponseCategory) => item.slug === "sinh-vien"
+  );
+  const postSubCategory = category.find(
+    (item: IResponseCategory) => item.slug === "tin-tuc"
+  );
+  const eventSubCategory = category.find(
+    (item: IResponseCategory) => item.slug === "su-kien"
+  );
+
+  const studentSubCategoryItems =
+    studentSubCategory?.subCategories.map((item: any) => ({
+      label: item.name,
+      path: `/student/${item.id}`,
+    })) || [];
+  const postSubCategoryItems =
+    postSubCategory?.subCategories.map((item: any) => ({
+      label: item.name,
+      path: `/posts/${item.id}`,
+    })) || [];
+  const eventSubCategoryItems =
+    eventSubCategory?.subCategories.map((item: any) => ({
+      label: item.name,
+      path: `/events/${item.id}`,
+    })) || [];
+  const navbarItems = [
+    ...NavbarItems,
+    {
+      label: "Sinh viên",
+      path: "/student",
+      icon: "FaUser",
+      children: studentSubCategoryItems,
+    },
+    {
+      label: "Bài viết",
+      path: "/post",
+      icon: "FaUser",
+      children: postSubCategoryItems,
+    },
+    {
+      label: "Sự kiện",
+      path: "/event",
+      icon: "FaUser",
+      children: eventSubCategoryItems,
+    },
+  ];
 
   return (
     <>
@@ -105,7 +154,7 @@ const NavbarMobile = () => {
               />
 
               {/* Navigation Items with staggered delays */}
-              {NavbarItems.map((item, index) => (
+              {navbarItems.map((item, index) => (
                 <div
                   key={item.label}
                   className={clsx(
