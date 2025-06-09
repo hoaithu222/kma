@@ -4,6 +4,9 @@ import Banner from "./components/Banner";
 import { useHome } from "./hooks/useHook";
 import NewsPost from "./components/NewsPost";
 import EventPostNew from "./components/EventPostNew";
+import EventPostAdmission from "./components/EventPostAdmission";
+import CooperationPost from "./components/CooperationPost";
+import StudentPost from "./components/StudentPost";
 
 const HomePage = () => {
   const {
@@ -25,6 +28,12 @@ const HomePage = () => {
       <NewsPost />
       {/* Sự kiện mới nhất */}
       <EventPostNew />
+      {/* Sự kiện tuyển sinh */}
+      <EventPostAdmission />
+      {/* Hợp tác đối ngoại */}
+      <CooperationPost />
+      {/* Cựu sinh viên */}
+      <StudentPost />
     </div>
   );
 };

@@ -92,7 +92,7 @@ function* fetchBannerPost(): Generator<any, void, any> {
   try {
     const response = yield call(getPublicArticle, {
       page: 0,
-      size: 10,
+      size: 4,
       subCategoryId: 53,
       status: "published",
       isPrivate: false,
@@ -114,7 +114,7 @@ function* fetchNewsPost(): Generator<any, void, any> {
   try {
     const response = yield call(getPublicArticle, {
       page: 0,
-      size: 10,
+      size: 4,
       subCategoryId: 50,
       status: "published",
       isPrivate: false,
@@ -135,7 +135,7 @@ function* fetchEventPostNew(): Generator<any, void, any> {
   try {
     const response = yield call(getPublicArticle, {
       page: 0,
-      size: 10,
+      size: 4,
       subCategoryId: 49,
       status: "published",
       isPrivate: false,
@@ -156,7 +156,7 @@ function* fetchEventPostAdmission(): Generator<any, void, any> {
   try {
     const response = yield call(getPublicArticle, {
       page: 0,
-      size: 10,
+      size: 2,
       subCategoryId: 51,
       status: "published",
       isPrivate: false,
@@ -198,7 +198,7 @@ function* fetchCooperationPost(): Generator<any, void, any> {
   try {
     const response = yield call(getPublicArticle, {
       page: 0,
-      size: 10,
+      size: 2,
       subCategoryId: 40,
       status: "published",
       isPrivate: false,

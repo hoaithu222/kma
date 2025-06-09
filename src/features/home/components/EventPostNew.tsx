@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useHome } from "../hooks/useHook";
 import clsx from "clsx";
 import Button from "@/foundation/components/buttons/Button";
+import { formatDate } from "@/shared/utils/formatDate";
+import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
 
 const EventPostNew = () => {
   const { eventPostNew, getEventPostNewDispatch } = useHome();
@@ -10,31 +12,6 @@ const EventPostNew = () => {
   useEffect(() => {
     getEventPostNewDispatch();
   }, []);
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return {
-      day: date.getDate().toString().padStart(2, "0"),
-      month: date.getMonth() + 1,
-      year: date.getFullYear(),
-      time: date.toLocaleTimeString("vi-VN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      }),
-    };
-  };
-
-  const stripHtml = (html: string) => {
-    const tmp = document.createElement("div");
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
-  };
-
-  const truncateText = (text: string, maxLength = 120) => {
-    if (text.length <= maxLength) return text;
-    return text.substr(0, maxLength) + "...";
-  };
 
   const getEventTypeColor = (index: number) => {
     const colors = [
@@ -118,7 +95,7 @@ const EventPostNew = () => {
                   {/* Date Header */}
                   <div
                     className={clsx(
-                      "absolute z-50 p-3 text-center border-b border-divider-subtle",
+                      "absolute z-50 p-5 text-center border-b border-divider-subtle",
                       "group-hover:border-b-primary top-0 right-8"
                     )}
                   >
@@ -252,7 +229,7 @@ const EventPostNew = () => {
                       </button>
                     </div>
                   </div>
-                  {/* Status Indicator */}
+
                   <div className="absolute top-2 left-2 w-2.5 h-2.5 bg-success rounded-full shadow animate-pulse"></div>
                 </div>
               );

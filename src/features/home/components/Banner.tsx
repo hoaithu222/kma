@@ -114,7 +114,7 @@ const Banner = () => {
           className="absolute w-full h-full"
         >
           <img
-            src={images[currentIndex].image}
+            src={images[currentIndex]?.image}
             alt={`Banner ${images[currentIndex].id}`}
             className="object-cover w-full h-full rounded-lg"
           />
@@ -122,7 +122,7 @@ const Banner = () => {
             {...currentTextAnimation}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={clsx(
-              "absolute w-[20%] sm:w-[25%] lg:w-[30%] h-[85%] sm:h-[80%]",
+              "absolute w-[50%] sm:w-[25%] lg:w-[30%] h-[85%] sm:h-[80%]",
               "p-3 md:p-4 lg:p-6 rounded-xl shadow-2xl bg-transparent backdrop-blur-sm left-2 sm:left-5 lg:left-18 top-2 sm:top-5 lg:top-8 overflow-hidden",
               "left-2 sm:left-5 lg:left-20 top-2 sm:top-5 lg:top-10"
             )}

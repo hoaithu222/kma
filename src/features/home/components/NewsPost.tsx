@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { useHome } from "../hooks/useHook";
+import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
+import { formatDate } from "@/shared/utils/formatDate";
 
 const NewsPost = () => {
   const { newsPost, getNewsPostDispatch } = useHome();
@@ -8,26 +10,6 @@ const NewsPost = () => {
   useEffect(() => {
     getNewsPostDispatch();
   }, []);
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("vi-VN", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
-  };
-
-  const stripHtml = (html: string) => {
-    const tmp = document.createElement("div");
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
-  };
-
-  const truncateText = (text: string, maxLength = 150) => {
-    if (text.length <= maxLength) return text;
-    return text.substr(0, maxLength) + "...";
-  };
 
   return (
     <div className="my-4 overflow-hidden rounded-lg md:my-6 bg-background-base lg:my-8">
@@ -121,7 +103,13 @@ const NewsPost = () => {
                           d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                         />
                       </svg>
-                      {formatDate(item.publishedAt)}
+                      {formatDate(item.publishedAt).day +
+                        "/" +
+                        formatDate(item.publishedAt).month +
+                        "/" +
+                        formatDate(item.publishedAt).year +
+                        " " +
+                        formatDate(item.publishedAt).time}
                     </span>
                     <span className="flex items-center">
                       <svg
