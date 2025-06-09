@@ -56,7 +56,7 @@ const StudentPost = () => {
   }, []);
 
   return (
-    <div className="w-full bg-background-surface py-8 md:py-16">
+    <div className="w-full bg-background-surface py-8 md:py-16 rounded-lg overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
