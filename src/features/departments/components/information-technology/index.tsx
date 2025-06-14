@@ -1,251 +1,249 @@
+import HeaderSection from "./components/HeaderSection";
+import TrainingObjectivesSection from "./components/TrainingObjectivesSection";
+import SpecificObjectivesSection from "./components/SpecificObjectivesSection";
+import AdmissionSection from "./components/AdmissionSection";
+import AdditionalInfoSection from "./components/AdditionalInfoSection";
 import { useTranslation } from "react-i18next";
-import {
-  GraduationCap,
-  Clock,
-  BookOpen,
-  Users,
-  Target,
-  Award,
-  CheckCircle,
-  Code,
-  Smartphone,
-  Cpu,
-  Globe,
-  Shield,
-} from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { LearningProgram } from "./components/LearningProgram";
+import clsx from "clsx";
 
 const InformationTechnology = () => {
   const { t } = useTranslation("informationTechnology");
+  const [activeTab, setActiveTab] = useState("generalInfo");
+
+  // Refs for each section
+  const sectionRefs = {
+    generalInfo: useRef(null),
+    trainingObjectives: useRef(null),
+    specificObjectives: useRef(null),
+    programInfo: useRef(null),
+    professionalInfo: useRef(null),
+    admissionInfo: useRef(null),
+    graduationRequirementsDetails: useRef(null),
+  };
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+
+    // Scroll to the corresponding section
+    const targetRef = sectionRefs[tab as keyof typeof sectionRefs];
+    if (targetRef && targetRef.current) {
+      (targetRef.current as HTMLElement).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  };
+
+  // Intersection Observer to update active tab based on scroll position
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    const options = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute("data-section");
+          if (sectionId) {
+            setActiveTab(sectionId);
+          }
+        }
+      });
+    };
+
+    Object.entries(sectionRefs).forEach(([_, ref]) => {
+      if (ref.current) {
+        const observer = new IntersectionObserver(callback, options);
+        observer.observe(ref.current);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
+
+  const navBar = [
+    {
+      label: t("tab.generalInfo"),
+      value: "generalInfo",
+      icon: "📋",
+    },
+    {
+      label: t("tab.trainingObjectives"),
+      value: "trainingObjectives",
+      icon: "🎯",
+    },
+    {
+      label: t("tab.specificObjectives"),
+      value: "specificObjectives",
+      icon: "📝",
+    },
+    {
+      label: t("tab.programInfo"),
+      value: "programInfo",
+      icon: "📚",
+    },
+    {
+      label: t("tab.professionalInfo"),
+      value: "professionalInfo",
+      icon: "💼",
+    },
+    {
+      label: t("tab.admissionInfo"),
+      value: "admissionInfo",
+      icon: "🎓",
+    },
+    {
+      label: t("tab.graduationRequirementsDetails"),
+      value: "graduationRequirementsDetails",
+      icon: "✅",
+    },
+  ];
 
   return (
-    <div className="min-h-screen mt-10 bg-background-surface md:mt-20 lg:mt-24">
-      <div className="container px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-        {/* Header Section */}
-        <div className="p-4 mb-6 shadow-xl sm:p-6 lg:p-8 sm:mb-8 bg-background-subtle rounded-2xl border-border-primary">
-          <div className="flex flex-col items-start mb-4 sm:flex-row sm:items-center sm:mb-6">
-            <div className="p-2 mb-4 mr-0 rounded-full sm:p-3 sm:mr-4 sm:mb-0 bg-gradient-to-r from-primary to-primary-dark">
-              <GraduationCap className="w-6 h-6 text-white sm:w-8 sm:h-8" />
-            </div>
-            <div>
-              <h2 className="mb-2 text-2xl font-bold sm:text-3xl text-text-primary">
-                {t("programInfo.programName")}
-              </h2>
-              <p className="text-base sm:text-lg text-text-secondary">
-                {t("programInfo.specialization")}
-              </p>
-            </div>
-          </div>
+    <div className="min-h-screen mt-10 overflow-y-auto bg-background-surface md:mt-20 lg:mt-24">
+      <div className="container px-2 py-4 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="relative grid grid-cols-1 gap-0 sm:gap-4 md:gap-6 lg:gap-8 lg:grid-cols-8">
+          {/* Enhanced Sidebar Navigation */}
+          <div className="col-span-2 pb-2 lg:h-screen lg:pb-0">
+            <div
+              className={clsx(
+                "z-50 p-6 border border-gray-100",
+                "shadow-lg lg:fixed top-40 rounded-2xl lg:top-44 bg-background-surface lg:bg-transparent",
+                {
+                  "bg-background-surface": activeTab !== "generalInfo",
+                }
+              )}
+            >
+              <h3 className="pb-2 mb-4 text-lg font-semibold border-b border-gray-200 text-text-primary">
+                Nội dung chính
+              </h3>
+              <nav className="space-y-2">
+                {navBar.map((item, _index) => (
+                  <button
+                    key={item.value}
+                    onClick={() => handleTabChange(item.value)}
+                    className={`group relative w-full flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-all duration-300 transform hover:scale-110 ${
+                      activeTab === item.value
+                        ? "bg-gradient-to-r from-blue-500 to-purple-600 text-text-primary shadow-lg shadow-blue-500/25"
+                        : "text-text-primary hover:bg-background-surface hover:text-text-secondary"
+                    }`}
+                  >
+                    {/* Icon */}
+                    <span className="text-lg">{item.icon}</span>
 
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
-            <div className="p-3 border rounded-lg sm:p-4 bg-background-subtle border-border-primary">
-              <div className="flex items-center mb-2">
-                <Award className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-primary" />
-                <span className="text-sm font-semibold sm:text-base text-text-primary">
-                  {t("degreeTitle")}
-                </span>
+                    {/* Label */}
+                    <span className="flex-1 text-sm font-medium leading-tight">
+                      {item.label}
+                    </span>
+
+                    {/* Active indicator */}
+                    {activeTab === item.value && (
+                      <div className="absolute w-2 h-2 bg-white rounded-full right-2 animate-pulse" />
+                    )}
+                  </button>
+                ))}
+              </nav>
+
+              {/* Progress indicator */}
+              <div className="pt-4 mt-6 border-t border-gray-200">
+                <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
+                  <span>Tiến độ đọc</span>
+                  <span>
+                    {Math.round(
+                      ((navBar.findIndex((item) => item.value === activeTab) +
+                        1) /
+                        navBar.length) *
+                        100
+                    )}
+                    %
+                  </span>
+                </div>
+                <div className="w-full h-2 bg-gray-200 rounded-full">
+                  <div
+                    className="h-2 transition-all duration-500 rounded-full bg-gradient-to-r from-blue-500 to-purple-600"
+                    style={{
+                      width: `${((navBar.findIndex((item) => item.value === activeTab) + 1) / navBar.length) * 100}%`,
+                    }}
+                  />
+                </div>
               </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                {t("programInfo.degreeAwarded")}
-              </p>
-            </div>
-
-            <div className="p-3 border rounded-lg sm:p-4 bg-background-subtle border-border-primary">
-              <div className="flex items-center mb-2">
-                <Clock className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-secondary" />
-                <span className="text-sm font-semibold sm:text-base text-text-primary">
-                  {t("programDuration")}
-                </span>
-              </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                {t("programDurationDetails.totalTime")}
-              </p>
-            </div>
-
-            <div className="p-3 border rounded-lg sm:p-4 bg-background-subtle border-border-primary">
-              <div className="flex items-center mb-2">
-                <BookOpen className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-accent" />
-                <span className="text-sm font-semibold sm:text-base text-text-primary">
-                  {t("programCredits")}
-                </span>
-              </div>
-              <p className="text-sm sm:text-base text-text-secondary">
-                {t("programCreditDetails.totalCredits")}
-              </p>
             </div>
           </div>
 
-          <div className="p-3 mt-4 border rounded-lg sm:p-4 sm:mt-6 bg-background-subtle border-border-primary">
-            <p className="text-sm sm:text-base text-text-secondary">
-              {t("programInfo.framework")}
-            </p>
-          </div>
-        </div>
-
-        {/* Training Objectives Section */}
-        <div className="p-4 mb-6 shadow-xl sm:p-6 lg:p-8 sm:mb-8 bg-background-subtle rounded-2xl border-border-primary">
-          <div className="flex items-center mb-4 sm:mb-6">
-            <Target className="w-5 h-5 mr-2 sm:w-6 sm:h-6 sm:mr-3 text-primary" />
-            <h2 className="text-xl font-bold sm:text-2xl text-text-primary">
-              {t("admissionInfo")}
-            </h2>
-          </div>
-
-          <div className="mb-4 sm:mb-6">
-            <p className="text-sm leading-relaxed sm:text-base text-text-secondary">
-              {t("trainingObjectives.general.introduction")}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="flex items-start p-3 border rounded-lg sm:p-4 bg-background-subtle border-border-primary"
+          <div className="min-h-screen col-span-1 p-2 overflow-y-auto lg:col-span-6">
+            <div className="space-y-3">
+              <section
+                ref={sectionRefs.generalInfo}
+                data-section="generalInfo"
+                className="scroll-mt-24"
               >
-                <CheckCircle className="flex-shrink-0 w-4 h-4 mt-1 mr-2 sm:w-5 sm:h-5 sm:mr-3 text-success" />
-                <p className="text-sm sm:text-base text-text-secondary">
-                  {t(`trainingObjectives.general.item${item}`)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+                <HeaderSection />
+              </section>
 
-        {/* Specific Objectives Section */}
-        <div className="p-4 mb-6 shadow-xl sm:p-6 lg:p-8 sm:mb-8 bg-background-subtle rounded-2xl border-border-primary">
-          <div className="flex items-center mb-4 sm:mb-6">
-            <Users className="w-5 h-5 mr-2 sm:w-6 sm:h-6 sm:mr-3 text-secondary" />
-            <h2 className="text-xl font-bold sm:text-2xl text-text-primary">
-              {t("graduationRequirements")}
-            </h2>
-          </div>
+              <section
+                ref={sectionRefs.trainingObjectives}
+                data-section="trainingObjectives"
+                className="scroll-mt-24"
+              >
+                <TrainingObjectivesSection />
+              </section>
 
-          <p className="mb-4 text-sm sm:mb-6 sm:text-base text-text-secondary">
-            {t("trainingObjectives.specific.introduction")}
-          </p>
+              <section
+                ref={sectionRefs.specificObjectives}
+                data-section="specificObjectives"
+                className="scroll-mt-24"
+              >
+                <SpecificObjectivesSection />
+              </section>
 
-          {/* Political & Ethical Qualities */}
-          <div className="mb-6 sm:mb-8">
-            <h3 className="flex items-center mb-3 text-lg font-semibold sm:mb-4 sm:text-xl text-text-primary">
-              <Shield className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-primary" />
-              {t("ethicalQualities")}
-            </h3>
-            <div className="space-y-3 sm:space-y-4">
-              <div className="p-3 border-l-4 rounded-lg shadow-sm sm:p-4 border-primary bg-background-subtle shadow-primary-light">
-                <p className="text-sm sm:text-base text-text-secondary">
-                  {t("trainingObjectives.specific.ethicalQualities.eq1")}
-                </p>
-              </div>
-              <div className="p-3 border-l-4 rounded-lg shadow-sm sm:p-4 border-primary bg-background-subtle shadow-primary-light">
-                <p className="text-sm sm:text-base text-text-secondary">
-                  {t("trainingObjectives.specific.ethicalQualities.eq2")}
-                </p>
-              </div>
+              <section
+                ref={sectionRefs.programInfo}
+                data-section="programInfo"
+                className="scroll-mt-24"
+              >
+                <LearningProgram />
+              </section>
+
+              <section
+                ref={sectionRefs.professionalInfo}
+                data-section="professionalInfo"
+                className="scroll-mt-24"
+              >
+                <div className="p-8 text-center text-gray-500">
+                  <h3 className="mb-2 text-lg font-semibold">
+                    Thông tin nghề nghiệp
+                  </h3>
+                  <p>Nội dung sẽ được thêm vào đây</p>
+                </div>
+              </section>
+
+              {/* Admission Section */}
+              <section
+                ref={sectionRefs.admissionInfo}
+                data-section="admissionInfo"
+                className="scroll-mt-24"
+              >
+                <AdmissionSection />
+              </section>
+
+              {/* Graduation Requirements Section */}
+              <section
+                ref={sectionRefs.graduationRequirementsDetails}
+                data-section="graduationRequirementsDetails"
+                className="scroll-mt-24"
+              >
+                <AdditionalInfoSection />
+              </section>
             </div>
-          </div>
-
-          {/* Knowledge */}
-          <div className="mb-6 sm:mb-8">
-            <h3 className="flex items-center mb-3 text-lg font-semibold sm:mb-4 sm:text-xl text-text-primary">
-              <BookOpen className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-secondary" />
-              {t("knowledgeInfo")}
-            </h3>
-            <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
-              {[1, 2, 3, 4, 5, 6, 7].map((item) => (
-                <div
-                  key={item}
-                  className="p-3 border-l-4 rounded-lg shadow-sm sm:p-4 border-secondary bg-background-subtle shadow-secondary-light"
-                >
-                  <p className="text-sm sm:text-base text-text-secondary ">
-                    {t(`trainingObjectives.specific.knowledge.kn${item}`)}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Professional Skills */}
-          <div className="mb-6 sm:mb-8">
-            <h3 className="flex items-center mb-3 text-lg font-semibold sm:mb-4 sm:text-xl text-text-primary">
-              <Code className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-accent" />
-              {t("technicalSkills")}
-            </h3>
-
-            <div className="space-y-4 sm:space-y-6">
-              <div className="p-4 border rounded-lg sm:p-6 border-border-primary bg-background-subtle">
-                <div className="flex items-center mb-2 sm:mb-3">
-                  <Code className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-accent" />
-                  <h4 className="text-sm font-semibold sm:text-base text-text-primary">
-                    {t(
-                      "trainingObjectives.specific.skills.s1_softwareEngineer_title"
-                    )}
-                  </h4>
-                </div>
-                <p className="text-sm sm:text-base text-text-secondary">
-                  {t("trainingObjectives.specific.skills.s1_softwareEngineer")}
-                </p>
-              </div>
-
-              <div className="p-4 border rounded-lg sm:p-6 border-border-primary bg-background-subtle">
-                <div className="flex items-center mb-2 sm:mb-3">
-                  <Smartphone className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-accent" />
-                  <h4 className="text-sm font-semibold sm:text-base text-text-primary">
-                    {t(
-                      "trainingObjectives.specific.skills.s2_mobileEngineer_title"
-                    )}
-                  </h4>
-                </div>
-                <p className="text-sm sm:text-base text-text-secondary">
-                  {t("trainingObjectives.specific.skills.s2_mobileEngineer")}
-                </p>
-              </div>
-
-              <div className="p-4 border rounded-lg sm:p-6 border-border-primary bg-background-subtle">
-                <div className="flex items-center mb-2 sm:mb-3">
-                  <Cpu className="w-4 h-4 mr-2 sm:w-5 sm:h-5 text-accent" />
-                  <h4 className="text-sm font-semibold sm:text-base text-text-primary">
-                    {t(
-                      "trainingObjectives.specific.skills.s3_embeddedEngineer_title"
-                    )}
-                  </h4>
-                </div>
-                <p className="text-sm sm:text-base text-text-secondary">
-                  {t("trainingObjectives.specific.skills.s3_embeddedEngineer")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Admission Section */}
-        <div className="p-4 mb-6 shadow-xl sm:p-6 lg:p-8 sm:mb-8 bg-background-subtle rounded-2xl border-border-primary">
-          <div className="flex items-center mb-4 sm:mb-6">
-            <Globe className="w-5 h-5 mr-2 sm:w-6 sm:h-6 sm:mr-3 text-accent" />
-            <h2 className="text-xl font-bold sm:text-2xl text-text-primary">
-              {t("admissionDetails.admissionInfo")}
-            </h2>
-          </div>
-
-          <div className="p-3 border rounded-lg sm:p-4 bg-background-subtle border-border-primary">
-            <p className="text-sm leading-relaxed sm:text-base text-text-secondary">
-              {t("admissionDetails.targetApplicants")}
-            </p>
-          </div>
-        </div>
-
-        {/* Additional Info */}
-        <div className="p-4 text-white shadow-xl sm:p-6 lg:p-8 bg-gradient-to-r from-primary to-primary-dark rounded-2xl">
-          <h2 className="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">
-            {t("graduationRequirementsDetails.title")}
-          </h2>
-          <p className="text-sm leading-relaxed sm:text-base text-white/90">
-            {t("knowledgeReference.outcomeReference")}
-          </p>
-
-          <div className="p-3 mt-4 rounded-lg sm:p-4 sm:mt-6 bg-white/10">
-            <p className="text-sm sm:text-base text-white/90">
-              {t("graduationRequirementsDetails.details")}
-            </p>
           </div>
         </div>
       </div>

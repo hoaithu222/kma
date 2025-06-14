@@ -27,7 +27,7 @@
       "item3": "A foundational knowledge base in software technology, enabling them to work as software development engineers;",
       "item4": "Theoretical knowledge and practical skills in Mobile and Embedded Software Engineering, with two specialized directions: software development engineer for mobile devices and software development engineer in embedded systems;",
       "item5": "Necessary social skills, self-study, and research abilities to succeed in life and career;",
-      "item6": "The training program allows for flexible chuyển đổi between the two specializations: “Information Security” and “Embedded and Mobile Software Engineering.”"
+      "item6": "The training program allows for flexible transition between the two specializations: \"Information Security\" and \"Embedded and Mobile Software Engineering\"."
     },
     "specific": {
       "introduction": "Upon graduation, Mobile and Embedded Software Engineers must possess:",
@@ -70,6 +70,203 @@
   },
   "knowledgeReference": {
     "knowledgeReference": "Knowledge Reference",
-    "outcomeReference": "For detailed output standards and curriculum, please refer to the Information Technology program."
+    "outcomeReference": "For detailed output standards and curriculum, please refer to the",
+    "outcomeReferenceLink": "Information Technology program."
+  },
+  "tab": {
+    "generalInfo": "General Information",
+    "trainingObjectives": "Training Objectives",
+    "specificObjectives": "Specific Objectives",
+    "programInfo": "Program Structure",
+    "professionalInfo": "Professional Information",
+    "admissionInfo": "Admission Information",
+    "graduationRequirementsDetails": "Additional Information"
+  },
+  "courseCategory": {
+    "legend": "Course Categories",
+    "mandatory": "General Mandatory",
+    "supportive": "Supporting Courses",
+    "specialized": "Specialized",
+    "professional": "Professional Education",
+    "mandatoryGroup": "Group Mandatory",
+    "foundation": "Foundation",
+    "internship": "Internship",
+    "thesis": "Graduation Thesis",
+    "other": "Other"
+  },
+  "common": {
+    "credits": "credits",
+    "courses": "courses",
+    "totalCredits": "Total Credits"
+  },
+  "learningProgramDetails": {
+    "title": "Learning Program",
+    "description": "Detailed curriculum by semester",
+    "noData": "No program data available"
+  },
+  "learningProgram": {
+    "description": "Detailed curriculum by semester",
+    "noData": "No program data available",
+    "semester1": {
+      "title": "Semester 1",
+      "courses": [
+        { "name": "Calculus 1", "credits": 3 },
+        { "name": "Linear Algebra", "credits": 3 },
+        { "name": "Introduction to Informatics", "credits": 2 },
+        { "name": "Marxist-Leninist Philosophy", "credits": 3 },
+        { "name": "National Defense and Security Education", "credits": 8 },
+        { "name": "Physical Education 1", "credits": 1 }
+      ]
+    },
+    "semester2": {
+      "title": "Semester 2",
+      "courses": [
+        { "name": "General Physics 1", "credits": 3 },
+        { "name": "Calculus 2", "credits": 3 },
+        { "name": "Basic Programming", "credits": 3 },
+        { "name": "Marxist-Leninist Political Economy", "credits": 2 },
+        { "name": "History of the Communist Party of Vietnam", "credits": 2 },
+        { "name": "Physical Education 2", "credits": 1 },
+        { "name": "Soft Skills", "credits": 2 }
+      ],
+      "electives": {
+        "title": "Elective",
+        "credits": 2,
+        "options": [
+          "Management Science",
+          "Introduction to Vietnamese Law",
+          "Introduction to Psychology",
+          "Logic"
+        ]
+      }
+    },
+    "semester3": {
+      "title": "Semester 3",
+      "courses": [
+        { "name": "General Physics 2", "credits": 3 },
+        { "name": "General Physics Laboratory 1 & 2", "credits": 2 },
+        { "name": "English 1", "credits": 3 },
+        { "name": "Probability and Statistics", "credits": 2 },
+        { "name": "Numerical Methods", "credits": 2 },
+        { "name": "Computer Networks", "credits": 3 },
+        { "name": "Ho Chi Minh's Thought", "credits": 2 },
+        { "name": "Physical Education 3", "credits": 1 }
+      ]
+    },
+    "semester4": {
+      "title": "Semester 4",
+      "courses": [
+        { "name": "English 2", "credits": 3 },
+        { "name": "Discrete Mathematics", "credits": 2 },
+        { "name": "Computer Network Administration", "credits": 2 },
+        { "name": "Automata and Formal Languages", "credits": 2 },
+        { "name": "Compilers", "credits": 2 },
+        { "name": "Database Theory", "credits": 2 },
+        { "name": "Analog and Digital Electronics", "credits": 3 },
+        { "name": "Physical Education 4", "credits": 1 },
+        { "name": "Scientific Socialism", "credits": 2 }
+      ]
+    },
+    "semester5": {
+      "title": "Semester 5",
+      "courses": [
+        { "name": "English 3", "credits": 4 },
+        { "name": "Object-Oriented Programming", "credits": 2 },
+        { "name": "Application Software Development", "credits": 2 },
+        { "name": "Data Structures and Algorithms", "credits": 2 },
+        { "name": "Computational Complexity Theory", "credits": 2 },
+        { "name": "Database Management Systems", "credits": 2 },
+        { "name": "Microprocessor Engineering", "credits": 2 },
+        { "name": "Information Transmission Theory", "credits": 2 },
+        { "name": "Physical Education 5", "credits": 1 }
+      ]
+    },
+    "semester6": {
+      "title": "Semester 6",
+      "courses": [
+        { "name": "English for Specific Purposes", "credits": 4 },
+        { "name": "Computer Architecture", "credits": 2 },
+        { "name": "Operating Systems Principles", "credits": 2 },
+        { "name": "Web Application Development", "credits": 2 },
+        { "name": "Software Engineering", "credits": 2 },
+        { "name": "Information System Analysis and Design", "credits": 2 },
+        { "name": "Digital Signal Processing", "credits": 2 },
+        { "name": "Data Transmission Engineering", "credits": 2 },
+        { "name": "Telecommunication Systems", "credits": 2 },
+        { "name": "Mobile Information Systems", "credits": 2 }
+      ]
+    },
+    "semester7": {
+      "title": "Semester 7",
+      "courses": [
+        { "name": "Embedded Systems Design", "credits": 3 },
+        { "name": "Embedded Software Engineering", "credits": 2 },
+        { "name": "Real-Time Embedded Operating Systems", "credits": 3 },
+        { "name": "Embedded Software Testing", "credits": 2 },
+        {
+          "name": "Fundamentals of Information Security and Privacy",
+          "credits": 3
+        },
+        { "name": "Linux and Open Source Software", "credits": 2 },
+        { "name": "Assembly Language Programming", "credits": 3 },
+        { "name": "Software Project Management", "credits": 2 },
+        { "name": "Specialized Field Internship", "credits": 3 }
+      ]
+    },
+    "semester8": {
+      "title": "Semester 8",
+      "compulsory": {
+        "title": "General Compulsory Knowledge",
+        "courses": [
+          { "name": "Linux Kernel Programming", "credits": 4 },
+          { "name": "Driver Programming", "credits": 4 }
+        ]
+      },
+      "embeddedTrack": {
+        "title": "Specialization in Embedded Software Development",
+        "courses": [
+          { "name": "Basic ARM Programming", "credits": 3 },
+          { "name": "Linux Embedded Systems Programming", "credits": 3 }
+        ]
+      },
+      "mobileTrack": {
+        "title": "Specialization in Mobile Device Software Development",
+        "courses": [
+          { "name": "Basic Android Programming", "credits": 3 },
+          { "name": "Smart Card Software Development", "credits": 3 }
+        ]
+      }
+    },
+    "semester9": {
+      "title": "Semester 9",
+      "embeddedTrack": {
+        "title": "Specialization in Embedded Software Development",
+        "courses": [
+          { "name": "Advanced ARM Programming", "credits": 3 },
+          { "name": "Computer Vision on Embedded Platforms", "credits": 3 },
+          { "name": "Security and Privacy in Embedded Systems", "credits": 3 },
+          { "name": "Embedded Software Optimization", "credits": 3 }
+        ]
+      },
+      "mobileTrack": {
+        "title": "Specialization in Mobile Device Software Development",
+        "courses": [
+          { "name": "Advanced Android Programming", "credits": 3 },
+          { "name": "Game Development on Android", "credits": 3 },
+          {
+            "name": "Security and Privacy in Mobile Software Development",
+            "credits": 3
+          },
+          { "name": "Mobile Software Optimization", "credits": 3 }
+        ]
+      }
+    },
+    "semester10": {
+      "title": "Semester 10",
+      "courses": [
+        { "name": "Graduation Internship", "credits": 3 },
+        { "name": "Graduation Thesis", "credits": 8 }
+      ]
+    }
   }
 }

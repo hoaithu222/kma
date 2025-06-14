@@ -95,5 +95,180 @@
   "footer": {
     "title": "Học Viện Kỹ thuật Mật Mã",
     "description": "Chương trình đào tạo chất lượng cao - Định hướng nghiên cứu và ứng dụng"
+  },
+  "tab": {
+    "generalInfo": "Thông tin chung",
+    "trainingObjectives": "Mục tiêu đào tạo",
+    "specificObjectives": "Mục tiêu cụ thể",
+    "programInfo": "Cấu trúc chương trình",
+    "professionalInfo": "Nghề nghiệp",
+    "admissionInfo": "Thông tin tuyển sinh",
+    "graduationRequirementsDetails": "Thông tin bổ sung"
+  },
+  "programInfoDetails": {
+    "title": "Chương trình đào tạo chi tiết theo từng học kỳ",
+    "description": "Chương trình đào tạo chi tiết theo từng học kỳ",
+    "totalCourses": "Tổng số môn học",
+    "totalCredits": "Tổng số tín chỉ",
+    "semesters": "Tổng số học kỳ",
+    "semester": "Học kỳ",
+    "credits": "Tín chỉ",
+    "courses": "Môn học",
+    "electives": "Học phần chuyên ngành tự chọn",
+    "specializations": "Chuyên ngành đào tạo",
+    "informationSystemSecurity": "Chuyên ngành An toàn hệ thống thông tin",
+    "networkSecurityEngineering": "Chuyên ngành Kỹ nghệ an toàn mạng",
+    "secureSoftwareTechnology": "Chuyên ngành Công nghệ phần mềm an toàn"
+  },
+  "courseCategory": {
+    "legend": "Phân loại môn học",
+    "mandatory": "Bắt buộc chung",
+    "supportive": "Bổ trợ ngành",
+    "specialized": "Chuyên ngành",
+    "professional": "Giáo dục chuyên nghiệp",
+    "mandatoryGroup": "Bắt buộc chung nhóm ngành",
+    "foundation": "Cơ sở ngành",
+    "internship": "Thực tập",
+    "thesis": "Luận văn tốt nghiệp",
+    "other": "Khác"
+  },
+  "common": {
+    "credits": "tín chỉ",
+    "courses": "môn học",
+    "totalCredits": "Tổng tín chỉ"
+  },
+  "learningProgramDetails": {
+    "title": "Cấu trúc chương trình đào tạo"
+  },
+  "learningProgram": {
+    "semester1": {
+      "title": "Học kỳ 1",
+      "courses": [
+        { "name": "Giáo dục quốc phòng an ninh", "credits": 8 },
+        { "name": "Triết học Mác – Lênin", "credits": 3 },
+        { "name": "Toán cao cấp 1", "credits": 4 },
+        { "name": "Vật lý đại cương 1", "credits": 3 },
+        { "name": "Tin học đại cương", "credits": 2 },
+        { "name": "Giáo dục thể chất 1", "credits": 1 }
+      ]
+    },
+    "semester2": {
+      "title": "Học kỳ 2",
+      "courses": [
+        { "name": "Toán cao cấp 2", "credits": 3 },
+        { "name": "Vật lý đại cương 2", "credits": 3 },
+        { "name": "Lập trình căn bản", "credits": 3 },
+        { "name": "Kinh tế chính trị Mác – Lênin", "credits": 2 },
+        { "name": "Lịch sử Đảng Cộng sản Việt Nam", "credits": 2 },
+        { "name": "Giáo dục thể chất 2", "credits": 1 },
+        { "name": "Chủ Nghĩa xã hội Khoa học", "credits": 2 }
+      ],
+      "electives": {
+        "title": "Môn tự chọn",
+        "credits": 2,
+        "options": [
+          "Khoa học quản lý",
+          "Pháp luật VN đại cương",
+          "Tâm lý học đại cương",
+          "Logic học"
+        ]
+      }
+    },
+    "semester3": {
+      "title": "Học kỳ 3",
+      "courses": [
+        { "name": "Toán cao cấp 3", "credits": 3 },
+        { "name": "Xác suất thống kê", "credits": 3 },
+        { "name": "Thực hành vật lý đại cương 1&2", "credits": 2 },
+        { "name": "Tiếng Anh 1", "credits": 3 },
+        { "name": "Tư tưởng Hồ Chí Minh", "credits": 2 },
+        { "name": "Công nghệ mạng máy tính", "credits": 2 },
+        { "name": "Kỹ thuật lập trình", "credits": 2 },
+        { "name": "Giáo dục thể chất 3", "credits": 1 },
+        { "name": "Kỹ năng mềm", "credits": 2 }
+      ]
+    },
+    "semester4": {
+      "title": "Học kỳ 4",
+      "courses": [
+        { "name": "Tiếng Anh 2", "credits": 3 },
+        { "name": "Toán rời rạc", "credits": 2 },
+        { "name": "Tín hiệu và hệ thống", "credits": 2 },
+        { "name": "Kỹ thuật điện", "credits": 2 },
+        { "name": "Linh kiện điện tử", "credits": 3 },
+        { "name": "Lý thuyết mạch", "credits": 2 },
+        { "name": "Điện tử công suất", "credits": 2 },
+        { "name": "Điện tử tương tự", "credits": 3 },
+        { "name": "Giáo dục thể chất 4", "credits": 1 }
+      ]
+    },
+    "semester5": {
+      "title": "Học kỳ 5",
+      "courses": [
+        { "name": "Tiếng Anh 3", "credits": 3 },
+        { "name": "Thông tin số", "credits": 2 },
+        { "name": "Kỹ thuật đo lường điện tử", "credits": 3 },
+        { "name": "Kỹ thuật vi xử lý", "credits": 2 },
+        { "name": "Điện tử số", "credits": 3 },
+        { "name": "Thiết kế mạch điện tử sử dụng máy tính", "credits": 2 },
+        { "name": "Thực tập cơ sở 1", "credits": 2 },
+        { "name": "Cơ sở điều khiển tự động", "credits": 2 },
+        { "name": "Giáo dục thể chất 5", "credits": 1 }
+      ]
+    },
+    "semester6": {
+      "title": "Học kỳ 6",
+      "courses": [
+        { "name": "Tiếng Anh chuyên ngành", "credits": 3 },
+        { "name": "Cơ sở lý thuyết truyền tin", "credits": 2 },
+        { "name": "Kỹ thuật truyền số liệu", "credits": 2 },
+        { "name": "Hệ thống viễn thông", "credits": 2 },
+        { "name": "Thiết kế hệ thống số", "credits": 3 },
+        { "name": "Kiến trúc máy tính", "credits": 2 },
+        { "name": "Điện tử công nghiệp", "credits": 2 },
+        { "name": "Đồ án 1", "credits": 2 }
+      ],
+      "electives": {
+        "title": "Lựa chọn cơ sở ngành",
+        "credits": 2,
+        "options": [
+          "Nguyên lý hệ điều hành",
+          "Kỹ thuật cảm biến",
+          "Đo lường tự động"
+        ]
+      }
+    },
+    "semester7": {
+      "title": "Học kỳ 7",
+      "courses": [
+        { "name": "Thiết bị ngoại vi và kỹ thuật ghép nối", "credits": 2 },
+        { "name": "Xử lý tín hiệu số", "credits": 3 },
+        { "name": "Hệ điều hành nhúng thời gian thực", "credits": 3 },
+        { "name": "Mật mã lý thuyết", "credits": 2 },
+        { "name": "Hệ thống nhúng", "credits": 3 },
+        { "name": "Cơ sở thiết kế VLSI", "credits": 3 },
+        { "name": "Thực tập cơ sở 2", "credits": 2 },
+        { "name": "Đồ án 2", "credits": 2 }
+      ]
+    },
+    "semester8": {
+      "title": "Học kỳ 8",
+      "courses": [
+        { "name": "Thiết kế hệ thống nhúng", "credits": 3 },
+        { "name": "Phát triển ứng dụng IoT", "credits": 3 },
+        { "name": "Thiết kế PLC", "credits": 3 },
+        { "name": "Lựa chọn 1", "credits": 3 },
+        { "name": "Lựa chọn 2", "credits": 3 },
+        { "name": "Thực tập cơ sở 3", "credits": 2 },
+        { "name": "Đồ án 3", "credits": 2 }
+      ]
+    },
+    "semester9": {
+      "title": "Học kỳ 9",
+      "courses": [
+        { "name": "Thực tập tốt nghiệp", "credits": 3 },
+        { "name": "Đồ án tốt nghiệp", "credits": 8 }
+      ]
+    }
   }
 }
