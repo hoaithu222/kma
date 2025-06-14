@@ -25,3 +25,9 @@ export const getPublicArticle = (
 ): Promise<IResponsePublicArticle> => {
   return Axios.get(POST_PATH.getPostsPublic, { params: data || {} });
 };
+
+export const getPostDetailApi = (data: {
+  id: string;
+}): Promise<IResponsePublicArticle> => {
+  return Axios.get(POST_PATH.getPostDetail.replace(":id", data.id));
+};

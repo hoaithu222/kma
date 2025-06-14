@@ -62,19 +62,19 @@ const NavbarMobile = () => {
     ...NavbarItems,
     {
       label: "Sinh viên",
-      path: "/student",
+      path: "/student/42",
       icon: "FaUser",
       children: studentSubCategoryItems,
     },
     {
       label: "Bài viết",
-      path: "/post",
+      path: "/posts/40",
       icon: "FaUser",
       children: postSubCategoryItems,
     },
     {
       label: "Sự kiện",
-      path: "/event",
+      path: "/events/41",
       icon: "FaUser",
       children: eventSubCategoryItems,
     },

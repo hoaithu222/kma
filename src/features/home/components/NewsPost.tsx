@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { useHome } from "../hooks/useHook";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
 import { formatDate } from "@/shared/utils/formatDate";
+import { useNavigate } from "react-router-dom";
 
 const NewsPost = () => {
   const { newsPost, getNewsPostDispatch } = useHome();
   const post = newsPost?.content;
-
+  const navigate = useNavigate();
   useEffect(() => {
     getNewsPostDispatch();
   }, []);
@@ -46,7 +47,7 @@ const NewsPost = () => {
                   <img
                     src={`${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`}
                     alt={item.title}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover w-full h-full"
                   />
                 ) : (
                   <div className="flex items-center justify-center w-full h-full">
@@ -69,7 +70,7 @@ const NewsPost = () => {
                 )}
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-background-overlay group-hover:opacity-100"></div>
+                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
               </div>
 
               {/* Content Section */}
@@ -138,7 +139,10 @@ const NewsPost = () => {
 
                 {/* Read More Button */}
                 <div className="flex items-center justify-between">
-                  <button className="inline-flex items-center px-4 py-2 text-sm font-medium transition-all duration-300 transform rounded-lg shadow-md text-text-on-primary bg-primary hover:bg-primary-dark hover:scale-105 hover:shadow-lg">
+                  <button
+                    className="inline-flex items-center px-4 py-2 text-sm font-medium transition-all duration-300 transform rounded-lg shadow-md text-text-on-primary bg-primary hover:bg-primary-dark hover:scale-105 hover:shadow-lg"
+                    onClick={() => navigate(`/detail-post/${item.id}`)}
+                  >
                     Đọc thêm
                     <svg
                       className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"

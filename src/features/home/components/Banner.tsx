@@ -4,6 +4,7 @@ import Button from "@/foundation/components/buttons/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useHome } from "../hooks/useHook";
 import clsx from "clsx";
+import { useNavigate } from "react-router-dom";
 
 const animations = [
   {
@@ -64,6 +65,7 @@ const Banner = () => {
     summary: item.summary,
   }));
 
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -147,27 +149,29 @@ const Banner = () => {
                   </p>
                 )}
 
-                <div className="mt-auto space-y-3">
-                  <Button
-                    variant="primary"
-                    className="flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium transition-all duration-200 transform rounded-lg shadow-md sm:text-sm hover:shadow-lg hover:scale-105"
+                <Button
+                  variant="primary"
+                  className="z-50 flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium transition-all duration-200 transform rounded-lg shadow-md cursor-pointer sm:text-sm hover:shadow-lg hover:scale-105"
+                  style={{ pointerEvents: "auto" }}
+                  onClick={() =>
+                    navigate(`/detail-post/${images[currentIndex].id}`)
+                  }
+                >
+                  <span>Xem chi tiết</span>
+                  <svg
+                    className="w-3 h-3 sm:w-4 sm:h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span>Xem chi tiết</span>
-                    <svg
-                      className="w-3 h-3 sm:w-4 sm:h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </Button>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </Button>
               </div>
             </div>
           </motion.div>
@@ -175,24 +179,22 @@ const Banner = () => {
       </AnimatePresence>
 
       {/* Navigation Buttons */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <Button
-          variant="primary"
-          shape="round"
-          className="absolute transform -translate-y-1/2 left-4 top-1/2 opacity-70 hover:opacity-100"
-          onClick={handlePrevious}
-        >
-          <ArrowLeftIcon className="w-2 h-2 lg:w-4 lg:h-4" />
-        </Button>
-        <Button
-          variant="primary"
-          shape="round"
-          className="absolute transform -translate-y-1/2 right-4 top-1/2 opacity-70 hover:opacity-100"
-          onClick={handleNext}
-        >
-          <ArrowRightIcon className="w-2 h-2 lg:w-4 lg:h-4" />
-        </Button>
-      </div>
+      <Button
+        variant="primary"
+        shape="round"
+        className="absolute z-10 transform -translate-y-1/2 left-4 top-1/2 opacity-70 hover:opacity-100"
+        onClick={handlePrevious}
+      >
+        <ArrowLeftIcon className="w-2 h-2 lg:w-4 lg:h-4" />
+      </Button>
+      <Button
+        variant="primary"
+        shape="round"
+        className="absolute z-10 transform -translate-y-1/2 right-4 top-1/2 opacity-70 hover:opacity-100"
+        onClick={handleNext}
+      >
+        <ArrowRightIcon className="w-2 h-2 lg:w-4 lg:h-4" />
+      </Button>
 
       {/* Dots indicator */}
       <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-4 left-1/2">

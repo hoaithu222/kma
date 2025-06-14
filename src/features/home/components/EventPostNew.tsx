@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Button from "@/foundation/components/buttons/Button";
 import { formatDate } from "@/shared/utils/formatDate";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
+import { useNavigate } from "react-router-dom";
 
 const EventPostNew = () => {
   const { eventPostNew, getEventPostNewDispatch } = useHome();
@@ -12,7 +13,7 @@ const EventPostNew = () => {
   useEffect(() => {
     getEventPostNewDispatch();
   }, []);
-
+  const navigate = useNavigate();
   const getEventTypeColor = (index: number) => {
     const colors = [
       "primary",
@@ -211,6 +212,7 @@ const EventPostNew = () => {
                     <div>
                       <button
                         className={`w-full ${colorStyle} py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 transform hover:scale-105 shadow group/btn flex items-center justify-center`}
+                        onClick={() => navigate(`/detail-post/${item.id}`)}
                       >
                         <span>Chi tiết</span>
                         <svg
@@ -269,7 +271,10 @@ const EventPostNew = () => {
       {/* View More Section */}
       <div className="relative z-10 py-4 text-center">
         <div className="max-w-4xl px-6 mx-auto">
-          <Button className="group inline-flex items-center justify-center px-8 py-4 bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] text-[var(--color-button-primary-text)] rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+          <Button
+            className="group inline-flex items-center justify-center px-8 py-4 bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] text-[var(--color-button-primary-text)] rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            onClick={() => navigate("/events/49")}
+          >
             <span>Xem thêm sự kiện</span>
             <svg
               className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1"
@@ -287,35 +292,6 @@ const EventPostNew = () => {
           </Button>
         </div>
       </div>
-
-      {/* Empty State */}
-      {post && post.length === 0 && (
-        <div className="relative z-10 px-6 py-16 text-center">
-          <div className="max-w-md mx-auto">
-            <div className="inline-flex items-center justify-center w-24 h-24 mb-6 rounded-3xl bg-[var(--color-background-elevated)] border border-[var(--color-border-muted)]">
-              <svg
-                className="w-12 h-12 text-[var(--color-text-muted)]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[var(--color-text-primary)] mb-3">
-              Chưa có sự kiện nào
-            </h3>
-            <p className="text-[var(--color-text-secondary)] text-lg">
-              Vui lòng quay lại sau để xem các sự kiện mới nhất từ cộng đồng.
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

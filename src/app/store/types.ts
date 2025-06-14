@@ -23,6 +23,8 @@ export enum AppReducerType {
   STUDENT = "student",
   EVENT = "event",
   POST = "post",
+  DETAIL_POST = "detailPost",
+  RESEARCH = "research",
 }
 export enum ReduxStateType {
   INIT = "init",

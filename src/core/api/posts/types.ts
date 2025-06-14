@@ -20,6 +20,7 @@ export interface IFile {
 export interface ResponseArticle {
   id: number;
   categoryId: number;
+  categoryName: string;
   subCategoryName: string;
   folderUrl: string;
   title: string;

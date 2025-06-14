@@ -4,20 +4,28 @@ import clsx from "clsx";
 import Button from "@/foundation/components/buttons/Button";
 import { formatDate } from "@/shared/utils/formatDate";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getPostDetail } from "@/features/detail-post/slice/detail-post.slice";
 
 const CooperationPost = () => {
   const { cooperationPost, getCooperationPostDispatch } = useHome();
   const post = cooperationPost?.content;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getCooperationPostDispatch();
   }, []);
 
+  const handleViewDetail = (id: string) => {
+    dispatch(getPostDetail(id));
+    navigate(`/detail-post/${id}`);
+  };
+
   return (
     <div className="w-full min-h-[calc(100vh-2rem)] my-2 rounded-lg overflow-hidden bg-gradient-to-br from-background-subtle via-background-base to-background-muted">
-
       <div className="relative overflow-hidden">
-
         <div className="absolute inset-0 bg-secondary-dark"></div>
         <div
           className="absolute inset-0 opacity-30"
@@ -26,21 +34,21 @@ const CooperationPost = () => {
           }}
         ></div>
 
-        <div className="relative container mx-auto px-4 py-8 md:py-12 lg:py-16 text-center text-text-on-primary drop-shadow-sm">
+        <div className="container relative px-4 py-8 mx-auto text-center md:py-12 lg:py-16 text-text-on-primary drop-shadow-sm">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 lg:mb-6 bg-gradient-to-r from-text-on-primary via-secondary-light to-primary-light bg-clip-text text-transparent">
+            <h2 className="mb-3 text-2xl font-bold text-transparent sm:text-3xl md:text-4xl lg:text-5xl md:mb-4 lg:mb-6 bg-gradient-to-r from-text-on-primary via-secondary-light to-primary-light bg-clip-text">
               HỢP TÁC ĐỐI NGOẠI
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-4 md:mb-6 lg:mb-8 text-text-inverse drop-shadow-sm">
+            <p className="mb-4 text-sm leading-relaxed sm:text-base md:text-lg lg:text-xl md:mb-6 lg:mb-8 text-text-inverse drop-shadow-sm">
               Học viện Kỹ thuật Mật mã luôn tiên phong trong các hoạt động hợp
               tác quốc tế và hợp tác doanh nghiệp để nâng cao chất lượng các
               hoạt động giảng dạy, nghiên cứu và chuyển giao công nghệ.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-6 mt-6 md:mt-8 lg:mt-10 drop-shadow-sm">
+            <div className="grid grid-cols-2 gap-3 mt-6 md:grid-cols-4 md:gap-4 lg:gap-6 md:mt-8 lg:mt-10 drop-shadow-sm">
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-light">
+                <div className="text-xl font-bold sm:text-2xl md:text-3xl text-primary-light">
                   50+
                 </div>
                 <div className="text-xs sm:text-sm text-text-on-primary/80">
@@ -48,7 +56,7 @@ const CooperationPost = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-light">
+                <div className="text-xl font-bold sm:text-2xl md:text-3xl text-primary-light">
                   130+
                 </div>
                 <div className="text-xs sm:text-sm text-text-on-primary/80">
@@ -56,7 +64,7 @@ const CooperationPost = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-light">
+                <div className="text-xl font-bold sm:text-2xl md:text-3xl text-primary-light">
                   25+
                 </div>
                 <div className="text-xs sm:text-sm text-text-on-primary/80">
@@ -64,7 +72,7 @@ const CooperationPost = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-light">
+                <div className="text-xl font-bold sm:text-2xl md:text-3xl text-primary-light">
                   1000+
                 </div>
                 <div className="text-xs sm:text-sm text-text-on-primary/80">
@@ -75,15 +83,13 @@ const CooperationPost = () => {
           </div>
         </div>
 
-
-        <div className="absolute top-10 left-5 w-16 h-16 md:w-20 md:h-20 bg-primary-light/20 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-5 w-24 h-24 md:w-32 md:h-32 bg-secondary-light/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        <div className="absolute w-16 h-16 rounded-full top-10 left-5 md:w-20 md:h-20 bg-primary-light/20 blur-xl animate-pulse"></div>
+        <div className="absolute w-24 h-24 delay-1000 rounded-full bottom-10 right-5 md:w-32 md:h-32 bg-secondary-light/20 blur-xl animate-pulse"></div>
       </div>
 
-
-      <div className="container mx-auto px-4 py-6 md:py-8 lg:py-12">
+      <div className="container px-4 py-6 mx-auto md:py-8 lg:py-12">
         {/* Section Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8 lg:mb-10">
+        <div className="flex flex-wrap justify-center gap-2 mb-6 md:gap-4 md:mb-8 lg:mb-10">
           <button className="bg-primary text-text-on-primary px-3 md:px-4 lg:px-6 py-1.5 md:py-2 lg:py-3 rounded-full text-sm md:text-base font-semibold shadow-lg hover:bg-primary-dark transition-all duration-300">
             Tất cả hợp tác
           </button>
@@ -96,7 +102,7 @@ const CooperationPost = () => {
         </div>
 
         {/* Posts Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:gap-6">
           {post?.map((item: any, _index: number) => (
             <article
               key={item.id}
@@ -106,15 +112,15 @@ const CooperationPost = () => {
               )}
             >
               {/* Image Container */}
-              <div className="relative overflow-hidden h-40 sm:h-48 md:h-56 lg:h-64">
+              <div className="relative h-40 overflow-hidden sm:h-48 md:h-56 lg:h-64">
                 <img
                   src={`${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:opacity-100"></div>
 
                 {/* Category Badge */}
                 <div className="absolute top-3 left-3 md:top-4 md:left-4">
@@ -125,10 +131,10 @@ const CooperationPost = () => {
 
                 {/* Cooperation Type */}
                 <div className="absolute top-3 right-3 md:top-4 md:right-4">
-                  <div className="bg-card-bg/95 backdrop-blur-sm rounded-lg px-2 md:px-3 py-1 md:py-2 shadow-lg">
+                  <div className="px-2 py-1 rounded-lg shadow-lg bg-card-bg/95 backdrop-blur-sm md:px-3 md:py-2">
                     <div className="flex items-center gap-1.5 md:gap-2">
                       <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-success rounded-full animate-pulse"></div>
-                      <span className="text-xs md:text-sm font-semibold text-text-primary">
+                      <span className="text-xs font-semibold md:text-sm text-text-primary">
                         Đang hợp tác
                       </span>
                     </div>
@@ -136,11 +142,11 @@ const CooperationPost = () => {
                 </div>
 
                 {/* Hover Overlay Content */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center text-text-on-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="bg-primary/20 backdrop-blur-sm rounded-lg p-3 md:p-4">
+                <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                  <div className="text-center transition-transform duration-300 transform translate-y-4 text-text-on-primary group-hover:translate-y-0">
+                    <div className="p-3 rounded-lg bg-primary/20 backdrop-blur-sm md:p-4">
                       <svg
-                        className="w-6 h-6 md:w-8 md:h-8 lg:w-12 lg:h-12 mx-auto mb-1 md:mb-2"
+                        className="w-6 h-6 mx-auto mb-1 md:w-8 md:h-8 lg:w-12 lg:h-12 md:mb-2"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >
@@ -150,9 +156,13 @@ const CooperationPost = () => {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <p className="text-xs md:text-sm font-semibold">
+                      <Link
+                        to={`/detail-post/${item.id}`}
+                        className="text-xs font-semibold cursor-pointer md:text-sm"
+                        style={{ pointerEvents: "auto" }}
+                      >
                         Xem chi tiết
-                      </p>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -203,18 +213,18 @@ const CooperationPost = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base md:text-lg lg:text-xl font-bold text-text-primary mb-2 md:mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+                <h3 className="mb-2 text-base font-bold transition-colors duration-300 md:text-lg lg:text-xl text-text-primary md:mb-3 line-clamp-2 group-hover:text-primary">
                   {item.title}
                 </h3>
 
                 {/* Summary */}
-                <p className="text-xs md:text-sm text-text-secondary leading-relaxed mb-3 md:mb-4 line-clamp-3">
+                <p className="mb-3 text-xs leading-relaxed md:text-sm text-text-secondary md:mb-4 line-clamp-3">
                   {item.summary || truncateText(stripHtml(item.content), 120)}
                 </p>
 
                 {/* Cooperation Details */}
-                <div className="bg-background-muted rounded-lg p-2 md:p-3 lg:p-4 mb-3 md:mb-4">
-                  <div className="grid grid-cols-2 gap-2 md:gap-3 lg:gap-4 text-xs md:text-sm">
+                <div className="p-2 mb-3 rounded-lg bg-background-muted md:p-3 lg:p-4 md:mb-4">
+                  <div className="grid grid-cols-2 gap-2 text-xs md:gap-3 lg:gap-4 md:text-sm">
                     <div>
                       <span className="text-text-muted">Loại hợp tác:</span>
                       <p className="font-semibold text-text-primary">
@@ -244,35 +254,19 @@ const CooperationPost = () => {
                       ? "✓ Đã công bố"
                       : "⏳ Đang xử lý"}
                   </span>
-
-                  {!item.isPrivate && (
-                    <div className="flex items-center gap-1">
-                      <svg
-                        className="w-3 h-3 md:w-4 md:h-4 text-primary"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      <span className="text-xs md:text-sm text-primary font-semibold">
-                        Quan trọng
-                      </span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Action Button */}
-                <Button className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-text-on-primary font-bold py-1.5 md:py-2 lg:py-3 rounded-lg md:rounded-xl transition-all duration-300 transform hover:shadow-lg group-hover:scale-105">
+                <Button
+                  className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-text-on-primary font-bold py-1.5 md:py-2 lg:py-3 rounded-lg md:rounded-xl transition-all duration-300 transform hover:shadow-lg group-hover:scale-105"
+                  onClick={() => handleViewDetail(item.id)}
+                >
                   <span className="flex items-center justify-center gap-1.5 md:gap-2">
                     <span className="text-sm md:text-base">
                       Tìm hiểu chi tiết
                     </span>
                     <svg
-                      className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      className="w-3 h-3 transition-transform duration-300 md:w-4 md:h-4 lg:w-5 lg:h-5 group-hover:translate-x-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -289,28 +283,28 @@ const CooperationPost = () => {
               </div>
 
               {/* Decorative Corner */}
-              <div className="absolute -top-1 -right-1 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary-light to-primary rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
+              <div className="absolute w-12 h-12 transition-opacity duration-300 rounded-full -top-1 -right-1 md:w-16 md:h-16 bg-gradient-to-br from-primary-light to-primary opacity-10 group-hover:opacity-20 blur-sm"></div>
             </article>
           ))}
         </div>
       </div>
 
       {/* Call to Action Section */}
-      <div className="bg-primary-dark  text-text-on-primary py-8 md:py-12 lg:py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4 lg:mb-6">
+      <div className="py-8 bg-primary-dark text-text-on-primary md:py-12 lg:py-16">
+        <div className="container px-4 mx-auto text-center">
+          <h2 className="mb-3 text-xl font-bold md:text-2xl lg:text-3xl md:mb-4 lg:mb-6">
             Mở rộng cơ hội hợp tác
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-text-muted drop-shadow-sm mb-4 md:mb-6 lg:mb-8 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto mb-4 text-sm md:text-base lg:text-lg text-text-muted drop-shadow-sm md:mb-6 lg:mb-8">
             Học viện Kỹ thuật Mật mã luôn chào đón các đối tác trong và ngoài
             nước cùng hợp tác phát triển trong lĩnh vực an toàn thông tin và
             công nghệ mật mã.
           </p>
           <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-            <Button className="bg-primary hover:bg-primary-dark text-text-on-primary px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <Button className="px-4 py-2 text-sm font-bold transition-all duration-300 transform rounded-lg shadow-lg bg-primary hover:bg-primary-dark text-text-on-primary md:px-6 lg:px-8 md:py-3 lg:py-4 md:rounded-xl md:text-base lg:text-lg hover:scale-105">
               Liên hệ hợp tác
             </Button>
-            <Button className="bg-transparent border-2 border-text-on-primary text-text-on-primary hover:bg-text-on-primary hover:text-text-primary px-4 md:px-6 lg:px-8 py-2 md:py-3 lg:py-4 rounded-lg md:rounded-xl font-bold text-sm md:text-base lg:text-lg transition-all duration-300">
+            <Button className="px-4 py-2 text-sm font-bold transition-all duration-300 bg-transparent border-2 rounded-lg border-text-on-primary text-text-on-primary hover:bg-text-on-primary hover:text-text-primary md:px-6 lg:px-8 md:py-3 lg:py-4 md:rounded-xl md:text-base lg:text-lg">
               Tìm hiểu thêm
             </Button>
           </div>

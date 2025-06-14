@@ -75,23 +75,24 @@ export const NavbarItems: INavbarItem[] = [
       },
     ],
   },
-  {
-    label: "research",
-    path: "/research/research-projects",
-    icon: "FaFlask",
-    children: [
-      {
-        label: "research-projects",
-        path: "/research/research-projects",
-        icon: "FaProjectDiagram",
-      },
-      {
-        label: "research-publications",
-        path: "/research/scientific-publications",
-        icon: "FaBook",
-      },
-    ],
-  },
+  // lấy từ api
+  // {
+  //   label: "research",
+  //   path: "/research/research-projects",
+  //   icon: "FaFlask",
+  //   children: [
+  //     {
+  //       label: "research-projects",
+  //       path: "/research/research-projects",
+  //       icon: "FaProjectDiagram",
+  //     },
+  //     {
+  //       label: "research-publications",
+  //       path: "/research/scientific-publications",
+  //       icon: "FaBook",
+  //     },
+  //   ],
+  // },
   {
     label: "admission",
     path: "/admission/undergraduate-program",
@@ -152,19 +153,19 @@ export const NavbarItems: INavbarItem[] = [
   //     },
   //   ],
   // },
-  {
-    label: "contact",
-    path: "/contact/introduction",
-    icon: "FaPhoneAlt",
-    children: [
-      {
-        label: "contact-introduction",
-        path: "/contact/introduction",
-        icon: "FaInfoCircle",
-      },
-      { label: "contact-info", path: "/contact/contact", icon: "FaEnvelope" },
-    ],
-  },
+  // {
+  //   label: "contact",
+  //   path: "/contact/introduction",
+  //   icon: "FaPhoneAlt",
+  //   children: [
+  //     {
+  //       label: "contact-introduction",
+  //       path: "/contact/introduction",
+  //       icon: "FaInfoCircle",
+  //     },
+  //     { label: "contact-info", path: "/contact/contact", icon: "FaEnvelope" },
+  //   ],
+  // },
   // {
   //   label: "article",
   //   path: "/article/news",
@@ -191,4 +192,20 @@ export const NavbarItems: INavbarItem[] = [
   //     },
   //   ],
   // },
+];
+// tách liên hệ ra các item khác
+export const ContactItems: INavbarItem[] = [
+  {
+    label: "contact",
+    path: "/contact/introduction",
+    icon: "FaPhoneAlt",
+    children: [
+      {
+        label: "contact-introduction",
+        path: "/contact/introduction",
+        icon: "FaInfoCircle",
+      },
+      { label: "contact-info", path: "/contact/contact", icon: "FaEnvelope" },
+    ],
+  },
 ];

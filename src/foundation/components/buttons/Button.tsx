@@ -82,7 +82,7 @@ const Button = ({
     warning:
       "bg-warning text-on-warning border-transparent hover:bg-warning-dark disabled:bg-warning-light disabled:text-disabled",
     gradientPrimary:
-      "bg-gradient-to-r from-primary via-primary-dark to-primary-darker text-white border-transparent hover:from-primary-dark hover:to-primary disabled:bg-primary-light disabled:text-disabled",
+      "bg-gradient-to-r from-primary via-primary-dark to-primary-light text-white border-transparent hover:from-primary-dark hover:to-primary disabled:bg-primary-light disabled:text-disabled",
     gradientSubtle:
       "bg-gradient-to-r from-secondary via-secondary-light to-secondary-dark text-on-secondary border-transparent hover:from-secondary-dark hover:to-secondary-light disabled:bg-secondary-light disabled:text-disabled",
     gradientCool:

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import NavbarDropdown from "./NavbarDropdown";
 import { useTranslation } from "react-i18next";
-import { NavbarItems } from "./items";
+import { ContactItems, NavbarItems } from "./items";
 import { FaHome } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectCategory } from "@/features/home/slice/home.selector";
@@ -46,26 +46,41 @@ const Navbar = () => {
       label: item.name,
       path: `/events/${item.id}`,
     })) || [];
+  const researchSubCategory = category.find(
+    (item: IResponseCategory) => item.slug === "nghien-cuu"
+  );
+  const researchSubCategoryItems =
+    researchSubCategory?.subCategories.map((item: any) => ({
+      label: item.name,
+      path: `/research/${item.id}`,
+    })) || [];
   const navbarItems = [
     ...NavbarItems,
     {
+      label: "Nghiên cứu",
+      path: "/research/55",
+      icon: "FaUser",
+      children: researchSubCategoryItems,
+    },
+    {
       label: "Sinh viên",
-      path: "/student",
+      path: "/student/42",
       icon: "FaUser",
       children: studentSubCategoryItems,
     },
     {
       label: "Bài viết",
-      path: "/post",
+      path: "/posts/40",
       icon: "FaUser",
       children: postSubCategoryItems,
     },
     {
       label: "Sự kiện",
-      path: "/event",
+      path: "/event/49",
       icon: "FaUser",
       children: eventSubCategoryItems,
     },
+    ...ContactItems,
   ];
 
   return (

@@ -1,9 +1,10 @@
 import clsx from "clsx";
 // import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Button from "./foundation/components/buttons/Button";
 import { ArrowUpIcon } from "lucide-react";
 import { ToastProvider } from "./foundation/components/notification/Toast";
+import { useEffect } from "react";
 // import ToastContainer from "./widgets/toast/ToastContainer";
 
 /**
@@ -17,6 +18,11 @@ import { ToastProvider } from "./foundation/components/notification/Toast";
  */
 const AppShell = () => {
   // Warning tuyệt đổi không thêm localStorage ở đây
+  // tự động scroll to top khi chuyển trang
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
   return (
     <div
       className={clsx(

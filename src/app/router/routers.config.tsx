@@ -1,9 +1,10 @@
+import DetailPost from "@/features/detail-post/DetailPost";
 import { lazy } from "react";
 
 const HomePage = lazy(() => import("@/features/home/HomePage.tsx"));
 const LoginPage = lazy(() => import("@/features/auth/Login.tsx"));
 const EventPage = lazy(() => import("@/features/event/EventPage.tsx"));
-const PostPage = lazy(() => import("@/features/posts/PostPage.tsx"));
+
 const StudentPage = lazy(() => import("@/features/student/StudentPage.tsx"));
 const NewsPage = lazy(() => import("@/features/news/NewsPage.tsx"));
 const ForumPage = lazy(() => import("@/features/forum/ForumPage.tsx"));
@@ -52,6 +53,7 @@ const TrainingUndergraduateProgram = lazy(
 const IntroductionContact = lazy(
   () => import("@/features/contact/components/introduction")
 );
+const ResearchPage = lazy(() => import("@/features/research/ResearchPage.tsx"));
 
 const defaultOptions = {
   requireAuth: true,
@@ -146,6 +148,12 @@ export const ROUTE = {
     layout: "main",
     options: defaultOptions,
   },
+  research: {
+    path: "/research/:id",
+    element: <ResearchPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
   // tuyển sinh
   admissionUndergraduateProgram: {
     path: "/admission/undergraduate-program",
@@ -188,6 +196,12 @@ export const ROUTE = {
     layout: "main",
     options: defaultOptions,
   },
+  detailPost: {
+    path: "/detail-post/:id",
+    element: <DetailPost />,
+    layout: "main",
+    options: defaultOptions,
+  },
   // router động
   student: {
     path: "/student/:id",
@@ -198,12 +212,6 @@ export const ROUTE = {
   event: {
     path: "/events/:id",
     element: <EventPage />,
-    layout: "main",
-    options: defaultOptions,
-  },
-  post: {
-    path: "/posts/:id",
-    element: <PostPage />,
     layout: "main",
     options: defaultOptions,
   },

@@ -1,13 +1,14 @@
 import { ReduxStateType } from "@/app/store/types";
 import { ResponseArticle } from "@/core/api/posts/types";
 
-export interface IPostState {
-  post: {
+export interface initialStateType {
+  post: ResponseArticle | null;
+  statusGetPost: ReduxStateType;
+  error: string | null;
+  listRelatedPost: {
     data: ResponseArticle[];
     totalPages: number;
     totalItems: number;
   };
-  statusGetPost: ReduxStateType;
-  statusGetPostDetail: ReduxStateType;
-  postDetail: ResponseArticle;
+  statusGetListRelatedPost: ReduxStateType;
 }
