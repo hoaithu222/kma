@@ -25,6 +25,7 @@ export enum AppReducerType {
   POST = "post",
   DETAIL_POST = "detailPost",
   RESEARCH = "research",
+  LECTURER = "lecturer",
 }
 export enum ReduxStateType {
   INIT = "init",

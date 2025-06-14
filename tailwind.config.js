@@ -22,4 +22,19 @@ module.exports = {
     },
   },
   // rất quan trọng để bật class .dark
+  keyframes: {
+    // ... keep existing keyframes
+    'gradient-x': {
+      '0%, 100%': {
+        'background-position': '0% 50%'
+      },
+      '50%': {
+        'background-position': '100% 50%'
+      }
+    }
+  },
+  animation: {
+    // ... keep existing animations
+    "gradient-x": "gradient-x 3s ease infinite",
+  },
 };

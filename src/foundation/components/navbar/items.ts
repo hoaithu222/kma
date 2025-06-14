@@ -34,6 +34,11 @@ export const NavbarItems: INavbarItem[] = [
         path: "/about/organizations",
         icon: "FaUsers",
       },
+      {
+        label: "lecturers",
+        path: "/lecturers",
+        icon: "FaUserTie",
+      },
     ],
   },
   {

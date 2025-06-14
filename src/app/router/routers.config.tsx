@@ -54,7 +54,10 @@ const IntroductionContact = lazy(
   () => import("@/features/contact/components/introduction")
 );
 const ResearchPage = lazy(() => import("@/features/research/ResearchPage.tsx"));
-
+const LecturerPage = lazy(() => import("@/features/lecturer/LecturerPage.tsx"));
+const DetailLecturer = lazy(
+  () => import("@/features/lecturer/components/DetailLecturer")
+);
 const defaultOptions = {
   requireAuth: true,
   hideInMenu: false,
@@ -94,6 +97,18 @@ export const ROUTE = {
   aboutOrganizations: {
     path: "/about/organizations",
     element: <Organizations />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  lecturer: {
+    path: "/lecturers",
+    element: <LecturerPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  detailLecturer: {
+    path: "/lecturer/:id",
+    element: <DetailLecturer />,
     layout: "main",
     options: defaultOptions,
   },

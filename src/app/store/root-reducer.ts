@@ -9,6 +9,7 @@ import studentReducer from "@/features/student/slice/student.slice";
 import eventReducer from "@/features/event/slice/event.slice";
 import detailPostReducer from "@/features/detail-post/slice/detail-post.slice";
 import researchReducer from "@/features/research/slice/research.slice";
+import lecturerReducer from "@/features/lecturer/slice/lecturer.slice";
 
 export const rootReducer = combineReducers({
   [AppReducerType.LANGUAGE]: languageReducer,
@@ -19,4 +20,5 @@ export const rootReducer = combineReducers({
   [AppReducerType.EVENT]: eventReducer,
   [AppReducerType.DETAIL_POST]: detailPostReducer,
   [AppReducerType.RESEARCH]: researchReducer,
+  [AppReducerType.LECTURER]: lecturerReducer,
 });

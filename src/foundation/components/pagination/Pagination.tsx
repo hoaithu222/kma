@@ -34,7 +34,7 @@ const Pagination = ({
   return (
     <div className="flex flex-col items-center justify-between gap-2 mt-4 sm:flex-row">
       {/* Info */}
-      <div className="text-xs text-gray-600">
+      <div className="text-xs text-text-secondary">
         Hiển thị {currentPage * pageSize + 1} -{" "}
         {Math.min((currentPage + 1) * pageSize, totalItems)} của {totalItems}{" "}
         kết quả
@@ -46,7 +46,7 @@ const Pagination = ({
         <button
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 0}
-          className="px-2 py-1 text-xs border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-2 py-1 text-xs transition-colors duration-200 border rounded border-border-primary hover:bg-background-surface disabled:opacity-50 disabled:cursor-not-allowed text-text-secondary hover:text-text-primary"
         >
           Trước
         </button>
@@ -56,11 +56,13 @@ const Pagination = ({
           <>
             <button
               onClick={() => onPageChange(0)}
-              className="px-2 py-1 text-xs border border-gray-300 rounded hover:bg-gray-50"
+              className="px-2 py-1 text-xs transition-colors duration-200 border rounded border-border-primary hover:bg-background-surface text-text-secondary hover:text-text-primary"
             >
               1
             </button>
-            {getPageNumbers()[0] > 1 && <span className="px-1">...</span>}
+            {getPageNumbers()[0] > 1 && (
+              <span className="px-1 text-text-secondary">...</span>
+            )}
           </>
         )}
 
@@ -69,10 +71,10 @@ const Pagination = ({
           <button
             key={page}
             onClick={() => onPageChange(page)}
-            className={`px-2 py-1 text-xs border rounded ${
+            className={`px-2 py-1 text-xs border rounded transition-colors duration-200 ${
               page === currentPage
-                ? "bg-blue-600 text-white border-blue-600"
-                : "border-gray-300 hover:bg-gray-50"
+                ? "bg-secondary text-text-on-primary border-secondary hover:bg-secondary-dark"
+                : "border-border-primary text-text-secondary hover:bg-background-surface hover:text-text-primary"
             }`}
           >
             {page + 1}
@@ -83,11 +85,11 @@ const Pagination = ({
         {getPageNumbers()[getPageNumbers().length - 1] < totalPages - 1 && (
           <>
             {getPageNumbers()[getPageNumbers().length - 1] < totalPages - 2 && (
-              <span className="px-1">...</span>
+              <span className="px-1 text-text-secondary">...</span>
             )}
             <button
               onClick={() => onPageChange(totalPages - 1)}
-              className="px-2 py-1 text-xs border border-gray-300 rounded hover:bg-gray-50"
+              className="px-2 py-1 text-xs transition-colors duration-200 border rounded border-border-primary hover:bg-background-surface text-text-secondary hover:text-text-primary"
             >
               {totalPages}
             </button>
@@ -98,7 +100,7 @@ const Pagination = ({
         <button
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages - 1}
-          className="px-2 py-1 text-xs border border-gray-300 rounded hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-2 py-1 text-xs transition-colors duration-200 border rounded border-border-primary hover:bg-background-surface disabled:opacity-50 disabled:cursor-not-allowed text-text-secondary hover:text-text-primary"
         >
           Sau
         </button>
