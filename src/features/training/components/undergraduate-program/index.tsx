@@ -38,7 +38,7 @@ const TrainingUndergraduateProgram = () => {
 
   return (
     <div className="container min-h-screen px-2 py-4 mx-auto mt-4 rounded-lg sm:px-4 sm:py-6 md:px-6 md:py-8 lg:px-8 lg:py-12 md:mt-8 lg:mt-16">
-      <div className="px-4 py-8 mx-auto max-w-7xl sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div className="px-1 py-6 mx-auto max-w-7xl sm:px-4 sm:py-8 md:px-6 md:py-10 lg:px-8 lg:py-15">
         {/* Header Section */}
         <div className="max-w-4xl mx-auto mb-8 text-center sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg sm:w-20 sm:h-20 sm:mb-8 bg-gradient-to-r from-primary to-primary-dark rounded-2xl">

@@ -12,6 +12,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { Semester } from "./types";
 import CourseCard from "./CourseCard";
+import Empty from "@/foundation/components/empty/Empty";
 
 interface SemesterCardProps {
   semesterKey: string;
@@ -33,6 +34,13 @@ const SemesterCard: React.FC<SemesterCardProps> = ({
     ...(semesterData.courses || []),
     ...(semesterData.compulsory?.courses || []),
   ];
+  if (!semesterData || typeof semesterData !== "object") {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-background-surface">
+        <Empty title="Không tìm thấy dữ liệu" />
+      </div>
+    );
+  }
 
   // Đối với học kỳ 7 và 8, chỉ lấy một chuyên ngành
   if (semesterKey === "semester7" || semesterKey === "semester8") {

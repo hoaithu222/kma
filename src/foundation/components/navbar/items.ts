@@ -202,15 +202,7 @@ export const NavbarItems: INavbarItem[] = [
 export const ContactItems: INavbarItem[] = [
   {
     label: "contact",
-    path: "/contact/introduction",
+    path: "/contact",
     icon: "FaPhoneAlt",
-    children: [
-      {
-        label: "contact-introduction",
-        path: "/contact/introduction",
-        icon: "FaInfoCircle",
-      },
-      { label: "contact-info", path: "/contact/contact", icon: "FaEnvelope" },
-    ],
   },
 ];

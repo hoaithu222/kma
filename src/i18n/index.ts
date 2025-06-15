@@ -25,6 +25,8 @@ import enTelecommunication from "./locales/en/telecommunication.json";
 import viTelecommunication from "./locales/vi/telecommunication.json";
 import enDepartments from "./locales/en/departments.json";
 import viDepartments from "./locales/vi/departments.json";
+import viContact from "./locales/vi/contact.json";
+import enContact from "./locales/en/contact.json";
 
 i18n
   .use(LanguageDetector)
@@ -43,6 +45,7 @@ i18n
         informationSecurity: enInformationSecurity,
         telecommunication: enTelecommunication,
         departments: enDepartments,
+        contact: enContact,
       },
       vi: {
         home: viHome,
@@ -56,6 +59,7 @@ i18n
         informationSecurity: viInformationSecurity,
         telecommunication: viTelecommunication,
         departments: viDepartments,
+        contact: viContact,
       },
     },
     fallbackLng: "en",
@@ -68,6 +72,13 @@ i18n
       order: ["localStorage", "navigator"],
       caches: ["localStorage"],
     },
+    saveMissing: true,
+    missingKeyHandler: (key, fallbackValue) => {
+      console.warn(`Missing translation for key: ${key}`);
+      return fallbackValue;
+    },
+    fallbackNS: "home",
+    debug: process.env.NODE_ENV === "development",
   });
 
 export default i18n;

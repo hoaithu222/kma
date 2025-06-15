@@ -53,7 +53,7 @@ const CareerProspects = () => {
   });
 
   return (
-    <div className="max-w-6xl min-h-screen p-4 mx-auto md:p-6 bg-background-surface">
+    <div className="max-w-6xl min-h-screen p-1 mx-auto sm:p-3 md:p-4 lg:p-6 bg-background-surface">
       {/* Header */}
       <div className="mb-8 text-center md:mb-12">
         <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full shadow-lg md:w-20 md:h-20 md:mb-6 bg-gradient-to-r from-blue-600 to-purple-600">

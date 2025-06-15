@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useHome } from "../hooks/useHook";
 import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
+import SafeImage from "@/components/SafeImage";
 
 const animations = [
   {
@@ -115,18 +116,19 @@ const Banner = () => {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="absolute w-full h-full"
         >
-          <img
+          <SafeImage
             src={images[currentIndex]?.image}
             alt={`Banner ${images[currentIndex].id}`}
             className="object-cover w-full h-full rounded-lg"
+            fallbackSrc={images[currentIndex]?.image}
           />
           <motion.div
             {...currentTextAnimation}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={clsx(
-              "absolute w-[50%] sm:w-[25%] lg:w-[30%] h-[60%] sm:h-[75%]",
-              "p-3 md:p-4 lg:p-6 rounded-xl shadow-2xl bg-transparent backdrop-blur-sm left-2 sm:left-5 lg:left-18 top-2 sm:top-5 lg:top-8 overflow-hidden",
-              "left-14 sm:left-5 lg:left-20 top-20 sm:top-5 lg:top-10"
+              "absolute w-[50%] sm:w-[25%] lg:w-[30%] h-[30%] ",
+              "p-1 sm:p-3 md:p-4 lg:p-6 rounded-xl shadow-2xl bg-transparent backdrop-blur-sm left-2 sm:left-5 lg:left-18 top-2 sm:top-5 lg:top-8 overflow-hidden",
+              "left-2 top-28"
             )}
           >
             <div
@@ -139,33 +141,19 @@ const Banner = () => {
             >
               {/* Nội dung chữ */}
               <div className="relative z-10 flex flex-col ">
-                <h2 className="mb-1 text-sm font-bold leading-tight text-shadow sm:text-base md:text-xl lg:text-2xl ">
+                <h2 className="mb-1 text-xs font-bold leading-tight text-shadow sm:text-sm md:text-base lg:text-xl line-clamp-2 ">
                   {images[currentIndex].title}
                 </h2>
 
                 <Button
                   variant="primary"
-                  className="z-50 flex items-center justify-center w-full gap-2 px-4 py-2 mb-0 text-xs font-medium transition-all duration-200 transform rounded-lg shadow-md cursor-pointer sm:text-sm hover:shadow-lg hover:scale-105"
                   style={{ pointerEvents: "auto" }}
                   size="small"
                   onClick={() =>
                     navigate(`/detail-post/${images[currentIndex].id}`)
                   }
                 >
-                  <span>Xem chi tiết</span>
-                  <svg
-                    className="w-3 h-3 sm:w-4 sm:h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  Xem chi tiết
                 </Button>
               </div>
             </div>

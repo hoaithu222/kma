@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { LearningProgramData } from "./types";
 import { SemesterCard } from "./SemesterCard";
 import { Sparkles, BookOpen, TrendingUp } from "lucide-react";
+import Empty from "@/foundation/components/empty/Empty";
 
 export const LearningProgram: React.FC = () => {
   const { t } = useTranslation("informationTechnology");
@@ -13,6 +14,15 @@ export const LearningProgram: React.FC = () => {
   const learningProgram = t("learningProgram", {
     returnObjects: true,
   }) as LearningProgramData;
+
+  // Add validation check
+  if (!learningProgram || typeof learningProgram !== "object") {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-background-surface">
+        <Empty title="Không tìm thấy dữ liệu" />
+      </div>
+    );
+  }
 
   const toggleSemester = (semesterKey: string) => {
     setExpandedSemesters((prev) => ({

@@ -55,8 +55,8 @@ const TimelineItem = ({
                 relative
               `}
             >
-              <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
-                <div className="flex-shrink-0 p-1 md:p-1.5 lg:p-2 rounded-full bg-secondary-light/10">
+              <div className="flex items-start gap-1 md:gap-3 lg:gap-4">
+                <div className="hidden sm:flex sm:flex-shrink-0 p-1 sm:p-2 md:p-1.5 lg:p-2 rounded-full bg-secondary-light/10">
                   <GraduationCap className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-secondary" />
                 </div>
                 <div className="flex-1">
@@ -82,7 +82,7 @@ const TimelineItem = ({
             <div className="w-1/2 pl-4 md:pl-6 lg:pl-8">
               <div
                 className={`
-                  max-w-[200px] md:max-w-[250px] lg:max-w-sm p-3 md:p-4 lg:p-6 bg-background-elevated rounded-xl shadow-lg border border-border-subtle
+                  max-w-[200px] md:max-w-[250px] lg:max-w-sm p-1 sm:p-3 md:p-4 lg:p-6 bg-background-elevated rounded-xl shadow-lg border border-border-subtle
                   transition-all duration-500 ease-in-out transform
                   group-hover:shadow-xl group-hover:scale-105
                   ${
@@ -94,7 +94,7 @@ const TimelineItem = ({
                 `}
               >
                 <div className="flex items-start gap-2 md:gap-3 lg:gap-4">
-                  <div className="flex-shrink-0 p-1 md:p-1.5 lg:p-2 rounded-full bg-secondary-light/10">
+                  <div className="hidden sm:flex sm:flex-shrink-0 p-1 sm:p-2 md:p-1.5 lg:p-2 rounded-full bg-secondary-light/10">
                     <GraduationCap className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 text-secondary" />
                   </div>
                   <div className="flex-1">

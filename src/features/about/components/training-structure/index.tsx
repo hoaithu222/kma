@@ -5,7 +5,7 @@ const TrainingStructure = () => {
   const { t } = useTranslation("trainingStructure");
 
   return (
-    <div className="container px-4 py-8 mx-auto mt-10 md:mt-18 lg:mt-28">
+    <div className="container p-3 mt-16 md:px-2 md:py-4 lg:px-4 lg:py-8 md:mt-18 lg:mt-28">
       {/* Header Section */}
       <div className="mb-8">
         <h2 className="mb-6 text-xl font-bold text-text-primary sm:text-2xl">
@@ -13,14 +13,14 @@ const TrainingStructure = () => {
         </h2>
 
         {/* Core Majors */}
-        <div className="grid gap-4 sm:gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-2 sm:gap-4 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
           {(t("core_majors", { returnObjects: true }) as any[]).map(
             (major, _index) => (
               <div
                 key={major.major_code}
                 className="p-4 transition-shadow border rounded-lg shadow-md sm:p-6 bg-background-elevated border-border-primary hover:shadow-lg"
               >
-                <div className="mb-4">
+                <div className="mb-2 lg:mb-4">
                   <h3 className="mb-2 text-lg font-semibold text-primary sm:text-xl">
                     {major.major_name}
                   </h3>
@@ -30,7 +30,7 @@ const TrainingStructure = () => {
                 </div>
 
                 <div>
-                  <h4 className="mb-3 text-sm font-medium tracking-wide uppercase text-text-secondary">
+                  <h4 className="mb-1 text-sm font-medium tracking-wide uppercase lg:mb-3 text-text-secondary">
                     {t("specialization_title")}:
                   </h4>
                   <ul className="space-y-2 ">
@@ -53,8 +53,8 @@ const TrainingStructure = () => {
       </div>
 
       {/* Admission Information */}
-      <div className="p-4 mb-8 rounded-lg sm:p-6 bg-background-subtle">
-        <h3 className="mb-3 text-base font-semibold text-text-primary sm:text-lg">
+      <div className="p-2 mb-4 rounded-lg sm:p-4 bg-background-subtle">
+        <h3 className="mb-1 text-base font-semibold text-text-primary sm:text-lg">
           {t("admission_information_title")}
         </h3>
         <p className="leading-relaxed text-text-secondary">
@@ -67,7 +67,7 @@ const TrainingStructure = () => {
         <h3 className="mb-4 text-base font-semibold text-text-primary sm:text-lg">
           {t("student_achievements_title")}
         </h3>
-        <p className="mb-4 leading-relaxed text-text-secondary">
+        <p className="mb-2 leading-relaxed lg:mb-4 text-text-secondary">
           {t("student_achievements.introduction")}
         </p>
 
@@ -95,7 +95,7 @@ const TrainingStructure = () => {
       </div>
 
       {/* Conclusion */}
-      <div className="p-4 rounded-lg sm:p-6 bg-background-subtle">
+      <div className="p-2 rounded-lg sm:p-4 bg-background-subtle">
         <h3 className="mb-3 text-base font-semibold text-text-primary sm:text-lg">
           {t("conclusion_title")}
         </h3>

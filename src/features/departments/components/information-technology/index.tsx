@@ -117,8 +117,8 @@ const InformationTechnology = () => {
   ];
 
   return (
-    <div className="min-h-screen mt-10 overflow-y-auto md:mt-20 lg:mt-24">
-      <div className="container px-2 py-4 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div className="min-h-screen mt-10 md:mt-20 lg:mt-24">
+      <div className="container px-1 mx-auto py-14 sm:px-3 sm:py-12 lg:px-4 lg:py-14">
         <div className="relative grid grid-cols-1 gap-0 sm:gap-4 md:gap-6 lg:gap-8 lg:grid-cols-8">
           {/* Enhanced Sidebar Navigation */}
           <div className="col-span-2 pb-2 lg:h-screen lg:pb-0">
@@ -187,7 +187,7 @@ const InformationTechnology = () => {
             </div>
           </div>
 
-          <div className="min-h-screen col-span-1 p-2 overflow-y-auto lg:col-span-6">
+          <div className="min-h-screen col-span-1 p-1 overflow-y-auto lg:col-span-6">
             <div className="space-y-3">
               <section
                 ref={sectionRefs.generalInfo}

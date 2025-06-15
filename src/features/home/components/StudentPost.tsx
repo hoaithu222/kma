@@ -74,7 +74,7 @@ const StudentPost = () => {
   };
 
   return (
-    <div className="relative w-full py-8 mt-2 overflow-hidden sm:py-10 md:py-12 lg:py-16 rounded-xl sm:mt-3 md:mt-4 lg:mt-6">
+    <div className="relative w-full py-4 mt-2 overflow-hidden sm:py-10 md:py-12 lg:py-16 rounded-xl sm:mt-3 md:mt-4 lg:mt-6">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-indigo-100/30 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/10"></div>
 
@@ -86,7 +86,7 @@ const StudentPost = () => {
         <div className="absolute top-1/3 right-1/3 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-emerald-400 rounded-full animate-pulse opacity-50"></div>
       </div>
 
-      <div className="relative px-3 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
+      <div className="relative px-2 mx-auto max-w-7xl sm:px-4 md:px-6 lg:px-8">
         {/* Enhanced Header Section */}
         <div className="mb-8 text-center sm:mb-10 md:mb-12 lg:mb-16">
           {/* Icon with multiple effects */}
@@ -101,24 +101,24 @@ const StudentPost = () => {
           </div>
 
           {/* Title with gradient text */}
-          <h2 className="mb-3 text-2xl font-black leading-tight text-transparent sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text">
+          <h2 className="mb-3 text-lg font-black leading-tight text-transparent sm:text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text">
             Cựu Sinh Viên Xuất Sắc
           </h2>
 
           {/* Subtitle with enhanced styling */}
           <div className="relative max-w-3xl mx-auto">
-            <p className="text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl dark:text-gray-300">
+            <p className="text-xs leading-relaxed text-gray-600 sm:text-sm md:text-base dark:text-gray-300">
               Những câu chuyện truyền cảm hứng từ các cựu sinh viên
               <span className="relative inline-block mx-1 sm:mx-2">
                 <span className="relative z-10 font-semibold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
-                  học viện kỹ thuật mật mã
+                  Học Viện Kỹ Thuật Mật Mã
                 </span>
                 <span className="absolute inset-0 transform -skew-x-3 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30"></span>
               </span>
             </p>
 
             {/* Decorative elements */}
-            <div className="flex items-center justify-center gap-1 mt-3 sm:gap-2 sm:mt-4">
+            <div className="flex items-center justify-center gap-1 mt-2 sm:gap-2 sm:mt-4">
               <Sparkles className="w-3 h-3 text-yellow-500 sm:w-4 sm:h-4 animate-pulse" />
               <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
               <Sparkles className="w-3 h-3 text-purple-500 delay-300 sm:w-4 sm:h-4 animate-pulse" />
@@ -238,7 +238,7 @@ const StudentPost = () => {
                       {/* Enhanced Read More Button */}
                       <Button
                         variant="text"
-                        className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white transition-all duration-300 rounded-lg shadow-lg group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl"
+                        className="flex items-center gap-1.5 px-2.5  py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-semibold text-white transition-all duration-300 rounded-lg shadow-lg group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl"
                         onClick={() => navigate(`/detail-post/${post.id}`)}
                       >
                         <span>Đọc thêm</span>

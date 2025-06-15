@@ -100,78 +100,219 @@
     "semester1": {
       "title": "Semester 1",
       "courses": [
-        { "name": "National Defense and Security Education", "credits": 8 },
-        { "name": "General Informatics", "credits": 2 },
-        { "name": "Marxist–Leninist Philosophy", "credits": 3 },
-        { "name": "Calculus 1", "credits": 3 },
-        { "name": "Linear Algebra", "credits": 3 },
-        { "name": "Physical Education 1", "credits": 1 },
-        { "name": "General Law", "credits": 2 }
+        {
+          "name": "National Defense and Security Education",
+          "credits": 8
+        },
+        {
+          "name": "General Informatics",
+          "credits": 2
+        },
+        {
+          "name": "Marxist–Leninist Philosophy",
+          "credits": 3
+        },
+        {
+          "name": "Calculus 1",
+          "credits": 3
+        },
+        {
+          "name": "Linear Algebra",
+          "credits": 3
+        },
+        {
+          "name": "Physical Education 1",
+          "credits": 1
+        },
+        {
+          "name": "General Law",
+          "credits": 2
+        }
       ]
     },
     "semester2": {
       "title": "Semester 2",
       "courses": [
-        { "name": "Calculus 2", "credits": 3 },
-        { "name": "General Physics 1", "credits": 3 },
-        { "name": "Marxist–Leninist Political Economy", "credits": 2 },
-        { "name": "Scientific Socialism", "credits": 2 },
-        { "name": "Physical Education 2", "credits": 1 },
-        { "name": "Ho Chi Minh Thought", "credits": 2 },
-        { "name": "Fundamentals of Programming", "credits": 3 },
-        { "name": "Vietnamese General Law", "credits": 2 },
-        { "name": "Soft Skills", "credits": 2 }
+        {
+          "name": "Calculus 2",
+          "credits": 3
+        },
+        {
+          "name": "General Physics 1",
+          "credits": 3
+        },
+        {
+          "name": "Marxist–Leninist Political Economy",
+          "credits": 2
+        },
+        {
+          "name": "Scientific Socialism",
+          "credits": 2
+        },
+        {
+          "name": "Physical Education 2",
+          "credits": 1
+        },
+        {
+          "name": "Ho Chi Minh Thought",
+          "credits": 2
+        },
+        {
+          "name": "Fundamentals of Programming",
+          "credits": 3
+        },
+        {
+          "name": "Vietnamese General Law",
+          "credits": 2
+        },
+        {
+          "name": "Soft Skills",
+          "credits": 2
+        }
       ]
     },
     "semester3": {
       "title": "Semester 3",
       "courses": [
-        { "name": "General Physics 2", "credits": 3 },
-        { "name": "Probability and Statistics", "credits": 2 },
-        { "name": "Advanced Mathematics", "credits": 3 },
-        { "name": "English 1", "credits": 3 },
-        { "name": "Data Structures and Algorithms", "credits": 2 },
-        { "name": "Computer Networks", "credits": 3 },
-        { "name": "Discrete Mathematics", "credits": 2 },
-        { "name": "Numerical Methods", "credits": 2 },
-        { "name": "Physical Education 3", "credits": 1 },
-        { "name": "History of the Communist Party of Vietnam", "credits": 2 }
+        {
+          "name": "General Physics 2",
+          "credits": 3
+        },
+        {
+          "name": "Probability and Statistics",
+          "credits": 2
+        },
+        {
+          "name": "Advanced Mathematics",
+          "credits": 3
+        },
+        {
+          "name": "English 1",
+          "credits": 3
+        },
+        {
+          "name": "Data Structures and Algorithms",
+          "credits": 2
+        },
+        {
+          "name": "Computer Networks",
+          "credits": 3
+        },
+        {
+          "name": "Discrete Mathematics",
+          "credits": 2
+        },
+        {
+          "name": "Numerical Methods",
+          "credits": 2
+        },
+        {
+          "name": "Physical Education 3",
+          "credits": 1
+        },
+        {
+          "name": "History of the Communist Party of Vietnam",
+          "credits": 2
+        }
       ]
     },
     "semester4": {
       "title": "Semester 4",
       "courses": [
-        { "name": "English 2", "credits": 3 },
-        { "name": "Data Transmission Techniques", "credits": 2 },
-        { "name": "Fundamentals of Information Theory", "credits": 2 },
-        { "name": "Database Theory", "credits": 2 },
-        { "name": "Database Management Systems", "credits": 2 },
-        { "name": "Computer Network Administration", "credits": 2 },
-        { "name": "Computer Architecture and Assembly Language", "credits": 3 }
+        {
+          "name": "English 2",
+          "credits": 3
+        },
+        {
+          "name": "Data Transmission Techniques",
+          "credits": 2
+        },
+        {
+          "name": "Fundamentals of Information Theory",
+          "credits": 2
+        },
+        {
+          "name": "Database Theory",
+          "credits": 2
+        },
+        {
+          "name": "Database Management Systems",
+          "credits": 2
+        },
+        {
+          "name": "Computer Network Administration",
+          "credits": 2
+        },
+        {
+          "name": "Computer Architecture and Assembly Language",
+          "credits": 3
+        }
       ]
     },
     "semester5": {
       "title": "Semester 5",
       "courses": [
-        { "name": "English 3", "credits": 4 },
-        { "name": "Object-Oriented Programming", "credits": 2 },
-        { "name": "System Analysis and Design", "credits": 2 },
-        { "name": "Principles of Operating Systems", "credits": 2 },
-        { "name": "Linux and Open Source Software", "credits": 2 },
-        { "name": "Algorithms in Information Security", "credits": 2 },
-        { "name": "Introduction to Cryptography", "credits": 3 }
+        {
+          "name": "English 3",
+          "credits": 4
+        },
+        {
+          "name": "Object-Oriented Programming",
+          "credits": 2
+        },
+        {
+          "name": "System Analysis and Design",
+          "credits": 2
+        },
+        {
+          "name": "Principles of Operating Systems",
+          "credits": 2
+        },
+        {
+          "name": "Linux and Open Source Software",
+          "credits": 2
+        },
+        {
+          "name": "Algorithms in Information Security",
+          "credits": 2
+        },
+        {
+          "name": "Introduction to Cryptography",
+          "credits": 3
+        }
       ]
     },
     "semester6": {
       "title": "Semester 6",
       "courses": [
-        { "name": "English for Specific Purposes", "credits": 4 },
-        { "name": "Core Topics in the Field", "credits": 2 },
-        { "name": "Fundamentals of Information Security", "credits": 3 },
-        { "name": "Computer Network Security", "credits": 3 },
-        { "name": "Programming Techniques", "credits": 2 },
-        { "name": "Database Security", "credits": 2 },
-        { "name": "Network Security Protocols", "credits": 2 }
+        {
+          "name": "English for Specific Purposes",
+          "credits": 4
+        },
+        {
+          "name": "Core Topics in the Field",
+          "credits": 2
+        },
+        {
+          "name": "Fundamentals of Information Security",
+          "credits": 3
+        },
+        {
+          "name": "Computer Network Security",
+          "credits": 3
+        },
+        {
+          "name": "Programming Techniques",
+          "credits": 2
+        },
+        {
+          "name": "Database Security",
+          "credits": 2
+        },
+        {
+          "name": "Network Security Protocols",
+          "credits": 2
+        }
       ]
     },
     "semester7": {
@@ -179,34 +320,88 @@
       "informationSystemSecurity": {
         "title": "Information System Security",
         "courses": [
-          { "name": "Secure Web Technologies", "credits": 3 },
-          { "name": "System Security Administration", "credits": 3 },
-          { "name": "Wireless and Mobile Network Security", "credits": 2 },
-          { "name": "Network Security Design and Analysis", "credits": 2 },
-          { "name": "Malware", "credits": 3 },
-          { "name": "Seminar on Information System Security", "credits": 2 }
+          {
+            "name": "Secure Web Technologies",
+            "credits": 3
+          },
+          {
+            "name": "System Security Administration",
+            "credits": 3
+          },
+          {
+            "name": "Wireless and Mobile Network Security",
+            "credits": 2
+          },
+          {
+            "name": "Network Security Design and Analysis",
+            "credits": 2
+          },
+          {
+            "name": "Malware",
+            "credits": 3
+          },
+          {
+            "name": "Seminar on Information System Security",
+            "credits": 2
+          }
         ]
       },
       "networkSecurityEngineering": {
         "title": "Network Security Engineering",
         "courses": [
-          { "name": "Secure Web Technologies", "credits": 3 },
-          { "name": "Wireless and Mobile Network Security", "credits": 2 },
-          { "name": "Malware", "credits": 3 },
-          { "name": "Software Vulnerability Exploitation", "credits": 2 },
-          { "name": "System Attack and Defense", "credits": 3 },
-          { "name": "Seminar on Network Security Engineering", "credits": 2 }
+          {
+            "name": "Secure Web Technologies",
+            "credits": 3
+          },
+          {
+            "name": "Wireless and Mobile Network Security",
+            "credits": 2
+          },
+          {
+            "name": "Malware",
+            "credits": 3
+          },
+          {
+            "name": "Software Vulnerability Exploitation",
+            "credits": 2
+          },
+          {
+            "name": "System Attack and Defense",
+            "credits": 3
+          },
+          {
+            "name": "Seminar on Network Security Engineering",
+            "credits": 2
+          }
         ]
       },
       "secureSoftwareTechnology": {
         "title": "Secure Software Technology",
         "courses": [
-          { "name": "Secure Web Technologies", "credits": 3 },
-          { "name": "Software Engineering", "credits": 3 },
-          { "name": "User Interface Design", "credits": 2 },
-          { "name": "Formal Specification", "credits": 2 },
-          { "name": "Mobile Application Development", "credits": 3 },
-          { "name": "Seminar on Secure Software Technology", "credits": 2 }
+          {
+            "name": "Secure Web Technologies",
+            "credits": 3
+          },
+          {
+            "name": "Software Engineering",
+            "credits": 3
+          },
+          {
+            "name": "User Interface Design",
+            "credits": 2
+          },
+          {
+            "name": "Formal Specification",
+            "credits": 2
+          },
+          {
+            "name": "Mobile Application Development",
+            "credits": 3
+          },
+          {
+            "name": "Seminar on Secure Software Technology",
+            "credits": 2
+          }
         ]
       }
     },
@@ -219,12 +414,30 @@
             "name": "Network Security Monitoring and Incident Response",
             "credits": 2
           },
-          { "name": "System Security Testing and Evaluation", "credits": 3 },
-          { "name": "Information Security Management", "credits": 2 },
-          { "name": "Digital Forensics", "credits": 3 },
-          { "name": "Specialized Elective 1", "credits": 2 },
-          { "name": "Specialized Elective 2", "credits": 2 },
-          { "name": "Specialized Elective 3", "credits": 2 }
+          {
+            "name": "System Security Testing and Evaluation",
+            "credits": 3
+          },
+          {
+            "name": "Information Security Management",
+            "credits": 2
+          },
+          {
+            "name": "Digital Forensics",
+            "credits": 3
+          },
+          {
+            "name": "Specialized Elective 1",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 2",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 3",
+            "credits": 2
+          }
         ]
       },
       "networkSecurityEngineering": {
@@ -234,12 +447,30 @@
             "name": "Network Security Monitoring and Incident Response",
             "credits": 2
           },
-          { "name": "System Security Testing and Evaluation", "credits": 3 },
-          { "name": "Information Security Management", "credits": 2 },
-          { "name": "Digital Forensics", "credits": 3 },
-          { "name": "Specialized Elective 1", "credits": 2 },
-          { "name": "Specialized Elective 2", "credits": 2 },
-          { "name": "Specialized Elective 3", "credits": 2 }
+          {
+            "name": "System Security Testing and Evaluation",
+            "credits": 3
+          },
+          {
+            "name": "Information Security Management",
+            "credits": 2
+          },
+          {
+            "name": "Digital Forensics",
+            "credits": 3
+          },
+          {
+            "name": "Specialized Elective 1",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 2",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 3",
+            "credits": 2
+          }
         ]
       },
       "secureSoftwareTechnology": {
@@ -249,20 +480,44 @@
             "name": "Applied Cryptography in Information Security",
             "credits": 3
           },
-          { "name": "Secure Programming Techniques", "credits": 3 },
-          { "name": "Software Testing and Quality Assurance", "credits": 2 },
-          { "name": "Data Mining in Information Security", "credits": 2 },
-          { "name": "Specialized Elective 1", "credits": 2 },
-          { "name": "Specialized Elective 2", "credits": 2 },
-          { "name": "Specialized Elective 3", "credits": 2 }
+          {
+            "name": "Secure Programming Techniques",
+            "credits": 3
+          },
+          {
+            "name": "Software Testing and Quality Assurance",
+            "credits": 2
+          },
+          {
+            "name": "Data Mining in Information Security",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 1",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 2",
+            "credits": 2
+          },
+          {
+            "name": "Specialized Elective 3",
+            "credits": 2
+          }
         ]
       }
     },
     "semester9": {
       "title": "Semester 9 (General Plan)",
       "courses": [
-        { "name": "Graduation Internship", "credits": 3 },
-        { "name": "Graduation Thesis", "credits": 8 }
+        {
+          "name": "Graduation Internship",
+          "credits": 3
+        },
+        {
+          "name": "Graduation Thesis",
+          "credits": 8
+        }
       ]
     }
   },

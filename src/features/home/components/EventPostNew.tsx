@@ -40,7 +40,7 @@ const EventPostNew = () => {
   };
 
   return (
-    <div className="relative my-4 overflow-hidden rounded-lg shadow-md shadow-card-shadow">
+    <div className="relative my-2 overflow-hidden rounded-lg shadow-md md:my-3 lg:my-4 shadow-card-shadow">
       {/* Modern Gradient Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
@@ -50,11 +50,11 @@ const EventPostNew = () => {
       </div>
 
       {/* Header Section */}
-      <div className="relative z-10 px-4 py-6 text-center">
+      <div className="relative z-10 p-2 text-center sm:px-3 sm:py-4 lg:px-4 lg:py-6">
         <div className="max-w-2xl mx-auto">
           <div className="inline-flex items-center justify-center w-10 h-10 mb-4 rounded-xl bg-primary/10 backdrop-blur-sm">
             <svg
-              className="w-5 h-5 text-primary"
+              className="w-8 h-8 sm:w-10 sm:h-10 text-primary"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -67,10 +67,10 @@ const EventPostNew = () => {
               />
             </svg>
           </div>
-          <h2 className="mb-2 text-2xl font-bold text-text-primary md:text-3xl">
+          <h2 className="mb-2 text-lg font-bold text-text-primary sm:text-xl md:text-2xl lg:text-3xl">
             SỰ KIỆN MỚI NHẤT
           </h2>
-          <p className="max-w-xl mx-auto mb-4 text-sm text-text-secondary">
+          <p className="max-w-xl mx-auto mb-4 text-xs text-text-secondary sm:text-sm">
             Khám phá những sự kiện thú vị và cập nhật mới nhất từ cộng đồng của
             chúng tôi
           </p>
@@ -81,9 +81,9 @@ const EventPostNew = () => {
       </div>
 
       {/* Events Grid */}
-      <div className="relative z-10 px-2 pb-6">
+      <div className="relative z-10 px-2 pb-3 sm:px-3 md:pb-4 lg:pb-6 lg:px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {post?.map((item: any, index: number) => {
               const eventDate = formatDate(item.publishedAt || item.createdAt);
               const colorType = getEventTypeColor(index);
@@ -140,9 +140,9 @@ const EventPostNew = () => {
                     <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-100"></div>
                   </div>
                   {/* Event Content */}
-                  <div className="p-3">
+                  <div className="p-1 md:p-2 lg:p-3">
                     {/* Category Badge */}
-                    <div className="mb-2">
+                    <div className="mb-1 md:mb-2">
                       <span
                         className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold ${colorStyle} shadow-sm`}
                       >
@@ -151,16 +151,16 @@ const EventPostNew = () => {
                       </span>
                     </div>
                     {/* Title */}
-                    <h3 className="text-base font-bold text-text-primary mb-2 leading-tight group-hover:text-primary transition-colors duration-300 line-clamp-2 min-h-[2.5rem]">
+                    <h3 className=" font-bold text-text-primary mb-1 text-sm sm:text-base sm:mb-2 leading-tight group-hover:text-primary transition-colors duration-300 line-clamp-2 min-h-[2.5rem]">
                       {item.title}
                     </h3>
                     {/* Event Details */}
-                    <div className="mb-3 space-y-2">
+                    <div className="mb-1 space-y-2 sm:mb-2">
                       {item.startTime && (
                         <div className="flex items-center text-xs text-text-secondary">
                           <div className="flex items-center justify-center w-6 h-6 mr-2 rounded bg-background-muted">
                             <svg
-                              className="w-3 h-3"
+                              className="w-4 h-4"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"
@@ -204,31 +204,33 @@ const EventPostNew = () => {
                       )}
                       {item.content && (
                         <div className="p-2 text-xs leading-relaxed rounded text-text-muted line-clamp-2 bg-background-subtle">
-                          {truncateText(stripHtml(item.content))}
+                          {truncateText(stripHtml(item.content), 50)}
                         </div>
                       )}
                     </div>
                     {/* Action Button */}
-                    <div>
-                      <button
-                        className={`w-full ${colorStyle} py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 transform hover:scale-105 shadow group/btn flex items-center justify-center`}
-                        onClick={() => navigate(`/detail-post/${item.id}`)}
-                      >
-                        <span>Chi tiết</span>
-                        <svg
-                          className="w-4 h-4 ml-1 transition-transform duration-300 group-hover/btn:translate-x-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                    <div className="h-8 md:h-3 lg:h-5 ">
+                      <div className="absolute bottom-0 left-0 w-full p-2 ">
+                        <button
+                          className={`w-full ${colorStyle} py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 transform hover:scale-105 shadow group/btn flex items-center justify-center`}
+                          onClick={() => navigate(`/detail-post/${item.id}`)}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
-                      </button>
+                          <span>Chi tiết</span>
+                          <svg
+                            className="w-4 h-4 ml-1 transition-transform duration-300 group-hover/btn:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -268,11 +270,10 @@ const EventPostNew = () => {
         </div>
       )}
 
-      {/* View More Section */}
-      <div className="relative z-10 py-4 text-center">
-        <div className="max-w-4xl px-6 mx-auto">
+      <div className="relative z-10 py-2 text-center lg:py-4">
+        <div className="max-w-4xl px-2 mx-auto md:px-4 lg:px-6">
           <Button
-            className="group inline-flex items-center justify-center px-8 py-4 bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] text-[var(--color-button-primary-text)] rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="group inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] text-[var(--color-button-primary-text)] rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             onClick={() => navigate("/events/49")}
           >
             <span>Xem thêm sự kiện</span>

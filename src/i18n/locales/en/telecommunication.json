@@ -146,24 +146,63 @@
     "semester1": {
       "title": "Semester 1",
       "courses": [
-        { "name": "National Defense and Security Education", "credits": 8 },
-        { "name": "Marxism–Leninism Philosophy", "credits": 3 },
-        { "name": "Advanced Mathematics 1", "credits": 4 },
-        { "name": "General Physics 1", "credits": 3 },
-        { "name": "General Informatics", "credits": 2 },
-        { "name": "Physical Education 1", "credits": 1 }
+        {
+          "name": "National Defense and Security Education",
+          "credits": 8
+        },
+        {
+          "name": "Marxism–Leninism Philosophy",
+          "credits": 3
+        },
+        {
+          "name": "Advanced Mathematics 1",
+          "credits": 4
+        },
+        {
+          "name": "General Physics 1",
+          "credits": 3
+        },
+        {
+          "name": "General Informatics",
+          "credits": 2
+        },
+        {
+          "name": "Physical Education 1",
+          "credits": 1
+        }
       ]
     },
     "semester2": {
       "title": "Semester 2",
       "courses": [
-        { "name": "Advanced Mathematics 2", "credits": 3 },
-        { "name": "General Physics 2", "credits": 3 },
-        { "name": "Introduction to Programming", "credits": 3 },
-        { "name": "Marxist-Leninist Political Economy", "credits": 2 },
-        { "name": "History of the Communist Party of Vietnam", "credits": 2 },
-        { "name": "Physical Education 2", "credits": 1 },
-        { "name": "Scientific Socialism", "credits": 2 }
+        {
+          "name": "Advanced Mathematics 2",
+          "credits": 3
+        },
+        {
+          "name": "General Physics 2",
+          "credits": 3
+        },
+        {
+          "name": "Introduction to Programming",
+          "credits": 3
+        },
+        {
+          "name": "Marxist-Leninist Political Economy",
+          "credits": 2
+        },
+        {
+          "name": "History of the Communist Party of Vietnam",
+          "credits": 2
+        },
+        {
+          "name": "Physical Education 2",
+          "credits": 1
+        },
+        {
+          "name": "Scientific Socialism",
+          "credits": 2
+        }
       ],
       "electives": {
         "title": "Elective Courses",
@@ -179,56 +218,161 @@
     "semester3": {
       "title": "Semester 3",
       "courses": [
-        { "name": "Advanced Mathematics 3", "credits": 3 },
-        { "name": "Probability and Statistics", "credits": 3 },
-        { "name": "General Physics Lab 1&2", "credits": 2 },
-        { "name": "English 1", "credits": 3 },
-        { "name": "Ho Chi Minh Ideology", "credits": 2 },
-        { "name": "Computer Network Technology", "credits": 2 },
-        { "name": "Programming Techniques", "credits": 2 },
-        { "name": "Physical Education 3", "credits": 1 },
-        { "name": "Soft Skills", "credits": 2 }
+        {
+          "name": "Advanced Mathematics 3",
+          "credits": 3
+        },
+        {
+          "name": "Probability and Statistics",
+          "credits": 3
+        },
+        {
+          "name": "General Physics Lab 1&2",
+          "credits": 2
+        },
+        {
+          "name": "English 1",
+          "credits": 3
+        },
+        {
+          "name": "Ho Chi Minh Ideology",
+          "credits": 2
+        },
+        {
+          "name": "Computer Network Technology",
+          "credits": 2
+        },
+        {
+          "name": "Programming Techniques",
+          "credits": 2
+        },
+        {
+          "name": "Physical Education 3",
+          "credits": 1
+        },
+        {
+          "name": "Soft Skills",
+          "credits": 2
+        }
       ]
     },
     "semester4": {
       "title": "Semester 4",
       "courses": [
-        { "name": "English 2", "credits": 3 },
-        { "name": "Discrete Mathematics", "credits": 2 },
-        { "name": "Signals and Systems", "credits": 2 },
-        { "name": "Electrical Engineering", "credits": 2 },
-        { "name": "Electronic Components", "credits": 3 },
-        { "name": "Circuit Theory", "credits": 2 },
-        { "name": "Power Electronics", "credits": 2 },
-        { "name": "Analog Electronics", "credits": 3 },
-        { "name": "Physical Education 4", "credits": 1 }
+        {
+          "name": "English 2",
+          "credits": 3
+        },
+        {
+          "name": "Discrete Mathematics",
+          "credits": 2
+        },
+        {
+          "name": "Signals and Systems",
+          "credits": 2
+        },
+        {
+          "name": "Electrical Engineering",
+          "credits": 2
+        },
+        {
+          "name": "Electronic Components",
+          "credits": 3
+        },
+        {
+          "name": "Circuit Theory",
+          "credits": 2
+        },
+        {
+          "name": "Power Electronics",
+          "credits": 2
+        },
+        {
+          "name": "Analog Electronics",
+          "credits": 3
+        },
+        {
+          "name": "Physical Education 4",
+          "credits": 1
+        }
       ]
     },
     "semester5": {
       "title": "Semester 5",
       "courses": [
-        { "name": "English 3", "credits": 3 },
-        { "name": "Digital Communication", "credits": 2 },
-        { "name": "Electronic Measurement Techniques", "credits": 3 },
-        { "name": "Microprocessor Engineering", "credits": 2 },
-        { "name": "Digital Electronics", "credits": 3 },
-        { "name": "Computer-Aided Circuit Design", "credits": 2 },
-        { "name": "Basic Internship 1", "credits": 2 },
-        { "name": "Fundamentals of Automation", "credits": 2 },
-        { "name": "Physical Education 5", "credits": 1 }
+        {
+          "name": "English 3",
+          "credits": 3
+        },
+        {
+          "name": "Digital Communication",
+          "credits": 2
+        },
+        {
+          "name": "Electronic Measurement Techniques",
+          "credits": 3
+        },
+        {
+          "name": "Microprocessor Engineering",
+          "credits": 2
+        },
+        {
+          "name": "Digital Electronics",
+          "credits": 3
+        },
+        {
+          "name": "Computer-Aided Circuit Design",
+          "credits": 2
+        },
+        {
+          "name": "Basic Internship 1",
+          "credits": 2
+        },
+        {
+          "name": "Fundamentals of Automation",
+          "credits": 2
+        },
+        {
+          "name": "Physical Education 5",
+          "credits": 1
+        }
       ]
     },
     "semester6": {
       "title": "Semester 6",
       "courses": [
-        { "name": "Technical English", "credits": 3 },
-        { "name": "Theory of Information Transmission", "credits": 2 },
-        { "name": "Data Communication Engineering", "credits": 2 },
-        { "name": "Telecommunication Systems", "credits": 2 },
-        { "name": "Digital System Design", "credits": 3 },
-        { "name": "Computer Architecture", "credits": 2 },
-        { "name": "Industrial Electronics", "credits": 2 },
-        { "name": "Project 1", "credits": 2 }
+        {
+          "name": "Technical English",
+          "credits": 3
+        },
+        {
+          "name": "Theory of Information Transmission",
+          "credits": 2
+        },
+        {
+          "name": "Data Communication Engineering",
+          "credits": 2
+        },
+        {
+          "name": "Telecommunication Systems",
+          "credits": 2
+        },
+        {
+          "name": "Digital System Design",
+          "credits": 3
+        },
+        {
+          "name": "Computer Architecture",
+          "credits": 2
+        },
+        {
+          "name": "Industrial Electronics",
+          "credits": 2
+        },
+        {
+          "name": "Project 1",
+          "credits": 2
+        }
       ],
       "electives": {
         "title": "Major Foundation Electives",
@@ -243,37 +387,87 @@
     "semester7": {
       "title": "Semester 7",
       "courses": [
-        { "name": "Peripheral Devices and Interfacing", "credits": 2 },
-        { "name": "Digital Signal Processing", "credits": 3 },
-        { "name": "Real-Time Embedded Operating Systems", "credits": 3 },
-        { "name": "Cryptography Theory", "credits": 2 },
-        { "name": "Embedded Systems", "credits": 3 },
-        { "name": "VLSI Design Fundamentals", "credits": 3 },
-        { "name": "Basic Internship 2", "credits": 2 },
-        { "name": "Project 2", "credits": 2 }
+        {
+          "name": "Peripheral Devices and Interfacing",
+          "credits": 2
+        },
+        {
+          "name": "Digital Signal Processing",
+          "credits": 3
+        },
+        {
+          "name": "Real-Time Embedded Operating Systems",
+          "credits": 3
+        },
+        {
+          "name": "Cryptography Theory",
+          "credits": 2
+        },
+        {
+          "name": "Embedded Systems",
+          "credits": 3
+        },
+        {
+          "name": "VLSI Design Fundamentals",
+          "credits": 3
+        },
+        {
+          "name": "Basic Internship 2",
+          "credits": 2
+        },
+        {
+          "name": "Project 2",
+          "credits": 2
+        }
       ]
     },
     "semester8": {
       "title": "Semester 8",
       "courses": [
-        { "name": "Embedded System Design", "credits": 3 },
-        { "name": "IoT Application Development", "credits": 3 },
-        { "name": "PLC Design", "credits": 3 },
-        { "name": "Elective 1", "credits": 3 },
-        { "name": "Elective 2", "credits": 3 },
-        { "name": "Basic Internship 3", "credits": 2 },
-        { "name": "Project 3", "credits": 2 }
+        {
+          "name": "Embedded System Design",
+          "credits": 3
+        },
+        {
+          "name": "IoT Application Development",
+          "credits": 3
+        },
+        {
+          "name": "PLC Design",
+          "credits": 3
+        },
+        {
+          "name": "Elective 1",
+          "credits": 3
+        },
+        {
+          "name": "Elective 2",
+          "credits": 3
+        },
+        {
+          "name": "Basic Internship 3",
+          "credits": 2
+        },
+        {
+          "name": "Project 3",
+          "credits": 2
+        }
       ]
     },
     "semester9": {
       "title": "Semester 9",
       "courses": [
-        { "name": "Graduation Internship", "credits": 3 },
-        { "name": "Graduation Thesis", "credits": 8 }
+        {
+          "name": "Graduation Internship",
+          "credits": 3
+        },
+        {
+          "name": "Graduation Thesis",
+          "credits": 8
+        }
       ]
     }
   },
-
   "careerPathsTelecom": {
     "title": "Career Opportunities After Graduating in Electronics and Telecommunications",
     "intro": "Graduates can pursue many attractive positions in high-tech fields:",

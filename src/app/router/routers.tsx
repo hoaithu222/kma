@@ -6,11 +6,13 @@ import { ROUTE } from "./routers.config";
 import React from "react";
 // import { authMiddleware } from "./auth.middleware";
 import AppShell from "@/AppShell";
+import NotFound from "@/layout/NotFound";
 // map layout name thành component layout tuong ung
 const layoutMap = {
   main: MainLayout,
   login: LoginLayout,
   extension: ExtensionLayout,
+  notFound: NotFound,
 };
 // gom các router theo layout trở thành nhánh trong router tree
 const layoutRoutes: Record<string, RouteObject> = {};
@@ -42,7 +44,7 @@ Object.values(ROUTE).forEach((router) => {
   // Chuyển sang màn 404 nếu không tìm thấy router
   layoutRoutes[layout].children?.push({
     path: "*",
-    element: <Navigate to="/404" />,
+    element: <Navigate to="/not-found" />,
   });
 });
 /**

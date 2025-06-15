@@ -11,13 +11,13 @@ const TuitionFee = () => {
   const { t } = useTranslation("departments");
 
   return (
-    <div className="min-h-screen p-4 mx-auto md:p-6 lg:p-8 max-w-7xl bg-background-surface">
+    <div className="min-h-screen p-1 mx-auto sm:p-3 md:p-4 lg:p-6 max-w-7xl bg-background-surface">
       {/* Header */}
       <div className="mb-8 text-center md:mb-12">
         <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full shadow-lg md:w-20 md:h-20 md:mb-6 bg-primary">
           <GraduationCap className="w-8 h-8 md:w-10 md:h-10 text-text-on-primary" />
         </div>
-        <h3 className="mb-4 text-3xl font-bold md:text-4xl text-text-primary">
+        <h3 className="mb-4 text-xl font-bold md:text-2xl lg:text-3xl text-text-primary">
           {t("tuitionFees.title")}
         </h3>
         <div className="w-24 h-1 mx-auto rounded-full md:w-32 bg-primary"></div>
@@ -27,11 +27,11 @@ const TuitionFee = () => {
         {/* Undergraduate Section */}
         <div className="overflow-hidden transition-all duration-300 border shadow-lg border-border-primary bg-background-elevated rounded-2xl hover:shadow-2xl">
           <div className="p-4 md:p-6 bg-primary">
-            <div className="flex items-center space-x-3 md:space-x-4">
-              <div className="flex items-center justify-center w-10 h-10 bg-blue-400 rounded-lg md:w-12 md:h-12">
+            <div className="flex items-center space-x-1 sm:space-x-3 md:space-x-4">
+              <div className="flex items-center justify-center bg-blue-400 rounded-lg p-0.5">
                 <GraduationCap className="w-5 h-5 md:w-6 md:h-6 text-text-on-primary" />
               </div>
-              <h4 className="text-xl font-bold md:text-2xl text-text-on-primary">
+              <h4 className="text-lg font-bold md:text-xl lg:text-2xl text-text-on-primary">
                 {t("tuitionFees.undergraduate.title")}
               </h4>
             </div>
@@ -41,7 +41,7 @@ const TuitionFee = () => {
             <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
               <div className="space-y-4 md:space-y-6">
                 <div className="p-4 border-l-4 md:p-6 bg-background-surface border-primary rounded-xl">
-                  <h3 className="flex items-center mb-3 text-base font-semibold md:text-lg text-primary">
+                  <h3 className="flex items-center mb-3 text-sm font-semibold md:text-lg text-primary">
                     <DollarSign className="w-4 h-4 mr-2 md:w-5 md:h-5" />
                     {t("tuitionFees.undergraduate.currentRate")}
                   </h3>
@@ -53,7 +53,7 @@ const TuitionFee = () => {
                 </div>
               </div>
               <div className="p-4 border-l-4 md:p-6 bg-background-surface border-success rounded-xl">
-                <h3 className="mb-4 text-base font-semibold md:text-lg text-success">
+                <h3 className="mb-4 text-sm font-semibold md:text-lg text-success">
                   {t("tuitionFees.undergraduate.semesterCostTitle", {
                     minCredits: "18",
                     maxCredits: "24",
@@ -89,7 +89,7 @@ const TuitionFee = () => {
               <div className="flex items-center justify-center w-10 h-10 bg-red-400 rounded-lg md:w-12 md:h-12">
                 <Award className="w-5 h-5 md:w-6 md:h-6 text-text-on-secondary" />
               </div>
-              <h2 className="text-xl font-bold md:text-2xl text-text-on-secondary">
+              <h2 className="text-lg font-bold md:text-xl lg:text-2xl text-text-on-secondary">
                 {t("tuitionFees.mastersInfoSec.title")}
               </h2>
             </div>
@@ -98,7 +98,7 @@ const TuitionFee = () => {
           <div className="p-4 md:p-8">
             <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
               <div className="p-4 border-l-4 border-red-400 md:p-6 bg-background-surface rounded-xl">
-                <h3 className="flex items-center mb-3 text-base font-semibold md:text-lg text-secondary">
+                <h3 className="flex items-center mb-3 text-sm font-semibold md:text-lg text-secondary">
                   <DollarSign className="w-4 h-4 mr-2 md:w-5 md:h-5" />
                   {t("tuitionFees.mastersInfoSec.currentRate")}
                 </h3>

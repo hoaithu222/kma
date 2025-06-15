@@ -29,5 +29,17 @@
   "school_council": {
     "title": "School Council",
     "description": "The School Council is an agency established by the decision of the Rector of the Academy of Cryptography Techniques to advise the Rector in implementing the management and operational tasks of the Academy."
-  }
+  },
+  "information_technology_faculty": "Information Technology Faculty",
+  "general_information_security_faculty": "Information Security Faculty",
+  "electronic_information_faculty": "Telecommunication Faculty",
+  "research_block": "Research Block",
+  "cryptography_security_center": "Cryptography and Security Center",
+  "information_center": "Information Center",
+  "practice_departments": "Practice Departments",
+  "testing_departments": "Testing Departments",
+  "support_block": "Support Block",
+  "school_office": "School Office",
+  "computing_center": "Computing Center",
+  "innovation_center": "Innovation Center"
 }

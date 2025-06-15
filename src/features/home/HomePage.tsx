@@ -21,7 +21,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="w-full pt-16 overflow-hidden md:pt-24 lg:pt-36 ">
+    <div className="w-full pt-12 overflow-hidden md:pt-24 lg:pt-32 ">
       {/* Banner */}
       <Banner />
       {/* Tin tức mới nhất*/}

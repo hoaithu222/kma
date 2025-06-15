@@ -24,26 +24,30 @@ const Navbar = () => {
   const studentSubCategory = category.find(
     (item: IResponseCategory) => item.slug === "sinh-vien"
   );
+  console.log(studentSubCategory?.subCategories);
   const postSubCategory = category.find(
     (item: IResponseCategory) => item.slug === "tin-tuc"
   );
+  console.log(postSubCategory?.subCategories);
   const eventSubCategory = category.find(
     (item: IResponseCategory) => item.slug === "su-kien"
   );
 
   const studentSubCategoryItems =
     studentSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
+      label: item.slug,
       path: `/student/${item.id}`,
     })) || [];
+
   const postSubCategoryItems =
     postSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
+      label: item.slug,
       path: `/post/${item.id}`,
     })) || [];
+
   const eventSubCategoryItems =
     eventSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
+      label: item.slug,
       path: `/events/${item.id}`,
     })) || [];
   const researchSubCategory = category.find(
@@ -52,7 +56,7 @@ const Navbar = () => {
 
   const researchSubCategoryItems =
     researchSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
+      label: item.slug,
       path: `/research/${item.id}`,
     })) || [];
   // tuyển sinh
@@ -61,37 +65,38 @@ const Navbar = () => {
   );
   const admissionSubCategoryItems =
     admissionSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
+      label: item.slug,
       path: `/admission/${item.id}`,
     })) || [];
+
   const navbarItems = [
     ...NavbarItems,
     {
-      label: "Tuyển sinh",
+      label: "admission",
       path: "/admission/57",
       icon: "FaUser",
       children: admissionSubCategoryItems,
     },
     {
-      label: "Nghiên cứu",
+      label: "research",
       path: "/research/55",
       icon: "FaUser",
       children: researchSubCategoryItems,
     },
     {
-      label: "Sinh viên",
+      label: "student",
       path: "/student/42",
       icon: "FaUser",
       children: studentSubCategoryItems,
     },
     {
-      label: "Bài viết",
+      label: "post",
       path: "/post/40",
       icon: "FaUser",
       children: postSubCategoryItems,
     },
     {
-      label: "Sự kiện",
+      label: "event",
       path: "/events/49",
       icon: "FaUser",
       children: eventSubCategoryItems,

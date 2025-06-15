@@ -123,7 +123,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
               isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="p-2 pl-4 space-y-1 rounded-lg bg-background-surface">
+            <div className="p-1 space-y-1 rounded-lg lg:p-2 lg:pl-4 bg-background-surface">
               {item.children.map((child) => (
                 <NavLink
                   key={child.label}
@@ -131,10 +131,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
                   onClick={handleItemClick}
                   className={childNavClass}
                 >
-                  <span className="flex items-center">
-                    <span className="w-2 h-2 mr-3 rounded-full bg-border-primary"></span>
-                    {t(child.label)}
-                  </span>
+                  <span className="flex items-center">{t(child.label)}</span>
                 </NavLink>
               ))}
             </div>

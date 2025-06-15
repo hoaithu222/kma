@@ -1,4 +1,5 @@
 import DetailPost from "@/features/detail-post/DetailPost";
+import NotFound from "@/layout/NotFound";
 import { lazy } from "react";
 
 const HomePage = lazy(() => import("@/features/home/HomePage.tsx"));
@@ -40,9 +41,7 @@ const TrainingMasterProgram = lazy(
 const TrainingUndergraduateProgram = lazy(
   () => import("@/features/training/components/undergraduate-program")
 );
-const IntroductionContact = lazy(
-  () => import("@/features/contact/components/introduction")
-);
+const ContactPage = lazy(() => import("@/features/contact/ContactPage.tsx"));
 const ResearchPage = lazy(() => import("@/features/research/ResearchPage.tsx"));
 const LecturerPage = lazy(() => import("@/features/lecturer/LecturerPage.tsx"));
 const DetailLecturer = lazy(
@@ -161,8 +160,8 @@ export const ROUTE = {
 
   // liên hệ
   contactIntroduction: {
-    path: "/contact/introduction",
-    element: <IntroductionContact />,
+    path: "/contact",
+    element: <ContactPage />,
     layout: "main",
     options: defaultOptions,
   },
@@ -211,6 +210,12 @@ export const ROUTE = {
     path: "/admission/:id",
     element: <AdmissionPage />,
     layout: "main",
+    options: defaultOptions,
+  },
+  notFound: {
+    path: "/not-found",
+    element: <NotFound />,
+    layout: "notFound",
     options: defaultOptions,
   },
 } satisfies Record<

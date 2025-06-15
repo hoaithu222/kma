@@ -17,13 +17,13 @@ const EventPostAdmission = () => {
   return (
     <div className="w-full min-h-screen overflow-hidden rounded-lg bg-gradient-to-br from-background-subtle via-background-base to-background-muted">
       {/* Header Section */}
-      <div className="py-8 bg-gradient-to-r from-primary to-primary-dark text-text-on-primary md:py-12">
-        <div className="container px-4 mx-auto text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-wide md:text-4xl lg:text-5xl">
+      <div className="py-4 bg-gradient-to-r from-primary to-primary-dark text-text-on-primary md:py-8">
+        <div className="container px-2 mx-auto text-center sm:px-4">
+          <h2 className="mb-4 text-lg font-bold tracking-wide sm:text-xl md:text-2xl lg:text-3xl">
             ĐÀO TẠO - TUYỂN SINH
           </h2>
-          <p className="max-w-4xl mx-auto text-base leading-relaxed md:text-lg lg:text-xl opacity-90">
-            Học viện Kỹ thuật Mật mã chuyên đào tạo các chuyên gia tinh nhuệ,
+          <p className="max-w-4xl mx-auto text-xs leading-relaxed sm:text-sm md:text-base lg:text-lg opacity-90">
+            Học Viện Kỹ Thuật Mật Mã chuyên đào tạo các chuyên gia tinh nhuệ,
             sẵn sàng đối mặt với những thách thức của thế giới số. Chúng tôi
             cung cấp các chương trình đào tạo chuyên sâu về An toàn thông tin,
             Mật mã và các ngành Công nghệ cao, nơi kiến thức, kỹ năng và bản
@@ -33,8 +33,8 @@ const EventPostAdmission = () => {
       </div>
 
       {/* Content Section */}
-      <div className="container px-4 py-8 mx-auto md:py-16">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
+      <div className="container px-2 py-4 mx-auto sm:px-3 md:py-6 lg:px-4 lg:py-8">
+        <div className="grid grid-cols-1 gap-2 md:gap-3 lg:gap-4 sm:grid-cols-2 md:gap-8">
           {post?.map((item: any, _index: number) => (
             <div
               key={item.id}
@@ -61,7 +61,7 @@ const EventPostAdmission = () => {
               </div>
 
               {/* Content */}
-              <div className="p-4 md:p-6">
+              <div className="p-2 md:p-3 lg:p-4">
                 <div className="flex items-center gap-2 mb-3 text-sm text-text-muted">
                   <svg
                     className="w-4 h-4"
@@ -83,12 +83,12 @@ const EventPostAdmission = () => {
                     formatDate(item.publishedAt).time}
                 </div>
 
-                <h3 className="mb-3 text-lg font-bold transition-colors duration-300 md:text-xl text-text-primary line-clamp-2 group-hover:text-primary">
+                <h3 className="mb-1 text-base font-bold transition-colors duration-300 md:text-lg lg:text-xl text-text-primary line-clamp-2 group-hover:text-primary">
                   {item.title}
                 </h3>
 
-                <p className="mb-4 text-sm leading-relaxed text-text-secondary line-clamp-3">
-                  {truncateText(stripHtml(item.content), 120)}
+                <p className="mb-2 text-xs leading-relaxed text-text-secondary line-clamp-3 sm:text-sm">
+                  {truncateText(stripHtml(item.content), 80)}
                 </p>
 
                 <Button
@@ -147,12 +147,12 @@ const EventPostAdmission = () => {
       </div>
 
       {/* Footer CTA Section */}
-      <div className="py-8 bg-gradient-to-r from-background-subtle to-background-muted md:py-16">
-        <div className="container flex flex-col items-center justify-center px-4 mx-auto text-center">
-          <h2 className="mb-4 text-2xl font-bold md:text-3xl text-text-primary">
+      <div className="py-4 md:py-8 bg-gradient-to-r from-background-subtle to-background-muted lg:py-10">
+        <div className="container flex flex-col items-center justify-center px-2 mx-auto text-center sm:px-4">
+          <h2 className="mb-2 text-lg font-bold md:mb-3 lg:mb-4 md:text-xl lg:text-2xl text-text-primary">
             Tìm hiểu thêm về chương trình đào tạo
           </h2>
-          <p className="max-w-2xl mx-auto mb-6 text-base md:text-lg text-text-secondary md:mb-8">
+          <p className="max-w-2xl mx-auto mb-2 text-xs sm:mb-4 md:mb-6 md:text-sm lg:text-base text-text-secondary lg:mb-8">
             Khám phá các chương trình đào tạo chất lượng cao và cơ hội nghề
             nghiệp rộng mở tại trường của chúng tôi.
           </p>

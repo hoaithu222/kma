@@ -18,16 +18,16 @@ const NewsPost = () => {
       <div className="sticky top-0 z-10 border-b rounded-lg bg-background-surface backdrop-blur-sm border-border-primary">
         <div className="px-4 py-4 mx-auto max-w-7xl sm:py-6">
           <div className="text-center">
-            <h2 className="mb-2 text-3xl font-bold text-primary sm:text-4xl">
+            <h2 className="mb-2 text-lg font-bold text-primary sm:text-xl md:text-2xl lg:text-3xl">
               TIN TỨC MỚI NHẤT
             </h2>
-            <div className="w-16 h-1 mx-auto rounded-full bg-primary sm:w-24"></div>
+            <div className="w-10 h-0.5 md:h-1 mx-auto rounded-full bg-primary lg:w-24 md:w-20 sm:w-16"></div>
           </div>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="px-4 py-4 mx-auto max-w-7xl sm:py-8">
+      <div className="px-2 py-2 mx-auto max-w-7xl sm:px-4 lg:py-8">
         <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {post?.map((item: any, _index: number) => (
             <article
@@ -74,15 +74,15 @@ const NewsPost = () => {
               </div>
 
               {/* Content Section */}
-              <div className="p-4 sm:p-6">
+              <div className="p-2 sm:p-4 lg:p-6">
                 {/* Title */}
-                <h2 className="mb-3 text-lg font-bold leading-tight transition-colors duration-300 text-text-primary group-hover:text-primary sm:text-xl line-clamp-2">
+                <h2 className="mb-1 text-lg font-bold leading-tight transition-colors duration-300 md:mb-3 text-text-primary group-hover:text-primary sm:text-xl line-clamp-2">
                   {item.title}
                 </h2>
 
                 {/* Summary/Content Preview */}
                 {item.content && (
-                  <p className="mb-4 text-sm leading-relaxed text-text-secondary line-clamp-3">
+                  <p className="mb-2 text-xs leading-relaxed md:text-sm text-text-secondary line-clamp-3">
                     {truncateText(stripHtml(item.content))}
                   </p>
                 )}
@@ -140,7 +140,7 @@ const NewsPost = () => {
                 {/* Read More Button */}
                 <div className="flex items-center justify-between">
                   <button
-                    className="inline-flex items-center px-4 py-2 text-sm font-medium transition-all duration-300 transform rounded-lg shadow-md text-text-on-primary bg-primary hover:bg-primary-dark hover:scale-105 hover:shadow-lg"
+                    className="inline-flex items-center px-2 py-1.5 text-xs font-medium transition-all duration-300 transform rounded-lg shadow-md md:text-sm lg:px-4 lg:py-2 text-text-on-primary bg-primary hover:bg-primary-dark hover:scale-105 hover:shadow-lg"
                     onClick={() => navigate(`/detail-post/${item.id}`)}
                   >
                     Đọc thêm

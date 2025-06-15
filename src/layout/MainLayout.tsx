@@ -21,7 +21,7 @@ const MainLayout = () => {
       )}
 
       {/* Main Content */}
-      <main className="container flex-grow px-4 py-6 mx-auto">
+      <main className="container flex-grow px-2 py-4 mx-auto lg:px-4 lg:py-6">
         <Outlet />
       </main>
 

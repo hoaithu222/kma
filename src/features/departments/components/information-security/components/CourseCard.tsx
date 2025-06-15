@@ -13,7 +13,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
   const IconComponent = category.icon;
 
   return (
-    <div className="relative h-[140px] w-[125px] xs:h-[150px] xs:w-[150px] sm:h-[160px] sm:w-[160px] md:h-[170px] md:w-[170px] group">
+    <div className="relative h-[140px] w-[120px] xs:h-[150px] xs:w-[150px] sm:h-[160px] sm:w-[160px] md:h-[170px] md:w-[170px] group">
       {/* Hover glow effect */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur"></div>
 
@@ -24,6 +24,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         <div className="flex items-center justify-between mb-1.5">
           <div className="flex items-start space-x-1.5">
             <div className="relative">
+              s
               <div
                 className={`p-1.5 xs:p-2 sm:p-2.5 rounded-lg shadow-md ${category.badgeColor} bg-opacity-90 backdrop-blur-sm border border-white/20`}
               >

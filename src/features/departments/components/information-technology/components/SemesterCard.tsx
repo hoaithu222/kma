@@ -28,10 +28,10 @@ export const SemesterCard: React.FC<SemesterCardProps> = ({
 
   // Check if this is semester 8 or 9
   const isSpecialSemester =
-    semesterData.title.includes("8") || semesterData.title.includes("9");
+    semesterData?.title?.includes("8") || semesterData?.title?.includes("9");
 
   // Calculate total courses and credits based on semester type
-  let allCourses = [...(semesterData.courses || [])];
+  let allCourses = [...(semesterData?.courses || [])];
 
   if (isSpecialSemester) {
     if (semesterData.title.includes("8")) {

@@ -51,7 +51,7 @@ const NavbarMobile = () => {
   const postSubCategoryItems =
     postSubCategory?.subCategories.map((item: any) => ({
       label: item.name,
-      path: `/posts/${item.id}`,
+      path: `/post/${item.id}`,
     })) || [];
   const eventSubCategoryItems =
     eventSubCategory?.subCategories.map((item: any) => ({
@@ -140,8 +140,8 @@ const NavbarMobile = () => {
 
         {/* Navigation Content with staggered animation */}
         <div className="flex flex-col h-full bg-background-surface">
-          <div className="flex-1 py-6 overflow-y-auto">
-            <div className="px-6 space-y-2">
+          <div className="flex-1 py-3 overflow-y-auto">
+            <div className="px-3 space-y-2">
               {/* Home Link with delay */}
               <div
                 className={clsx(

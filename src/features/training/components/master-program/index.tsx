@@ -116,14 +116,14 @@ const TrainingMasterProgram = () => {
 
   return (
     <div className="min-h-screen mt-10 rounded-lg sm:mt-16 md:mt-20 lg:mt-24 ">
-      <div className="container px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+      <div className="container px-2 py-4 mx-auto sm:px-4 sm:py-6 md:px-6 md:py-8 lg:px-8 lg:py-12">
         {/* Header Section */}
         <div className="max-w-5xl mx-auto mb-8 text-center sm:mb-12 lg:mb-16">
           <div className="inline-flex items-center justify-center w-16 h-16 mb-6 shadow-2xl sm:w-20 sm:h-20 lg:w-24 lg:h-24 sm:mb-8 bg-gradient-to-r from-primary to-primary-dark rounded-3xl">
             <GraduationCap className="w-8 h-8 text-white sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
           </div>
 
-          <h2 className="mb-4 text-3xl font-bold text-transparent sm:mb-6 sm:text-4xl lg:text-5xl bg-gradient-to-r from-primary to-primary-dark bg-clip-text">
+          <h2 className="mb-4 text-xl font-bold text-transparent sm:mb-6 sm:text-2xl lg:text-3xl bg-gradient-to-r from-primary to-primary-dark bg-clip-text">
             {t("master_program_information_security.program_title")}
           </h2>
 
@@ -156,7 +156,7 @@ const TrainingMasterProgram = () => {
                   >
                     <IconComponent className="w-5 h-5 text-white sm:w-6 sm:h-6" />
                   </div>
-                  <h3 className="mb-2 text-base font-bold sm:mb-3 sm:text-lg text-text-primary">
+                  <h3 className="mb-2 text-sm font-bold sm:mb-3 sm:text-lg text-text-primary">
                     {t(highlight.title)}
                   </h3>
                   <p className="text-xs leading-relaxed sm:text-sm text-text-secondary">
@@ -170,7 +170,7 @@ const TrainingMasterProgram = () => {
 
         {/* Career Prospects */}
         <div className="max-w-6xl mx-auto mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="mb-6 text-2xl font-bold text-center sm:mb-8 sm:text-3xl text-text-primary">
+          <h2 className="mb-6 text-lg font-bold text-center sm:mb-8 sm:text-xl lg:text-2xl text-text-primary">
             {t(
               "master_program_information_security.general_introduction.career_prospects.title"
             )}
@@ -202,7 +202,7 @@ const TrainingMasterProgram = () => {
                     <IconComponent className="w-6 h-6 text-white sm:w-7 sm:h-7" />
                   </div>
 
-                  <h3 className="mb-2 text-base font-bold transition-colors duration-300 sm:mb-3 sm:text-lg text-text-primary group-hover:text-primary">
+                  <h3 className="mb-2 text-sm font-bold transition-colors duration-300 sm:mb-3 sm:text-lg text-text-primary group-hover:text-primary">
                     {t(career.title)}
                   </h3>
 
@@ -217,25 +217,25 @@ const TrainingMasterProgram = () => {
 
         {/* Learning Outcomes */}
         <div className="mx-auto mb-8 sm:mb-12 lg:mb-16 max-w-7xl">
-          <h2 className="mb-6 text-2xl font-bold text-center sm:mb-8 lg:mb-12 sm:text-3xl text-text-primary">
+          <h2 className="mb-6 text-xl font-bold text-center sm:mb-8 lg:mb-12 sm:text-2xl lg:text-3xl text-text-primary">
             {t("master_program_information_security.learning_outcomes.title")}
           </h2>
 
           <div className="p-4 mb-6 border shadow-xl sm:p-6 lg:p-8 sm:mb-8 lg:mb-12 bg-background-subtle backdrop-blur-sm rounded-3xl border-border-primary">
-            <p className="text-base leading-relaxed text-center sm:text-lg text-text-secondary">
+            <p className="text-sm leading-relaxed text-center sm:text-lg text-text-secondary">
               {t(
                 "master_program_information_security.learning_outcomes.introduction"
               )}
             </p>
           </div>
 
-          <div className="grid gap-4 sm:gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-2 sm:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-4">
             {learningOutcomes.map((outcome) => {
               const IconComponent = outcome.icon;
               return (
                 <div
                   key={outcome.category}
-                  className="p-4 transition-all duration-500 border shadow-xl sm:p-6 group bg-background-subtle backdrop-blur-sm rounded-2xl border-border-primary hover:shadow-2xl hover:-translate-y-2"
+                  className="p-2 transition-all duration-500 border shadow-xl md:p-3 lg:p-4 group bg-background-subtle backdrop-blur-sm rounded-2xl border-border-primary hover:shadow-2xl hover:-translate-y-2"
                 >
                   <div
                     className={`inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r ${outcome.color} rounded-2xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}
@@ -243,7 +243,7 @@ const TrainingMasterProgram = () => {
                     <IconComponent className="w-6 h-6 text-white sm:w-8 sm:h-8" />
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold transition-colors duration-300 sm:mb-4 sm:text-xl text-text-primary group-hover:text-primary">
+                  <h3 className="mb-3 text-sm font-bold transition-colors duration-300 sm:mb-4 sm:text-xl text-text-primary group-hover:text-primary">
                     {t(outcome.title)}
                   </h3>
 
@@ -268,10 +268,10 @@ const TrainingMasterProgram = () => {
         {/* Contact Information */}
         <div className="max-w-4xl mx-auto text-center">
           <div className="p-4 text-white shadow-2xl sm:p-6 lg:p-8 bg-gradient-to-r from-primary to-primary-dark rounded-3xl">
-            <h3 className="mb-3 text-xl font-bold sm:mb-4 sm:text-2xl">
+            <h3 className="mb-3 text-sm font-bold sm:mb-4 sm:text-xl lg:text-2xl">
               {t("admission_contact.title")}
             </h3>
-            <p className="mb-4 text-sm leading-relaxed sm:mb-6 sm:text-base">
+            <p className="mb-4 text-xs leading-relaxed sm:mb-6 sm:text-sm lg:text-base">
               {t("master_program_information_security.admission_contact.info")}
             </p>
             <Link
