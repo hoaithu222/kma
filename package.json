@@ -10,6 +10,8 @@
     "generate:colors": "node scripts/generate-colors.mjs",
     "generate:font": "node scripts/generate-font.mjs",
     "generate:en": "node scripts/generate-en.mjs",
+    "compare:translations": "node scripts/compare-translations.mjs",
+    "generate:translations": "node scripts/generate-translations.mjs",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",

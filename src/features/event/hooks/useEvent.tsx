@@ -40,12 +40,20 @@ export const useEvent = () => {
   // lấy chi tiết bài viết liên quan đến sinh viên
   const eventPostDetail = useSelector(selectEventPostDetail);
   const statusGetEventPostDetail = useSelector(selectStatusGetEventPostDetail);
+  const handleFilter = (
+    filter: IRequestSearchArticlePublic,
+    subCategoryId: number
+  ) => {
+    setFilter(filter);
+    dispatch(getEventPost({ ...filter, subCategoryId }));
+  };
   return {
     eventPost,
     getEventPostAction,
     statusGetEventPost,
     statusGetEventPostDetail,
     eventPostDetail,
+    handleFilter,
     filter,
     setFilter,
     totalPages,

@@ -11,17 +11,17 @@ const EventPage = () => {
 
   const {
     eventPost,
-    getEventPostAction,
+
     statusGetEventPost,
     totalPages,
     totalItems,
     filter,
-    setFilter,
+    handleFilter,
   } = useEvent();
   useEffect(() => {
     if (id) {
-      setFilter({ ...filter, subCategoryId: Number(id) });
-      getEventPostAction(filter, Number(id));
+      const subCategoryId = Number(id);
+      handleFilter({ ...filter, subCategoryId }, subCategoryId);
     }
   }, [id]);
   if (statusGetEventPost === ReduxStateType.LOADING) {
@@ -41,11 +41,13 @@ const EventPage = () => {
           })}
 
           <Pagination
-            currentPage={0}
-            totalPages={totalPages}
-            totalItems={totalItems}
-            pageSize={10}
-            onPageChange={() => {}}
+            currentPage={Number(filter.page)}
+            totalPages={Number(totalPages)}
+            totalItems={Number(totalItems)}
+            pageSize={Number(filter.size ?? 9)}
+            onPageChange={(page) => {
+              handleFilter({ ...filter, page: page }, Number(id));
+            }}
           />
         </div>
       </div>

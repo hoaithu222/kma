@@ -15,7 +15,7 @@ interface EventTimelineProps {
 const EventTimeline = ({ events }: EventTimelineProps) => {
   return (
     <div className="relative">
-      {events.map((event, index) => (
+      {events?.map((event, index) => (
         <div
           key={index}
           className="relative flex gap-3 pb-4 md:gap-4 lg:gap-6 md:pb-6 lg:pb-8 last:pb-0"

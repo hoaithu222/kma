@@ -42,6 +42,13 @@ export const useResearch = () => {
   ) => {
     dispatch(getResearchPost({ ...filter, subCategoryId }));
   };
+  const handleFilter = (
+    filter: IRequestSearchArticlePublic,
+    subCategoryId: number
+  ) => {
+    setFilter(filter);
+    dispatch(getResearchPost({ ...filter, subCategoryId }));
+  };
 
   return {
     researchPost,
@@ -53,5 +60,6 @@ export const useResearch = () => {
     setFilter,
     totalPages,
     totalItems,
+    handleFilter,
   };
 };

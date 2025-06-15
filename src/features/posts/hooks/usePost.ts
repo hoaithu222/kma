@@ -39,6 +39,13 @@ export const usePost = () => {
   ) => {
     dispatch(getPost({ ...filter, subCategoryId }));
   };
+  const handleFilter = (
+    filter: IRequestSearchArticlePublic,
+    subCategoryId: number
+  ) => {
+    setFilter(filter);
+    dispatch(getPost({ ...filter, subCategoryId }));
+  };
   return {
     post,
     statusGetPost,
@@ -49,5 +56,6 @@ export const usePost = () => {
     filter,
     setFilter,
     getPostAction,
+    handleFilter,
   };
 };

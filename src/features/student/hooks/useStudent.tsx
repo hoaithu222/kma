@@ -13,6 +13,15 @@ import { IRequestSearchArticlePublic } from "@/core/api/posts/types";
 
 export const useStudent = () => {
   const dispatch = useDispatch();
+  const statusGetStudentPost = useSelector(selectStatusGetStudentPost);
+  // lấy chi tiết bài viết liên quan đến sinh viên
+  const studentPostDetail = useSelector(selectStudentPostDetail);
+  const statusGetStudentPostDetail = useSelector(
+    selectStatusGetStudentPostDetail
+  );
+  const studentPost = useSelector(selectStudentPost);
+  const totalPages = useSelector(selectTotalPages);
+  const totalItems = useSelector(selectTotalItems);
   // lấy danh sách bài viết liên quan đến sinh viên
   const [filter, setFilter] = useState<IRequestSearchArticlePublic>({
     page: 0,
@@ -26,21 +35,21 @@ export const useStudent = () => {
     order: null,
     keyword: null,
   });
-  const studentPost = useSelector(selectStudentPost);
-  const totalPages = useSelector(selectTotalPages);
-  const totalItems = useSelector(selectTotalItems);
+
   const getStudentPostAction = (
     filter: IRequestSearchArticlePublic,
     subCategoryId: number
   ) => {
     dispatch(getStudentPost({ ...filter, subCategoryId }));
   };
-  const statusGetStudentPost = useSelector(selectStatusGetStudentPost);
-  // lấy chi tiết bài viết liên quan đến sinh viên
-  const studentPostDetail = useSelector(selectStudentPostDetail);
-  const statusGetStudentPostDetail = useSelector(
-    selectStatusGetStudentPostDetail
-  );
+  const handleFilter = (
+    filter: IRequestSearchArticlePublic,
+    subCategoryId: number
+  ) => {
+    setFilter(filter);
+    dispatch(getStudentPost({ ...filter, subCategoryId }));
+  };
+
   return {
     studentPost,
     getStudentPostAction,
@@ -51,5 +60,6 @@ export const useStudent = () => {
     setFilter,
     totalPages,
     totalItems,
+    handleFilter,
   };
 };

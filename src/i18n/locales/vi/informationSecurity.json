@@ -100,78 +100,219 @@
     "semester1": {
       "title": "Học kỳ 1",
       "courses": [
-        { "name": "Giáo dục quốc phòng an ninh", "credits": 8 },
-        { "name": "Tin học đại cương", "credits": 2 },
-        { "name": "Triết học Mác –Lênin", "credits": 3 },
-        { "name": "Giải tích 1", "credits": 3 },
-        { "name": "Đại số tuyến tính", "credits": 3 },
-        { "name": "Giáo dục thể chất 1", "credits": 1 },
-        { "name": "Pháp luật đại cương", "credits": 2 }
+        {
+          "name": "Giáo dục quốc phòng an ninh",
+          "credits": 8
+        },
+        {
+          "name": "Tin học đại cương",
+          "credits": 2
+        },
+        {
+          "name": "Triết học Mác –Lênin",
+          "credits": 3
+        },
+        {
+          "name": "Giải tích 1",
+          "credits": 3
+        },
+        {
+          "name": "Đại số tuyến tính",
+          "credits": 3
+        },
+        {
+          "name": "Giáo dục thể chất 1",
+          "credits": 1
+        },
+        {
+          "name": "Pháp luật đại cương",
+          "credits": 2
+        }
       ]
     },
     "semester2": {
       "title": "Học kỳ 2",
       "courses": [
-        { "name": "Giải tích 2", "credits": 3 },
-        { "name": "Vật lý đại cương 1", "credits": 3 },
-        { "name": "Kinh tế chính trị Mác – Lênin", "credits": 2 },
-        { "name": "Chủ Nghĩa xã hội Khoa học", "credits": 2 },
-        { "name": "Giáo dục thể chất 2", "credits": 1 },
-        { "name": "Tư tưởng Hồ Chí Minh", "credits": 2 },
-        { "name": "Lập trình căn bản", "credits": 3 },
-        { "name": "Pháp luật VN đại cương", "credits": 2 },
-        { "name": "Kỹ năng mềm", "credits": 2 }
+        {
+          "name": "Giải tích 2",
+          "credits": 3
+        },
+        {
+          "name": "Vật lý đại cương 1",
+          "credits": 3
+        },
+        {
+          "name": "Kinh tế chính trị Mác – Lênin",
+          "credits": 2
+        },
+        {
+          "name": "Chủ Nghĩa xã hội Khoa học",
+          "credits": 2
+        },
+        {
+          "name": "Giáo dục thể chất 2",
+          "credits": 1
+        },
+        {
+          "name": "Tư tưởng Hồ Chí Minh",
+          "credits": 2
+        },
+        {
+          "name": "Lập trình căn bản",
+          "credits": 3
+        },
+        {
+          "name": "Pháp luật VN đại cương",
+          "credits": 2
+        },
+        {
+          "name": "Kỹ năng mềm",
+          "credits": 2
+        }
       ]
     },
     "semester3": {
       "title": "Học kỳ 3",
       "courses": [
-        { "name": "Vật lý đại cương 2", "credits": 3 },
-        { "name": "Toán xác suất thống kê", "credits": 2 },
-        { "name": "Toán chuyên đề", "credits": 3 },
-        { "name": "Tiếng Anh 1", "credits": 3 },
-        { "name": "Cấu trúc dữ liệu và giải thuật", "credits": 2 },
-        { "name": "Mạng máy tính", "credits": 3 },
-        { "name": "Toán rời rạc", "credits": 2 },
-        { "name": "Phương pháp tính", "credits": 2 },
-        { "name": "Giáo dục thể chất 3", "credits": 1 },
-        { "name": "Lịch sử Đảng Cộng sản Việt Nam", "credits": 2 }
+        {
+          "name": "Vật lý đại cương 2",
+          "credits": 3
+        },
+        {
+          "name": "Toán xác suất thống kê",
+          "credits": 2
+        },
+        {
+          "name": "Toán chuyên đề",
+          "credits": 3
+        },
+        {
+          "name": "Tiếng Anh 1",
+          "credits": 3
+        },
+        {
+          "name": "Cấu trúc dữ liệu và giải thuật",
+          "credits": 2
+        },
+        {
+          "name": "Mạng máy tính",
+          "credits": 3
+        },
+        {
+          "name": "Toán rời rạc",
+          "credits": 2
+        },
+        {
+          "name": "Phương pháp tính",
+          "credits": 2
+        },
+        {
+          "name": "Giáo dục thể chất 3",
+          "credits": 1
+        },
+        {
+          "name": "Lịch sử Đảng Cộng sản Việt Nam",
+          "credits": 2
+        }
       ]
     },
     "semester4": {
       "title": "Học kỳ 4",
       "courses": [
-        { "name": "Tiếng Anh 2", "credits": 3 },
-        { "name": "Kỹ thuật truyền số liệu", "credits": 2 },
-        { "name": "Cơ sở lý thuyết truyền tin", "credits": 2 },
-        { "name": "Lý thuyết cơ sở dữ liệu", "credits": 2 },
-        { "name": "Hệ quản trị cơ sở dữ liệu", "credits": 2 },
-        { "name": "Quản trị mạng máy tính", "credits": 2 },
-        { "name": "Kiến trúc máy tính và hợp ngữ", "credits": 3 }
+        {
+          "name": "Tiếng Anh 2",
+          "credits": 3
+        },
+        {
+          "name": "Kỹ thuật truyền số liệu",
+          "credits": 2
+        },
+        {
+          "name": "Cơ sở lý thuyết truyền tin",
+          "credits": 2
+        },
+        {
+          "name": "Lý thuyết cơ sở dữ liệu",
+          "credits": 2
+        },
+        {
+          "name": "Hệ quản trị cơ sở dữ liệu",
+          "credits": 2
+        },
+        {
+          "name": "Quản trị mạng máy tính",
+          "credits": 2
+        },
+        {
+          "name": "Kiến trúc máy tính và hợp ngữ",
+          "credits": 3
+        }
       ]
     },
     "semester5": {
       "title": "Học kỳ 5",
       "courses": [
-        { "name": "Tiếng Anh 3", "credits": 4 },
-        { "name": "Lập trình hướng đối tượng", "credits": 2 },
-        { "name": "Phân tích, thiết kế hệ thống thông tin", "credits": 2 },
-        { "name": "Nguyên lý hệ điều hành", "credits": 2 },
-        { "name": "Linux và phần mềm nguồn mở", "credits": 2 },
-        { "name": "Thuật toán trong an toàn thông tin", "credits": 2 },
-        { "name": "Nhập môn mật mã học", "credits": 3 }
+        {
+          "name": "Tiếng Anh 3",
+          "credits": 4
+        },
+        {
+          "name": "Lập trình hướng đối tượng",
+          "credits": 2
+        },
+        {
+          "name": "Phân tích, thiết kế hệ thống thông tin",
+          "credits": 2
+        },
+        {
+          "name": "Nguyên lý hệ điều hành",
+          "credits": 2
+        },
+        {
+          "name": "Linux và phần mềm nguồn mở",
+          "credits": 2
+        },
+        {
+          "name": "Thuật toán trong an toàn thông tin",
+          "credits": 2
+        },
+        {
+          "name": "Nhập môn mật mã học",
+          "credits": 3
+        }
       ]
     },
     "semester6": {
       "title": "Học kỳ 6",
       "courses": [
-        { "name": "Tiếng Anh chuyên ngành", "credits": 4 },
-        { "name": "Chuyên đề cơ sở", "credits": 2 },
-        { "name": "Cơ sở an toàn thông tin", "credits": 3 },
-        { "name": "An toàn mạng máy tính", "credits": 3 },
-        { "name": "Kỹ thuật lập trình", "credits": 2 },
-        { "name": "An toàn cơ sở dữ liệu", "credits": 2 },
-        { "name": "Giao thức an toàn mạng", "credits": 2 }
+        {
+          "name": "Tiếng Anh chuyên ngành",
+          "credits": 4
+        },
+        {
+          "name": "Chuyên đề cơ sở",
+          "credits": 2
+        },
+        {
+          "name": "Cơ sở an toàn thông tin",
+          "credits": 3
+        },
+        {
+          "name": "An toàn mạng máy tính",
+          "credits": 3
+        },
+        {
+          "name": "Kỹ thuật lập trình",
+          "credits": 2
+        },
+        {
+          "name": "An toàn cơ sở dữ liệu",
+          "credits": 2
+        },
+        {
+          "name": "Giao thức an toàn mạng",
+          "credits": 2
+        }
       ]
     },
     "semester7": {
@@ -179,34 +320,88 @@
       "informationSystemSecurity": {
         "title": "Chuyên ngành An toàn hệ thống thông tin",
         "courses": [
-          { "name": "Công nghệ web an toàn", "credits": 3 },
-          { "name": "Quản trị an toàn hệ thống", "credits": 3 },
-          { "name": "An toàn mạng không dây và di động", "credits": 2 },
-          { "name": "Phân tích thiết kế an toàn mạng máy tính", "credits": 2 },
-          { "name": "Mã độc", "credits": 3 },
-          { "name": "Chuyên đề An toàn hệ thống thông tin", "credits": 2 }
+          {
+            "name": "Công nghệ web an toàn",
+            "credits": 3
+          },
+          {
+            "name": "Quản trị an toàn hệ thống",
+            "credits": 3
+          },
+          {
+            "name": "An toàn mạng không dây và di động",
+            "credits": 2
+          },
+          {
+            "name": "Phân tích thiết kế an toàn mạng máy tính",
+            "credits": 2
+          },
+          {
+            "name": "Mã độc",
+            "credits": 3
+          },
+          {
+            "name": "Chuyên đề An toàn hệ thống thông tin",
+            "credits": 2
+          }
         ]
       },
       "networkSecurityEngineering": {
         "title": "Chuyên ngành Kỹ nghệ an toàn mạng",
         "courses": [
-          { "name": "Công nghệ web an toàn", "credits": 3 },
-          { "name": "An toàn mạng không dây và di động", "credits": 2 },
-          { "name": "Mã độc", "credits": 3 },
-          { "name": "Khai thác lỗ hổng phần mềm", "credits": 2 },
-          { "name": "Tấn công và phòng thủ hệ thống", "credits": 3 },
-          { "name": "Chuyên đề Kỹ nghệ an toàn mạng", "credits": 2 }
+          {
+            "name": "Công nghệ web an toàn",
+            "credits": 3
+          },
+          {
+            "name": "An toàn mạng không dây và di động",
+            "credits": 2
+          },
+          {
+            "name": "Mã độc",
+            "credits": 3
+          },
+          {
+            "name": "Khai thác lỗ hổng phần mềm",
+            "credits": 2
+          },
+          {
+            "name": "Tấn công và phòng thủ hệ thống",
+            "credits": 3
+          },
+          {
+            "name": "Chuyên đề Kỹ nghệ an toàn mạng",
+            "credits": 2
+          }
         ]
       },
       "secureSoftwareTechnology": {
         "title": "Chuyên ngành Công nghệ phần mềm an toàn",
         "courses": [
-          { "name": "Công nghệ web an toàn", "credits": 3 },
-          { "name": "Công nghệ phần mềm", "credits": 3 },
-          { "name": "Thiết kế giao diện người dùng", "credits": 2 },
-          { "name": "Đặc tả hình thức", "credits": 2 },
-          { "name": "Phát triển ứng dụng trên nền tảng di động", "credits": 3 },
-          { "name": "Chuyên đề Công nghệ phần mềm an toàn", "credits": 2 }
+          {
+            "name": "Công nghệ web an toàn",
+            "credits": 3
+          },
+          {
+            "name": "Công nghệ phần mềm",
+            "credits": 3
+          },
+          {
+            "name": "Thiết kế giao diện người dùng",
+            "credits": 2
+          },
+          {
+            "name": "Đặc tả hình thức",
+            "credits": 2
+          },
+          {
+            "name": "Phát triển ứng dụng trên nền tảng di động",
+            "credits": 3
+          },
+          {
+            "name": "Chuyên đề Công nghệ phần mềm an toàn",
+            "credits": 2
+          }
         ]
       }
     },
@@ -215,51 +410,114 @@
       "informationSystemSecurity": {
         "title": "Chuyên ngành An toàn hệ thống thông tin",
         "courses": [
-          { "name": "Giám sát và ứng phó sự cố an toàn mạng", "credits": 2 },
+          {
+            "name": "Giám sát và ứng phó sự cố an toàn mạng",
+            "credits": 2
+          },
           {
             "name": "Kiểm thử và đánh giá an toàn hệ thống thông tin",
             "credits": 3
           },
-          { "name": "Quản lý an toàn thông tin", "credits": 2 },
-          { "name": "Điều tra số", "credits": 3 },
-          { "name": "Học phần chuyên ngành tự chọn 1", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 2", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 3", "credits": 2 }
+          {
+            "name": "Quản lý an toàn thông tin",
+            "credits": 2
+          },
+          {
+            "name": "Điều tra số",
+            "credits": 3
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 1",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 2",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 3",
+            "credits": 2
+          }
         ]
       },
       "networkSecurityEngineering": {
         "title": "Chuyên ngành Kỹ nghệ an toàn mạng",
         "courses": [
-          { "name": "Giám sát và ứng phó sự cố an toàn mạng", "credits": 2 },
+          {
+            "name": "Giám sát và ứng phó sự cố an toàn mạng",
+            "credits": 2
+          },
           {
             "name": "Kiểm thử và đánh giá an toàn hệ thống thông tin",
             "credits": 3
           },
-          { "name": "Quản lý an toàn thông tin", "credits": 2 },
-          { "name": "Điều tra số", "credits": 3 },
-          { "name": "Học phần chuyên ngành tự chọn 1", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 2", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 3", "credits": 2 }
+          {
+            "name": "Quản lý an toàn thông tin",
+            "credits": 2
+          },
+          {
+            "name": "Điều tra số",
+            "credits": 3
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 1",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 2",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 3",
+            "credits": 2
+          }
         ]
       },
       "secureSoftwareTechnology": {
         "title": "Chuyên ngành Công nghệ phần mềm an toàn",
         "courses": [
-          { "name": "Mật mã ứng dụng trong ATTT", "credits": 3 },
-          { "name": "Kỹ thuật lập trình an toàn", "credits": 3 },
-          { "name": "Kiểm thử và đảm bảo chất lượng phần mềm", "credits": 2 },
-          { "name": "Khai phá dữ liệu trong an toàn thông tin", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 1", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 2", "credits": 2 },
-          { "name": "Học phần chuyên ngành tự chọn 3", "credits": 2 }
+          {
+            "name": "Mật mã ứng dụng trong ATTT",
+            "credits": 3
+          },
+          {
+            "name": "Kỹ thuật lập trình an toàn",
+            "credits": 3
+          },
+          {
+            "name": "Kiểm thử và đảm bảo chất lượng phần mềm",
+            "credits": 2
+          },
+          {
+            "name": "Khai phá dữ liệu trong an toàn thông tin",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 1",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 2",
+            "credits": 2
+          },
+          {
+            "name": "Học phần chuyên ngành tự chọn 3",
+            "credits": 2
+          }
         ]
       }
     },
     "semester9": {
       "title": "Học kỳ 9 (Kế hoạch chung)",
       "courses": [
-        { "name": "Thực tập tốt nghiệp", "credits": 3 },
-        { "name": "Đồ án tốt nghiệp", "credits": 8 }
+        {
+          "name": "Thực tập tốt nghiệp",
+          "credits": 3
+        },
+        {
+          "name": "Đồ án tốt nghiệp",
+          "credits": 8
+        }
       ]
     }
   },

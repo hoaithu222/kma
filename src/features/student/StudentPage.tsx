@@ -11,17 +11,17 @@ const StudentPage = () => {
 
   const {
     studentPost,
-    getStudentPostAction,
+
     statusGetStudentPost,
     totalPages,
     totalItems,
     filter,
-    setFilter,
+    handleFilter,
   } = useStudent();
   useEffect(() => {
     if (id) {
-      setFilter({ ...filter, subCategoryId: Number(id) });
-      getStudentPostAction(filter, Number(id));
+      const subCategoryId = Number(id);
+      handleFilter({ ...filter, subCategoryId }, subCategoryId);
     }
   }, [id]);
 
@@ -42,11 +42,13 @@ const StudentPage = () => {
           })}
 
           <Pagination
-            currentPage={0}
-            totalPages={totalPages}
-            totalItems={totalItems}
-            pageSize={10}
-            onPageChange={() => {}}
+            currentPage={Number(filter.page)}
+            totalPages={Number(totalPages)}
+            totalItems={Number(totalItems)}
+            pageSize={Number(filter.size ?? 9)}
+            onPageChange={(page) => {
+              handleFilter({ ...filter, page: page }, Number(id));
+            }}
           />
         </div>
       </div>

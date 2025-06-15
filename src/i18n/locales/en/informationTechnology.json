@@ -107,8 +107,6 @@
     "noData": "No program data available"
   },
   "learningProgram": {
-    "description": "Detailed curriculum by semester",
-    "noData": "No program data available",
     "semester1": {
       "title": "Semester 1",
       "courses": [

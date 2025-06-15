@@ -39,6 +39,13 @@ export const useAdmission = () => {
   ) => {
     dispatch(getAdmission({ ...filter, subCategoryId }));
   };
+  const handleFilter = (
+    filter: IRequestSearchArticlePublic,
+    subCategoryId: number
+  ) => {
+    setFilter(filter);
+    dispatch(getAdmission({ ...filter, subCategoryId }));
+  };
   return {
     admission,
     statusGetAdmission,
@@ -49,5 +56,6 @@ export const useAdmission = () => {
     filter,
     setFilter,
     getAdmissionAction,
+    handleFilter,
   };
 };

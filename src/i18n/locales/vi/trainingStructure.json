@@ -17,18 +17,19 @@
     {
       "major_name": "Công nghệ thông tin",
       "major_code": "7480201",
-
       "specialization_title": "Chuyên ngành",
       "specializations": [
         "Kỹ thuật phần mềm nhúng và di động",
         "Trí tuệ nhân tạo ứng dụng"
-      ]
+      ],
+      "major_title": "Mã ngành"
     },
     {
       "major_name": "Kỹ thuật Điện tử – Viễn thông",
       "major_code": "7520207",
       "major_title": "Mã ngành",
-      "specializations": ["Hệ thống nhúng và điều khiển tự động"]
+      "specializations": ["Hệ thống nhúng và điều khiển tự động"],
+      "specialization_title": "Chuyên ngành"
     }
   ],
   "admission_information_title": "Thông tin tuyển sinh",
@@ -41,7 +42,8 @@
       "Giải nhì bảng sinh viên tại cuộc thi “ASEAN Cyber Shield (ACS) 2024”",
       "Giải nhất phần thi Jeopardy tại “Sinh viên với An toàn thông tin ASEAN 2023”",
       "Giải ba cuộc thi “An toàn và Bảo mật Thông tin Toàn quốc CIS 2024”"
-    ]
+    ],
+    "student_achievements_title": "Thành tích sinh viên"
   },
   "conclusion": "Những thành tích trên không chỉ thể hiện năng lực vượt trội của sinh viên Học viện Kỹ thuật Mật mã trong lĩnh vực CNTT, ATTT và DTVT mà còn khẳng định vị thế của Học viện trong việc đào tạo nguồn nhân lực chất lượng cao, đáp ứng nhu cầu ngày càng cao của xã hội và quốc gia trong kỷ nguyên số."
 }

@@ -11,17 +11,17 @@ const PostPage = () => {
 
   const {
     post,
-    getPostAction,
     statusGetPost,
     totalPages,
     totalItems,
     filter,
-    setFilter,
+
+    handleFilter,
   } = usePost();
   useEffect(() => {
     if (id) {
-      setFilter({ ...filter, subCategoryId: Number(id) });
-      getPostAction(filter, Number(id));
+      const subCategoryId = Number(id);
+      handleFilter({ ...filter, subCategoryId }, subCategoryId);
     }
   }, [id]);
   if (statusGetPost === ReduxStateType.LOADING) {
@@ -41,11 +41,13 @@ const PostPage = () => {
           })}
 
           <Pagination
-            currentPage={0}
-            totalPages={totalPages}
-            totalItems={totalItems}
-            pageSize={10}
-            onPageChange={() => {}}
+            currentPage={Number(filter.page)}
+            totalPages={Number(totalPages)}
+            totalItems={Number(totalItems)}
+            pageSize={Number(filter.size ?? 9)}
+            onPageChange={(page) => {
+              handleFilter({ ...filter, page: page }, Number(id));
+            }}
           />
         </div>
       </div>

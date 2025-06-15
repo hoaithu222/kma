@@ -10,17 +10,17 @@ const ResearchPage = () => {
   const { id } = useParams();
   const {
     researchPost,
-    getResearchPostAction,
+
     statusGetResearchPost,
     totalPages,
     totalItems,
     filter,
-    setFilter,
+    handleFilter,
   } = useResearch();
   useEffect(() => {
     if (id) {
-      setFilter({ ...filter, subCategoryId: Number(id) });
-      getResearchPostAction(filter, Number(id));
+      const subCategoryId = Number(id);
+      handleFilter({ ...filter, subCategoryId }, subCategoryId);
     }
   }, [id]);
   if (statusGetResearchPost === ReduxStateType.LOADING) {
@@ -40,11 +40,13 @@ const ResearchPage = () => {
           })}
 
           <Pagination
-            currentPage={0}
-            totalPages={totalPages}
-            totalItems={totalItems}
-            pageSize={10}
-            onPageChange={() => {}}
+            currentPage={Number(filter.page)}
+            totalPages={Number(totalPages)}
+            totalItems={Number(totalItems)}
+            pageSize={Number(filter.size ?? 9)}
+            onPageChange={(page) => {
+              handleFilter({ ...filter, page: page }, Number(id));
+            }}
           />
         </div>
       </div>

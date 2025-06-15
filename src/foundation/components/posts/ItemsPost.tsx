@@ -101,24 +101,21 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
         {/* Animated border gradient */}
         <div className="absolute inset-0 transition-opacity duration-300 opacity-0 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 group-hover:opacity-100 -z-10"></div>
 
-        {/* Header với category badges */}
-        <div className="px-4 pt-4 sm:px-6 sm:pt-6">
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span
-              className={`px-3 py-1.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r ${getCategoryColor(data.categoryName)} shadow-lg transform transition-transform duration-300 hover:scale-110`}
-            >
-              {data.categoryName}
-            </span>
-            <span className="px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 bg-gray-100/80 dark:bg-gray-700/50 border border-gray-200/50 dark:border-gray-600/50 backdrop-blur-sm">
-              {data.subCategoryName}
-            </span>
-          </div>
-        </div>
-
-        {/* Main content area */}
-        <div className="flex flex-col gap-6 p-4 sm:p-6 lg:flex-row lg:gap-8">
+        <div className="flex flex-col gap-2 p-1 sm:gap-3 md:gap-4 sm:p-2 lg:p-3 lg:flex-row lg:gap-5">
           {/* Enhanced Thumbnail */}
-          <div className="w-full lg:w-2/5 xl:w-1/3">
+          <div className="relative w-full lg:w-3/5">
+            <div className="absolute top-0 left-0 z-10 px-2 pt-2 sm:px-3 sm:pt-3">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  className={`px-3 py-1.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r ${getCategoryColor(data.categoryName)} shadow-lg transform transition-transform duration-300 hover:scale-110`}
+                >
+                  {data.categoryName}
+                </span>
+                <span className="px-3 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 bg-gray-100/80 dark:bg-gray-700/50 border border-gray-200/50 dark:border-gray-600/50 backdrop-blur-sm">
+                  {data.subCategoryName}
+                </span>
+              </div>
+            </div>
             <div className="relative overflow-hidden rounded-lg sm:rounded-xl group/thumb">
               {/* Image with multiple effects */}
               <div className="relative overflow-hidden rounded-lg aspect-video sm:rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700">
@@ -142,15 +139,15 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
           </div>
 
           {/* Enhanced Content */}
-          <div className="flex flex-col justify-between w-full lg:w-3/5 xl:w-2/3">
-            <div className="space-y-4">
+          <div className="flex flex-col w-full lg:w-3/5 xl:w-2/3">
+            <div className="space-y-2 sm:space-y-3 md:space-y-4">
               {/* Title with gradient text effect */}
-              <h2 className="text-xl font-bold leading-tight text-transparent transition-all duration-300 sm:text-2xl lg:text-3xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text line-clamp-2 group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600">
+              <h2 className="text-lg font-bold leading-tight text-transparent transition-all duration-300 text-start sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text line-clamp-2 group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600">
                 {data.title}
               </h2>
 
               {/* Enhanced summary */}
-              <p className="text-sm leading-relaxed text-gray-600 transition-colors duration-300 sm:text-base lg:text-lg dark:text-gray-300 line-clamp-3 group-hover:text-gray-700 dark:group-hover:text-gray-200">
+              <p className="text-sm leading-relaxed text-gray-600 transition-colors duration-300 text-start sm:text-base lg:text-lg dark:text-gray-300 line-clamp-3 group-hover:text-gray-700 dark:group-hover:text-gray-200">
                 {data.summary}
               </p>
 
@@ -169,6 +166,7 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                     {data.viewCount.toLocaleString()} lượt xem
                   </span>
                 </div>
+                {/* tag */}
               </div>
 
               {/* Enhanced Files section */}
@@ -235,7 +233,6 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
             </div>
           </div>
         </div>
-
         {/* Floating particles effect (optional) */}
         <div className="absolute w-2 h-2 transition-opacity duration-300 bg-blue-400 rounded-full opacity-0 top-4 right-4 group-hover:opacity-100"></div>
         <div className="absolute w-1.5 h-1.5 transition-opacity duration-300 delay-100 bg-purple-400 rounded-full opacity-0 bottom-8 left-8 group-hover:opacity-100"></div>

@@ -137,7 +137,11 @@
             "date": "Ngày 7/5/2025",
             "description": "Học viện Kỹ thuật Mật mã cùng Học viện Chính trị quốc gia Hồ Chí Minh, Trường Đại học Công nghệ (ĐHQG Hà Nội), Đại học Bách khoa Hà Nội và Trường Đại học FPT đã ký kết thành lập Liên minh nhân lực Chiến lược. Liên minh này nhằm xây dựng lực lượng nhân sự chất lượng cao, sẵn sàng thích ứng với thời đại chuyển đổi số."
           }
-        ]
+        ],
+        "id": "1",
+        "event": "Liên minh nhân lực Chiến lược thực thi Nghị quyết 57-NQ/TW",
+        "date": "Ngày 7/5/2025",
+        "description": "Học viện Kỹ thuật Mật mã cùng Học viện Chính trị quốc gia Hồ Chí Minh, Trường Đại học Công nghệ (ĐHQG Hà Nội), Đại học Bách khoa Hà Nội và Trường Đại học FPT đã ký kết thành lập Liên minh nhân lực Chiến lược. Liên minh này nhằm xây dựng lực lượng nhân sự chất lượng cao, sẵn sàng thích ứng với thời đại chuyển đổi số."
       },
       {
         "title": "Hợp tác với Trung tâm nghiên cứu, đào tạo thiết kế vi mạch và trí tuệ nhân tạo Đà Nẵng",
@@ -147,7 +151,11 @@
             "date": "Ngày 7/3/2025",
             "description": "Học viện ký biên bản ghi nhớ với Trung tâm nghiên cứu, đào tạo thiết kế vi mạch và trí tuệ nhân tạo Đà Nẵng. Mục tiêu là hợp tác nghiên cứu, đào tạo trong lĩnh vực vi mạch bán dẫn và trí tuệ nhân tạo, góp phần phát triển lĩnh vực này tại Đà Nẵng và cả nước."
           }
-        ]
+        ],
+        "id": "2",
+        "event": "Hợp tác với Trung tâm nghiên cứu, đào tạo thiết kế vi mạch và trí tuệ nhân tạo Đà Nẵng",
+        "date": "Ngày 7/3/2025",
+        "description": "Học viện ký biên bản ghi nhớ với Trung tâm nghiên cứu, đào tạo thiết kế vi mạch và trí tuệ nhân tạo Đà Nẵng. Mục tiêu là hợp tác nghiên cứu, đào tạo trong lĩnh vực vi mạch bán dẫn và trí tuệ nhân tạo, góp phần phát triển lĩnh vực này tại Đà Nẵng và cả nước."
       },
       {
         "title": "Làm việc với Viện Khoa học Công nghệ tiên tiến Nhật Bản (JAIST)",
@@ -157,7 +165,11 @@
             "date": "Ngày 27/02/2023",
             "description": "Học viện đón tiếp và làm việc với đoàn đại biểu Viện Khoa học Công nghệ tiên tiến Nhật Bản (JAIST). Hai bên trao đổi về khả năng hợp tác trong nghiên cứu và đào tạo, đặc biệt trong lĩnh vực công nghệ tiên tiến."
           }
-        ]
+        ],
+        "id": "3",
+        "event": "Làm việc với Viện Khoa học Công nghệ tiên tiến Nhật Bản (JAIST)",
+        "date": "Ngày 27/02/2023",
+        "description": "Học viện đón tiếp và làm việc với đoàn đại biểu Viện Khoa học Công nghệ tiên tiến Nhật Bản (JAIST). Hai bên trao đổi về khả năng hợp tác trong nghiên cứu và đào tạo, đặc biệt trong lĩnh vực công nghệ tiên tiến."
       }
     ]
   },
