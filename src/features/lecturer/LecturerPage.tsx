@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import LecturerCard from "./components/LecturerCard";
 import { useLecturer } from "./hooks/useLecturer";
 import { ReduxStateType } from "@/app/store/types";
-import LoadingSpinner from "@/foundation/components/loading/LoadingSpinner";
 import { useNavigate } from "react-router-dom";
 import Pagination from "@/foundation/components/pagination/Pagination";
+import FacultyCardSkeleton from "@/foundation/components/loading/FacultyCardSkeleton";
 
 const LecturerPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -25,14 +25,14 @@ const LecturerPage = () => {
 
   if (statusGetLecturer === ReduxStateType.LOADING) {
     return (
-      <div className="flex items-center justify-center h-screen bg-background-base">
-        <LoadingSpinner />
+      <div className="p-5 mt-10 md:mt-20 lg:mt-28">
+        <FacultyCardSkeleton count={6} />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen p-6 mt-10 bg-background-base md:mt-16 lg:mt-24">
+    <div className="min-h-screen p-1 mt-10 sm:p-3 md:p-4 lg:p-6 md:mt-16 lg:mt-28">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
@@ -45,7 +45,7 @@ const LecturerPage = () => {
         </div>
 
         {/* Lecturer Cards */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {currentLecturers.map((lecturer) => (
             <LecturerCard
               key={lecturer.id}

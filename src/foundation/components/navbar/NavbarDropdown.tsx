@@ -167,7 +167,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
 
       {item.children && isOpen && (
         <div
-          className="absolute left-0 z-50 w-64 mt-2 overflow-hidden border rounded-lg shadow-lg bg-background-elevated border-border-primary top-full animate-fade-in backdrop-blur-sm"
+          className="absolute left-0 z-[9999] w-64 mt-2 overflow-hidden border rounded-lg shadow-lg bg-background-elevated border-border-primary top-full animate-fade-in backdrop-blur-sm"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

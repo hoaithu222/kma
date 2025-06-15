@@ -23,6 +23,8 @@ import enInformationSecurity from "./locales/en/informationSecurity.json";
 import viInformationSecurity from "./locales/vi/informationSecurity.json";
 import enTelecommunication from "./locales/en/telecommunication.json";
 import viTelecommunication from "./locales/vi/telecommunication.json";
+import enDepartments from "./locales/en/departments.json";
+import viDepartments from "./locales/vi/departments.json";
 
 i18n
   .use(LanguageDetector)
@@ -40,6 +42,7 @@ i18n
         informationTechnology: enInformationTechnology,
         informationSecurity: enInformationSecurity,
         telecommunication: enTelecommunication,
+        departments: enDepartments,
       },
       vi: {
         home: viHome,
@@ -52,6 +55,7 @@ i18n
         informationTechnology: viInformationTechnology,
         informationSecurity: viInformationSecurity,
         telecommunication: viTelecommunication,
+        departments: viDepartments,
       },
     },
     fallbackLng: "en",

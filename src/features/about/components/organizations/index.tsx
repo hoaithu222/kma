@@ -4,21 +4,21 @@ const Organizations = () => {
   const { t } = useTranslation("organizations");
 
   return (
-    <div className="container px-3 py-4 mx-auto mt-8 sm:px-4 sm:py-10 sm:mt-18 md:mt-24 lg:mt-28">
+    <div className="container mx-auto mt-12 sm:p-2 md:px-3 md:py-6 lg:px-4 lg:py-10 sm:mt-18 md:mt-24 lg:mt-28">
       <div className="max-w-5xl mx-auto sm:max-w-6xl">
-        <h1 className="mb-4 text-xl font-bold text-center text-text-primary sm:text-2xl sm:mb-6 md:text-3xl md:mb-8 lg:text-4xl lg:mb-10">
+        <h2 className="mb-4 text-xl font-bold text-center text-text-primary sm:text-2xl sm:mb-6 md:text-3xl md:mb-8 lg:text-4xl lg:mb-10">
           {t("academy_name")}
-        </h1>
+        </h2>
 
         {/* Organizational Chart */}
-        <div className="p-3 mb-6 border rounded-lg shadow-lg border-border-primary bg-background-surface sm:p-4 sm:mb-8 md:p-6 md:mb-10 lg:p-8 lg:mb-12">
+        <div className="p-1 mb-6 border rounded-lg shadow-lg border-border-primary bg-background-surface sm:p-4 sm:mb-8 md:p-6 md:mb-10 lg:p-8 lg:mb-12">
           <h2 className="mb-3 text-base font-bold text-center text-text-primary sm:text-lg sm:mb-4 md:text-xl md:mb-6 lg:text-2xl lg:mb-8">
             {t("organizational_chart")}
           </h2>
 
           {/* Chart Container */}
           <div className="relative overflow-x-auto">
-            <div className="min-w-[300px] mx-auto sm:min-w-[400px] md:min-w-[500px] lg:min-w-[800px]">
+            <div className="min-w-[300px] mx-auto sm:min-w-[380px] md:min-w-[450px] lg:min-w-[800px]">
               {/* Top Level - Hội đồng trường */}
               <div className="flex justify-center mb-3 sm:mb-4 md:mb-6 lg:mb-8">
                 <div className="px-3 py-1.5 font-bold text-center transition-transform duration-300 transform rounded-lg shadow-lg text-text-on-primary bg-primary hover:scale-105 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4">

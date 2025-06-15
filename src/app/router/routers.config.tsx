@@ -17,15 +17,7 @@ const Organizations = lazy(
 const TrainingStructure = lazy(
   () => import("@/features/about/components/training-structure")
 );
-const AdmissionDoctorProgram = lazy(
-  () => import("@/features/admission/components/doctor-program")
-);
-const AdmissionMasterProgram = lazy(
-  () => import("@/features/admission/components/master-program")
-);
-const AdmissionUndergraduateProgram = lazy(
-  () => import("@/features/admission/components/undergraduate-program")
-);
+
 const InformationSecurity = lazy(
   () => import("@/features/departments/components/information-security")
 );
@@ -41,9 +33,7 @@ const ResearchProjects = lazy(
 const ScientificPublications = lazy(
   () => import("@/features/research/components/scientific-publications")
 );
-const TrainingDoctorProgram = lazy(
-  () => import("@/features/training/components/doctor-program")
-);
+
 const TrainingMasterProgram = lazy(
   () => import("@/features/training/components/master-program")
 );
@@ -57,6 +47,10 @@ const ResearchPage = lazy(() => import("@/features/research/ResearchPage.tsx"));
 const LecturerPage = lazy(() => import("@/features/lecturer/LecturerPage.tsx"));
 const DetailLecturer = lazy(
   () => import("@/features/lecturer/components/DetailLecturer")
+);
+const PostPage = lazy(() => import("@/features/posts/PostPage.tsx"));
+const AdmissionPage = lazy(
+  () => import("@/features/admission/AdmissionPage.tsx")
 );
 const defaultOptions = {
   requireAuth: true,
@@ -125,12 +119,7 @@ export const ROUTE = {
     layout: "main",
     options: defaultOptions,
   },
-  trainingDoctorProgram: {
-    path: "/training/doctor-program",
-    element: <TrainingDoctorProgram />,
-    layout: "main",
-    options: defaultOptions,
-  },
+
   // khoa trung tâm
   centerDepartmentInformationTechnology: {
     path: "/center-department/information-technology",
@@ -169,25 +158,7 @@ export const ROUTE = {
     layout: "main",
     options: defaultOptions,
   },
-  // tuyển sinh
-  admissionUndergraduateProgram: {
-    path: "/admission/undergraduate-program",
-    element: <AdmissionUndergraduateProgram />,
-    layout: "main",
-    options: defaultOptions,
-  },
-  admissionMasterProgram: {
-    path: "/admission/master-program",
-    element: <AdmissionMasterProgram />,
-    layout: "main",
-    options: defaultOptions,
-  },
-  admissionDoctorProgram: {
-    path: "/admission/doctor-program",
-    element: <AdmissionDoctorProgram />,
-    layout: "main",
-    options: defaultOptions,
-  },
+
   // liên hệ
   contactIntroduction: {
     path: "/contact/introduction",
@@ -227,6 +198,18 @@ export const ROUTE = {
   event: {
     path: "/events/:id",
     element: <EventPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  post: {
+    path: "/post/:id",
+    element: <PostPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  admission: {
+    path: "/admission/:id",
+    element: <AdmissionPage />,
     layout: "main",
     options: defaultOptions,
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Eye } from "lucide-react";
+import { Clock, Eye } from "lucide-react";
 import { ResponseArticle } from "@/core/api/posts/types";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,17 @@ const formatDateShort = (dateString: string): string => {
     month: "short",
     day: "numeric",
   });
+};
+const formatTimeAgo = (dateString: string): string => {
+  const now = new Date();
+  const date = new Date(dateString);
+  const diffTime = Math.abs(now.getTime() - date.getTime());
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 1) return "Hôm qua";
+  if (diffDays < 7) return `${diffDays} ngày trước`;
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)} tuần trước`;
+  return formatDateShort(dateString);
 };
 
 const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({
@@ -53,6 +64,12 @@ const RelatedPostsSidebar: React.FC<RelatedPostsSidebarProps> = ({
                     <Eye className="w-2 h-2 sm:w-3 sm:h-3" />
                     {relatedPost.viewCount.toLocaleString()}
                   </span>
+                  <div className="flex items-center gap-1 xs:gap-1.5 px-1 xs:px-1.5 sm:px-2 md:px-2.5 py-0.5 xs:py-1 sm:py-1 md:py-1.5 bg-gray-100/70 dark:bg-gray-700/50 rounded-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
+                    <Clock className="w-2.5 xs:w-3 sm:w-3.5 h-2.5 xs:h-3 sm:h-3.5 text-blue-500" />
+                    <span className="font-medium">
+                      {formatTimeAgo(relatedPost.publishedAt as string)}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex items-center justify-between">

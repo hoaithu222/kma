@@ -13,6 +13,15 @@ import { IRequestSearchArticlePublic } from "@/core/api/posts/types";
 
 export const useResearch = () => {
   const dispatch = useDispatch();
+  const statusGetResearchPost = useSelector(selectStatusGetResearchPost);
+  // lấy chi tiết bài viết liên quan đến sinh viên
+  const researchPostDetail = useSelector(selectResearchPostDetail);
+  const statusGetResearchPostDetail = useSelector(
+    selectStatusGetResearchPostDetail
+  );
+  const researchPost = useSelector(selectResearchPost);
+  const totalPages = useSelector(selectTotalPages);
+  const totalItems = useSelector(selectTotalItems);
   // lấy danh sách bài viết liên quan đến nghiên cứu
   const [filter, setFilter] = useState<IRequestSearchArticlePublic>({
     page: 0,
@@ -26,21 +35,14 @@ export const useResearch = () => {
     order: null,
     keyword: null,
   });
-  const researchPost = useSelector(selectResearchPost);
-  const totalPages = useSelector(selectTotalPages);
-  const totalItems = useSelector(selectTotalItems);
+
   const getResearchPostAction = (
     filter: IRequestSearchArticlePublic,
     subCategoryId: number
   ) => {
     dispatch(getResearchPost({ ...filter, subCategoryId }));
   };
-  const statusGetResearchPost = useSelector(selectStatusGetResearchPost);
-  // lấy chi tiết bài viết liên quan đến sinh viên
-  const researchPostDetail = useSelector(selectResearchPostDetail);
-  const statusGetResearchPostDetail = useSelector(
-    selectStatusGetResearchPostDetail
-  );
+
   return {
     researchPost,
     getResearchPostAction,

@@ -115,7 +115,7 @@ const TrainingMasterProgram = () => {
   ];
 
   return (
-    <div className="min-h-screen mt-10 rounded-lg shadow-xl sm:mt-16 md:mt-20 lg:mt-24 bg-background-surface">
+    <div className="min-h-screen mt-10 rounded-lg sm:mt-16 md:mt-20 lg:mt-24 ">
       <div className="container px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         {/* Header Section */}
         <div className="max-w-5xl mx-auto mb-8 text-center sm:mb-12 lg:mb-16">
@@ -275,7 +275,8 @@ const TrainingMasterProgram = () => {
               {t("master_program_information_security.admission_contact.info")}
             </p>
             <Link
-              to=""
+              to="https://actvn.edu.vn/News/Detail?NewsId=23314"
+              target="_blank"
               className="inline-flex items-center px-4 py-2 text-xs font-semibold transition-colors duration-300 bg-white rounded-full shadow-lg sm:px-6 sm:py-3 sm:text-sm text-primary hover:bg-background-subtle hover:shadow-xl"
             >
               <span>{t("admission_contact.details_link")}</span>

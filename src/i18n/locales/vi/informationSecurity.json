@@ -58,6 +58,8 @@
     "programInfo": "Cấu trúc chương trình",
     "professionalInfo": "Nghề nghiệp",
     "admissionInfo": "Thông tin tuyển sinh",
+    "tuitionFee": "Học phí",
+    "document": "Tài liệu đào tạo",
     "graduationRequirementsDetails": "Thông tin bổ sung"
   },
   "graduationRequirements": "Theo quy chế đào tạo trình độ đại học của Bộ Giáo dục và Đào tạo và các quy định của Học viện Kỹ thuật mật mã.",
@@ -258,6 +260,56 @@
       "courses": [
         { "name": "Thực tập tốt nghiệp", "credits": 3 },
         { "name": "Đồ án tốt nghiệp", "credits": 8 }
+      ]
+    }
+  },
+  "careerPathsInfoSec": {
+    "title": "Cơ hội nghề nghiệp sau khi tốt nghiệp ngành An toàn Thông tin",
+    "description": "Cơ hội nghề nghiệp sau khi tốt nghiệp ngành An toàn Thông tin",
+    "intro": "Sinh viên tốt nghiệp ngành ATTT có thể làm việc ở nhiều vị trí khác nhau trong bối cảnh nhu cầu bảo mật ngày càng tăng cao.",
+    "securityAnalystEngineer": {
+      "title": "1. 🔐 Chuyên viên An toàn Thông tin (Security Analyst / Engineer)",
+      "description": [
+        "Giám sát, phát hiện và ứng phó với các cuộc tấn công mạng.",
+        "Thiết lập các chính sách bảo mật, triển khai hệ thống tường lửa, IDS/IPS,...",
+        "Làm việc tại các Trung tâm điều hành an ninh mạng (SOC)."
+      ]
+    },
+    "malwareAnalystDigitalForensics": {
+      "title": "2. 🧠 Chuyên viên Phân tích Mã độc, Điều tra Số (Malware Analyst, Digital Forensics)",
+      "description": [
+        "Phân tích, bóc tách và truy vết mã độc, ransomware.",
+        "Điều tra các cuộc tấn công để tìm nguyên nhân và thủ phạm.",
+        "Làm việc tại các cơ quan điều tra công nghệ cao hoặc tổ chức tài chính."
+      ]
+    },
+    "pentestEngineer": {
+      "title": "3. 🛡️ Kỹ sư Pentest (Chuyên gia Kiểm thử Xâm nhập)",
+      "description": [
+        "Mô phỏng tấn công để kiểm tra lỗ hổng hệ thống.",
+        "Đưa ra giải pháp khắc phục điểm yếu bảo mật.",
+        "Thường làm việc tại các công ty bảo mật hoặc làm freelancer."
+      ]
+    },
+    "cryptographySpecialist": {
+      "title": "4. 🔒 Chuyên gia Mật mã (Cryptography Specialist)",
+      "description": [
+        "Phân tích, xây dựng và triển khai các thuật toán mã hóa.",
+        "Ứng dụng trong bảo mật dữ liệu, chữ ký số, thanh toán an toàn."
+      ]
+    },
+    "governmentTechnicalOfficer": {
+      "title": "5. 🧑‍💻 Cán bộ Kỹ thuật tại Cơ quan Nhà nước, Quốc phòng – An ninh",
+      "description": [
+        "Làm việc tại các đơn vị như: Ban Cơ yếu Chính phủ, Bộ Công an, Bộ Quốc phòng.",
+        "Tham gia xây dựng và bảo vệ hệ thống thông tin mật, tuyệt mật của Nhà nước."
+      ]
+    },
+    "cloudBlockchainSecuritySpecialist": {
+      "title": "6. ☁️ Chuyên viên Bảo mật Điện toán Đám mây, Blockchain",
+      "description": [
+        "Bảo vệ dữ liệu, dịch vụ trên nền tảng cloud như AWS, Azure, GCP.",
+        "Phân tích và xây dựng giải pháp bảo mật cho hệ thống sử dụng blockchain."
       ]
     }
   }

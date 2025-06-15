@@ -80,6 +80,8 @@
     "programInfo": "Program Structure",
     "professionalInfo": "Professional Information",
     "admissionInfo": "Admission Information",
+    "tuitionFee": "Tuition Fee",
+    "document": "Document",
     "graduationRequirementsDetails": "Additional Information"
   },
   "courseCategory": {
@@ -267,6 +269,66 @@
         { "name": "Graduation Internship", "credits": 3 },
         { "name": "Graduation Thesis", "credits": 8 }
       ]
+    }
+  },
+  "careerProspects": {
+    "title": "Career Prospects",
+    "description": "Career Prospects",
+    "noData": "No career prospects data available",
+    "careerPaths": {
+      "title": "Career Fields for Information Technology Students",
+      "securitySpecialist": {
+        "title": "1. Cybersecurity Specialist (Security Engineer, Security Analyst)",
+        "description": [
+          "Work at Security Operations Centers (SOCs).",
+          "Analyze, detect, and handle cyberattacks.",
+          "Implement security solutions for information systems."
+        ]
+      },
+      "softwareDeveloper": {
+        "title": "2. Software Developer",
+        "description": [
+          "Participate in developing software, desktop applications, web, or mobile apps.",
+          "Can specialize in backend, frontend, fullstack, or AI, Machine Learning."
+        ]
+      },
+      "systemNetworkEngineer": {
+        "title": "3. System and Network Engineer",
+        "description": [
+          "Administer IT systems, monitor computer networks.",
+          "Deploy network security solutions such as: firewalls, VPNs, IDS/IPS, etc."
+        ]
+      },
+      "cryptographySpecialist": {
+        "title": "4. Cryptography Specialist",
+        "description": [
+          "Analyze and build cryptographic algorithms.",
+          "Serve in the field of data protection and secure communication."
+        ]
+      },
+      "softwareTesterQA": {
+        "title": "5. Software Tester and Quality Assurance (Tester/QA)",
+        "description": [
+          "Test and evaluate the security and quality of software.",
+          "Can undertake the role of a Security Tester."
+        ]
+      },
+      "governmentTechnicalOfficer": {
+        "title": "6. Technical Officer in Government Agencies",
+        "description": [
+          "Work in agencies under the Ministry of National Defense, Ministry of Public Security, Government Cipher Committee, Ministry of Information & Communications, etc.",
+          "Participate in building and operating classified and top-secret IT systems."
+        ]
+      },
+      "techEntrepreneurship": {
+        "title": "7. Tech Entrepreneurship",
+        "description": [
+          "With a strong foundation, students can develop products and start companies in fields such as:",
+          "Cybersecurity, data protection",
+          "Blockchain technology applications",
+          "Custom software solutions"
+        ]
+      }
     }
   }
 }

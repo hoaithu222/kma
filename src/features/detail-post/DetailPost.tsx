@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDetailPost } from "./hooks/useDetailPost";
 
-import LoadingSpinner from "@/foundation/components/loading/LoadingSpinner";
-
 import { ReduxStateType } from "@/app/store/types";
 
 // Import components
@@ -13,6 +11,7 @@ import FloatingFilesPanel from "./components/FloatingFilesPanel";
 import PostHeader from "./components/PostHeader";
 import PostHero from "./components/PostHero";
 import PostContent from "./components/PostContent";
+import LoadingPage from "@/foundation/components/loading/LoadingPage";
 
 const DetailPost = () => {
   const { id } = useParams();
@@ -63,7 +62,7 @@ const DetailPost = () => {
   if (statusGetPost === ReduxStateType.LOADING || !post) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <LoadingSpinner />
+        <LoadingPage />
       </div>
     );
   }

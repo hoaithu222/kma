@@ -32,240 +32,197 @@ import {
   getStudentPost,
 } from "./home.slice";
 import { getCategoriesApi } from "@/core/api/category";
-
-// import { IRequestBanner } from "@/core/api/home/types";
-
 import { getSubcategoriesApi } from "@/core/api/subcategory";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { IRequestGetLecturer } from "@/core/api/lecturer/types";
 import { getLecturersAllApi } from "@/core/api/lecturer";
 import { IRequestSearchArticlePublic } from "@/core/api/posts/types";
 import { getPublicArticle } from "@/core/api/posts";
-// lấy bài viết
+
+// Constants for subcategory IDs
+const SUBCATEGORY_IDS = {
+  BANNER: 53,
+  NEWS: 50,
+  EVENT_NEW: 49,
+  EVENT_ADMISSION: 51,
+  STUDENT: 52,
+  COOPERATION: 40,
+} as const;
+
+// Generic error handler
+const handleError = (error: any) => {
+  console.error("Saga Error:", error);
+  return error;
+};
+
+// Generic article fetcher
+function* fetchArticles(
+  params: IRequestSearchArticlePublic,
+  successAction: any,
+  errorAction: any
+): Generator<any, void, any> {
+  try {
+    const response = yield call(getPublicArticle, params);
+    yield put(
+      successAction({
+        content: response.data.data.content,
+        totalPages: response.data.data.totalPages,
+        totalItems: response.data.data.totalElements,
+      })
+    );
+  } catch (error) {
+    yield put(errorAction(handleError(error)));
+  }
+}
+
+// Article fetching sagas
 function* fetchArticlesHome(
   action: PayloadAction<IRequestSearchArticlePublic>
 ): Generator<any, void, any> {
   try {
     const response = yield call(getPublicArticle, action.payload);
-
     yield put(getPostsSuccess(response.data.data.content));
   } catch (error) {
-    yield put(getPostsError(error));
+    yield put(getPostsError(handleError(error)));
   }
 }
-// lấy danh mục
+
+function* fetchBannerPost() {
+  yield* fetchArticles(
+    {
+      page: 0,
+      size: 4,
+      subCategoryId: SUBCATEGORY_IDS.BANNER,
+      status: "published",
+      isPrivate: false,
+    },
+    getBannerPostSuccess,
+    getBannerPostError
+  );
+}
+
+function* fetchNewsPost() {
+  yield* fetchArticles(
+    {
+      page: 0,
+      size: 4,
+      subCategoryId: SUBCATEGORY_IDS.NEWS,
+      status: "published",
+      isPrivate: false,
+    },
+    getNewsPostSuccess,
+    getNewsPostError
+  );
+}
+
+function* fetchEventPostNew() {
+  yield* fetchArticles(
+    {
+      page: 0,
+      size: 4,
+      subCategoryId: SUBCATEGORY_IDS.EVENT_NEW,
+      status: "published",
+      isPrivate: false,
+    },
+    getEventPostNewSuccess,
+    getEventPostNewError
+  );
+}
+
+function* fetchEventPostAdmission() {
+  yield* fetchArticles(
+    {
+      page: 0,
+      size: 2,
+      subCategoryId: SUBCATEGORY_IDS.EVENT_ADMISSION,
+      status: "published",
+      isPrivate: false,
+    },
+    getEventPostAdmissionSuccess,
+    getEventPostAdmissionError
+  );
+}
+
+function* fetchStudentPost() {
+  yield* fetchArticles(
+    {
+      page: 0,
+      size: 10,
+      subCategoryId: SUBCATEGORY_IDS.STUDENT,
+      status: "published",
+      isPrivate: false,
+    },
+    getStudentPostSuccess,
+    getStudentPostError
+  );
+}
+
+function* fetchCooperationPost() {
+  yield* fetchArticles(
+    {
+      page: 0,
+      size: 2,
+      subCategoryId: SUBCATEGORY_IDS.COOPERATION,
+      status: "published",
+      isPrivate: false,
+    },
+    getCooperationPostSuccess,
+    getCooperationPostError
+  );
+}
+
+// Category related sagas
 function* fetchCategory(): Generator<any, void, any> {
   try {
     const response = yield call(getCategoriesApi);
-
     yield put(getCategorySuccess(response.data.data));
   } catch (error) {
-    yield put(getCategoryError(error));
+    yield put(getCategoryError(handleError(error)));
   }
 }
-// lấy danh mục con
+
 function* fetchSubCategory(
   action: PayloadAction<{ categoryId: number }>
 ): Generator<any, void, any> {
   try {
     const response = yield call(getSubcategoriesApi, action.payload.categoryId);
-
     yield put(getSubCategorySuccess(response.data.data));
   } catch (error) {
-    yield put(getSubCategoryError(error));
+    yield put(getSubCategoryError(handleError(error)));
   }
 }
-// lấy giảng viên
+
+// Lecturer saga
 function* fetchLecturer(
   action: PayloadAction<IRequestGetLecturer>
 ): Generator<any, void, any> {
   try {
     const response = yield call(getLecturersAllApi, action.payload);
-
     yield put(getLecturerSuccess(response.data.data));
   } catch (error) {
-    yield put(getLecturerError(error));
-  }
-}
-// lấy banner với id subCategory 53
-function* fetchBannerPost(): Generator<any, void, any> {
-  try {
-    const response = yield call(getPublicArticle, {
-      page: 0,
-      size: 4,
-      subCategoryId: 53,
-      status: "published",
-      isPrivate: false,
-    });
-    yield put(
-      getBannerPostSuccess({
-        content: response.data.data.content,
-        totalPages: response.data.data.totalPages,
-        totalItems: response.data.data.totalElements,
-      })
-    );
-  } catch (error) {
-    yield put(getBannerPostError(error));
+    yield put(getLecturerError(handleError(error)));
   }
 }
 
-// lấy tin tức mới nhất với id subCategory  50
-function* fetchNewsPost(): Generator<any, void, any> {
-  try {
-    const response = yield call(getPublicArticle, {
-      page: 0,
-      size: 4,
-      subCategoryId: 50,
-      status: "published",
-      isPrivate: false,
-    });
-    yield put(
-      getNewsPostSuccess({
-        content: response.data.data.content,
-        totalPages: response.data.data.totalPages,
-        totalItems: response.data.data.totalElements,
-      })
-    );
-  } catch (error) {
-    yield put(getNewsPostError(error));
-  }
-}
-// lấy sụ kiện mới nhất với id 49
-function* fetchEventPostNew(): Generator<any, void, any> {
-  try {
-    const response = yield call(getPublicArticle, {
-      page: 0,
-      size: 4,
-      subCategoryId: 49,
-      status: "published",
-      isPrivate: false,
-    });
-    yield put(
-      getEventPostNewSuccess({
-        content: response.data.data.content,
-        totalPages: response.data.data.totalPages,
-        totalItems: response.data.data.totalElements,
-      })
-    );
-  } catch (error) {
-    yield put(getEventPostNewError(error));
-  }
-}
-// lấy các bài post liên quan đến đào tạo tuyển sinh id 51
-function* fetchEventPostAdmission(): Generator<any, void, any> {
-  try {
-    const response = yield call(getPublicArticle, {
-      page: 0,
-      size: 2,
-      subCategoryId: 51,
-      status: "published",
-      isPrivate: false,
-    });
-    yield put(
-      getEventPostAdmissionSuccess({
-        content: response.data.data.content,
-        totalPages: response.data.data.totalPages,
-        totalItems: response.data.data.totalElements,
-      })
-    );
-  } catch (error) {
-    yield put(getEventPostAdmissionError(error));
-  }
-}
-// lấy các bài post liên quan đến cựu sinh viên id 52
-function* fetchStudentPost(): Generator<any, void, any> {
-  try {
-    const response = yield call(getPublicArticle, {
-      page: 0,
-      size: 10,
-      subCategoryId: 52,
-      status: "published",
-      isPrivate: false,
-    });
-    yield put(
-      getStudentPostSuccess({
-        content: response.data.data.content,
-        totalPages: response.data.data.totalPages,
-        totalItems: response.data.data.totalElements,
-      })
-    );
-  } catch (error) {
-    yield put(getStudentPostError(error));
-  }
-}
-// lấy các bài post liên quan đến hợp tác đối ngoại id 40
-function* fetchCooperationPost(): Generator<any, void, any> {
-  try {
-    const response = yield call(getPublicArticle, {
-      page: 0,
-      size: 2,
-      subCategoryId: 40,
-      status: "published",
-      isPrivate: false,
-    });
-    yield put(
-      getCooperationPostSuccess({
-        content: response.data.data.content,
-        totalPages: response.data.data.totalPages,
-        totalItems: response.data.data.totalElements,
-      })
-    );
-  } catch (error) {
-    yield put(getCooperationPostError(error));
-  }
-}
-// lấy giảng viên
-function* watchGetLecturer() {
-  yield takeLatest(getLecturer.type, fetchLecturer);
-}
-// lấy danh mục con
-function* watchGetSubCategory() {
-  yield takeLatest(getSubCategory.type, fetchSubCategory);
-}
-// lấy danh mục con
-function* watchGetCategory() {
-  yield takeLatest(getCategory.type, fetchCategory);
-}
-
-function* watchGetPosts() {
-  yield takeLatest(getPosts.type, fetchArticlesHome);
-}
-// lấy banner với id subCategory 53
-function* watchGetBannerPost() {
-  yield takeLatest(getBannerPost.type, fetchBannerPost);
-}
-// lấy tin tức mới nhất với id subCategory  50
-function* watchGetNewsPost() {
-  yield takeLatest(getNewsPost.type, fetchNewsPost);
-}
-// lấy sụ kiện mới nhất với id 49
-function* watchGetEventPostNew() {
-  yield takeLatest(getEventPostNew.type, fetchEventPostNew);
-}
-// lấy các bài post liên quan đến đào tạo tuyển sinh id 51
-function* watchGetEventPostAdmission() {
-  yield takeLatest(getEventPostAdmission.type, fetchEventPostAdmission);
-}
-// lấy các bài post liên quan đến cựu sinh viên id 52
-function* watchGetStudentPost() {
-  yield takeLatest(getStudentPost.type, fetchStudentPost);
-}
-// lấy các bài post liên quan đến hợp tác đối ngoại id 40
-function* watchGetCooperationPost() {
-  yield takeLatest(getCooperationPost.type, fetchCooperationPost);
-}
+// Watchers
+const createWatcher = (action: any, saga: any) => takeLatest(action.type, saga);
 
 export function* homeSaga() {
   yield all([
-    watchGetPosts(),
-    watchGetCategory(),
-    watchGetSubCategory(),
-    watchGetLecturer(),
-    watchGetBannerPost(),
-    watchGetNewsPost(),
-    watchGetEventPostNew(),
-    watchGetEventPostAdmission(),
-    watchGetStudentPost(),
-    watchGetCooperationPost(),
+    // Article watchers
+    createWatcher(getPosts, fetchArticlesHome),
+    createWatcher(getBannerPost, fetchBannerPost),
+    createWatcher(getNewsPost, fetchNewsPost),
+    createWatcher(getEventPostNew, fetchEventPostNew),
+    createWatcher(getEventPostAdmission, fetchEventPostAdmission),
+    createWatcher(getStudentPost, fetchStudentPost),
+    createWatcher(getCooperationPost, fetchCooperationPost),
+
+    // Category watchers
+    createWatcher(getCategory, fetchCategory),
+    createWatcher(getSubCategory, fetchSubCategory),
+
+    // Lecturer watcher
+    createWatcher(getLecturer, fetchLecturer),
   ]);
 }

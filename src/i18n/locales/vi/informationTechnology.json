@@ -87,6 +87,8 @@
     "programInfo": "Cấu trúc chương trình",
     "professionalInfo": "Nghề nghiệp",
     "admissionInfo": "Thông tin tuyển sinh",
+    "tuitionFee": "Học phí",
+    "document": "Tài liệu đào tạo",
     "graduationRequirementsDetails": "Thông tin bổ sung"
   },
   "courseCategory": {
@@ -269,6 +271,67 @@
         { "name": "Thực tập tốt nghiệp", "credits": 3 },
         { "name": "Đồ án tốt nghiệp", "credits": 8 }
       ]
+    }
+  },
+  "careerProspects": {
+    "title": "Nghề nghiệp",
+    "description": "Nghề nghiệp",
+    "noData": "Không có dữ liệu nghề nghiệp",
+
+    "careerPaths": {
+      "title": "Các Lĩnh vực Nghề nghiệp cho Sinh viên Ngành Công nghệ Thông tin",
+      "securitySpecialist": {
+        "title": "1. Chuyên viên An toàn Thông tin (Security Engineer, Security Analyst)",
+        "description": [
+          "Làm việc tại các trung tâm điều hành an ninh mạng (SOC).",
+          "Phân tích, phát hiện và xử lý các cuộc tấn công mạng.",
+          "Triển khai giải pháp bảo mật cho hệ thống thông tin."
+        ]
+      },
+      "softwareDeveloper": {
+        "title": "2. Lập trình viên Phần mềm (Software Developer)",
+        "description": [
+          "Tham gia phát triển phần mềm, ứng dụng desktop, web hoặc mobile.",
+          "Có thể làm backend, frontend, fullstack hoặc AI, Machine Learning."
+        ]
+      },
+      "systemNetworkEngineer": {
+        "title": "3. Kỹ sư Hệ thống và Mạng (System/Network Engineer)",
+        "description": [
+          "Quản trị hệ thống CNTT, giám sát mạng máy tính.",
+          "Triển khai các giải pháp bảo mật mạng: firewall, VPN, IDS/IPS,..."
+        ]
+      },
+      "cryptographySpecialist": {
+        "title": "4. Chuyên viên Mã hóa và Mật mã (Cryptography Specialist)",
+        "description": [
+          "Phân tích, xây dựng các thuật toán mã hóa.",
+          "Phục vụ trong lĩnh vực bảo vệ dữ liệu, truyền thông an toàn."
+        ]
+      },
+      "softwareTesterQA": {
+        "title": "5. Kiểm thử và Đảm bảo Chất lượng Phần mềm (Tester/QA)",
+        "description": [
+          "Kiểm tra, đánh giá tính bảo mật và chất lượng phần mềm.",
+          "Có thể đảm nhận vai trò kiểm thử bảo mật (Security Tester)."
+        ]
+      },
+      "governmentTechnicalOfficer": {
+        "title": "6. Cán bộ Kỹ thuật tại các Cơ quan Nhà nước",
+        "description": [
+          "Làm việc trong các cơ quan thuộc Bộ Quốc phòng, Bộ Công an, Ban Cơ yếu Chính phủ, Bộ Thông tin & Truyền thông,...",
+          "Tham gia xây dựng, vận hành các hệ thống CNTT mật và tối mật."
+        ]
+      },
+      "techEntrepreneurship": {
+        "title": "7. Khởi nghiệp Công nghệ",
+        "description": [
+          "Với nền tảng tốt, sinh viên có thể phát triển sản phẩm, startup trong lĩnh vực:",
+          "An ninh mạng, bảo mật dữ liệu",
+          "Ứng dụng công nghệ blockchain",
+          "Giải pháp phần mềm theo nhu cầu thực tế"
+        ]
+      }
     }
   }
 }

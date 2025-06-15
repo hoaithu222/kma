@@ -107,7 +107,7 @@ const Banner = () => {
     textAnimations[currentIndex % textAnimations.length];
 
   return (
-    <div className="relative w-full h-48 overflow-hidden lg:h-96 sm:h-60 md:h-72">
+    <div className="relative w-full overflow-hidden lg:h-[500px] h-60 md:h-72">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -124,13 +124,13 @@ const Banner = () => {
             {...currentTextAnimation}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={clsx(
-              "absolute w-[50%] sm:w-[25%] lg:w-[30%] h-[85%] sm:h-[80%]",
+              "absolute w-[50%] sm:w-[25%] lg:w-[30%] h-[60%] sm:h-[75%]",
               "p-3 md:p-4 lg:p-6 rounded-xl shadow-2xl bg-transparent backdrop-blur-sm left-2 sm:left-5 lg:left-18 top-2 sm:top-5 lg:top-8 overflow-hidden",
-              "left-2 sm:left-5 lg:left-20 top-2 sm:top-5 lg:top-10"
+              "left-14 sm:left-5 lg:left-20 top-20 sm:top-5 lg:top-10"
             )}
           >
             <div
-              className="relative flex flex-col h-full p-4 text-white"
+              className="relative flex flex-col h-full p-1 text-white md:p-2 lg:p-4"
               // style={{
               //   backgroundImage: `url(${images[currentIndex].image})`,
               //   backgroundSize: "cover",
@@ -138,21 +138,16 @@ const Banner = () => {
               // }}
             >
               {/* Nội dung chữ */}
-              <div className="relative z-10 flex flex-col h-full">
-                <h2 className="mb-2 text-sm font-bold leading-tight text-shadow sm:text-base md:text-2xl lg:text-3xl line-clamp-2">
+              <div className="relative z-10 flex flex-col ">
+                <h2 className="mb-1 text-sm font-bold leading-tight text-shadow sm:text-base md:text-xl lg:text-2xl ">
                   {images[currentIndex].title}
                 </h2>
 
-                {images[currentIndex].summary && (
-                  <p className="flex-grow mb-4 text-xs leading-relaxed text-shadow sm:text-sm lg:text-base line-clamp-3">
-                    {images[currentIndex].summary}
-                  </p>
-                )}
-
                 <Button
                   variant="primary"
-                  className="z-50 flex items-center justify-center w-full gap-2 px-4 py-2 text-xs font-medium transition-all duration-200 transform rounded-lg shadow-md cursor-pointer sm:text-sm hover:shadow-lg hover:scale-105"
+                  className="z-50 flex items-center justify-center w-full gap-2 px-4 py-2 mb-0 text-xs font-medium transition-all duration-200 transform rounded-lg shadow-md cursor-pointer sm:text-sm hover:shadow-lg hover:scale-105"
                   style={{ pointerEvents: "auto" }}
+                  size="small"
                   onClick={() =>
                     navigate(`/detail-post/${images[currentIndex].id}`)
                   }

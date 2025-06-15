@@ -103,6 +103,8 @@
     "programInfo": "Program Structure",
     "professionalInfo": "Professional Information",
     "admissionInfo": "Admission Information",
+    "tuitionFee": "Tuition Fee",
+    "document": "Document",
     "graduationRequirementsDetails": "Additional Information"
   },
   "programInfoDetails": {
@@ -268,6 +270,53 @@
       "courses": [
         { "name": "Graduation Internship", "credits": 3 },
         { "name": "Graduation Thesis", "credits": 8 }
+      ]
+    }
+  },
+
+  "careerPathsTelecom": {
+    "title": "Career Opportunities After Graduating in Electronics and Telecommunications",
+    "intro": "Graduates can pursue many attractive positions in high-tech fields:",
+    "telecomEngineer": {
+      "title": "1. 📡 Telecom Engineer",
+      "description": [
+        "Design, operate, and maintain fixed and mobile telecommunication network systems.",
+        "Work at major corporations such as Viettel, VNPT, MobiFone, FPT Telecom,..."
+      ]
+    },
+    "networkCommunicationSpecialist": {
+      "title": "2. 📶 Network Communication Specialist (Network Engineer)",
+      "description": [
+        "Deploy and monitor data communication networks, LAN/WAN, and optical transmission networks.",
+        "Ensure stable and secure system operation."
+      ]
+    },
+    "electronicsCircuitDesignEngineer": {
+      "title": "3. 🛠️ Electronics Engineer – Circuit Design",
+      "description": [
+        "Design and develop electronic circuits, microprocessors, and microcontrollers in communication devices.",
+        "Apply them in industrial products, military equipment, medical devices,..."
+      ]
+    },
+    "secureCommunicationEngineer": {
+      "title": "4. 🔐 Secure Communication Engineer",
+      "description": [
+        "Integrate security into communication systems, design encrypted communication systems.",
+        "Work at special technical units such as the Government Cipher Committee, Ministry of National Defense,..."
+      ]
+    },
+    "iotWirelessCommunicationSpecialist": {
+      "title": "5. 🌐 IoT and Wireless Communication Specialist",
+      "description": [
+        "Design wireless communication systems for smart homes, autonomous vehicles, medical devices, etc.",
+        "Develop embedded systems and network-connected sensors."
+      ]
+    },
+    "satelliteRadioCommunicationEngineer": {
+      "title": "6. 🛰️ Satellite and Radio Communication Engineer",
+      "description": [
+        "Analyze, build, and operate satellite communication systems, radar, and digital television.",
+        "Work in national defense – security research units or telecommunication companies."
       ]
     }
   }

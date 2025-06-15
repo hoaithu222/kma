@@ -26,8 +26,8 @@ const AccordionContentTab = () => {
 
   return (
     <Accordion
+      variant="ghost"
       type="multiple"
-      variant="bordered"
       size="lg"
       className="space-y-1 md:space-y-2 lg:space-y-4"
     >

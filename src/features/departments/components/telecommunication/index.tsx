@@ -7,6 +7,9 @@ import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 import LearningProgram from "./components/LearningProgram";
 import clsx from "clsx";
+import CareerProspects from "./components/CareerProspects";
+import TuitionFee from "../common/TuitionFee";
+import Documents from "../common/Documents";
 
 const Telecommunication = () => {
   const { t } = useTranslation("telecommunication");
@@ -18,8 +21,9 @@ const Telecommunication = () => {
     specificObjectives: useRef(null),
     programInfo: useRef(null),
     professionalInfo: useRef(null),
+    tuitionFee: useRef(null),
     admissionInfo: useRef(null),
-    graduationRequirementsDetails: useRef(null),
+    document: useRef(null),
   };
 
   const handleTabChange = (tab: string) => {
@@ -80,11 +84,7 @@ const Telecommunication = () => {
       value: "trainingObjectives",
       icon: "🎯",
     },
-    {
-      label: t("tab.specificObjectives"),
-      value: "specificObjectives",
-      icon: "📝",
-    },
+
     {
       label: t("tab.programInfo"),
       value: "programInfo",
@@ -96,32 +96,32 @@ const Telecommunication = () => {
       icon: "💼",
     },
     {
+      label: t("tab.tuitionFee"),
+      value: "tuitionFee",
+      icon: "💰",
+    },
+    {
       label: t("tab.admissionInfo"),
       value: "admissionInfo",
       icon: "🎓",
     },
     {
-      label: t("tab.graduationRequirementsDetails"),
-      value: "graduationRequirementsDetails",
-      icon: "✅",
-    },
-    {
-      label: t("tab.additionalInfo"),
-      value: "additionalInfo",
-      icon: "📝",
+      label: t("tab.document"),
+      value: "document",
+      icon: "📄",
     },
   ];
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 bg-background-surface">
+    <div className="min-h-screen p-4 sm:p-6 ">
       <div className="container px-2 py-4 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="relative grid grid-cols-1 gap-0 sm:gap-4 md:gap-6 lg:gap-8 lg:grid-cols-8">
           {/* Enhanced Sidebar Navigation */}
           <div className="col-span-2 pb-2 lg:h-screen lg:pb-0">
             <div
               className={clsx(
-                "z-50 p-6 border border-gray-100",
-                "shadow-lg lg:fixed top-40 rounded-2xl lg:top-44 bg-background-surface lg:bg-transparent",
+                "z-40 p-6 border border-gray-100",
+                "shadow-lg lg:fixed top-40 rounded-2xl lg:top-44 bg-background-surface ",
                 {
                   "bg-background-surface": activeTab !== "generalInfo",
                 }
@@ -191,6 +191,7 @@ const Telecommunication = () => {
                 className="scroll-mt-24"
               >
                 <HeaderSection />
+                <ProgramDetailsSection />
               </section>
 
               <section
@@ -200,12 +201,6 @@ const Telecommunication = () => {
               >
                 <TrainingObjectivesSection />
               </section>
-
-              <section
-                ref={sectionRefs.specificObjectives}
-                data-section="specificObjectives"
-                className="scroll-mt-24"
-              ></section>
 
               <section
                 ref={sectionRefs.programInfo}
@@ -220,12 +215,14 @@ const Telecommunication = () => {
                 data-section="professionalInfo"
                 className="scroll-mt-24"
               >
-                <div className="p-8 text-center text-gray-500">
-                  <h3 className="mb-2 text-lg font-semibold">
-                    Thông tin nghề nghiệp
-                  </h3>
-                  <p>Nội dung sẽ được thêm vào đây</p>
-                </div>
+                <CareerProspects />
+              </section>
+              <section
+                ref={sectionRefs.tuitionFee}
+                data-section="tuitionFee"
+                className="scroll-mt-24"
+              >
+                <TuitionFee />
               </section>
 
               {/* Admission Section */}
@@ -236,15 +233,16 @@ const Telecommunication = () => {
               >
                 <AdmissionSection />
               </section>
-
-              {/* Graduation Requirements Section */}
               <section
-                ref={sectionRefs.graduationRequirementsDetails}
-                data-section="graduationRequirementsDetails"
+                ref={sectionRefs.document}
+                data-section="document"
                 className="scroll-mt-24"
               >
-                <ProgramDetailsSection />
+                <Documents departmentKey="dtvt" />
               </section>
+
+              {/* Graduation Requirements Section */}
+
               {/* <section
                 ref={sectionRefs.additionalInfo}
                 data-section="additionalInfo"

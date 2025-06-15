@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import image from "@/assets/about/imageOverview.png";
 
-import News from "./components/News";
 import AccordionContentTab from "./components/AccordionContentTab";
 
 import { GraduationCapIcon } from "lucide-react";
@@ -10,9 +9,9 @@ const AboutOverview = () => {
   const { t: tAboutOverview } = useTranslation("aboutOverview");
 
   return (
-    <div className="grid grid-cols-12 gap-3 py-4 mt-12 sm:py-6 sm:mt-16 md:mt-20 lg:mt-24">
+    <div className="grid grid-cols-12 gap-3 py-4 mt-12 sm:py-6 sm:mt-16 md:mt-20 lg:mt-28">
       {/* Main Content */}
-      <div className="col-span-12 mb-4 lg:col-span-9">
+      <div className="col-span-12 mb-4 lg:col-span-12">
         <div className="mb-4 space-y-4">
           {/* Academy Overview */}
           <div className="p-3 rounded-lg shadow-lg sm:p-4 bg-background-elevated">
@@ -46,9 +45,6 @@ const AboutOverview = () => {
       </div>
 
       {/* News Sidebar */}
-      <div className="hidden lg:block lg:col-span-3">
-        <News />
-      </div>
     </div>
   );
 };

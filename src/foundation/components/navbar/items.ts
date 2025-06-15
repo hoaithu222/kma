@@ -98,28 +98,28 @@ export const NavbarItems: INavbarItem[] = [
   //     },
   //   ],
   // },
-  {
-    label: "admission",
-    path: "/admission/undergraduate-program",
-    icon: "FaUserPlus",
-    children: [
-      {
-        label: "admission-undergraduate",
-        path: "/admission/undergraduate-program",
-        icon: "FaGraduationCap",
-      },
-      {
-        label: "admission-master",
-        path: "/admission/master-program",
-        icon: "FaUserGraduate",
-      },
-      {
-        label: "admission-doctor",
-        path: "/admission/doctor-program",
-        icon: "FaUserMd",
-      },
-    ],
-  },
+  // {
+  //   label: "admission",
+  //   path: "/admission/undergraduate-program",
+  //   icon: "FaUserPlus",
+  //   children: [
+  //     {
+  //       label: "admission-undergraduate",
+  //       path: "/admission/undergraduate-program",
+  //       icon: "FaGraduationCap",
+  //     },
+  //     {
+  //       label: "admission-master",
+  //       path: "/admission/master-program",
+  //       icon: "FaUserGraduate",
+  //     },
+  //     {
+  //       label: "admission-doctor",
+  //       path: "/admission/doctor-program",
+  //       icon: "FaUserMd",
+  //     },
+  //   ],
+  // },
   // lấy từ api
   // {
   //   label: "student",

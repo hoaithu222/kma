@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import NavbarDropdown from "./NavbarDropdown";
 import { useTranslation } from "react-i18next";
-import { NavbarItems } from "./items";
+import { ContactItems, NavbarItems } from "./items";
 import { FaHome, FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsMobileMenuOpen } from "@/app/store/slices/navbar";
@@ -58,8 +58,22 @@ const NavbarMobile = () => {
       label: item.name,
       path: `/events/${item.id}`,
     })) || [];
+  const admissionSubCategory = category.find(
+    (item: IResponseCategory) => item.slug === "tuyen-sinh"
+  );
+  const admissionSubCategoryItems =
+    admissionSubCategory?.subCategories.map((item: any) => ({
+      label: item.name,
+      path: `/admission/${item.id}`,
+    })) || [];
   const navbarItems = [
     ...NavbarItems,
+    {
+      label: "Tuyển sinh",
+      path: "/admission/57",
+      icon: "FaUser",
+      children: admissionSubCategoryItems,
+    },
     {
       label: "Sinh viên",
       path: "/student/42",
@@ -68,16 +82,18 @@ const NavbarMobile = () => {
     },
     {
       label: "Bài viết",
-      path: "/posts/40",
+      path: "/post/40",
       icon: "FaUser",
       children: postSubCategoryItems,
     },
     {
       label: "Sự kiện",
-      path: "/events/41",
+      path: "/events/49",
       icon: "FaUser",
       children: eventSubCategoryItems,
     },
+
+    ...ContactItems,
   ];
 
   return (

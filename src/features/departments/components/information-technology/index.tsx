@@ -1,12 +1,14 @@
 import HeaderSection from "./components/HeaderSection";
 import TrainingObjectivesSection from "./components/TrainingObjectivesSection";
 import SpecificObjectivesSection from "./components/SpecificObjectivesSection";
-import AdmissionSection from "./components/AdmissionSection";
-import AdditionalInfoSection from "./components/AdditionalInfoSection";
+import Documents from "../common/Documents";
 import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 import { LearningProgram } from "./components/LearningProgram";
 import clsx from "clsx";
+import CareerProspects from "./components/CareerProspectsCn";
+import TuitionFee from "../common/TuitionFee";
+import AdmissionSection from "./components/AdmissionSection";
 
 const InformationTechnology = () => {
   const { t } = useTranslation("informationTechnology");
@@ -20,7 +22,8 @@ const InformationTechnology = () => {
     programInfo: useRef(null),
     professionalInfo: useRef(null),
     admissionInfo: useRef(null),
-    graduationRequirementsDetails: useRef(null),
+    tuitionFee: useRef(null),
+    document: useRef(null),
   };
 
   const handleTabChange = (tab: string) => {
@@ -97,27 +100,32 @@ const InformationTechnology = () => {
       icon: "💼",
     },
     {
+      label: t("tab.tuitionFee"),
+      value: "tuitionFee",
+      icon: "💰",
+    },
+    {
       label: t("tab.admissionInfo"),
       value: "admissionInfo",
       icon: "🎓",
     },
     {
-      label: t("tab.graduationRequirementsDetails"),
-      value: "graduationRequirementsDetails",
-      icon: "✅",
+      label: t("tab.document"),
+      value: "document",
+      icon: "📄",
     },
   ];
 
   return (
-    <div className="min-h-screen mt-10 overflow-y-auto bg-background-surface md:mt-20 lg:mt-24">
+    <div className="min-h-screen mt-10 overflow-y-auto md:mt-20 lg:mt-24">
       <div className="container px-2 py-4 mx-auto sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="relative grid grid-cols-1 gap-0 sm:gap-4 md:gap-6 lg:gap-8 lg:grid-cols-8">
           {/* Enhanced Sidebar Navigation */}
           <div className="col-span-2 pb-2 lg:h-screen lg:pb-0">
             <div
               className={clsx(
-                "z-50 p-6 border border-gray-100",
-                "shadow-lg lg:fixed top-40 rounded-2xl lg:top-44 bg-background-surface lg:bg-transparent",
+                "z-40 p-6 border border-gray-100",
+                "shadow-lg lg:fixed top-40 rounded-2xl lg:top-44 bg-background-surface",
                 {
                   "bg-background-surface": activeTab !== "generalInfo",
                 }
@@ -218,14 +226,16 @@ const InformationTechnology = () => {
                 data-section="professionalInfo"
                 className="scroll-mt-24"
               >
-                <div className="p-8 text-center text-gray-500">
-                  <h3 className="mb-2 text-lg font-semibold">
-                    Thông tin nghề nghiệp
-                  </h3>
-                  <p>Nội dung sẽ được thêm vào đây</p>
-                </div>
+                <CareerProspects />
               </section>
 
+              <section
+                ref={sectionRefs.tuitionFee}
+                data-section="tuitionFee"
+                className="scroll-mt-24"
+              >
+                <TuitionFee />
+              </section>
               {/* Admission Section */}
               <section
                 ref={sectionRefs.admissionInfo}
@@ -235,13 +245,13 @@ const InformationTechnology = () => {
                 <AdmissionSection />
               </section>
 
-              {/* Graduation Requirements Section */}
+              {/* tài  */}
               <section
-                ref={sectionRefs.graduationRequirementsDetails}
-                data-section="graduationRequirementsDetails"
+                ref={sectionRefs.document}
+                data-section="document"
                 className="scroll-mt-24"
               >
-                <AdditionalInfoSection />
+                <Documents departmentKey="cntt" />
               </section>
             </div>
           </div>

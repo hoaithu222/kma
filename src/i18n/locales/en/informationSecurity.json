@@ -60,6 +60,8 @@
     "programInfo": "Program Structure",
     "professionalInfo": "Professional Information",
     "admissionInfo": "Admission Information",
+    "tuitionFee": "Tuition Fee",
+    "document": "Document",
     "graduationRequirementsDetails": "Additional Information"
   },
   "programInfoDetails": {
@@ -261,6 +263,55 @@
       "courses": [
         { "name": "Graduation Internship", "credits": 3 },
         { "name": "Graduation Thesis", "credits": 8 }
+      ]
+    }
+  },
+  "careerPathsInfoSec": {
+    "title": "Career Opportunities After Graduating in Information Security",
+    "intro": "Graduates with an Information Security (IS) degree can pursue various roles amidst the increasing demand for cybersecurity.",
+    "securityAnalystEngineer": {
+      "title": "1. 🔐 Security Analyst / Engineer",
+      "description": [
+        "Monitor, detect, and respond to cyberattacks.",
+        "Establish security policies, deploy firewalls, IDS/IPS, etc.",
+        "Work at Security Operations Centers (SOCs)."
+      ]
+    },
+    "malwareAnalystDigitalForensics": {
+      "title": "2. 🧠 Malware Analyst, Digital Forensics Specialist",
+      "description": [
+        "Analyze, deconstruct, and trace malware, ransomware.",
+        "Investigate cyberattacks to determine causes and perpetrators.",
+        "Work at high-tech investigation agencies or financial organizations."
+      ]
+    },
+    "pentestEngineer": {
+      "title": "3. 🛡️ Pentest Engineer (Penetration Testing Specialist)",
+      "description": [
+        "Simulate attacks to test system vulnerabilities.",
+        "Propose solutions to fix security weaknesses.",
+        "Often work at security companies or as a freelancer."
+      ]
+    },
+    "cryptographySpecialist": {
+      "title": "4. 🔒 Cryptography Specialist",
+      "description": [
+        "Analyze, build, and implement cryptographic algorithms.",
+        "Apply them in data security, digital signatures, and secure payments."
+      ]
+    },
+    "governmentTechnicalOfficer": {
+      "title": "5. 🧑‍💻 Technical Officer in Government Agencies, National Defense – Security",
+      "description": [
+        "Work at units such as: Government Cipher Committee, Ministry of Public Security, Ministry of National Defense.",
+        "Participate in building and protecting classified and top-secret information systems of the State."
+      ]
+    },
+    "cloudBlockchainSecuritySpecialist": {
+      "title": "6. ☁️ Cloud and Blockchain Security Specialist",
+      "description": [
+        "Protect data and services on cloud platforms like AWS, Azure, GCP.",
+        "Analyze and build security solutions for systems using blockchain."
       ]
     }
   }

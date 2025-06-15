@@ -103,6 +103,8 @@
     "programInfo": "Cấu trúc chương trình",
     "professionalInfo": "Nghề nghiệp",
     "admissionInfo": "Thông tin tuyển sinh",
+    "tuitionFee": "Học phí",
+    "document": "Tài liệu đào tạo",
     "graduationRequirementsDetails": "Thông tin bổ sung"
   },
   "programInfoDetails": {
@@ -268,6 +270,52 @@
       "courses": [
         { "name": "Thực tập tốt nghiệp", "credits": 3 },
         { "name": "Đồ án tốt nghiệp", "credits": 8 }
+      ]
+    }
+  },
+  "careerPathsTelecom": {
+    "title": "Cơ hội nghề nghiệp sau khi tốt nghiệp ngành Điện tử Viễn thông",
+    "intro": "Sinh viên tốt nghiệp có thể đảm nhận nhiều vị trí hấp dẫn trong các lĩnh vực công nghệ cao:",
+    "telecomEngineer": {
+      "title": "1. 📡 Kỹ sư viễn thông (Telecom Engineer)",
+      "description": [
+        "Thiết kế, vận hành, bảo trì hệ thống mạng viễn thông cố định và di động.",
+        "Làm việc tại các tập đoàn lớn như Viettel, VNPT, MobiFone, FPT Telecom,..."
+      ]
+    },
+    "networkCommunicationSpecialist": {
+      "title": "2. 📶 Chuyên viên mạng truyền thông (Network Engineer)",
+      "description": [
+        "Triển khai và giám sát các mạng truyền thông dữ liệu, mạng LAN/WAN, mạng truyền dẫn quang.",
+        "Đảm bảo hệ thống hoạt động ổn định và an toàn."
+      ]
+    },
+    "electronicsCircuitDesignEngineer": {
+      "title": "3. 🛠️ Kỹ sư điện tử – thiết kế mạch (Electronics Engineer)",
+      "description": [
+        "Thiết kế, phát triển mạch điện tử, mạch vi xử lý, vi điều khiển trong thiết bị truyền thông.",
+        "Ứng dụng trong các sản phẩm công nghiệp, quân sự, thiết bị y tế,..."
+      ]
+    },
+    "secureCommunicationEngineer": {
+      "title": "4. 🔐 Chuyên viên tích hợp viễn thông và bảo mật (Secure Communication Engineer)",
+      "description": [
+        "Tích hợp bảo mật vào hệ thống truyền thông, thiết kế hệ thống truyền tin mã hóa.",
+        "Làm việc tại các đơn vị kỹ thuật đặc biệt như Ban Cơ yếu Chính phủ, Bộ Quốc phòng,..."
+      ]
+    },
+    "iotWirelessCommunicationSpecialist": {
+      "title": "5. 🌐 Chuyên viên IoT và truyền thông không dây",
+      "description": [
+        "Thiết kế hệ thống truyền thông không dây cho nhà thông minh, xe tự hành, thiết bị y tế,...",
+        "Phát triển các hệ thống nhúng và cảm biến kết nối mạng."
+      ]
+    },
+    "satelliteRadioCommunicationEngineer": {
+      "title": "6. 🛰️ Kỹ sư truyền thông vệ tinh và vô tuyến",
+      "description": [
+        "Phân tích, xây dựng và vận hành hệ thống liên lạc vệ tinh, radar, truyền hình số.",
+        "Làm việc trong các đơn vị nghiên cứu quốc phòng – an ninh hoặc hãng viễn thông."
       ]
     }
   }

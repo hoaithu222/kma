@@ -8,7 +8,6 @@ import {
   Star,
   Trophy,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 import { formatDate } from "@/shared/utils/formatDate";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
@@ -21,7 +20,6 @@ const StudentPost = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const { studentPost, getStudentPostDispatch } = useHome();
   const posts = studentPost?.content;
   const navigate = useNavigate();
@@ -175,15 +173,13 @@ const StudentPost = () => {
             {posts?.map((post: any, index: number) => (
               <article
                 key={post.id}
-                className="group relative flex-none w-[85%] sm:w-[60%] md:w-[45%] lg:w-[32%] transform transition-all duration-500 hover:scale-105 hover:-translate-y-2"
-                onMouseEnter={() => setHoveredCard(post.id)}
-                onMouseLeave={() => setHoveredCard(null)}
+                className="group relative flex-none w-[85%] sm:w-[60%] md:w-[45%] lg:w-[32%] transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
               >
                 {/* Card with glass morphism */}
                 <div className="relative h-full overflow-hidden border shadow-xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-gray-200/50 dark:shadow-gray-900/50 border-white/20 dark:border-gray-700/50 group-hover:shadow-2xl group-hover:shadow-blue-200/30 dark:group-hover:shadow-blue-900/30">
                   {/* Animated border gradient */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r ${getRandomGradient(index)} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-xl sm:rounded-2xl`}
+                    className={`absolute inset-0 bg-gradient-to-r ${getRandomGradient(index)} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl sm:rounded-2xl`}
                   ></div>
 
                   {/* Enhanced Image Container */}
@@ -191,32 +187,27 @@ const StudentPost = () => {
                     <img
                       src={`${import.meta.env.VITE_API_URL_FILE}/${post.thumbnailUrl}`}
                       alt={post.title}
-                      className="object-cover w-full h-full transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                      className="object-cover w-full h-full transition-all duration-500 group-hover:scale-105"
                     />
 
                     {/* Multiple overlay effects */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${getRandomGradient(index)} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
+                      className={`absolute inset-0 bg-gradient-to-br ${getRandomGradient(index)} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
                     ></div>
 
                     {/* Enhanced Category Badge */}
                     <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
                       <div
-                        className={`px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 text-xs font-bold text-white rounded-full bg-gradient-to-r ${getRandomGradient(index)} shadow-lg backdrop-blur-sm border border-white/20 transform transition-all duration-300 group-hover:scale-110`}
+                        className={`px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 text-xs font-bold text-white rounded-full bg-gradient-to-r ${getRandomGradient(index)} shadow-lg backdrop-blur-sm border border-white/20 transition-all duration-300`}
                       >
                         {post.subCategoryName}
                       </div>
                     </div>
 
                     {/* Achievement badge */}
-                    <div className="absolute flex items-center justify-center w-8 h-8 transition-all duration-300 transform bg-yellow-500 rounded-full shadow-lg sm:w-9 sm:h-9 md:w-10 md:h-10 top-3 right-3 sm:top-4 sm:right-4 group-hover:rotate-12 group-hover:scale-110">
+                    <div className="absolute flex items-center justify-center w-8 h-8 transition-all duration-300 bg-yellow-500 rounded-full shadow-lg sm:w-9 sm:h-9 md:w-10 md:h-10 top-3 right-3 sm:top-4 sm:right-4">
                       <Award className="w-4 h-4 text-white sm:w-5 sm:h-5" />
-                    </div>
-
-                    {/* Floating action indicator */}
-                    <div className="absolute flex items-center justify-center w-8 h-8 transition-all duration-500 delay-100 transform translate-y-4 rounded-full opacity-0 sm:w-9 sm:h-9 md:w-10 md:h-10 bottom-3 right-3 sm:bottom-4 sm:right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm group-hover:opacity-100 group-hover:translate-y-0">
-                      <ArrowRight className="w-4 h-4 text-blue-600 sm:w-5 sm:h-5 dark:text-blue-400" />
                     </div>
                   </div>
 
@@ -247,26 +238,15 @@ const StudentPost = () => {
                       {/* Enhanced Read More Button */}
                       <Button
                         variant="text"
-                        className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl hover:scale-105"
+                        className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white transition-all duration-300 rounded-lg shadow-lg group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl"
                         onClick={() => navigate(`/detail-post/${post.id}`)}
                       >
                         <span>Đọc thêm</span>
-                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 transform transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-0.5" />
+                        <ExternalLink className="w-3 h-3 transition-transform duration-300 transform sm:w-4 sm:h-4 group-hover/btn:translate-x-1" />
                       </Button>
                     </div>
                   </div>
-
-                  {/* Shine effect */}
-                  <div className="absolute top-0 w-full h-full transition-all duration-1000 skew-x-12 -left-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:left-full"></div>
                 </div>
-
-                {/* Floating particles for each card */}
-                {hoveredCard === post.id && (
-                  <>
-                    <div className="absolute w-2 h-2 bg-yellow-400 rounded-full sm:w-3 sm:h-3 -top-2 -right-2 animate-ping opacity-60"></div>
-                    <div className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full -bottom-2 -left-2 animate-pulse opacity-60"></div>
-                  </>
-                )}
               </article>
             ))}
           </div>

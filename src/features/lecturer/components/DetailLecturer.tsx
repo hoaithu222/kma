@@ -62,7 +62,7 @@ const DetailLecturer = () => {
   }
 
   return (
-    <div className="min-h-screen mt-10 rounded-lg bg-background-base sm:mt-14 md:mt-20 lg:mt-28">
+    <div className="min-h-screen mt-10 rounded-lg sm:mt-14 md:mt-20 lg:mt-28">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute rounded-full -top-40 -right-40 w-96 h-96 bg-background-overlay blur-3xl animate-pulse"></div>
@@ -77,8 +77,8 @@ const DetailLecturer = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative px-6 py-12 mx-auto max-w-7xl">
-        <div className="p-2 ">
+      <div className="relative p-2 mx-auto sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 max-w-7xl">
+        <div className="p-2">
           <Button
             variant="borderIce"
             onClick={handleBack}
@@ -88,11 +88,11 @@ const DetailLecturer = () => {
           </Button>
         </div>
         {/* Hero Section with 50-50 Layout */}
-        <div className="mb-16 overflow-hidden transition-all duration-700 shadow-2xl bg-background-overlay backdrop-blur-xl rounded-3xl hover:shadow-3xl hover:bg-background-overlay animate-fade-in">
+        <div className="p-2 mb-8 overflow-hidden transition-all duration-700 rounded-lg shadow-2xl sm:mb-12 md:mb-16 bg-background-overlay backdrop-blur-xl sm:rounded-xl md:rounded-2xl lg:rounded-3xl hover:shadow-3xl hover:bg-background-overlay animate-fade-in sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12">
           <div className="flex flex-col lg:flex-row">
             {/* Left Side - Image (50%) */}
             <div className="relative lg:w-1/2">
-              <div className="relative h-96 lg:h-[600px] overflow-hidden bg-background-overlay">
+              <div className="relative h-60 sm:h-80 md:h-96 lg:h-[400px] xl:h-[600px] overflow-hidden bg-background-overlay rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl">
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-full bg-gradient-to-br from-white/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 rounded-tr-full bg-gradient-to-tr from-white/20 to-transparent"></div>
@@ -132,7 +132,7 @@ const DetailLecturer = () => {
             </div>
 
             {/* Right Side - Info (50%) */}
-            <div className="relative p-8 lg:w-1/2 lg:p-12">
+            <div className="relative p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 lg:w-1/2">
               {/* Background decorations */}
               <div className="absolute top-0 right-0 w-20 h-20 translate-x-10 -translate-y-10 rounded-full opacity-50 bg-gradient-to-br from-blue-100 to-indigo-100"></div>
               <div className="absolute bottom-0 left-0 w-16 h-16 -translate-x-8 translate-y-8 rounded-full opacity-50 bg-gradient-to-br from-purple-100 to-pink-100"></div>
@@ -140,18 +140,18 @@ const DetailLecturer = () => {
               <div className="relative z-10 flex flex-col h-full">
                 {/* Title Section */}
                 <div className="mb-8">
-                  <h3 className="mb-4 text-4xl font-bold leading-tight text-transparent lg:text-5xl bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text">
+                  <h3 className="mb-4 text-xl font-bold leading-tight text-transparent sm:text-2xl md:text-3xl lg:text-4xl lg:text-5xl bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text">
                     {detailLecturer?.name}
                   </h3>
 
                   <div className="flex flex-wrap gap-3 mb-4">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl hover:scale-105 hover:shadow-xl">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 text-sm font-bold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl hover:scale-105 hover:shadow-xl sm:text-base md:text-lg">
                       <GraduationCap className="w-5 h-5" />
                       {detailLecturer?.title}
                     </div>
 
                     {detailLecturer?.position && (
-                      <div className="inline-flex items-center gap-2 px-4 py-2 font-semibold text-purple-700 transition-all duration-300 transform bg-purple-100 rounded-2xl hover:scale-105 hover:bg-purple-200">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-purple-700 transition-all duration-300 transform bg-purple-100 rounded-2xl hover:scale-105 hover:bg-purple-200 sm:text-sm md:text-base">
                         <Award className="w-4 h-4" />
                         {stripHtml(detailLecturer.position)}
                       </div>
@@ -162,17 +162,17 @@ const DetailLecturer = () => {
                 {/* Quick Info Cards */}
                 <div className="flex-1 mb-4 space-y-4">
                   {detailLecturer?.email && (
-                    <div className="flex items-center gap-4 p-4 transition-all duration-300 group bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-blue-50 hover:scale-105 hover:shadow-lg">
+                    <div className="flex items-center gap-4 p-4 text-xs transition-all duration-300 group bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-blue-50 hover:scale-105 hover:shadow-lg sm:text-sm md:text-base">
                       <div className="p-3 transition-all duration-300 bg-blue-100 rounded-xl group-hover:bg-blue-200 group-hover:scale-110">
                         <Mail className="w-5 h-5 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-gray-600">
+                        <p className="text-xs font-semibold text-gray-600 sm:text-sm">
                           Email liên hệ
                         </p>
                         <a
                           href={`mailto:${detailLecturer.email}`}
-                          className="text-lg font-bold text-blue-600 transition-colors duration-300 hover:text-blue-800 hover:underline"
+                          className="text-sm font-bold text-blue-600 transition-colors duration-300 sm:text-base hover:text-blue-800 hover:underline"
                         >
                           {detailLecturer.email}
                         </a>
@@ -182,13 +182,13 @@ const DetailLecturer = () => {
 
                   {/* Quick Bio Preview */}
                   {detailLecturer?.bio && (
-                    <div className="p-6 transition-all duration-300 border-4 border-gray-200 border-dashed bg-gradient-to-br from-gray-50/80 to-blue-50/80 rounded-2xl hover:border-blue-300 hover:bg-gradient-to-br hover:from-blue-50/80 hover:to-indigo-50/80">
-                      <h4 className="flex items-center gap-2 mb-3 text-sm font-bold text-gray-800">
+                    <div className="p-2 transition-all duration-300 border-4 border-gray-200 border-dashed rounded-lg sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-gray-50/80 to-blue-50/80 sm:rounded-xl md:rounded-2xl lg:rounded-3xl hover:border-blue-300 hover:bg-gradient-to-br hover:from-blue-50/80 hover:to-indigo-50/80">
+                      <h4 className="flex items-center gap-2 mb-3 text-xs font-bold text-gray-800 sm:text-sm">
                         <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                         Giới thiệu nhanh
                       </h4>
                       <p
-                        className="text-sm leading-relaxed text-gray-700 line-clamp-4"
+                        className="text-xs leading-relaxed text-gray-700 sm:text-sm line-clamp-4"
                         dangerouslySetInnerHTML={{
                           __html: detailLecturer.bio,
                         }}
@@ -216,18 +216,18 @@ const DetailLecturer = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Bio */}
           {detailLecturer?.bio && (
-            <div className="group lg:col-span-2 p-8 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.01] animate-fade-in">
-              <div className="absolute inset-0 transition-opacity duration-500 opacity-0 bg-gradient-to-br from-purple-500/3 to-pink-500/3 rounded-3xl group-hover:opacity-100"></div>
-              <h3 className="relative flex items-center gap-4 mb-8 text-3xl font-bold text-text-primary">
+            <div className="group lg:col-span-2 p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.01] animate-fade-in">
+              <div className="absolute inset-0 transition-opacity duration-500 rounded-lg opacity-0 bg-gradient-to-br from-purple-500/3 to-pink-500/3 sm:rounded-xl md:rounded-2xl lg:rounded-3xl group-hover:opacity-100"></div>
+              <h3 className="relative flex items-center gap-4 mb-8 text-lg font-bold sm:text-xl md:text-2xl lg:text-3xl text-text-primary">
                 <div className="p-4 shadow-lg bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl">
                   <User className="w-8 h-8 text-white" />
                 </div>
                 Thông tin cá nhân
                 <div className="flex-1 h-px bg-gradient-to-r from-background-subtle to-transparent"></div>
               </h3>
-              <div className="relative p-8 border-2 shadow-inner bg-gradient-to-br from-purple-50/50 to-pink-50/50 rounded-3xl border-purple-200/30">
+              <div className="relative p-2 border-2 rounded-lg shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-purple-50/50 to-pink-50/50 sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-purple-200/30">
                 <p
-                  className="text-lg font-medium leading-relaxed text-gray-700 whitespace-pre-line"
+                  className="text-sm font-medium leading-relaxed text-gray-700 whitespace-pre-line sm:text-base"
                   dangerouslySetInnerHTML={{
                     __html: detailLecturer.bio,
                   }}
@@ -238,16 +238,16 @@ const DetailLecturer = () => {
 
           {/* Education */}
           {detailLecturer?.education && (
-            <div className="group p-8 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
-              <h3 className="flex items-center gap-4 mb-6 text-2xl font-bold text-text-primary">
+            <div className="group p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
+              <h3 className="flex items-center gap-4 mb-6 text-base font-bold sm:text-lg md:text-xl text-text-primary">
                 <div className="p-3 shadow-lg bg-gradient-to-br from-secondary to-secondary-dark rounded-2xl">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 Học vấn
               </h3>
-              <div className="p-6 border-2 shadow-inner bg-gradient-to-br from-background-surface to-background-elevated rounded-2xl border-border-primary">
+              <div className="p-2 border-2 rounded-lg shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
                 <p
-                  className="text-lg font-medium leading-relaxed text-text-secondary"
+                  className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary"
                   dangerouslySetInnerHTML={{
                     __html: detailLecturer.education,
                   }}
@@ -258,16 +258,16 @@ const DetailLecturer = () => {
 
           {/* Research Interests */}
           {detailLecturer?.researchInterests && (
-            <div className="group p-8 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
-              <h3 className="flex items-center gap-4 mb-6 text-2xl font-bold text-text-primary">
+            <div className="group p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
+              <h3 className="flex items-center gap-4 mb-6 text-base font-bold sm:text-lg md:text-xl text-text-primary">
                 <div className="p-3 shadow-lg bg-gradient-to-br from-accent to-accent-dark rounded-2xl">
                   <Lightbulb className="w-6 h-6 text-white" />
                 </div>
                 Lĩnh vực nghiên cứu
               </h3>
-              <div className="p-6 border-2 shadow-inner bg-gradient-to-br from-background-surface to-background-elevated rounded-2xl border-border-primary">
+              <div className="p-2 border-2 rounded-lg shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
                 <p
-                  className="text-lg font-medium leading-relaxed text-text-secondary"
+                  className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary"
                   dangerouslySetInnerHTML={{
                     __html: detailLecturer.researchInterests,
                   }}
@@ -278,15 +278,15 @@ const DetailLecturer = () => {
 
           {/* Teaching Areas */}
           {detailLecturer?.teachingAreas && (
-            <div className="group p-8 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
-              <h3 className="flex items-center gap-4 mb-6 text-2xl font-bold text-text-primary">
+            <div className="group p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
+              <h3 className="flex items-center gap-4 mb-6 text-base font-bold sm:text-lg md:text-xl text-text-primary">
                 <div className="p-3 shadow-lg bg-gradient-to-br from-success to-success rounded-2xl">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 Lĩnh vực giảng dạy
               </h3>
-              <div className="p-6 border-2 shadow-inner bg-gradient-to-br from-background-surface to-background-elevated rounded-2xl border-border-primary">
-                <p className="text-lg font-medium leading-relaxed text-text-secondary">
+              <div className="p-2 border-2 rounded-lg shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
+                <p className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary">
                   {stripHtml(detailLecturer.teachingAreas)}
                 </p>
               </div>
@@ -295,16 +295,16 @@ const DetailLecturer = () => {
 
           {/* Scientific Works */}
           {detailLecturer?.scientificWorks && (
-            <div className="group p-8 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
-              <h3 className="flex items-center gap-4 mb-6 text-2xl font-bold text-text-primary">
+            <div className="group p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.02] animate-fade-in">
+              <h3 className="flex items-center gap-4 mb-6 text-base font-bold sm:text-lg md:text-xl text-text-primary">
                 <div className="p-3 shadow-lg bg-gradient-to-br from-info to-info rounded-2xl">
                   <FileText className="w-6 h-6 text-white" />
                 </div>
                 Công trình khoa học
               </h3>
-              <div className="p-6 border-2 shadow-inner bg-gradient-to-br from-background-surface to-background-elevated rounded-2xl border-border-primary">
+              <div className="p-2 border-2 rounded-lg shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
                 <p
-                  className="text-lg font-medium leading-relaxed text-text-secondary"
+                  className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary"
                   dangerouslySetInnerHTML={{
                     __html: detailLecturer.scientificWorks,
                   }}
@@ -315,17 +315,17 @@ const DetailLecturer = () => {
 
           {/* Awards */}
           {detailLecturer?.awards && (
-            <div className="group lg:col-span-2 p-8 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.01] animate-fade-in">
-              <h3 className="flex items-center gap-4 mb-8 text-3xl font-bold text-text-primary">
+            <div className="group lg:col-span-2 p-2 sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-background-overlay backdrop-blur-xl border border-white/30 shadow-xl rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl transition-all duration-500 hover:bg-background-muted hover:shadow-2xl hover:scale-[1.01] animate-fade-in">
+              <h3 className="flex items-center gap-4 mb-8 text-lg font-bold sm:text-xl md:text-2xl lg:text-3xl text-text-primary">
                 <div className="p-4 shadow-lg bg-gradient-to-br from-warning to-warning rounded-2xl">
                   <Trophy className="w-8 h-8 text-white" />
                 </div>
                 Giải thưởng & Danh hiệu
                 <div className="flex-1 h-px bg-gradient-to-r from-background-subtle to-transparent"></div>
               </h3>
-              <div className="p-8 border-2 shadow-inner bg-gradient-to-br from-background-surface to-background-elevated rounded-3xl border-border-primary">
+              <div className="p-2 border-2 rounded-lg shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 bg-gradient-to-br from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
                 <p
-                  className="text-lg font-semibold leading-relaxed text-text-secondary"
+                  className="text-sm font-semibold leading-relaxed sm:text-base text-text-secondary"
                   dangerouslySetInnerHTML={{
                     __html: detailLecturer.awards,
                   }}

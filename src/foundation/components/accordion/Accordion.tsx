@@ -284,7 +284,7 @@ const CustomAccordion: React.FC<CustomAccordionProps> = ({
   const variantClasses = {
     default: `
       border border-border-primary
-      ${rounded ? "rounded-lg" : ""}
+      ${rounded ? "rounded-lg" : "rounded-md"}
       divide-y divide-border-primary
       ${shadow ? "shadow-sm" : ""}
       ${gradient ? "bg-gradient-to-r from-background-elevated to-background-muted" : "bg-background-elevated"}

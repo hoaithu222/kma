@@ -39,7 +39,7 @@ const Navbar = () => {
   const postSubCategoryItems =
     postSubCategory?.subCategories.map((item: any) => ({
       label: item.name,
-      path: `/posts/${item.id}`,
+      path: `/post/${item.id}`,
     })) || [];
   const eventSubCategoryItems =
     eventSubCategory?.subCategories.map((item: any) => ({
@@ -49,13 +49,29 @@ const Navbar = () => {
   const researchSubCategory = category.find(
     (item: IResponseCategory) => item.slug === "nghien-cuu"
   );
+
   const researchSubCategoryItems =
     researchSubCategory?.subCategories.map((item: any) => ({
       label: item.name,
       path: `/research/${item.id}`,
     })) || [];
+  // tuyển sinh
+  const admissionSubCategory = category.find(
+    (item: IResponseCategory) => item.slug === "tuyen-sinh"
+  );
+  const admissionSubCategoryItems =
+    admissionSubCategory?.subCategories.map((item: any) => ({
+      label: item.name,
+      path: `/admission/${item.id}`,
+    })) || [];
   const navbarItems = [
     ...NavbarItems,
+    {
+      label: "Tuyển sinh",
+      path: "/admission/57",
+      icon: "FaUser",
+      children: admissionSubCategoryItems,
+    },
     {
       label: "Nghiên cứu",
       path: "/research/55",
@@ -70,16 +86,17 @@ const Navbar = () => {
     },
     {
       label: "Bài viết",
-      path: "/posts/40",
+      path: "/post/40",
       icon: "FaUser",
       children: postSubCategoryItems,
     },
     {
       label: "Sự kiện",
-      path: "/event/49",
+      path: "/events/49",
       icon: "FaUser",
       children: eventSubCategoryItems,
     },
+
     ...ContactItems,
   ];
 
