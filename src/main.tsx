@@ -12,3 +12,15 @@ createRoot(document.getElementById("root")!).render(
     </Suspense>
   </StrictMode>
 );
+
+// Global error handler cho lỗi ngoài React (ví dụ: dynamic import, unhandled promise rejection)
+window.addEventListener("error", (event) => {
+  // Có thể log hoặc show thông báo tùy ý
+  // alert("Unexpected error occurred. Please reload the page.");
+  console.error("Global error:", event.error);
+});
+window.addEventListener("unhandledrejection", (event) => {
+  // Có thể log hoặc show thông báo tùy ý
+  // alert("Unexpected error occurred. Please reload the page.");
+  console.error("Unhandled rejection:", event.reason);
+});

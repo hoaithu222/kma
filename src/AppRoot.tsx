@@ -5,6 +5,9 @@ import { PersistGate } from "redux-persist/integration/react";
 import ThemProvider from "./app/providers/ThemProvider";
 import LanguageProvider from "./app/providers/LanguageProvider";
 import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorFallback from "./components/ErrorFallback";
+
+// Custom fallback UI cho ErrorBoundary
 
 const AppRoot = () => {
   return (
@@ -12,7 +15,7 @@ const AppRoot = () => {
       <PersistGate loading={null} persistor={persistor}>
         <LanguageProvider>
           <ThemProvider>
-            <ErrorBoundary>
+            <ErrorBoundary fallback={<ErrorFallback />}>
               <App />
             </ErrorBoundary>
           </ThemProvider>
