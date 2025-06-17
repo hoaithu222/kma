@@ -18,7 +18,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative overflow-hidden text-gray-100 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <footer className="relative overflow-hidden text-text-primary bg-gradient-to-br from-primary via-primary-light to-primary-dark">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute rounded-full w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 -top-48 -left-48 animate-pulse"></div>
@@ -36,9 +36,9 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between mb-12 md:flex-row">
           <div className="flex items-center mb-6 space-x-4 md:mb-0">
             <div className="relative group">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 p-0.5 group-hover:scale-110 transition-all duration-500">
-                <div className="flex items-center justify-center w-full h-full bg-gray-900 rounded-full">
-                  <span className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text">
+              <div className="w-20 h-20 rounded-full  p-0.5 group-hover:scale-110 transition-all duration-500">
+                <div className="flex items-center justify-center w-full h-full rounded-full">
+                  <span className="text-2xl font-bold text-transparent bg-gradient-to-br from-secondary to-secondary-light bg-clip-text">
                     <img src={logo} alt="logo" className="w-full h-full" />
                   </span>
                 </div>
@@ -46,7 +46,7 @@ const Footer = () => {
               <div className="absolute inset-0 transition-all duration-500 rounded-full opacity-0 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:opacity-30 blur-xl"></div>
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text">
+              <h2 className="text-xl font-semibold text-transparent bg-gradient-to-br from-text-primary to-text-primary-dark bg-clip-text">
                 {t("header.description")}
               </h2>
             </div>
