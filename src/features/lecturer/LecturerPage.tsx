@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import LecturerCard from "./components/LecturerCard";
 import { useLecturer } from "./hooks/useLecturer";
 import { ReduxStateType } from "@/app/store/types";
@@ -7,21 +7,23 @@ import Pagination from "@/foundation/components/pagination/Pagination";
 import FacultyCardSkeleton from "@/foundation/components/loading/FacultyCardSkeleton";
 
 const LecturerPage = () => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [pageSize, _setPageSize] = useState(6);
-  const { lecturerList, statusGetLecturer, getLecturerDispatch } =
-    useLecturer();
+  const {
+    lecturerList,
+    statusGetLecturer,
+    getLecturerDispatch,
+    filter,
+    setFilter,
+    totalElements,
+    totalPages,
+  } = useLecturer();
   const navigate = useNavigate();
 
   useEffect(() => {
-    getLecturerDispatch({});
-  }, []);
-
-  // Calculate pagination
-  const totalPages = Math.ceil(lecturerList.length / pageSize);
-  const startIndex = currentPage * pageSize;
-  const endIndex = startIndex + pageSize;
-  const currentLecturers = lecturerList.slice(startIndex, endIndex);
+    getLecturerDispatch();
+  }, [filter]);
+  const handlePageChange = (page: number) => {
+    setFilter((prev) => ({ ...prev, page }));
+  };
 
   if (statusGetLecturer === ReduxStateType.LOADING) {
     return (
@@ -32,7 +34,7 @@ const LecturerPage = () => {
   }
 
   return (
-    <div className="min-h-screen p-1 mt-10 sm:p-3 md:p-4 lg:p-6 md:mt-16 lg:mt-28">
+    <div className="p-1 mt-10 min-h-screen sm:p-3 md:p-4 lg:p-6 md:mt-16 lg:mt-28">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-8">
@@ -46,7 +48,7 @@ const LecturerPage = () => {
 
         {/* Lecturer Cards */}
         <div className="grid grid-cols-1 gap-3 sm:gap-4 lg:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {currentLecturers.map((lecturer) => (
+          {lecturerList.map((lecturer) => (
             <LecturerCard
               key={lecturer.id}
               lecturer={lecturer}
@@ -58,17 +60,16 @@ const LecturerPage = () => {
         </div>
 
         {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="mt-8">
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              totalItems={lecturerList.length}
-              pageSize={pageSize}
-              onPageChange={(page) => setCurrentPage(page)}
-            />
-          </div>
-        )}
+
+        <div className="mt-8">
+          <Pagination
+            currentPage={filter.page}
+            totalPages={totalPages}
+            totalItems={totalElements}
+            pageSize={filter.size}
+            onPageChange={handlePageChange}
+          />
+        </div>
       </div>
     </div>
   );

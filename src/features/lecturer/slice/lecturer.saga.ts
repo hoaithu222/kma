@@ -3,19 +3,30 @@ import {
   getDetailLecturer,
   getDetailLecturerFailed,
   getDetailLecturerSuccess,
-  getLecturer,
-  getLecturerFailed,
+  getLecturerRequest,
   getLecturerSuccess,
+  getLecturerFailure,
 } from "./lecturer.slice";
 import { getLecturerByIdApi, getLecturersAllApi } from "@/core/api/lecturer";
 import { PayloadAction } from "@reduxjs/toolkit";
+import { IRequestSearchLecturer } from "@/core/api/lecturer/types";
 
-function* getLecturerSaga(): Generator<any, void, any> {
+function* getLecturerSaga(
+  action: PayloadAction<IRequestSearchLecturer>
+): Generator<any, void, any> {
   try {
-    const response = yield call(getLecturersAllApi, {});
-    yield put(getLecturerSuccess(response.data.data));
+    const response = yield call(getLecturersAllApi, action.payload);
+    yield put(
+      getLecturerSuccess({
+        content: response.data.data.content,
+        totalElements: response.data.data.totalElements,
+        totalPages: response.data.data.totalPages,
+        pageNumber: response.data.data.pageNumber,
+        pageSize: response.data.data.pageSize,
+      })
+    );
   } catch (error) {
-    yield put(getLecturerFailed(error as string));
+    yield put(getLecturerFailure(error as string));
   }
 }
 
@@ -31,6 +42,6 @@ function* getDetailLecturerSaga(
 }
 
 export function* lecturerSaga() {
-  yield takeEvery(getLecturer, getLecturerSaga);
+  yield takeEvery(getLecturerRequest, getLecturerSaga);
   yield takeEvery(getDetailLecturer, getDetailLecturerSaga);
 }

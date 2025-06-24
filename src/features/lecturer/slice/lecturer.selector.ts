@@ -7,7 +7,7 @@ const selectLecturer = (state: RootState) =>
 
 export const selectLecturerData = createSelector(
   [selectLecturer],
-  (lecturer) => lecturer.lecturerList
+  (lecturer) => lecturer.lecturer.dataLecturer
 );
 export const selectLecturerStatus = createSelector(
   [selectLecturer],
@@ -20,4 +20,20 @@ export const selectDetailLecturerData = createSelector(
 export const selectDetailLecturerStatus = createSelector(
   [selectLecturer],
   (lecturer) => lecturer.statusGetDetailLecturer
+);
+export const selectLecturerTotalElements = createSelector(
+  [selectLecturer],
+  (lecturer) => lecturer.lecturer.totalElements
+);
+export const selectLecturerTotalPages = createSelector(
+  [selectLecturer],
+  (lecturer) => lecturer.lecturer.totalPages
+);
+export const selectLecturerPageNumber = createSelector(
+  [selectLecturer],
+  (lecturer) => lecturer.lecturer.pageNumber
+);
+export const selectLecturerPageSize = createSelector(
+  [selectLecturer],
+  (lecturer) => lecturer.lecturer.pageSize
 );
