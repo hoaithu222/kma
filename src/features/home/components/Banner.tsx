@@ -6,6 +6,7 @@ import { useHome } from "../hooks/useHook";
 import clsx from "clsx";
 import { useNavigate } from "react-router-dom";
 import SafeImage from "@/components/SafeImage";
+import { sortByPublishedDate } from "@/shared/utils/sort";
 
 const animations = [
   {
@@ -58,8 +59,11 @@ const Banner = () => {
   useEffect(() => {
     getBannerPostDispatch();
   }, []);
+  // sắp xếp bannerPost theo createdAt
 
-  const images = bannerPost?.content?.map((item: any) => ({
+  const sortBanner = sortByPublishedDate(bannerPost?.content);
+
+  const images = sortBanner?.map((item: any) => ({
     id: item.id,
     image: `${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`,
     title: item.title,
@@ -132,7 +136,7 @@ const Banner = () => {
             )}
           >
             <div
-              className="relative flex flex-col h-full p-1 text-white md:p-2 lg:p-4"
+              className="flex relative flex-col p-1 h-full text-white md:p-2 lg:p-4"
               // style={{
               //   backgroundImage: `url(${images[currentIndex].image})`,
               //   backgroundSize: "cover",
@@ -140,8 +144,8 @@ const Banner = () => {
               // }}
             >
               {/* Nội dung chữ */}
-              <div className="relative z-10 flex flex-col ">
-                <h2 className="mb-1 text-xs font-bold leading-tight text-shadow sm:text-sm md:text-base lg:text-xl line-clamp-2 ">
+              <div className="flex relative z-10 flex-col">
+                <h2 className="mb-1 text-xs font-bold leading-tight text-shadow sm:text-sm md:text-base lg:text-xl line-clamp-2">
                   {images[currentIndex].title}
                 </h2>
 
@@ -165,7 +169,7 @@ const Banner = () => {
       <Button
         variant="primary"
         shape="round"
-        className="absolute z-10 transform -translate-y-1/2 left-4 top-1/2 opacity-70 hover:opacity-100"
+        className="absolute left-4 top-1/2 z-10 opacity-70 transform -translate-y-1/2 hover:opacity-100"
         onClick={handlePrevious}
       >
         <ArrowLeftIcon className="w-2 h-2 lg:w-4 lg:h-4" />
@@ -173,15 +177,15 @@ const Banner = () => {
       <Button
         variant="primary"
         shape="round"
-        className="absolute z-10 transform -translate-y-1/2 right-4 top-1/2 opacity-70 hover:opacity-100"
+        className="absolute right-4 top-1/2 z-10 opacity-70 transform -translate-y-1/2 hover:opacity-100"
         onClick={handleNext}
       >
         <ArrowRightIcon className="w-2 h-2 lg:w-4 lg:h-4" />
       </Button>
 
       {/* Dots indicator */}
-      <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-4 left-1/2">
-        {images.map((_, index) => (
+      <div className="flex absolute bottom-4 left-1/2 space-x-2 transform -translate-x-1/2">
+        {images.map((_item: any, index: number) => (
           <button
             key={index}
             className={`h-2 w-2 rounded-full transition-all duration-200 ${

@@ -3,19 +3,20 @@ import { useHome } from "../hooks/useHook";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
 import { formatDate } from "@/shared/utils/formatDate";
 import { useNavigate } from "react-router-dom";
+import { sortByPublishedDate } from "@/shared/utils/sort";
 
 const NewsPost = () => {
   const { newsPost, getNewsPostDispatch } = useHome();
-  const post = newsPost?.content;
+  const post = sortByPublishedDate(newsPost?.content);
   const navigate = useNavigate();
   useEffect(() => {
     getNewsPostDispatch();
   }, []);
 
   return (
-    <div className="my-4 overflow-hidden rounded-lg md:my-6 bg-background-base lg:my-8">
+    <div className="overflow-hidden my-4 rounded-lg md:my-6 bg-background-base lg:my-8">
       {/* Header Section */}
-      <div className="sticky top-0 z-10 border-b rounded-lg bg-background-surface backdrop-blur-sm border-border-primary">
+      <div className="sticky top-0 z-10 rounded-lg border-b backdrop-blur-sm bg-background-surface border-border-primary">
         <div className="px-4 py-4 mx-auto max-w-7xl sm:py-6">
           <div className="text-center">
             <h2 className="mb-2 text-lg font-bold text-primary sm:text-xl md:text-2xl lg:text-3xl">
@@ -32,17 +33,17 @@ const NewsPost = () => {
           {post?.map((item: any, _index: number) => (
             <article
               key={item.id}
-              className="relative overflow-hidden transition-all duration-500 transform border shadow-lg bg-card-bg group rounded-2xl hover:shadow-2xl hover:-translate-y-2 border-border-primary"
+              className="overflow-hidden relative rounded-2xl border shadow-lg transition-all duration-500 transform bg-card-bg group hover:shadow-2xl hover:-translate-y-2 border-border-primary"
             >
               {/* Category Badge */}
-              <div className="absolute z-10 top-4 left-4">
+              <div className="absolute top-4 left-4 z-10">
                 <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full shadow-lg text-text-on-primary bg-primary">
                   {item.categoryName}
                 </span>
               </div>
 
               {/* Image Section */}
-              <div className="relative h-48 overflow-hidden bg-background-muted">
+              <div className="overflow-hidden relative h-48 bg-background-muted">
                 {item.thumbnailUrl ? (
                   <img
                     src={`${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`}
@@ -50,8 +51,8 @@ const NewsPost = () => {
                     className="object-cover w-full h-full"
                   />
                 ) : (
-                  <div className="flex items-center justify-center w-full h-full">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary">
+                  <div className="flex justify-center items-center w-full h-full">
+                    <div className="flex justify-center items-center w-16 h-16 rounded-full bg-primary">
                       <svg
                         className="w-8 h-8 text-text-on-primary"
                         fill="none"
@@ -70,7 +71,7 @@ const NewsPost = () => {
                 )}
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
               </div>
 
               {/* Content Section */}
@@ -88,11 +89,11 @@ const NewsPost = () => {
                 )}
 
                 {/* Meta Information */}
-                <div className="flex items-center justify-between mb-4 text-xs text-text-muted">
+                <div className="flex justify-between items-center mb-4 text-xs text-text-muted">
                   <div className="flex items-center space-x-4">
                     <span className="flex items-center">
                       <svg
-                        className="w-4 h-4 mr-1"
+                        className="mr-1 w-4 h-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -114,7 +115,7 @@ const NewsPost = () => {
                     </span>
                     <span className="flex items-center">
                       <svg
-                        className="w-4 h-4 mr-1"
+                        className="mr-1 w-4 h-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -138,14 +139,14 @@ const NewsPost = () => {
                 </div>
 
                 {/* Read More Button */}
-                <div className="flex items-center justify-between">
+                <div className="flex justify-between items-center">
                   <button
                     className="inline-flex items-center px-2 py-1.5 text-xs font-medium transition-all duration-300 transform rounded-lg shadow-md md:text-sm lg:px-4 lg:py-2 text-text-on-primary bg-primary hover:bg-primary-dark hover:scale-105 hover:shadow-lg"
                     onClick={() => navigate(`/detail-post/${item.id}`)}
                   >
                     Đọc thêm
                     <svg
-                      className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                      className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -162,7 +163,7 @@ const NewsPost = () => {
               </div>
 
               {/* Decorative Element */}
-              <div className="absolute bottom-0 left-0 w-full h-1 transition-transform duration-500 origin-left transform scale-x-0 bg-primary group-hover:scale-x-100"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 transition-transform duration-500 transform origin-left scale-x-0 bg-primary group-hover:scale-x-100"></div>
             </article>
           ))}
         </div>

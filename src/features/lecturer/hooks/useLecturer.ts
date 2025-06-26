@@ -25,6 +25,7 @@ export const useLecturer = () => {
     position: "",
     page: 0,
     size: 9,
+    ordered: true,
   });
   const detailLecturer = useSelector(selectDetailLecturerData);
   const statusGetDetailLecturer = useSelector(selectDetailLecturerStatus);

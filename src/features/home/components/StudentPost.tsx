@@ -15,13 +15,13 @@ import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
 import { useHome } from "../hooks/useHook";
 import Button from "@/foundation/components/buttons/Button";
 import { useNavigate } from "react-router-dom";
-
+import { sortByPublishedDate } from "@/shared/utils/sort";
 const StudentPost = () => {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const { studentPost, getStudentPostDispatch } = useHome();
-  const posts = studentPost?.content;
+  const posts = sortByPublishedDate(studentPost?.content);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -74,15 +74,15 @@ const StudentPost = () => {
   };
 
   return (
-    <div className="relative w-full py-4 mt-2 overflow-hidden sm:py-10 md:py-12 lg:py-16 rounded-xl sm:mt-3 md:mt-4 lg:mt-6">
+    <div className="overflow-hidden relative py-4 mt-2 w-full rounded-xl sm:py-10 md:py-12 lg:py-16 sm:mt-3 md:mt-4 lg:mt-6">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-indigo-100/30 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/10"></div>
 
       {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="overflow-hidden absolute inset-0 pointer-events-none">
         <div className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full top-20 left-10 animate-pulse opacity-60"></div>
-        <div className="absolute w-1 h-1 bg-purple-400 rounded-full top-40 right-20 animate-ping opacity-40"></div>
-        <div className="absolute w-2 h-2 bg-pink-300 rounded-full sm:w-3 sm:h-3 bottom-32 left-1/4 animate-bounce opacity-30"></div>
+        <div className="absolute right-20 top-40 w-1 h-1 bg-purple-400 rounded-full opacity-40 animate-ping"></div>
+        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-pink-300 rounded-full opacity-30 animate-bounce sm:w-3 sm:h-3"></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-emerald-400 rounded-full animate-pulse opacity-50"></div>
       </div>
 
@@ -90,38 +90,38 @@ const StudentPost = () => {
         {/* Enhanced Header Section */}
         <div className="mb-8 text-center sm:mb-10 md:mb-12 lg:mb-16">
           {/* Icon with multiple effects */}
-          <div className="relative inline-flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 blur-xl opacity-30 animate-pulse"></div>
-            <div className="relative flex items-center justify-center w-12 h-12 rounded-full shadow-2xl sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500">
-              <Trophy className="w-6 h-6 text-white sm:w-8 sm:h-8 md:w-10 md:h-10 animate-bounce" />
-              <div className="absolute flex items-center justify-center w-4 h-4 rounded-full sm:w-6 sm:h-6 -top-1 -right-1 bg-gradient-to-r from-yellow-300 to-orange-400">
+          <div className="inline-flex relative justify-center items-center mb-4 sm:mb-6 md:mb-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 rounded-full opacity-30 blur-xl animate-pulse"></div>
+            <div className="flex relative justify-center items-center w-12 h-12 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 rounded-full shadow-2xl sm:w-16 sm:h-16 md:w-20 md:h-20">
+              <Trophy className="w-6 h-6 text-white animate-bounce sm:w-8 sm:h-8 md:w-10 md:h-10" />
+              <div className="flex absolute -top-1 -right-1 justify-center items-center w-4 h-4 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full sm:w-6 sm:h-6">
                 <Star className="w-2 h-2 text-white sm:w-3 sm:h-3" />
               </div>
             </div>
           </div>
 
           {/* Title with gradient text */}
-          <h2 className="mb-3 text-lg font-black leading-tight text-transparent sm:text-xl md:text-2xl lg:text-3xl bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text">
+          <h2 className="mb-3 text-lg font-black leading-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 sm:text-xl md:text-2xl lg:text-3xl dark:from-white dark:via-blue-200 dark:to-purple-200">
             Cựu Sinh Viên Xuất Sắc
           </h2>
 
           {/* Subtitle with enhanced styling */}
-          <div className="relative max-w-3xl mx-auto">
+          <div className="relative mx-auto max-w-3xl">
             <p className="text-xs leading-relaxed text-gray-600 sm:text-sm md:text-base dark:text-gray-300">
               Những câu chuyện truyền cảm hứng từ các cựu sinh viên
-              <span className="relative inline-block mx-1 sm:mx-2">
-                <span className="relative z-10 font-semibold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">
+              <span className="inline-block relative mx-1 sm:mx-2">
+                <span className="relative z-10 font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                   Học Viện Kỹ Thuật Mật Mã
                 </span>
-                <span className="absolute inset-0 transform -skew-x-3 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg transform -skew-x-3 dark:from-blue-900/30 dark:to-purple-900/30"></span>
               </span>
             </p>
 
             {/* Decorative elements */}
-            <div className="flex items-center justify-center gap-1 mt-2 sm:gap-2 sm:mt-4">
-              <Sparkles className="w-3 h-3 text-yellow-500 sm:w-4 sm:h-4 animate-pulse" />
+            <div className="flex gap-1 justify-center items-center mt-2 sm:gap-2 sm:mt-4">
+              <Sparkles className="w-3 h-3 text-yellow-500 animate-pulse sm:w-4 sm:h-4" />
               <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-              <Sparkles className="w-3 h-3 text-purple-500 delay-300 sm:w-4 sm:h-4 animate-pulse" />
+              <Sparkles className="w-3 h-3 text-purple-500 delay-300 animate-pulse sm:w-4 sm:h-4" />
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ const StudentPost = () => {
         {/* Enhanced Posts Container */}
         <div className="relative">
           {/* Enhanced Navigation Buttons */}
-          <div className="absolute left-0 z-20 hidden -translate-y-1/2 top-1/2 md:block">
+          <div className="hidden absolute left-0 top-1/2 z-20 -translate-y-1/2 md:block">
             <Button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
@@ -145,7 +145,7 @@ const StudentPost = () => {
             </Button>
           </div>
 
-          <div className="absolute right-0 z-20 hidden -translate-y-1/2 top-1/2 md:block">
+          <div className="hidden absolute right-0 top-1/2 z-20 -translate-y-1/2 md:block">
             <Button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
@@ -164,7 +164,7 @@ const StudentPost = () => {
           {/* Enhanced Scrollable Posts */}
           <div
             ref={scrollContainerRef}
-            className="flex gap-3 px-3 py-2 overflow-x-auto sm:gap-4 md:gap-6 lg:gap-8 scrollbar-hide sm:px-4 md:px-6 lg:px-8"
+            className="flex overflow-x-auto gap-3 px-3 py-2 sm:gap-4 md:gap-6 lg:gap-8 scrollbar-hide sm:px-4 md:px-6 lg:px-8"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -176,14 +176,14 @@ const StudentPost = () => {
                 className="group relative flex-none w-[85%] sm:w-[60%] md:w-[45%] lg:w-[32%] transform transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1"
               >
                 {/* Card with glass morphism */}
-                <div className="relative h-full overflow-hidden border shadow-xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-gray-200/50 dark:shadow-gray-900/50 border-white/20 dark:border-gray-700/50 group-hover:shadow-2xl group-hover:shadow-blue-200/30 dark:group-hover:shadow-blue-900/30">
+                <div className="overflow-hidden relative h-full rounded-xl border shadow-xl backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 sm:rounded-2xl shadow-gray-200/50 dark:shadow-gray-900/50 border-white/20 dark:border-gray-700/50 group-hover:shadow-2xl group-hover:shadow-blue-200/30 dark:group-hover:shadow-blue-900/30">
                   {/* Animated border gradient */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r ${getRandomGradient(index)} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-xl sm:rounded-2xl`}
+                    className={`absolute inset-0 bg-gradient-to-r rounded-xl opacity-0 transition-opacity duration-300 ${getRandomGradient(index)} group-hover:opacity-10 sm:rounded-2xl`}
                   ></div>
 
                   {/* Enhanced Image Container */}
-                  <div className="relative h-40 overflow-hidden sm:h-44 md:h-48 lg:h-56">
+                  <div className="overflow-hidden relative h-40 sm:h-44 md:h-48 lg:h-56">
                     <img
                       src={`${import.meta.env.VITE_API_URL_FILE}/${post.thumbnailUrl}`}
                       alt={post.title}
@@ -191,9 +191,9 @@ const StudentPost = () => {
                     />
 
                     {/* Multiple overlay effects */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t to-transparent from-black/70 via-black/20"></div>
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${getRandomGradient(index)} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
+                      className={`absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-300 ${getRandomGradient(index)} group-hover:opacity-10`}
                     ></div>
 
                     {/* Enhanced Category Badge */}
@@ -206,7 +206,7 @@ const StudentPost = () => {
                     </div>
 
                     {/* Achievement badge */}
-                    <div className="absolute flex items-center justify-center w-8 h-8 transition-all duration-300 bg-yellow-500 rounded-full shadow-lg sm:w-9 sm:h-9 md:w-10 md:h-10 top-3 right-3 sm:top-4 sm:right-4">
+                    <div className="flex absolute top-3 right-3 justify-center items-center w-8 h-8 bg-yellow-500 rounded-full shadow-lg transition-all duration-300 sm:w-9 sm:h-9 md:w-10 md:h-10 sm:top-4 sm:right-4">
                       <Award className="w-4 h-4 text-white sm:w-5 sm:h-5" />
                     </div>
                   </div>
@@ -224,7 +224,7 @@ const StudentPost = () => {
                     </p>
 
                     {/* Enhanced Footer */}
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-200/50 dark:border-gray-700/50">
+                    <div className="flex justify-between items-center pt-3 border-t border-gray-200/50 dark:border-gray-700/50">
                       {/* Date with enhanced styling */}
                       <div className="flex items-center gap-1.5 px-2 py-1 sm:px-3 sm:py-1.5 bg-gray-100/70 dark:bg-gray-700/50 rounded-lg backdrop-blur-sm">
                         <Calendar className="w-3 h-3 text-blue-500 sm:w-4 sm:h-4" />
@@ -266,7 +266,7 @@ const StudentPost = () => {
       </div>
 
       {/* Bottom decorative wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none sm:h-20 bg-gradient-to-t from-white/50 to-transparent dark:from-gray-900/50"></div>
+      <div className="absolute right-0 bottom-0 left-0 h-16 bg-gradient-to-t to-transparent pointer-events-none sm:h-20 from-white/50 dark:from-gray-900/50"></div>
     </div>
   );
 };

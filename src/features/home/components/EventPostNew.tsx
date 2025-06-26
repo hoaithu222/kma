@@ -5,10 +5,11 @@ import Button from "@/foundation/components/buttons/Button";
 import { formatDate } from "@/shared/utils/formatDate";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
 import { useNavigate } from "react-router-dom";
+import { sortByPublishedDate } from "@/shared/utils/sort";
 
 const EventPostNew = () => {
   const { eventPostNew, getEventPostNewDispatch } = useHome();
-  const post = eventPostNew?.content;
+  const post = sortByPublishedDate(eventPostNew?.content);
 
   useEffect(() => {
     getEventPostNewDispatch();
@@ -40,19 +41,19 @@ const EventPostNew = () => {
   };
 
   return (
-    <div className="relative my-2 overflow-hidden rounded-lg shadow-md md:my-3 lg:my-4 shadow-card-shadow">
+    <div className="overflow-hidden relative my-2 rounded-lg shadow-md md:my-3 lg:my-4 shadow-card-shadow">
       {/* Modern Gradient Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
         <div className="absolute inset-0 bg-background-base"></div>
-        <div className="absolute top-0 left-0 w-40 h-40 rounded-full bg-primary/10 blur-2xl"></div>
-        <div className="absolute bottom-0 right-0 w-56 h-56 rounded-full bg-secondary/10 blur-2xl"></div>
+        <div className="absolute top-0 left-0 w-40 h-40 rounded-full blur-2xl bg-primary/10"></div>
+        <div className="absolute right-0 bottom-0 w-56 h-56 rounded-full blur-2xl bg-secondary/10"></div>
       </div>
 
       {/* Header Section */}
       <div className="relative z-10 p-2 text-center sm:px-3 sm:py-4 lg:px-4 lg:py-6">
-        <div className="max-w-2xl mx-auto">
-          <div className="inline-flex items-center justify-center w-10 h-10 mb-4 rounded-xl bg-primary/10 backdrop-blur-sm">
+        <div className="mx-auto max-w-2xl">
+          <div className="inline-flex justify-center items-center mb-4 w-10 h-10 rounded-xl backdrop-blur-sm bg-primary/10">
             <svg
               className="w-8 h-8 sm:w-10 sm:h-10 text-primary"
               fill="none"
@@ -70,19 +71,19 @@ const EventPostNew = () => {
           <h2 className="mb-2 text-lg font-bold text-text-primary sm:text-xl md:text-2xl lg:text-3xl">
             SỰ KIỆN MỚI NHẤT
           </h2>
-          <p className="max-w-xl mx-auto mb-4 text-xs text-text-secondary sm:text-sm">
+          <p className="mx-auto mb-4 max-w-xl text-xs text-text-secondary sm:text-sm">
             Khám phá những sự kiện thú vị và cập nhật mới nhất từ cộng đồng của
             chúng tôi
           </p>
-          <div className="flex items-center justify-center">
-            <div className="w-16 h-1 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
+          <div className="flex justify-center items-center">
+            <div className="w-16 h-1 bg-gradient-to-r rounded-full from-primary to-secondary"></div>
           </div>
         </div>
       </div>
 
       {/* Events Grid */}
       <div className="relative z-10 px-2 pb-3 sm:px-3 md:pb-4 lg:pb-6 lg:px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 gap-2 md:gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {post?.map((item: any, index: number) => {
               const eventDate = formatDate(item.publishedAt || item.createdAt);
@@ -91,16 +92,16 @@ const EventPostNew = () => {
               return (
                 <div
                   key={item.id}
-                  className="relative overflow-hidden text-sm transition-all duration-500 border group rounded-xl bg-card-bg border-card-border shadow-card-shadow hover:shadow-card-hover-shadow hover:-translate-y-1"
+                  className="overflow-hidden relative text-sm rounded-xl border transition-all duration-500 group bg-card-bg border-card-border shadow-card-shadow hover:shadow-card-hover-shadow hover:-translate-y-1"
                 >
                   {/* Date Header */}
                   <div
                     className={clsx(
                       "absolute z-50 p-5 text-center border-b border-divider-subtle",
-                      "group-hover:border-b-primary top-0 right-8"
+                      "top-0 right-8 group-hover:border-b-primary"
                     )}
                   >
-                    <div className="absolute inline-flex flex-col items-center justify-center p-2 border rounded-xl bg-background-elevated border-border-muted">
+                    <div className="inline-flex absolute flex-col justify-center items-center p-2 rounded-xl border bg-background-elevated border-border-muted">
                       <div className="text-lg font-bold text-text-primary">
                         {eventDate.day}
                       </div>
@@ -113,7 +114,7 @@ const EventPostNew = () => {
                     </div>
                   </div>
                   {/* Event Image */}
-                  <div className="relative h-40 overflow-hidden bg-background-muted">
+                  <div className="overflow-hidden relative h-40 bg-background-muted">
                     {item.thumbnailUrl ? (
                       <img
                         src={`${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`}
@@ -121,7 +122,7 @@ const EventPostNew = () => {
                         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
-                      <div className="flex items-center justify-center h-full">
+                      <div className="flex justify-center items-center h-full">
                         <svg
                           className="w-10 h-10 opacity-50 text-text-muted"
                           fill="none"
@@ -137,7 +138,7 @@ const EventPostNew = () => {
                         </svg>
                       </div>
                     )}
-                    <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/20 to-transparent group-hover:opacity-100"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t to-transparent opacity-0 transition-opacity duration-300 from-black/20 group-hover:opacity-100"></div>
                   </div>
                   {/* Event Content */}
                   <div className="p-1 md:p-2 lg:p-3">
@@ -158,7 +159,7 @@ const EventPostNew = () => {
                     <div className="mb-1 space-y-2 sm:mb-2">
                       {item.startTime && (
                         <div className="flex items-center text-xs text-text-secondary">
-                          <div className="flex items-center justify-center w-6 h-6 mr-2 rounded bg-background-muted">
+                          <div className="flex justify-center items-center mr-2 w-6 h-6 rounded bg-background-muted">
                             <svg
                               className="w-4 h-4"
                               fill="none"
@@ -178,7 +179,7 @@ const EventPostNew = () => {
                       )}
                       {item.location && (
                         <div className="flex items-center text-xs text-text-secondary">
-                          <div className="flex items-center justify-center w-6 h-6 mr-2 rounded bg-background-muted">
+                          <div className="flex justify-center items-center mr-2 w-6 h-6 rounded bg-background-muted">
                             <svg
                               className="w-3 h-3"
                               fill="none"
@@ -209,15 +210,15 @@ const EventPostNew = () => {
                       )}
                     </div>
                     {/* Action Button */}
-                    <div className="h-8 md:h-3 lg:h-5 ">
-                      <div className="absolute bottom-0 left-0 w-full p-2 ">
+                    <div className="h-8 md:h-3 lg:h-5">
+                      <div className="absolute bottom-0 left-0 p-2 w-full">
                         <button
-                          className={`w-full ${colorStyle} py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 transform hover:scale-105 shadow group/btn flex items-center justify-center`}
+                          className={`flex justify-center items-center px-3 py-2 w-full text-xs font-semibold rounded-lg shadow transition-all duration-300 transform ${colorStyle} hover:scale-105 group/btn`}
                           onClick={() => navigate(`/detail-post/${item.id}`)}
                         >
                           <span>Chi tiết</span>
                           <svg
-                            className="w-4 h-4 ml-1 transition-transform duration-300 group-hover/btn:translate-x-1"
+                            className="ml-1 w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -271,14 +272,14 @@ const EventPostNew = () => {
       )}
 
       <div className="relative z-10 py-2 text-center lg:py-4">
-        <div className="max-w-4xl px-2 mx-auto md:px-4 lg:px-6">
+        <div className="px-2 mx-auto max-w-4xl md:px-4 lg:px-6">
           <Button
             className="group inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 bg-[var(--color-button-primary-bg)] hover:bg-[var(--color-button-primary-hover)] text-[var(--color-button-primary-text)] rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             onClick={() => navigate("/events/49")}
           >
             <span>Xem thêm sự kiện</span>
             <svg
-              className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1"
+              className="ml-3 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

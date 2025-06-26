@@ -5,24 +5,25 @@ import Button from "@/foundation/components/buttons/Button";
 import { formatDate } from "@/shared/utils/formatDate";
 import { stripHtml, truncateText } from "@/shared/utils/stripHtml";
 import { useNavigate } from "react-router-dom";
+import { sortByPublishedDate } from "@/shared/utils/sort";
 
 const EventPostAdmission = () => {
   const { eventPostAdmission, getEventPostAdmissionDispatch } = useHome();
-  const post = eventPostAdmission?.content;
+  const post = sortByPublishedDate(eventPostAdmission?.content);
   const navigate = useNavigate();
   useEffect(() => {
     getEventPostAdmissionDispatch();
   }, []);
 
   return (
-    <div className="w-full min-h-screen overflow-hidden rounded-lg bg-gradient-to-br from-background-subtle via-background-base to-background-muted">
+    <div className="overflow-hidden w-full min-h-screen bg-gradient-to-br rounded-lg from-background-subtle via-background-base to-background-muted">
       {/* Header Section */}
       <div className="py-4 bg-gradient-to-r from-primary to-primary-dark text-text-on-primary md:py-8">
         <div className="container px-2 mx-auto text-center sm:px-4">
           <h2 className="mb-4 text-lg font-bold tracking-wide sm:text-xl md:text-2xl lg:text-3xl">
             ĐÀO TẠO - TUYỂN SINH
           </h2>
-          <p className="max-w-4xl mx-auto text-xs leading-relaxed sm:text-sm md:text-base lg:text-lg opacity-90">
+          <p className="mx-auto max-w-4xl text-xs leading-relaxed opacity-90 sm:text-sm md:text-base lg:text-lg">
             Học Viện Kỹ Thuật Mật Mã chuyên đào tạo các chuyên gia tinh nhuệ,
             sẵn sàng đối mặt với những thách thức của thế giới số. Chúng tôi
             cung cấp các chương trình đào tạo chuyên sâu về An toàn thông tin,
@@ -39,18 +40,18 @@ const EventPostAdmission = () => {
             <div
               key={item.id}
               className={clsx(
-                "group relative bg-card-bg rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden",
-                "transform hover:-translate-y-2 border border-border-primary"
+                "overflow-hidden relative rounded-2xl shadow-lg transition-all duration-500 group bg-card-bg hover:shadow-2xl",
+                "border transform hover:-translate-y-2 border-border-primary"
               )}
             >
               {/* Image Container */}
-              <div className="relative h-48 overflow-hidden md:h-56">
+              <div className="overflow-hidden relative h-48 md:h-56">
                 <img
                   src={`${import.meta.env.VITE_API_URL_FILE}/${item.thumbnailUrl}`}
                   alt={item.title}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/30 to-transparent group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t to-transparent opacity-0 transition-opacity duration-300 from-black/30 group-hover:opacity-100" />
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
@@ -62,7 +63,7 @@ const EventPostAdmission = () => {
 
               {/* Content */}
               <div className="p-2 md:p-3 lg:p-4">
-                <div className="flex items-center gap-2 mb-3 text-sm text-text-muted">
+                <div className="flex gap-2 items-center mb-3 text-sm text-text-muted">
                   <svg
                     className="w-4 h-4"
                     fill="currentColor"
@@ -93,11 +94,11 @@ const EventPostAdmission = () => {
 
                 <Button
                   onClick={() => navigate(`/detail-post/${item.id}`)}
-                  className="w-full py-2 font-semibold transition-all duration-300 transform bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-text-on-primary md:py-3 rounded-xl hover:shadow-lg"
+                  className="py-2 w-full font-semibold bg-gradient-to-r rounded-xl transition-all duration-300 transform from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-text-on-primary md:py-3 hover:shadow-lg"
                 >
                   Xem chi tiết
                   <svg
-                    className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -113,7 +114,7 @@ const EventPostAdmission = () => {
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute w-20 h-20 transition-opacity duration-300 rounded-full -top-2 -right-2 bg-gradient-to-br from-primary-light to-primary opacity-10 group-hover:opacity-20" />
+              <div className="absolute -top-2 -right-2 w-20 h-20 bg-gradient-to-br rounded-full opacity-10 transition-opacity duration-300 from-primary-light to-primary group-hover:opacity-20" />
             </div>
           ))}
         </div>
@@ -121,7 +122,7 @@ const EventPostAdmission = () => {
         {/* Empty State */}
         {(!post || post.length === 0) && (
           <div className="py-8 text-center md:py-16">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full md:w-24 md:h-24 md:mb-6 bg-background-muted">
+            <div className="flex justify-center items-center mx-auto mb-4 w-16 h-16 rounded-full md:w-24 md:h-24 md:mb-6 bg-background-muted">
               <svg
                 className="w-8 h-8 md:w-12 md:h-12 text-text-muted"
                 fill="none"
@@ -147,16 +148,16 @@ const EventPostAdmission = () => {
       </div>
 
       {/* Footer CTA Section */}
-      <div className="py-4 md:py-8 bg-gradient-to-r from-background-subtle to-background-muted lg:py-10">
-        <div className="container flex flex-col items-center justify-center px-2 mx-auto text-center sm:px-4">
+      <div className="py-4 bg-gradient-to-r md:py-8 from-background-subtle to-background-muted lg:py-10">
+        <div className="container flex flex-col justify-center items-center px-2 mx-auto text-center sm:px-4">
           <h2 className="mb-2 text-lg font-bold md:mb-3 lg:mb-4 md:text-xl lg:text-2xl text-text-primary">
             Tìm hiểu thêm về chương trình đào tạo
           </h2>
-          <p className="max-w-2xl mx-auto mb-2 text-xs sm:mb-4 md:mb-6 md:text-sm lg:text-base text-text-secondary lg:mb-8">
+          <p className="mx-auto mb-2 max-w-2xl text-xs sm:mb-4 md:mb-6 md:text-sm lg:text-base text-text-secondary lg:mb-8">
             Khám phá các chương trình đào tạo chất lượng cao và cơ hội nghề
             nghiệp rộng mở tại trường của chúng tôi.
           </p>
-          <Button className="px-6 py-3 text-base font-semibold transition-all duration-300 transform bg-primary hover:bg-primary-dark text-text-on-primary md:px-8 md:py-4 rounded-xl md:text-lg hover:scale-105">
+          <Button className="px-6 py-3 text-base font-semibold rounded-xl transition-all duration-300 transform bg-primary hover:bg-primary-dark text-text-on-primary md:px-8 md:py-4 md:text-lg hover:scale-105">
             Tìm hiểu ngay
           </Button>
         </div>
