@@ -163,11 +163,11 @@ const SelectMany = ({
   const getVariantClasses = () => {
     switch (variant) {
       case "outlined":
-        return "border-2 border-gray-300 bg-background-elevated focus:border-blue-500";
+        return "border-2 border-border-primary bg-input-bg focus:border-border-focus";
       case "filled":
-        return "border border-gray-300 bg-background-muted focus:bg-background-elevated focus:border-blue-500";
+        return "border border-border-primary bg-background-muted focus:bg-input-bg focus:border-border-focus";
       default:
-        return "border border-gray-300 bg-background-elevated focus:border-blue-500";
+        return "border border-border-primary bg-input-bg focus:border-border-focus";
     }
   };
 
@@ -184,7 +184,7 @@ const SelectMany = ({
         <div className="flex-1 min-w-0">
           <div className="font-medium truncate">{option.label}</div>
           {option.description && (
-            <div className="text-xs text-gray-500 truncate">
+            <div className="text-xs text-text-muted truncate">
               {option.description}
             </div>
           )}
@@ -199,7 +199,7 @@ const SelectMany = ({
     }
 
     if (selectedOptions.length === 0) {
-      return <span className="text-gray-500">{placeholder}</span>;
+      return <span className="text-text-muted">{placeholder}</span>;
     }
 
     if (selectedOptions.length === 1) {
@@ -212,14 +212,14 @@ const SelectMany = ({
   return (
     <div className={`w-full ${className}`}>
       {label && (
-        <label className="block mb-1 text-sm font-medium text-primary">
+        <label className="block mb-1 text-sm font-medium text-text-primary">
           {label}
-          {required && <span className="ml-1 text-red-500">*</span>}
+          {required && <span className="ml-1 text-error">*</span>}
         </label>
       )}
 
       {description && (
-        <p className="mb-2 text-sm text-secondary">{description}</p>
+        <p className="mb-2 text-sm text-text-secondary">{description}</p>
       )}
 
       <Popover.Root open={open} onOpenChange={setOpen}>
@@ -227,11 +227,11 @@ const SelectMany = ({
           <button
             className={`
               w-full flex items-center justify-between rounded-md transition-colors
-              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+              focus:outline-none focus:ring-2 focus:ring-border-focus focus:ring-offset-2
               disabled:opacity-50 disabled:cursor-not-allowed
               ${sizeClasses.trigger}
               ${getVariantClasses()}
-              ${error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}
+              ${error ? "border-border-error focus:border-border-error focus:ring-error" : ""}
               ${triggerClassName}
             `}
             disabled={disabled}
@@ -248,7 +248,7 @@ const SelectMany = ({
                     e.stopPropagation();
                     handleClear();
                   }}
-                  className="p-0.5 hover:bg-background-muted rounded text-muted hover:text-secondary"
+                  className="p-0.5 hover:bg-background-muted rounded text-text-muted hover:text-text-secondary"
                 >
                   <svg
                     className="w-4 h-4"
@@ -267,7 +267,7 @@ const SelectMany = ({
               )}
 
               <svg
-                className={`w-4 h-4 text-muted transition-transform ${open ? "rotate-180" : ""}`}
+                className={`w-4 h-4 text-text-muted transition-transform ${open ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -285,7 +285,7 @@ const SelectMany = ({
 
         <Popover.Content
           className={`
-            z-50 w-[var(--radix-popover-trigger-width)] max-h-60 overflow-hidden rounded-md border border-gray-200 bg-background-elevated shadow-lg
+            z-50 w-[var(--radix-popover-trigger-width)] max-h-60 overflow-hidden rounded-md border border-border-primary bg-card-bg shadow-lg
             data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95
             ${sizeClasses.content}
             ${contentClassName}
@@ -295,23 +295,23 @@ const SelectMany = ({
         >
           {/* Search */}
           {searchable && (
-            <div className="p-2 border-b border-gray-200 bg-background-muted">
+            <div className="p-2 border-b border-divider-primary bg-background-muted">
               <input
                 type="text"
                 placeholder="Tìm kiếm..."
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 bg-background-elevated"
+                className="w-full px-2 py-1 text-sm border border-border-primary rounded focus:outline-none focus:ring-1 focus:ring-border-focus bg-input-bg"
               />
             </div>
           )}
 
           {/* Select All */}
           {showSelectAll && filteredOptions.length > 0 && (
-            <div className="p-2 border-b border-gray-200 bg-background-muted">
+            <div className="p-2 border-b border-divider-primary bg-background-muted">
               <button
                 onClick={handleSelectAll}
-                className="w-full px-2 py-1 text-sm text-left rounded text-link hover:bg-background-subtle"
+                className="w-full px-2 py-1 text-sm text-left rounded text-text-link hover:bg-background-subtle"
               >
                 {value.length === filteredOptions.length
                   ? "Bỏ chọn tất cả"
@@ -324,17 +324,19 @@ const SelectMany = ({
           <div className="overflow-y-auto max-h-48">
             {loading ? (
               <div className="flex items-center justify-center py-4">
-                <div className="w-4 h-4 border-b-2 border-blue-600 rounded-full animate-spin"></div>
-                <span className="ml-2 text-sm text-muted">Đang tải...</span>
+                <div className="w-4 h-4 border-b-2 border-secondary rounded-full animate-spin"></div>
+                <span className="ml-2 text-sm text-text-muted">
+                  Đang tải...
+                </span>
               </div>
             ) : filteredOptions.length === 0 ? (
-              <div className="py-4 text-sm text-center text-muted">
+              <div className="py-4 text-sm text-center text-text-muted">
                 {emptyText}
               </div>
             ) : groupedOptions ? (
               Object.entries(groupedOptions).map(([group, groupOptions]) => (
                 <div key={group}>
-                  <div className="sticky top-0 px-3 py-2 text-xs font-semibold text-muted bg-background-muted">
+                  <div className="sticky top-0 px-3 py-2 text-xs font-semibold text-text-muted bg-background-muted">
                     {group}
                   </div>
                   {groupOptions.map((option) => {
@@ -355,13 +357,13 @@ const SelectMany = ({
                           hover:bg-background-muted focus:bg-background-muted focus:outline-none
                           disabled:opacity-50 disabled:cursor-not-allowed
                           ${sizeClasses.option}
-                          ${isSelected ? "bg-background-subtle text-link" : ""}
+                          ${isSelected ? "bg-background-subtle text-text-link" : ""}
                           ${optionClassName}
                         `}
                       >
                         <Checkbox.Root
                           checked={isSelected}
-                          className="w-4 h-4 border border-gray-300 rounded data-[state=checked]:bg-button-primary-bg data-[state=checked]:border-button-primary-bg"
+                          className="w-4 h-4 border border-border-primary rounded data-[state=checked]:bg-button-primary-bg data-[state=checked]:border-button-primary-bg"
                         >
                           <Checkbox.Indicator>
                             <svg
@@ -402,13 +404,13 @@ const SelectMany = ({
                       hover:bg-background-muted focus:bg-background-muted focus:outline-none
                       disabled:opacity-50 disabled:cursor-not-allowed
                       ${sizeClasses.option}
-                      ${isSelected ? "bg-background-subtle text-link" : ""}
+                      ${isSelected ? "bg-background-subtle text-text-link" : ""}
                       ${optionClassName}
                     `}
                   >
                     <Checkbox.Root
                       checked={isSelected}
-                      className="w-4 h-4 border border-gray-300 rounded data-[state=checked]:bg-button-primary-bg data-[state=checked]:border-button-primary-bg"
+                      className="w-4 h-4 border border-border-primary rounded data-[state=checked]:bg-button-primary-bg data-[state=checked]:border-button-primary-bg"
                     >
                       <Checkbox.Indicator>
                         <svg
@@ -436,7 +438,7 @@ const SelectMany = ({
       {error && <p className="mt-1 text-sm text-error">{error}</p>}
 
       {maxSelections && (
-        <p className="mt-1 text-xs text-muted">
+        <p className="mt-1 text-xs text-text-muted">
           {value.length}/{maxSelections} mục đã chọn
         </p>
       )}

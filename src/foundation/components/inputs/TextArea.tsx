@@ -40,15 +40,15 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <div className={`${fullWidth ? "w-full" : ""}`}>
         {label && (
-          <label className="block mb-1 text-sm font-medium md:text-base text-foreground md:mb-2">
+          <label className="block mb-1 text-sm font-medium md:text-base text-text-primary md:mb-2">
             {label}
           </label>
         )}
         <textarea
           ref={ref}
           className={cn(
-            "w-full px-2 md:px-3 lg:px-4 py-1.5 md:py-2 lg:py-2.5 text-xs md:text-sm lg:text-base bg-transparent border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[60px] md:min-h-[80px] lg:min-h-[100px]",
-            error ? "border-destructive" : "",
+            "w-full px-2 md:px-3 lg:px-4 py-1.5 md:py-2 lg:py-2.5 text-xs md:text-sm lg:text-base bg-input-bg border border-input-border rounded-md focus:outline-none focus:ring-2 focus:ring-border-focus focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[60px] md:min-h-[80px] lg:min-h-[100px]",
+            error ? "border-border-error" : "",
             className
           )}
           disabled={disabled}
@@ -56,7 +56,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           {...props}
         />
         {helperText && (
-          <p className="mt-1 text-xs md:text-sm lg:text-base text-destructive">
+          <p className="mt-1 text-xs md:text-sm lg:text-base text-error">
             {helperText}
           </p>
         )}

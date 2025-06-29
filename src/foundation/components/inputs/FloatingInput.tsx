@@ -64,13 +64,13 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
 
     const variantClasses = {
       default:
-        "border border-gray-300 bg-background-elevated rounded-lg focus:border-primary focus:ring-2 focus:ring-primary-light",
+        "border border-border-primary bg-input-bg rounded-lg focus:border-border-focus focus:ring-2 focus:ring-primary-light",
       outlined:
-        "border border-gray-300 bg-background-elevated rounded-xl focus:border-secondary focus:ring-2 focus:ring-primary-light",
+        "border border-border-primary bg-input-bg rounded-xl focus:border-border-focus focus:ring-2 focus:ring-primary-light",
       filled:
-        "border-0 bg-background-muted rounded-lg focus:bg-background-elevated focus:ring-2 focus:ring-primary-light",
+        "border-0 bg-background-muted rounded-lg focus:bg-input-bg focus:ring-2 focus:ring-primary-light",
       underlined:
-        "border-0 border-b-2 border-gray-300 bg-transparent rounded-none focus:border-primary",
+        "border-0 border-b-2 border-border-primary bg-transparent rounded-none focus:border-border-focus",
     };
 
     const sizeClasses = {
@@ -83,9 +83,10 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
     };
 
     const statusClasses = {
-      default: "border-secondary",
-      success: "border-success focus:border-success focus:ring-success",
-      error: "border-error focus:border-error focus:ring-error",
+      default: "border-border-primary",
+      success:
+        "border-border-success focus:border-border-success focus:ring-success",
+      error: "border-border-error focus:border-error focus:ring-error",
       warning: "border-warning focus:border-warning focus:ring-warning",
     };
 
@@ -136,7 +137,7 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
       sizeClasses[size],
       status !== "default" ? statusClasses[status] : "",
       fullWidth ? "w-full" : "",
-      disabled ? "opacity-50 cursor-not-allowed bg-gray-50" : "",
+      disabled ? "opacity-50 cursor-not-allowed bg-input-disabled-bg" : "",
       iconLeft || iconRight || showPasswordToggle || statusIcon ? "pr-10" : "",
       iconLeft ? "pl-10" : "",
       // Override browser autofill styles
@@ -147,10 +148,10 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
       .join(" ");
 
     const helperTextColor = {
-      default: "text-gray-500",
-      success: "text-green-600",
-      error: "text-red-600",
-      warning: "text-yellow-600",
+      default: "text-text-muted",
+      success: "text-success",
+      error: "text-error",
+      warning: "text-warning",
     };
 
     const labelColor = {
@@ -173,8 +174,8 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
             type={inputType}
             className={cn(
               inputClasses,
-              error ? "border-destructive" : "",
-              "peer w-full px-3 md:px-4 lg:px-5 py-2 md:py-2.5 lg:py-3 text-sm md:text-base bg-transparent border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              error ? "border-border-error" : "",
+              "peer w-full px-3 md:px-4 lg:px-5 py-2 md:py-2.5 lg:py-3 text-sm md:text-base bg-transparent border border-input-border rounded-md focus:outline-none focus:ring-2 focus:ring-border-focus focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             )}
             disabled={disabled}
             value={value}
@@ -202,8 +203,8 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
           {label && (
             <label
               className={cn(
-                "absolute left-3 md:left-4 lg:left-5 top-2 md:top-2.5 lg:top-3 text-sm md:text-base text-muted-foreground transition-all duration-200 transform -translate-y-4 scale-75 origin-[0] bg-background px-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4",
-                error ? "text-destructive" : "",
+                "absolute left-3 md:left-4 lg:left-5 top-2 md:top-2.5 lg:top-3 text-sm md:text-base text-text-muted transition-all duration-200 transform -translate-y-4 scale-75 origin-[0] bg-background-base px-1 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4",
+                error ? "text-error" : "",
                 isFloating
                   ? labelClasses[size].floating
                   : labelClasses[size].default,
@@ -243,9 +244,7 @@ const FloatingInput = React.forwardRef<HTMLInputElement, FloatingInputProps>(
             {helperText}
           </p>
         )}
-        {error && (
-          <p className="mt-1 text-xs md:text-sm text-destructive">{error}</p>
-        )}
+        {error && <p className="mt-1 text-xs md:text-sm text-error">{error}</p>}
       </div>
     );
   }
