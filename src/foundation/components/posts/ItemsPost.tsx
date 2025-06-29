@@ -215,7 +215,7 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                           </span>
                           <div className="flex-1 min-w-0">
                             <p className="text-sm font-medium text-gray-800 truncate transition-colors dark:text-gray-200 group-hover/file:text-blue-600 dark:group-hover/file:text-blue-400">
-                              {file.originalName}
+                              {file.fileName}
                             </p>
                             <p className="text-xs text-gray-500 dark:text-gray-400">
                               {file.fileType.toUpperCase()} •{" "}
