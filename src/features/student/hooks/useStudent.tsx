@@ -26,14 +26,6 @@ export const useStudent = () => {
   const [filter, setFilter] = useState<IRequestSearchArticlePublic>({
     page: 0,
     size: 9,
-    categoryId: null,
-    subCategoryId: null,
-    status: "published",
-    isPrivate: false,
-    tag: null,
-    sort: null,
-    order: null,
-    keyword: null,
   });
 
   const getStudentPostAction = (

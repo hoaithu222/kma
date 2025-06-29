@@ -26,7 +26,6 @@ export const usePost = () => {
     categoryId: null,
     subCategoryId: null,
     status: "published",
-    isPrivate: false,
     tag: null,
     sort: null,
     order: null,

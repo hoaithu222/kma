@@ -26,6 +26,8 @@ const initialState: initialStateType = {
     publishedAt: "",
     updatedAt: "",
     isPrivate: false,
+    authorId: 0,
+    authorName: "",
   },
   statusGetPost: ReduxStateType.INIT,
   error: null,

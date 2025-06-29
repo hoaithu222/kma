@@ -30,7 +30,6 @@ export const useDetailPost = () => {
     categoryId: null,
     subCategoryId: null,
     status: "published",
-    isPrivate: false,
     tag: null,
     sort: null,
     order: null,

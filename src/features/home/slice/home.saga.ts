@@ -93,8 +93,6 @@ function* fetchBannerPost() {
       page: 0,
       size: 4,
       subCategoryId: SUBCATEGORY_IDS.BANNER,
-      status: "published",
-      isPrivate: false,
     },
     getBannerPostSuccess,
     getBannerPostError
@@ -108,7 +106,6 @@ function* fetchNewsPost() {
       size: 4,
       subCategoryId: SUBCATEGORY_IDS.NEWS,
       status: "published",
-      isPrivate: false,
     },
     getNewsPostSuccess,
     getNewsPostError
@@ -122,7 +119,6 @@ function* fetchEventPostNew() {
       size: 4,
       subCategoryId: SUBCATEGORY_IDS.EVENT_NEW,
       status: "published",
-      isPrivate: false,
     },
     getEventPostNewSuccess,
     getEventPostNewError
@@ -136,7 +132,6 @@ function* fetchEventPostAdmission() {
       size: 2,
       subCategoryId: SUBCATEGORY_IDS.EVENT_ADMISSION,
       status: "published",
-      isPrivate: false,
     },
     getEventPostAdmissionSuccess,
     getEventPostAdmissionError
@@ -150,7 +145,6 @@ function* fetchStudentPost() {
       size: 10,
       subCategoryId: SUBCATEGORY_IDS.STUDENT,
       status: "published",
-      isPrivate: false,
     },
     getStudentPostSuccess,
     getStudentPostError
@@ -164,7 +158,6 @@ function* fetchCooperationPost() {
       size: 2,
       subCategoryId: SUBCATEGORY_IDS.COOPERATION,
       status: "published",
-      isPrivate: false,
     },
     getCooperationPostSuccess,
     getCooperationPostError

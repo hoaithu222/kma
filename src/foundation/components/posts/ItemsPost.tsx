@@ -1,4 +1,4 @@
-import { Eye, FileText, Download, ArrowRight, Clock } from "lucide-react";
+import { Eye, FileText, Download, ArrowRight, Clock, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export interface ResponseArticle {
@@ -31,6 +31,8 @@ export interface ResponseArticle {
   publishedAt: string;
   updatedAt: string;
   isPrivate: boolean;
+  authorId: number;
+  authorName: string;
 }
 
 interface ItemsPostProps {
@@ -91,21 +93,26 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
     return "📎";
   };
 
+  // Function to get author display name
+  const getAuthorDisplayName = () => {
+    return data.isPrivate ? "Ẩn danh" : data.authorName;
+  };
+
   return (
-    <article className="relative min-w-full mx-auto overflow-hidden transition-all duration-300 ease-out group max-w-7xl">
+    <article className="overflow-hidden relative mx-auto min-w-full max-w-7xl transition-all duration-300 ease-out group">
       {/* Gradient background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 rounded-xl sm:rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 rounded-xl to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 sm:rounded-2xl"></div>
 
       {/* Glass morphism card */}
-      <div className="relative transition-all duration-300 border shadow-lg backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 border-white/20 dark:border-gray-700/50 rounded-xl sm:rounded-2xl shadow-gray-200/50 dark:shadow-gray-900/50 group-hover:shadow-xl group-hover:shadow-blue-200/30 dark:group-hover:shadow-blue-900/30">
+      <div className="relative rounded-xl border shadow-lg backdrop-blur-sm transition-all duration-300 bg-white/80 dark:bg-gray-900/80 border-white/20 dark:border-gray-700/50 sm:rounded-2xl shadow-gray-200/50 dark:shadow-gray-900/50 group-hover:shadow-xl group-hover:shadow-blue-200/30 dark:group-hover:shadow-blue-900/30">
         {/* Animated border gradient */}
-        <div className="absolute inset-0 transition-opacity duration-300 opacity-0 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 group-hover:opacity-100 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r rounded-xl opacity-0 transition-opacity duration-300 sm:rounded-2xl from-blue-500/10 via-purple-500/10 to-pink-500/10 group-hover:opacity-100 -z-10"></div>
 
         <div className="flex flex-col gap-2 p-1 sm:gap-3 md:gap-4 sm:p-2 lg:p-3 lg:flex-row lg:gap-5">
           {/* Enhanced Thumbnail */}
           <div className="relative w-full lg:w-3/5">
             <div className="absolute top-0 left-0 z-10 px-2 pt-2 sm:px-3 sm:pt-3">
-              <div className="flex flex-wrap items-center gap-2 mb-4">
+              <div className="flex flex-wrap gap-2 items-center mb-4">
                 <span
                   className={`px-3 py-1.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r ${getCategoryColor(data.categoryName)} shadow-lg transform transition-transform duration-300 hover:scale-110`}
                 >
@@ -116,9 +123,9 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                 </span>
               </div>
             </div>
-            <div className="relative overflow-hidden rounded-lg sm:rounded-xl group/thumb">
+            <div className="overflow-hidden relative rounded-lg sm:rounded-xl group/thumb">
               {/* Image with multiple effects */}
-              <div className="relative overflow-hidden rounded-lg aspect-video sm:rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700">
+              <div className="overflow-hidden relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg aspect-video sm:rounded-xl dark:from-gray-800 dark:to-gray-700">
                 <img
                   src={`${import.meta.env.VITE_API_URL_FILE}/${data.thumbnailUrl}`}
                   alt={data.title}
@@ -127,7 +134,7 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                 />
 
                 {/* Multi-layer overlay effects */}
-                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-0 transition-opacity duration-300 from-black/30 group-hover:opacity-100"></div>
 
                 {/* View count overlay */}
                 <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1.5 bg-black/60 backdrop-blur-sm rounded-full text-white text-xs font-medium opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
@@ -141,8 +148,27 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
           {/* Enhanced Content */}
           <div className="flex flex-col w-full lg:w-3/5 xl:w-2/3">
             <div className="space-y-2 sm:space-y-3 md:space-y-4">
+              {/* Author info - Enhanced with beautiful styling */}
+              <div className="flex gap-3 items-center p-3 bg-gradient-to-r rounded-lg border backdrop-blur-sm from-gray-50/80 via-white/60 to-gray-50/80 dark:from-gray-800/60 dark:via-gray-700/40 dark:to-gray-800/60 border-gray-200/40 dark:border-gray-600/30">
+                <div className="flex justify-center items-center w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-lg transition-transform duration-300 transform group-hover:scale-110">
+                  <User className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex gap-2 items-center">
+                    <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                      {getAuthorDisplayName()}
+                    </p>
+                    {data.isPrivate && (
+                      <span className="px-2 py-0.5 text-xs font-medium text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/30 rounded-full border border-orange-200 dark:border-orange-800">
+                        Ẩn danh
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+
               {/* Title with gradient text effect */}
-              <h2 className="text-lg font-bold leading-tight text-transparent transition-all duration-300 text-start sm:text-xl lg:text-2xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text line-clamp-2 group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600">
+              <h2 className="text-lg font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 transition-all duration-300 text-start sm:text-xl lg:text-2xl dark:from-white dark:via-gray-100 dark:to-white line-clamp-2 group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600">
                 {data.title}
               </h2>
 
@@ -152,15 +178,15 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
               </p>
 
               {/* Meta information with modern styling */}
-              <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
-                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-gray-100/70 dark:bg-gray-700/50 backdrop-blur-sm border-gray-200/50 dark:border-gray-600/50">
+              <div className="flex flex-wrap gap-3 items-center text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex gap-2 items-center px-3 py-2 rounded-lg border backdrop-blur-sm bg-gray-100/70 dark:bg-gray-700/50 border-gray-200/50 dark:border-gray-600/50">
                   <Clock className="w-4 h-4 text-blue-500" />
                   <span className="font-medium">
                     {formatTimeAgo(data.publishedAt)}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 px-3 py-2 border rounded-lg bg-gray-100/70 dark:bg-gray-700/50 backdrop-blur-sm border-gray-200/50 dark:border-gray-600/50">
+                <div className="flex gap-2 items-center px-3 py-2 rounded-lg border backdrop-blur-sm bg-gray-100/70 dark:bg-gray-700/50 border-gray-200/50 dark:border-gray-600/50">
                   <Eye className="w-4 h-4 text-green-500" />
                   <span className="font-medium">
                     {data.viewCount.toLocaleString()} lượt xem
@@ -171,8 +197,8 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
 
               {/* Enhanced Files section */}
               {data.files.length > 0 && (
-                <div className="p-4 border rounded-xl bg-gradient-to-r from-gray-50/50 to-blue-50/30 dark:from-gray-800/50 dark:to-blue-900/20 border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
-                  <h4 className="flex items-center gap-2 mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <div className="p-4 bg-gradient-to-r rounded-xl border backdrop-blur-sm from-gray-50/50 to-blue-50/30 dark:from-gray-800/50 dark:to-blue-900/20 border-gray-200/50 dark:border-gray-700/50">
+                  <h4 className="flex gap-2 items-center mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
                     <FileText className="w-4 h-4 text-blue-500" />
                     Tệp đính kèm
                   </h4>
@@ -183,7 +209,7 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                         className="group/file flex items-center justify-between p-3 bg-white/70 dark:bg-gray-700/50 rounded-lg border border-gray-200/50 dark:border-gray-600/50 cursor-pointer hover:bg-white dark:hover:bg-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all duration-300 transform hover:scale-[1.02]"
                         style={{ animationDelay: `${index * 100}ms` }}
                       >
-                        <div className="flex items-center flex-1 min-w-0 gap-3">
+                        <div className="flex flex-1 gap-3 items-center min-w-0">
                           <span className="text-xl">
                             {getFileIcon(file.fileType)}
                           </span>
@@ -197,7 +223,7 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                             </p>
                           </div>
                         </div>
-                        <Download className="w-4 h-4 text-gray-400 transition-all duration-300 transform translate-x-2 opacity-0 group-hover/file:text-blue-500 group-hover/file:opacity-100 group-hover/file:translate-x-0" />
+                        <Download className="w-4 h-4 text-gray-400 opacity-0 transition-all duration-300 transform translate-x-2 group-hover/file:text-blue-500 group-hover/file:opacity-100 group-hover/file:translate-x-0" />
                       </div>
                     ))}
                     {data.files.length > 2 && (
@@ -219,22 +245,22 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                 onClick={() => navigate(`/detail-post/${data.id}`)}
               >
                 {/* Animated background */}
-                <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 group-hover/btn:opacity-100"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100"></div>
 
                 {/* Button content */}
-                <div className="relative flex items-center justify-center gap-2">
+                <div className="flex relative gap-2 justify-center items-center">
                   <span>Đọc tiếp</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 transform group-hover/btn:translate-x-1" />
                 </div>
 
                 {/* Shine effect */}
-                <div className="absolute top-0 w-full h-full transition-all duration-700 skew-x-12 -left-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover/btn:left-full"></div>
+                <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent to-transparent transition-all duration-700 skew-x-12 via-white/20 group-hover/btn:left-full"></div>
               </button>
             </div>
           </div>
         </div>
         {/* Floating particles effect (optional) */}
-        <div className="absolute w-2 h-2 transition-opacity duration-300 bg-blue-400 rounded-full opacity-0 top-4 right-4 group-hover:opacity-100"></div>
+        <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
         <div className="absolute w-1.5 h-1.5 transition-opacity duration-300 delay-100 bg-purple-400 rounded-full opacity-0 bottom-8 left-8 group-hover:opacity-100"></div>
       </div>
     </article>

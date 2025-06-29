@@ -92,7 +92,7 @@ const DetailLecturer = () => {
           <div className="flex flex-col lg:flex-row">
             {/* Left Side - Image (50%) */}
             <div className="relative lg:w-1/2">
-              <div className="relative h-60 sm:h-80 md:h-96 lg:h-[400px] xl:h-[600px] overflow-hidden bg-background-overlay rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl">
+              <div className="relative h-80 md:h-96 lg:h-[400px] xl:h-[600px] overflow-hidden bg-background-overlay rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl">
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br to-transparent rounded-bl-full from-white/20"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr to-transparent rounded-tr-full from-white/20"></div>
@@ -113,15 +113,15 @@ const DetailLecturer = () => {
                 <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent from-black/30"></div>
 
                 {/* Bottom info overlay */}
-                <div className="absolute right-6 bottom-6 left-6">
-                  <div className="p-4 rounded-2xl shadow-lg backdrop-blur-sm bg-white/90">
-                    <h4 className="mb-1 text-sm font-semibold text-gray-800">
+                <div className="absolute right-2 bottom-2 left-2 md:right-4 md:left-4 md:bottom-4 lg:right-6 lg:bottom-6 lg:left-6">
+                  <div className="p-1 rounded-2xl shadow-lg backdrop-blur-sm md:p-2 lg:p-4 bg-white/90">
+                    <h4 className="mb-1 text-xs font-semibold text-gray-800 md:text-sm">
                       Chuyên ngành
                     </h4>
-                    <p className="text-lg font-bold text-blue-600">
+                    <p className="text-base font-bold text-blue-600 lg:text-lg">
                       {detailLecturer?.majorName}
                       {detailLecturer?.subMajorName && (
-                        <span className="block mt-1 text-sm font-medium text-gray-600">
+                        <span className="block mt-1 text-xs font-medium text-gray-600 md:text-sm">
                           {detailLecturer.subMajorName}
                         </span>
                       )}
