@@ -1,12 +1,36 @@
-import { useTranslation } from "react-i18next";
 import image from "@/assets/about/imageOverview.png";
 
 import AccordionContentTab from "./components/AccordionContentTab";
+import { useAbout } from "@/features/about/hooks/useAbout";
 
 import { GraduationCapIcon } from "lucide-react";
+import aboutData from "@/features/about/data/aboutOverview.json";
+import { useEffect } from "react";
 
 const AboutOverview = () => {
-  const { t: tAboutOverview } = useTranslation("aboutOverview");
+  // const { t: tAboutOverview } = useTranslation("aboutOverview");
+  const { about, getAbout } = useAbout();
+
+  useEffect(() => {
+    getAbout();
+  }, []);
+
+  // Type guard to check if content is an object
+  const isContentObject = (
+    content: string | Record<string, any>
+  ): content is Record<string, any> => {
+    return typeof content === "object" && content !== null;
+  };
+
+  // Get about data from API or use fallback from JSON file
+  const getAboutData = () => {
+    if (about?.content && isContentObject(about.content)) {
+      return about.content;
+    }
+    return aboutData;
+  };
+
+  const aboutContent = getAboutData();
 
   return (
     <div className="grid grid-cols-12 gap-3 py-2 mt-12 sm:py-4 lg:py-6 sm:mt-16 md:mt-20 lg:mt-28">
@@ -21,30 +45,28 @@ const AboutOverview = () => {
               </div>
 
               <h2 className="text-base font-bold text-text-primary sm:text-lg md:text-xl lg:text-2xl">
-                {tAboutOverview("academyOverview.title")}
+                {aboutContent.academyOverview.title}
               </h2>
             </div>
-            <div className="w-full h-full p-1 overflow-hidden rounded-md lg:p-2">
+            <div className="overflow-hidden p-1 w-full h-full rounded-md lg:p-2">
               <img src={image} alt="" className="object-cover w-full h-full" />
             </div>
             <div className="mt-2 space-y-2 sm:mt-4 sm:space-y-4 lg:mt-6">
-              {(
-                tAboutOverview("academyOverview.content", {
-                  returnObjects: true,
-                }) as string[]
-              ).map((paragraph: string, index: number) => (
-                <p
-                  key={index}
-                  className="text-sm leading-relaxed text-text-secondary sm:text-base lg:text-lg"
-                >
-                  {paragraph}
-                </p>
-              ))}
+              {aboutContent.academyOverview.content.map(
+                (paragraph: string, index: number) => (
+                  <p
+                    key={index}
+                    className="text-sm leading-relaxed text-text-secondary sm:text-base lg:text-lg"
+                  >
+                    {paragraph}
+                  </p>
+                )
+              )}
             </div>
           </div>
         </div>
         {/* Accordion Sections */}
-        <AccordionContentTab />
+        <AccordionContentTab aboutContent={aboutContent} />
       </div>
 
       {/* News Sidebar */}
