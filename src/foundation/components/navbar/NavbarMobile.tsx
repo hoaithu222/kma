@@ -102,7 +102,7 @@ const NavbarMobile = () => {
       <div
         className={clsx(
           "fixed inset-0 z-40 bg-black transition-all duration-300 ease-in-out",
-          isMobileMenuOpen ? "bg-opacity-50 visible" : "bg-opacity-0 invisible"
+          isMobileMenuOpen ? "visible bg-opacity-50" : "invisible bg-opacity-0"
         )}
         onClick={onClose}
       />
@@ -110,7 +110,7 @@ const NavbarMobile = () => {
       {/* Mobile Menu with slide animation */}
       <nav
         className={clsx(
-          "fixed top-16 sm:top-24  left-0 z-50 h-full bg-background-elevated shadow-2xl",
+          "fixed left-0 top-16 z-50 h-full shadow-2xl sm:top-24 bg-background-elevated",
           "w-56 sm:w-56 md:w-80", // Responsive width
           "transition-transform duration-300 ease-in-out",
           // Translate animation
@@ -122,17 +122,17 @@ const NavbarMobile = () => {
         {/* Header with slide-down animation */}
         <div
           className={clsx(
-            "flex items-center justify-between p-2 sm:p-3 md:p-6 text-text-on-primary bg-gradient-to-r from-primary to-primary-dark",
+            "flex justify-between items-center p-2 bg-gradient-to-r sm:p-3 md:p-6 text-text-on-primary from-primary to-primary-dark",
             "transition-all duration-500 ease-out",
             isMobileMenuOpen
-              ? "transform translate-y-0 opacity-100"
-              : "transform -translate-y-4 opacity-0"
+              ? "opacity-100 transform translate-y-0"
+              : "opacity-0 transform -translate-y-4"
           )}
         >
           <h2 className="text-xl font-bold">Menu</h2>
           <button
             onClick={onClose}
-            className="p-2 transition-all duration-200 rounded-full hover:bg-white hover:bg-opacity-20 hover:rotate-90"
+            className="p-2 rounded-full transition-all duration-200 hover:bg-white hover:bg-opacity-20 hover:rotate-90"
           >
             <FaTimes className="w-5 h-5" />
           </button>
@@ -140,20 +140,20 @@ const NavbarMobile = () => {
 
         {/* Navigation Content with staggered animation */}
         <div className="flex flex-col h-full bg-background-surface">
-          <div className="flex-1 py-3 overflow-y-auto">
+          <div className="overflow-y-auto flex-1 py-3">
             <div className="px-3 space-y-2">
               {/* Home Link with delay */}
               <div
                 className={clsx(
                   "transition-all duration-300 ease-out",
                   isMobileMenuOpen
-                    ? "transform translate-x-0 opacity-100"
-                    : "transform -translate-x-8 opacity-0"
+                    ? "opacity-100 transform translate-x-0"
+                    : "opacity-0 transform -translate-x-8"
                 )}
                 style={{ transitionDelay: isMobileMenuOpen ? "100ms" : "0ms" }}
               >
                 <NavLink to="/" className={homeClass} onClick={onClose}>
-                  <FaHome className="w-5 h-5 mr-3 text-primary" />
+                  <FaHome className="mr-3 w-5 h-5 text-primary" />
                   <span className="font-medium">Trang chủ</span>
                 </NavLink>
               </div>
@@ -161,10 +161,10 @@ const NavbarMobile = () => {
               {/* Divider with delay */}
               <div
                 className={clsx(
-                  "my-4 border-t border-border-primary transition-all duration-300",
+                  "my-4 border-t transition-all duration-300 border-border-primary",
                   isMobileMenuOpen
-                    ? "transform scale-x-100 opacity-100"
-                    : "transform scale-x-0 opacity-0"
+                    ? "opacity-100 transform scale-x-100"
+                    : "opacity-0 transform scale-x-0"
                 )}
                 style={{ transitionDelay: isMobileMenuOpen ? "200ms" : "0ms" }}
               />
@@ -176,8 +176,8 @@ const NavbarMobile = () => {
                   className={clsx(
                     "transition-all duration-300 ease-out",
                     isMobileMenuOpen
-                      ? "transform translate-x-0 opacity-100"
-                      : "transform -translate-x-8 opacity-0"
+                      ? "opacity-100 transform translate-x-0"
+                      : "opacity-0 transform -translate-x-8"
                   )}
                   style={{
                     transitionDelay: isMobileMenuOpen
@@ -200,7 +200,9 @@ const NavbarMobile = () => {
                       onClick={onClose}
                     >
                       <span className="text-base font-medium">
-                        {t(item.label)}
+                        {item.children && item.children.length > 0
+                          ? item.label
+                          : t(item.label)}
                       </span>
                     </NavLink>
                   )}
@@ -212,11 +214,11 @@ const NavbarMobile = () => {
           {/* Footer with slide-up animation */}
           <div
             className={clsx(
-              "p-6 bg-background-elevated border-t border-border-primary",
+              "p-6 border-t bg-background-elevated border-border-primary",
               "transition-all duration-500 ease-out",
               isMobileMenuOpen
-                ? "transform translate-y-0 opacity-100"
-                : "transform translate-y-4 opacity-0"
+                ? "opacity-100 transform translate-y-0"
+                : "opacity-0 transform translate-y-4"
             )}
             style={{ transitionDelay: isMobileMenuOpen ? "600ms" : "0ms" }}
           ></div>

@@ -35,19 +35,19 @@ const Navbar = () => {
 
   const studentSubCategoryItems =
     studentSubCategory?.subCategories.map((item: any) => ({
-      label: item.slug,
+      label: item.name,
       path: `/student/${item.id}`,
     })) || [];
 
   const postSubCategoryItems =
     postSubCategory?.subCategories.map((item: any) => ({
-      label: item.slug,
+      label: item.name,
       path: `/post/${item.id}`,
     })) || [];
 
   const eventSubCategoryItems =
     eventSubCategory?.subCategories.map((item: any) => ({
-      label: item.slug,
+      label: item.name,
       path: `/events/${item.id}`,
     })) || [];
   const researchSubCategory = category.find(
@@ -56,7 +56,7 @@ const Navbar = () => {
 
   const researchSubCategoryItems =
     researchSubCategory?.subCategories.map((item: any) => ({
-      label: item.slug,
+      label: item.name,
       path: `/research/${item.id}`,
     })) || [];
   // tuyển sinh
@@ -65,7 +65,7 @@ const Navbar = () => {
   );
   const admissionSubCategoryItems =
     admissionSubCategory?.subCategories.map((item: any) => ({
-      label: item.slug,
+      label: item.name,
       path: `/admission/${item.id}`,
     })) || [];
 
@@ -107,11 +107,11 @@ const Navbar = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="flex items-center justify-between h-16">
+      <div className="flex justify-between items-center h-16">
         <NavLink to="/" className="mr-3">
           <FaHome className="hidden w-6 h-6 text-primary sm:block" />
         </NavLink>
-        <div className="items-center hidden space-x-4 md:flex">
+        <div className="hidden items-center space-x-4 md:flex">
           {navbarItems.map((item) => (
             <div key={item.label}>
               {item.children && item.children.length > 0 ? (
