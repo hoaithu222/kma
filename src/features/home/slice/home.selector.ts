@@ -74,3 +74,8 @@ export const selectCooperationPost = createSelector(
   [selectHome],
   (state) => state.cooperationPost
 );
+export const selectPage = createSelector([selectHome], (state) => state.page);
+export const selectStatusPage = createSelector(
+  [selectHome],
+  (state) => state.statusPage
+);

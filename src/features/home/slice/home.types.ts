@@ -5,6 +5,7 @@ import { IResponseGetLecturer } from "@/core/api/lecturer/types";
 import { IResponsePublicArticle } from "@/core/api/posts/types";
 import { IResponseGetMajor } from "@/core/api/major/types";
 import { IResponseGetSubMajor } from "@/core/api/sub-major/types";
+import { Page } from "@/core/api/pageApi/types";
 
 interface initialStateType {
   posts: IResponsePublicArticle[];
@@ -61,6 +62,9 @@ interface initialStateType {
   statusSubCategory: ReduxStateType;
   statusMajor: ReduxStateType;
   statusSubMajor: ReduxStateType;
+  // data trang tinh
+  page: Page[];
+  statusPage: ReduxStateType;
 }
 
 export type { initialStateType };

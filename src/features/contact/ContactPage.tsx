@@ -2,11 +2,13 @@ import { MapPin, Phone, Mail, Clock, Globe, Facebook } from "lucide-react";
 import { useContact } from "./hooks/useContact";
 import { useEffect } from "react";
 import contactData from "./data/contact.json";
+import { useHome } from "../home/hooks/useHook";
 
 const ContactPage = () => {
   //  không sử dụng đâ ngôn ngữ nữa lấy từ backend tra về
   // const { t } = useTranslation("contact");
   const { contact, getContact } = useContact();
+  const { page } = useHome();
 
   // Type guard to check if content is an object
   const isContentObject = (
@@ -20,6 +22,9 @@ const ContactPage = () => {
     // If API call was successful and returned valid data, use it
     if (contact?.content && isContentObject(contact.content)) {
       return contact.content;
+    }
+    if (page.length > 0) {
+      return page[6].content as Record<string, any>;
     }
     // Otherwise use fallback data from JSON file
     return contactData;

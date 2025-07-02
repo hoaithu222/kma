@@ -2,10 +2,11 @@ import { SchoolIcon } from "lucide-react";
 import { useEffect } from "react";
 import { useTrainingStructure } from "../../hooks/useTrainingStructure";
 import trainingStructureData from "../../data/trainingStructure.json";
+import { useHome } from "@/features/home/hooks/useHook";
 
 const TrainingStructure = () => {
   const { trainingStructure, getTrainingStructure } = useTrainingStructure();
-
+  const { page } = useHome();
   // Type guard to check if content is an object
   const isContentObject = (
     content: string | Record<string, any>
@@ -21,6 +22,9 @@ const TrainingStructure = () => {
       isContentObject(trainingStructure.content)
     ) {
       return trainingStructure.content;
+    }
+    if (page.length > 0) {
+      return page[2].content as Record<string, any>;
     }
     // Otherwise use fallback data from JSON file
     return trainingStructureData;

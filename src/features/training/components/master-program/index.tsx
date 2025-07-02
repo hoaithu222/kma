@@ -17,10 +17,11 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useMaster } from "../../hooks/useMaster";
 import masterProgramData from "../../data/masterProgram.json";
+import { useHome } from "@/features/home/hooks/useHook";
 
 const TrainingMasterProgram = () => {
   const { master, getMaster, isLoading, error } = useMaster();
-
+  const { page } = useHome();
   // Type guard to check if content is an object
   const isContentObject = (
     content: string | Record<string, any>
@@ -33,6 +34,9 @@ const TrainingMasterProgram = () => {
     // If API call was successful and returned valid data, use it
     if (master?.content && isContentObject(master.content)) {
       return master.content.master_program_information_security;
+    }
+    if (page.length > 0) {
+      return page[5].content as Record<string, any>;
     }
     // Otherwise use fallback data from JSON file
     return masterProgramData.master_program_information_security;

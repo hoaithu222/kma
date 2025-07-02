@@ -14,10 +14,13 @@ const HomePage = () => {
     // getLecturerDispatch,
     // getMajorDispatch,
     // getSubMajorDispatch,
+
+    getPageListDispatch,
   } = useHome();
 
   useEffect(() => {
     getCategoryDispatch();
+    getPageListDispatch();
   }, []);
 
   return (

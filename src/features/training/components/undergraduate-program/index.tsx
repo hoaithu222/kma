@@ -12,10 +12,10 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useUnder } from "../../hooks/useUnder";
 import masterProgramData from "../../data/masterProgram.json";
-
+import { useHome } from "@/features/home/hooks/useHook";
 const TrainingUndergraduateProgram = () => {
   const { under, getUnder, isLoading, error } = useUnder();
-
+  const { page } = useHome();
   // Type guard to check if content is an object
   const isContentObject = (
     content: string | Record<string, any>
@@ -28,6 +28,9 @@ const TrainingUndergraduateProgram = () => {
     // If API call was successful and returned valid data, use it
     if (under?.content && isContentObject(under.content)) {
       return under.content as any;
+    }
+    if (page.length > 0) {
+      return page[4].content as Record<string, any>;
     }
     // Otherwise use fallback data from JSON file
     return masterProgramData.undergraduate_programs as any;

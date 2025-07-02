@@ -27,3 +27,7 @@ export const deletePage = async (params: PageRequestWithId) => {
   );
   return response.data;
 };
+export const getPageListApi = async () => {
+  const response = await Axios.get(PAGE_PATH.getList);
+  return response.data;
+};

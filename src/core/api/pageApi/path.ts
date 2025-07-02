@@ -5,4 +5,5 @@ export const PAGE_PATH = {
   create: `${BASE_PATH}/create`,
   update: `${BASE_PATH}/:id`,
   delete: `${BASE_PATH}/:id`,
+  getList: `${BASE_PATH}/all`,
 };

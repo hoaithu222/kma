@@ -6,10 +6,12 @@ import { useAbout } from "@/features/about/hooks/useAbout";
 import { GraduationCapIcon } from "lucide-react";
 import aboutData from "@/features/about/data/aboutOverview.json";
 import { useEffect } from "react";
+import { useHome } from "@/features/home/hooks/useHook";
 
 const AboutOverview = () => {
   // const { t: tAboutOverview } = useTranslation("aboutOverview");
   const { about, getAbout } = useAbout();
+  const { page } = useHome();
 
   useEffect(() => {
     getAbout();
@@ -26,6 +28,9 @@ const AboutOverview = () => {
   const getAboutData = () => {
     if (about?.content && isContentObject(about.content)) {
       return about.content;
+    }
+    if (page.length > 0) {
+      return page[1].content as Record<string, any>;
     }
     return aboutData;
   };

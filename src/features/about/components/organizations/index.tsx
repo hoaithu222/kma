@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { useOrganization } from "../../hooks/useOrganization";
 import organizationsData from "../../data/organizations.json";
+import { useHome } from "@/features/home/hooks/useHook";
 
 const Organizations = () => {
   const { organization, getOrganization } = useOrganization();
-
+  const { page } = useHome();
   // Type guard to check if content is an object
   const isContentObject = (
     content: string | Record<string, any>
@@ -17,6 +18,9 @@ const Organizations = () => {
     // If API call was successful and returned valid data, use it
     if (organization?.content && isContentObject(organization.content)) {
       return organization.content;
+    }
+    if (page.length > 0) {
+      return page[3].content as Record<string, any>;
     }
     // Otherwise use fallback data from JSON file
     return organizationsData;

@@ -8,6 +8,7 @@ import {
   getLecturer,
   getMajor,
   getNewsPost,
+  getPageList,
   getPosts,
   getStudentPost,
   getSubMajor,
@@ -24,7 +25,9 @@ import {
   selectLecturer,
   selectMajor,
   selectNewsPost,
+  selectPage,
   selectPosts,
+  selectStatusPage,
   selectStudentPost,
   selectSubCategory,
   selectSubMajor,
@@ -45,6 +48,12 @@ export const useHome = () => {
   const eventPostAdmission = useSelector(selectEventPostAdmission);
   const studentPost = useSelector(selectStudentPost);
   const cooperationPost = useSelector(selectCooperationPost);
+  const page = useSelector(selectPage);
+  const statusPage = useSelector(selectStatusPage);
+
+  const getPageListDispatch = useCallback(() => {
+    dispatch(getPageList());
+  }, [dispatch]);
 
   const getPostsDispatch = useCallback(() => {
     dispatch(getPosts());
@@ -110,6 +119,9 @@ export const useHome = () => {
     eventPostAdmission,
     studentPost,
     cooperationPost,
+    page,
+    statusPage,
+    getPageListDispatch,
     getBannerPostDispatch,
     getNewsPostDispatch,
     getEventPostNewDispatch,

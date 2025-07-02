@@ -30,6 +30,9 @@ import {
   getEventPostAdmission,
   getCooperationPost,
   getStudentPost,
+  getPageListError,
+  getPageList,
+  getPageListSuccess,
 } from "./home.slice";
 import { getCategoriesApi } from "@/core/api/category";
 import { getSubcategoriesApi } from "@/core/api/subcategory";
@@ -38,6 +41,8 @@ import { IRequestGetLecturer } from "@/core/api/lecturer/types";
 import { getLecturersAllApi } from "@/core/api/lecturer";
 import { IRequestSearchArticlePublic } from "@/core/api/posts/types";
 import { getPublicArticle } from "@/core/api/posts";
+import { PageResponse } from "@/core/api/pageApi/types";
+import { getPageListApi } from "@/core/api/pageApi";
 
 // Constants for subcategory IDs
 const SUBCATEGORY_IDS = {
@@ -164,6 +169,15 @@ function* fetchCooperationPost() {
   );
 }
 
+function* fetchPageList() {
+  try {
+    const response: PageResponse = yield call(getPageListApi);
+    yield put(getPageListSuccess(response.data));
+  } catch (error) {
+    yield put(getPageListError(handleError(error)));
+  }
+}
+
 // Category related sagas
 function* fetchCategory(): Generator<any, void, any> {
   try {
@@ -217,5 +231,8 @@ export function* homeSaga() {
 
     // Lecturer watcher
     createWatcher(getLecturer, fetchLecturer),
+
+    // Page watcher
+    createWatcher(getPageList, fetchPageList),
   ]);
 }

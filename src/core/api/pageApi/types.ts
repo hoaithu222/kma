@@ -26,3 +26,12 @@ export interface PageRequestCreate {
   content: string | Record<string, any>;
   path: string;
 }
+
+export interface PageRequest {
+  page: number;
+  limit: number;
+}
+
+export interface PageResponse {
+  data: Page[];
+}

@@ -53,6 +53,9 @@ const initialState: initialStateType = {
   statusSubCategory: ReduxStateType.INIT,
   statusMajor: ReduxStateType.INIT,
   statusSubMajor: ReduxStateType.INIT,
+  // trang tĩnh
+  page: [],
+  statusPage: ReduxStateType.INIT,
 };
 
 const { slice, reducer } = createResettableSlice({
@@ -186,6 +189,18 @@ const { slice, reducer } = createResettableSlice({
     getCooperationPostError: (state, action) => {
       state.error = action.payload;
     },
+    // lấy danh sách trang tĩnh
+    getPageList: (state) => {
+      state.statusPage = ReduxStateType.LOADING;
+    },
+    getPageListSuccess: (state, action) => {
+      state.page = action.payload;
+      state.statusPage = ReduxStateType.SUCCESS;
+    },
+    getPageListError: (state, action) => {
+      state.error = action.payload;
+      state.statusPage = ReduxStateType.ERROR;
+    },
   },
   persist: {
     whitelist: [
@@ -199,6 +214,7 @@ const { slice, reducer } = createResettableSlice({
       "eventPostAdmission",
       "studentPost",
       "cooperationPost",
+      "page",
     ],
   },
 });
@@ -242,5 +258,8 @@ export const {
   getCooperationPost,
   getCooperationPostSuccess,
   getCooperationPostError,
+  getPageList,
+  getPageListSuccess,
+  getPageListError,
 } = slice.actions;
 export default reducer;
