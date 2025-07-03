@@ -46,7 +46,7 @@ const Footer = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-0 blur-xl transition-all duration-500 group-hover:opacity-30"></div>
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-text-primary to-text-primary-dark">
+              <h2 className="text-xl font-semibold text-gray-200">
                 {t("header.description")}
               </h2>
             </div>
@@ -155,7 +155,7 @@ const Footer = () => {
                   <span className="flex justify-center items-center w-10 h-10 text-white bg-gradient-to-br from-blue-400 to-purple-500 rounded-full transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                     <Mail size={18} />
                   </span>
-                  <span className="text-sm text-gray-300 transition-all duration-300 group-hover:text-white">
+                  <span className="text-sm text-gray-200 transition-all duration-300 group-hover:text-white">
                     {t("footer.contact.contact1")}
                   </span>
                   <ExternalLink
@@ -169,7 +169,7 @@ const Footer = () => {
                   <span className="flex justify-center items-center w-10 h-10 text-white bg-gradient-to-br from-green-400 to-blue-500 rounded-full transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                     <Phone size={18} />
                   </span>
-                  <span className="text-sm text-gray-300 transition-all duration-300 group-hover:text-white">
+                  <span className="text-sm text-gray-200 transition-all duration-300 group-hover:text-white">
                     {t("footer.contact.contact2")}
                   </span>
                   <ExternalLink
@@ -183,7 +183,7 @@ const Footer = () => {
                   <span className="flex justify-center items-center w-10 h-10 text-white bg-gradient-to-br from-purple-400 to-pink-500 rounded-full transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                     <MapPin size={18} />
                   </span>
-                  <span className="text-sm text-gray-300 transition-all duration-300 group-hover:text-white">
+                  <span className="text-sm text-gray-200 transition-all duration-300 group-hover:text-white">
                     {t("footer.contact.contact3")}
                   </span>
                   <ExternalLink
