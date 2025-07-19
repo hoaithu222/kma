@@ -51,11 +51,11 @@ const FloatingFilesPanel: React.FC<FloatingFilesPanelProps> = ({ files }) => {
       {isFilesPanelOpen && (
         <div className="flex fixed inset-0 z-50 justify-center items-center p-2 sm:p-4">
           <div
-            className="absolute inset-0 backdrop-blur-md bg-background-overlay"
+            className="absolute inset-0 backdrop-blur-md bg-background-transparent"
             onClick={() => setIsFilesPanelOpen(false)}
           ></div>
 
-          <div className="relative bg-card-bg/98 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl max-w-[90%] sm:max-w-md w-full max-h-[80vh] overflow-hidden border border-border-primary animate-in slide-in-from-bottom-4 fade-in duration-500">
+          <div className="relative bg-background-elevated backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl max-w-[90%] sm:max-w-md w-full max-h-[80vh] overflow-hidden border border-border-primary animate-in slide-in-from-bottom-4 fade-in duration-500">
             <div className="flex sticky top-0 justify-between items-center p-4 border-b backdrop-blur-md sm:p-6 bg-card-bg/90 border-divider-primary">
               <div className="flex gap-2 items-center sm:gap-3">
                 <div className="p-2 rounded-xl sm:p-3 bg-primary/10 sm:rounded-2xl">

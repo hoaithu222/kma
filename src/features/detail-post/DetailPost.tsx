@@ -66,6 +66,9 @@ const DetailPost = () => {
       </div>
     );
   }
+  const getAuthorDisplayName = () => {
+    return post.isPrivate ? "Ẩn danh" : post.authorName;
+  };
 
   const thumbnail = `${import.meta.env.VITE_API_URL_FILE}/${post.thumbnailUrl}`;
 
@@ -93,6 +96,7 @@ const DetailPost = () => {
               title={post.title}
               publishedAt={post.publishedAt}
               updatedAt={post.updatedAt}
+              authorName={getAuthorDisplayName()}
               summary={post.summary}
               tags={post.tag}
             />

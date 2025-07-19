@@ -1,5 +1,5 @@
 import React from "react";
-import { Calendar, Clock, BookOpen, Tag } from "lucide-react";
+import { Calendar, BookOpen, Tag, User } from "lucide-react";
 import { ITag } from "@/core/api/posts/types";
 import { formatDateTwo } from "@/shared/utils/formatDate";
 
@@ -11,14 +11,15 @@ interface PostHeroProps {
   updatedAt: string;
   summary: string;
   tags: ITag[];
+  authorName: string;
 }
 
 const PostHero: React.FC<PostHeroProps> = ({
   thumbnail,
   categoryName,
+  authorName,
   title,
   publishedAt,
-  updatedAt,
   summary,
   tags,
 }) => (
@@ -44,7 +45,7 @@ const PostHero: React.FC<PostHeroProps> = ({
         {title}
       </h3>
 
-      <div className="flex flex-wrap items-center gap-2 mb-4 sm:gap-4 sm:mb-8">
+      <div className="flex flex-wrap items-center gap-2 mb-4 sm:gap-4 sm:mb-8 justify-between">
         <div className="flex items-center gap-1 px-2 py-1 sm:gap-2 sm:px-4 sm:py-2 bg-background-elevated rounded-2xl">
           <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
           <span className="text-xs font-medium sm:text-sm text-secondary">
@@ -53,9 +54,9 @@ const PostHero: React.FC<PostHeroProps> = ({
         </div>
 
         <div className="flex items-center gap-1 px-2 py-1 sm:gap-2 sm:px-4 sm:py-2 bg-background-elevated rounded-2xl">
-          <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-accent" />
-          <span className="text-xs font-medium sm:text-sm text-accent">
-            Cập nhật: {formatDateTwo(updatedAt)}
+          <User className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+          <span className="text-xs font-medium sm:text-sm text-primary">
+            {authorName}
           </span>
         </div>
       </div>
