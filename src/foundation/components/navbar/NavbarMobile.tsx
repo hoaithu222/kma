@@ -7,13 +7,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsMobileMenuOpen } from "@/app/store/slices/navbar";
 import clsx from "clsx";
 import { isMobileMenuOpenSelector } from "@/app/store/slices/navbar/selectors";
-import { IResponseCategory } from "@/core/api/category/types";
-import { selectCategory } from "@/features/home/slice/home.selector";
+
+import { dataMenu } from "@/features/menu/slice/menu.types";
+import { selectMenuSelector } from "@/features/menu/slice/menu.selector";
 
 const NavbarMobile = () => {
   const { t } = useTranslation("navbar");
   const dispatch = useDispatch();
   const isMobileMenuOpen = useSelector(isMobileMenuOpenSelector);
+
+  // Helper function to safely get translation or fallback to label
+  const getTranslation = (key: string) => {
+    const translation = t(key);
+    // If the translation returns the same key, it means the key doesn't exist
+    // In that case, return the key itself as the text
+    return translation === key ? key : translation;
+  };
 
   const onClose = () => {
     dispatch(setIsMobileMenuOpen(false));
@@ -32,69 +41,55 @@ const NavbarMobile = () => {
         ? "bg-primary text-text-on-primary shadow-lg"
         : "text-text-primary hover:bg-background-surface hover:text-primary"
     }`;
-  const category: any = useSelector(selectCategory);
-  const studentSubCategory = category.find(
-    (item: IResponseCategory) => item.slug === "sinh-vien"
-  );
-  const postSubCategory = category.find(
-    (item: IResponseCategory) => item.slug === "tin-tuc"
-  );
-  const eventSubCategory = category.find(
-    (item: IResponseCategory) => item.slug === "su-kien"
-  );
+  // const category: any = useSelector(selectCategory);
+  // const studentSubCategory = category.find(
+  //   (item: IResponseCategory) => item.slug === "sinh-vien"
+  // );
+  // const postSubCategory = category.find(
+  //   (item: IResponseCategory) => item.slug === "tin-tuc"
+  // );
+  // const eventSubCategory = category.find(
+  //   (item: IResponseCategory) => item.slug === "su-kien"
+  // );
 
-  const studentSubCategoryItems =
-    studentSubCategory?.subCategories.map((item: any) => ({
+  // const studentSubCategoryItems =
+  //   studentSubCategory?.subCategories.map((item: any) => ({
+  //     label: item.name,
+  //     path: `/student/${item.id}`,
+  //   })) || [];
+  // const postSubCategoryItems =
+  //   postSubCategory?.subCategories.map((item: any) => ({
+  //     label: item.name,
+  //     path: `/post/${item.id}`,
+  //   })) || [];
+  // const eventSubCategoryItems =
+  //   eventSubCategory?.subCategories.map((item: any) => ({
+  //     label: item.name,
+  //     path: `/events/${item.id}`,
+  //   })) || [];
+  // const admissionSubCategory = category.find(
+  //   (item: IResponseCategory) => item.slug === "tuyen-sinh"
+  // );
+  // const admissionSubCategoryItems =
+  //   admissionSubCategory?.subCategories.map((item: any) => ({
+  //     label: item.name,
+  //     path: `/admission/${item.id}`,
+  //   })) || [];
+  const menu = useSelector(selectMenuSelector);
+  const items = menu?.map((item: dataMenu) => {
+    return {
       label: item.name,
-      path: `/student/${item.id}`,
-    })) || [];
-  const postSubCategoryItems =
-    postSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
-      path: `/post/${item.id}`,
-    })) || [];
-  const eventSubCategoryItems =
-    eventSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
-      path: `/events/${item.id}`,
-    })) || [];
-  const admissionSubCategory = category.find(
-    (item: IResponseCategory) => item.slug === "tuyen-sinh"
-  );
-  const admissionSubCategoryItems =
-    admissionSubCategory?.subCategories.map((item: any) => ({
-      label: item.name,
-      path: `/admission/${item.id}`,
-    })) || [];
-  const navbarItems = [
-    ...NavbarItems,
-    {
-      label: "Tuyển sinh",
-      path: "/admission/57",
-      icon: "FaUser",
-      children: admissionSubCategoryItems,
-    },
-    {
-      label: "Sinh viên",
-      path: "/student/42",
-      icon: "FaUser",
-      children: studentSubCategoryItems,
-    },
-    {
-      label: "Bài viết",
-      path: "/post/40",
-      icon: "FaUser",
-      children: postSubCategoryItems,
-    },
-    {
-      label: "Sự kiện",
-      path: "/events/49",
-      icon: "FaUser",
-      children: eventSubCategoryItems,
-    },
+      path: `/base-post/${item.id}`,
 
-    ...ContactItems,
-  ];
+      children: item.children.map((child: any) => {
+        return {
+          label: child.name,
+          path: `/base-post/${child.id}`,
+        };
+      }),
+    };
+  });
+  const navbarItems = [...NavbarItems, ...items, ...ContactItems];
 
   return (
     <>
@@ -188,7 +183,7 @@ const NavbarMobile = () => {
                   {item.children && item.children.length > 0 ? (
                     <div className="mb-2">
                       <NavbarDropdown
-                        item={item}
+                        item={item as any}
                         isMobile={true}
                         onItemClick={onClose}
                       />
@@ -200,9 +195,7 @@ const NavbarMobile = () => {
                       onClick={onClose}
                     >
                       <span className="text-base font-medium">
-                        {item.children && item.children.length > 0
-                          ? item.label
-                          : t(item.label)}
+                        {getTranslation(item.label)}
                       </span>
                     </NavLink>
                   )}

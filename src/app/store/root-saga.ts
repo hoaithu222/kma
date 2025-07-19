@@ -8,6 +8,8 @@ import { lecturerSaga } from "@/features/lecturer/slice/lecturer.saga";
 import { postSaga } from "@/features/posts/slice/post.saga";
 import { admissionSaga } from "@/features/admission/slice/admission.saga";
 import { researchSaga } from "@/features/research/slice/research.saga";
+import menuSaga from "@/features/menu/slice/menu.saga";
+import basePostSaga from "@/features/base-post/slice/base-post.saga";
 
 export const rootSage = function* () {
   try {
@@ -20,6 +22,8 @@ export const rootSage = function* () {
       postSaga(),
       admissionSaga(),
       researchSaga(),
+      menuSaga(),
+      basePostSaga(),
     ]);
   } catch (error) {
     console.error(error);

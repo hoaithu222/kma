@@ -21,6 +21,14 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
+  // Helper function to safely get translation or fallback to label
+  const getTranslation = (key: string) => {
+    const translation = t(key);
+    // If the translation returns the same key, it means the key doesn't exist
+    // In that case, return the key itself as the text
+    return translation === key ? key : translation;
+  };
+
   const handleMouseEnter = () => {
     if (!isMobile) {
       if (timeoutRef.current) {
@@ -102,7 +110,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
               className="flex-1"
               onClick={handleItemClick}
             >
-              <span className="text-base">{t(item.label)}</span>
+              <span className="text-base">{getTranslation(item.label)}</span>
             </NavLink>
             {item.children && (
               <div className="p-1 ml-2">
@@ -131,7 +139,9 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
                   onClick={handleItemClick}
                   className={childNavClass}
                 >
-                  <span className="flex items-center">{t(child.label)}</span>
+                  <span className="flex items-center">
+                    {getTranslation(child.label)}
+                  </span>
                 </NavLink>
               ))}
             </div>
@@ -151,7 +161,9 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
     >
       <div className="flex items-center cursor-pointer">
         <NavLink to={item.path} className={navClass}>
-          <span className="md:text-sm xl:text-base">{t(item.label)}</span>
+          <span className="md:text-sm xl:text-base">
+            {getTranslation(item.label)}
+          </span>
         </NavLink>
         {item.children && (
           <ChevronDown
@@ -178,7 +190,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({
                 <div className="flex items-center group">
                   <div className="w-1 h-6 mr-3 transition-colors duration-200 bg-transparent rounded-r group-hover:bg-primary"></div>
                   <span className="flex-1 md:text-sm xl:text-base">
-                    {t(child.label)}
+                    {getTranslation(child.label)}
                   </span>
                 </div>
               </NavLink>

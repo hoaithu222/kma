@@ -51,6 +51,7 @@ const PostPage = lazy(() => import("@/features/posts/PostPage.tsx"));
 const AdmissionPage = lazy(
   () => import("@/features/admission/AdmissionPage.tsx")
 );
+const BasePostPage = lazy(() => import("@/features/base-post/BasePost.tsx"));
 const defaultOptions = {
   requireAuth: true,
   hideInMenu: false,
@@ -209,6 +210,12 @@ export const ROUTE = {
   admission: {
     path: "/admission/:id",
     element: <AdmissionPage />,
+    layout: "main",
+    options: defaultOptions,
+  },
+  basePost: {
+    path: "/base-post/:id",
+    element: <BasePostPage />,
     layout: "main",
     options: defaultOptions,
   },

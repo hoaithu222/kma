@@ -12,6 +12,8 @@ import researchReducer from "@/features/research/slice/research.slice";
 import lecturerReducer from "@/features/lecturer/slice/lecturer.slice";
 import postReducer from "@/features/posts/slice/post.slice";
 import admissionReducer from "@/features/admission/slice/admission.slice";
+import menuReducer from "@/features/menu/slice/menu.slice";
+import basePostReducer from "@/features/base-post/slice/base-post.slice";
 
 export const rootReducer = combineReducers({
   [AppReducerType.LANGUAGE]: languageReducer,
@@ -25,4 +27,6 @@ export const rootReducer = combineReducers({
   [AppReducerType.LECTURER]: lecturerReducer,
   [AppReducerType.POST]: postReducer,
   [AppReducerType.ADMISSION]: admissionReducer,
+  [AppReducerType.MENU]: menuReducer,
+  [AppReducerType.BASE_POST]: basePostReducer,
 });

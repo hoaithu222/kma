@@ -6,8 +6,15 @@ import NavbarMobile from "@/foundation/components/navbar/NavbarMobile";
 import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 
+import { useEffect } from "react";
+import { useMenu } from "@/features/menu/hooks/useMenu";
+
 const MainLayout = () => {
   const isMobileMenuOpen = useSelector(isMobileMenuOpenSelector);
+  const { handleGetMenu } = useMenu();
+  useEffect(() => {
+    handleGetMenu();
+  }, []);
 
   return (
     <div className="relative flex flex-col min-h-screen">
