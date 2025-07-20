@@ -238,7 +238,7 @@ const StudentPost = () => {
                       {/* Enhanced Read More Button */}
                       <Button
                         variant="text"
-                        className="flex items-center gap-1.5 px-2.5  py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-semibold text-white transition-all duration-300 rounded-lg shadow-lg group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl"
+                        className="flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-semibold text-white transition-all duration-300 rounded-lg shadow-lg group/btn bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl hover:scale-105 active:scale-95 cursor-pointer z-10 relative"
                         onClick={() => navigate(`/detail-post/${post.id}`)}
                       >
                         <span>Đọc thêm</span>

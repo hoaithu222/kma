@@ -16,7 +16,7 @@ const EventPostAdmission = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden w-full min-h-screen bg-gradient-to-br rounded-lg from-background-subtle via-background-base to-background-muted">
+    <div className="overflow-hidden w-full bg-gradient-to-br rounded-lg from-background-subtle via-background-base to-background-muted">
       {/* Header Section */}
       <div className="py-4 bg-gradient-to-r from-primary to-primary-dark text-text-on-primary md:py-8">
         <div className="container px-2 mx-auto text-center sm:px-4">

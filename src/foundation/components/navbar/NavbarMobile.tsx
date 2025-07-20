@@ -7,9 +7,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { setIsMobileMenuOpen } from "@/app/store/slices/navbar";
 import clsx from "clsx";
 import { isMobileMenuOpenSelector } from "@/app/store/slices/navbar/selectors";
-
 import { dataMenu } from "@/features/menu/slice/menu.types";
 import { selectMenuSelector } from "@/features/menu/slice/menu.selector";
+
+interface NavbarItem {
+  label: string;
+  path: string;
+  icon?: string;
+  children?: NavbarItem[];
+  role?: string;
+}
 
 const NavbarMobile = () => {
   const { t } = useTranslation("navbar");
@@ -41,55 +48,32 @@ const NavbarMobile = () => {
         ? "bg-primary text-text-on-primary shadow-lg"
         : "text-text-primary hover:bg-background-surface hover:text-primary"
     }`;
-  // const category: any = useSelector(selectCategory);
-  // const studentSubCategory = category.find(
-  //   (item: IResponseCategory) => item.slug === "sinh-vien"
-  // );
-  // const postSubCategory = category.find(
-  //   (item: IResponseCategory) => item.slug === "tin-tuc"
-  // );
-  // const eventSubCategory = category.find(
-  //   (item: IResponseCategory) => item.slug === "su-kien"
-  // );
 
-  // const studentSubCategoryItems =
-  //   studentSubCategory?.subCategories.map((item: any) => ({
-  //     label: item.name,
-  //     path: `/student/${item.id}`,
-  //   })) || [];
-  // const postSubCategoryItems =
-  //   postSubCategory?.subCategories.map((item: any) => ({
-  //     label: item.name,
-  //     path: `/post/${item.id}`,
-  //   })) || [];
-  // const eventSubCategoryItems =
-  //   eventSubCategory?.subCategories.map((item: any) => ({
-  //     label: item.name,
-  //     path: `/events/${item.id}`,
-  //   })) || [];
-  // const admissionSubCategory = category.find(
-  //   (item: IResponseCategory) => item.slug === "tuyen-sinh"
-  // );
-  // const admissionSubCategoryItems =
-  //   admissionSubCategory?.subCategories.map((item: any) => ({
-  //     label: item.name,
-  //     path: `/admission/${item.id}`,
-  //   })) || [];
   const menu = useSelector(selectMenuSelector);
-  const items = menu?.map((item: dataMenu) => {
-    return {
-      label: item.name,
-      path: `/base-post/${item.id}`,
 
-      children: item.children.map((child: any) => {
-        return {
-          label: child.name,
-          path: `/base-post/${child.id}`,
+  // Hàm đệ quy để chuyển đổi menu data thành NavbarItem structure
+  const convertMenuToNavbarItems = (menuItems: dataMenu[]): NavbarItem[] => {
+    return (
+      menuItems?.map((item: dataMenu) => {
+        const navbarItem: NavbarItem = {
+          label: item.name,
+          path: `/base-post/${item.id}`,
+          icon: "FaFileAlt", // Default icon for dynamic items
         };
-      }),
-    };
-  });
-  const navbarItems = [...NavbarItems, ...items, ...ContactItems];
+
+        // Xử lý children đệ quy
+        if (item.children && item.children.length > 0) {
+          navbarItem.children = convertMenuToNavbarItems(item.children);
+        }
+
+        return navbarItem;
+      }) || []
+    );
+  };
+
+  // Chuyển đổi menu data thành NavbarItem structure
+  const dynamicItems = convertMenuToNavbarItems(menu);
+  const navbarItems = [...NavbarItems, ...dynamicItems, ...ContactItems];
 
   return (
     <>
@@ -183,7 +167,7 @@ const NavbarMobile = () => {
                   {item.children && item.children.length > 0 ? (
                     <div className="mb-2">
                       <NavbarDropdown
-                        item={item as any}
+                        item={item as NavbarItem}
                         isMobile={true}
                         onItemClick={onClose}
                       />

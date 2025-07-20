@@ -1,7 +1,7 @@
 interface INavbarItem {
   label: string;
   path: string;
-  icon: React.ReactNode | string;
+  icon: string | React.ReactNode;
   children?: INavbarItem[];
 }
 
