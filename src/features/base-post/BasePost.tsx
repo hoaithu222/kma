@@ -5,19 +5,20 @@ import Pagination from "@/foundation/components/pagination/Pagination";
 import ItemsPost from "@/foundation/components/posts/ItemsPost";
 import { ReduxStateType } from "@/app/store/types";
 import LoadingSkeleton from "@/foundation/components/loading/LoadingSkeleton";
+import Empty from "@/foundation/components/empty/Empty";
 
 const BasePostPage = () => {
   const { id } = useParams();
   const {
     posts,
-    statusGetStudentPost,
+    statusGetPost,
     filter,
     totalPages,
     totalItems,
     handleFilter,
     getPostsAction,
   } = useBasePost();
-  console.log(posts);
+
   useEffect(() => {
     if (id) {
       const categoryId = Number(id);
@@ -31,16 +32,23 @@ const BasePostPage = () => {
     }
   }, [id]);
 
-  if (statusGetStudentPost === ReduxStateType.LOADING) {
+  if (statusGetPost === ReduxStateType.LOADING) {
     return (
-      <div className="min-h-screen mt-10 md:mt-20 lg:mt-28">
+      <div className="mt-10 min-h-screen md:mt-20 lg:mt-28">
         <LoadingSkeleton count={3} />
+      </div>
+    );
+  }
+  if (posts.length === 0) {
+    return (
+      <div className="min-h-screen mt-30 md:mt-20 lg:mt-28">
+        <Empty variant="data" title="Không có dữ liệu" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen mt-10 md:mt-20 lg:mt-24">
+    <div className="mt-10 min-h-screen md:mt-20 lg:mt-24">
       <div className="container px-1 py-2 mx-auto sm:px-3 sm:py-6 lg:px-4 lg:py-8">
         <div className="flex flex-wrap gap-3 sm:gap-4 lg:gap-6">
           {posts?.map((item: any) => {

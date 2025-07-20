@@ -61,7 +61,7 @@ const DetailPost = () => {
 
   if (statusGetPost === ReduxStateType.LOADING || !post) {
     return (
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900/20">
         <LoadingPage />
       </div>
     );
@@ -73,7 +73,7 @@ const DetailPost = () => {
   const thumbnail = `${import.meta.env.VITE_API_URL_FILE}/${post.thumbnailUrl}`;
 
   return (
-    <div className="min-h-screen bg-background-muted/50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20">
       <ReadingProgressBar progress={readingProgress} />
 
       <PostHeader
@@ -85,25 +85,31 @@ const DetailPost = () => {
         onNavigateBack={() => navigate(-1)}
         onLikeToggle={() => setIsLiked(!isLiked)}
         onBookmarkToggle={() => setIsBookmarked(!isBookmarked)}
+        navigateToHome={() => navigate("/")}
+        navigateToCategory={() => navigate(`/base-post/${post.categoryId}`)}
       />
 
-      <div className="px-2 py-4 mx-auto sm:px-4 sm:py-8 max-w-7xl lg:px-8">
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <PostHero
-              thumbnail={thumbnail}
-              categoryName={post.categoryName}
-              title={post.title}
-              publishedAt={post.publishedAt}
-              updatedAt={post.updatedAt}
-              authorName={getAuthorDisplayName()}
-              summary={post.summary}
-              tags={post.tag}
-            />
+      <div className="px-1 py-2 mx-auto max-w-9xl sm:px-2 sm:py-4">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 lg:grid-cols-4 xl:grid-cols-5">
+          {/* Main Content */}
+          <div className="lg:col-span-3 xl:col-span-4">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
+              <PostHero
+                thumbnail={thumbnail}
+                categoryName={post.categoryName}
+                title={post.title}
+                publishedAt={post.publishedAt}
+                updatedAt={post.updatedAt}
+                authorName={getAuthorDisplayName()}
+                summary={post.summary}
+                tags={post.tag}
+              />
 
-            <PostContent content={post.content} />
+              <PostContent content={post.content} />
+            </div>
           </div>
 
+          {/* Sidebar */}
           <div className="lg:col-span-1">
             <RelatedPostsSidebar listRelatedPost={listRelatedPostData} />
           </div>

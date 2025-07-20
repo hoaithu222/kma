@@ -1,4 +1,4 @@
-import { Eye, FileText, Download, ArrowRight, Clock, User } from "lucide-react";
+import { Eye, FileText, ArrowRight, Clock, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export interface ResponseArticle {
@@ -62,13 +62,13 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
 
   const navigate = useNavigate();
 
-  const formatFileSize = (bytes: number) => {
-    if (bytes === 0) return "0 Bytes";
-    const k = 1024;
-    const sizes = ["Bytes", "KB", "MB", "GB"];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-  };
+  // const formatFileSize = (bytes: number) => {
+  //   if (bytes === 0) return "0 Bytes";
+  //   const k = 1024;
+  //   const sizes = ["Bytes", "KB", "MB", "GB"];
+  //   const i = Math.floor(Math.log(bytes) / Math.log(k));
+  //   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+  // };
 
   const getCategoryColor = (categoryName: string) => {
     const colors = {
@@ -84,19 +84,20 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
     );
   };
 
-  const getFileIcon = (fileType: string) => {
-    if (fileType.includes("pdf")) return "📄";
-    if (fileType.includes("doc")) return "📝";
-    if (fileType.includes("image")) return "🖼️";
-    if (fileType.includes("video")) return "🎥";
-    if (fileType.includes("audio")) return "🎵";
-    return "📎";
-  };
+  // const getFileIcon = (fileType: string) => {
+  //   if (fileType.includes("pdf")) return "📄";
+  //   if (fileType.includes("doc")) return "📝";
+  //   if (fileType.includes("image")) return "🖼️";
+  //   if (fileType.includes("video")) return "🎥";
+  //   if (fileType.includes("audio")) return "🎵";
+  //   return "📎";
+  // };
 
-  // Function to get author display name
   const getAuthorDisplayName = () => {
     return data.isPrivate ? "Ẩn danh" : data.authorName;
   };
+
+  const hasFiles = data.files.length > 0;
 
   return (
     <article className="overflow-hidden relative mx-auto min-w-full max-w-7xl transition-all duration-300 ease-out group">
@@ -108,9 +109,9 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
         {/* Animated border gradient */}
         <div className="absolute inset-0 bg-gradient-to-r rounded-xl opacity-0 transition-opacity duration-300 sm:rounded-2xl from-blue-500/10 via-purple-500/10 to-pink-500/10 group-hover:opacity-100 -z-10"></div>
 
-        <div className="flex flex-col gap-2 p-1 sm:gap-3 md:gap-4 sm:p-2 lg:p-3 lg:flex-row lg:gap-5">
-          {/* Enhanced Thumbnail */}
-          <div className="relative w-full lg:w-3/5">
+        <div className="flex flex-col gap-2 p-2 sm:gap-3 md:gap-4 sm:p-2 lg:p-3 lg:flex-row lg:gap-5">
+          {/* Enhanced Thumbnail - Dynamic height based on files */}
+          <div className="relative w-full lg:w-2/5">
             <div className="absolute top-0 left-0 z-10 px-2 pt-2 sm:px-3 sm:pt-3">
               <div className="flex flex-wrap gap-2 items-center mb-4">
                 <span
@@ -124,8 +125,12 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
               </div>
             </div>
             <div className="overflow-hidden relative rounded-lg sm:rounded-xl group/thumb">
-              {/* Image with multiple effects */}
-              <div className="overflow-hidden relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg aspect-video sm:rounded-xl dark:from-gray-800 dark:to-gray-700">
+              {/* Image with dynamic aspect ratio */}
+              <div
+                className={`overflow-hidden relative bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg sm:rounded-xl dark:from-gray-800 dark:to-gray-700 ${
+                  hasFiles ? "aspect-[5/3]" : "aspect-[5/3]"
+                }`}
+              >
                 <img
                   src={`${import.meta.env.VITE_API_URL_FILE}/${data.thumbnailUrl}`}
                   alt={data.title}
@@ -146,12 +151,12 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
           </div>
 
           {/* Enhanced Content */}
-          <div className="flex flex-col w-full lg:w-3/5 xl:w-2/3">
+          <div className="flex flex-col w-full lg:w-3/5 xl:w-3/5">
             <div className="space-y-2 sm:space-y-3 md:space-y-4">
-              {/* Author info - Enhanced with beautiful styling */}
-              <div className="flex gap-3 items-center p-3 bg-gradient-to-r rounded-lg border backdrop-blur-sm from-gray-50/80 via-white/60 to-gray-50/80 dark:from-gray-800/60 dark:via-gray-700/40 dark:to-gray-800/60 border-gray-200/40 dark:border-gray-600/30">
-                <div className="flex justify-center items-center w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-lg transition-transform duration-300 transform group-hover:scale-110">
-                  <User className="w-5 h-5 text-white" />
+              {/* Author info - Compact styling */}
+              <div className="flex gap-3 items-center p-2 bg-gradient-to-r rounded-lg border backdrop-blur-sm from-gray-50/80 via-white/60 to-gray-50/80 dark:from-gray-800/60 dark:via-gray-700/40 dark:to-gray-800/60 border-gray-200/40 dark:border-gray-600/30">
+                <div className="flex justify-center items-center w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full shadow-lg transition-transform duration-300 transform group-hover:scale-110">
+                  <User className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex-1">
                   <div className="flex gap-2 items-center">
@@ -177,71 +182,40 @@ const ItemsPost = ({ data }: ItemsPostProps) => {
                 {data.summary}
               </p>
 
-              {/* Meta information with modern styling */}
-              <div className="flex flex-wrap gap-3 items-center text-sm text-gray-500 dark:text-gray-400">
-                <div className="flex gap-2 items-center px-3 py-2 rounded-lg border backdrop-blur-sm bg-gray-100/70 dark:bg-gray-700/50 border-gray-200/50 dark:border-gray-600/50">
-                  <Clock className="w-4 h-4 text-blue-500" />
-                  <span className="font-medium">
+              {/* Meta information with compact styling */}
+              <div className="flex flex-wrap gap-2 items-center text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex gap-2 items-center px-2 py-1.5 rounded-lg border backdrop-blur-sm bg-gray-100/70 dark:bg-gray-700/50 border-gray-200/50 dark:border-gray-600/50">
+                  <Clock className="w-3.5 h-3.5 text-blue-500" />
+                  <span className="text-xs font-medium">
                     {formatTimeAgo(data.publishedAt)}
                   </span>
                 </div>
 
-                <div className="flex gap-2 items-center px-3 py-2 rounded-lg border backdrop-blur-sm bg-gray-100/70 dark:bg-gray-700/50 border-gray-200/50 dark:border-gray-600/50">
-                  <Eye className="w-4 h-4 text-green-500" />
-                  <span className="font-medium">
+                <div className="flex gap-2 items-center px-2 py-1.5 rounded-lg border backdrop-blur-sm bg-gray-100/70 dark:bg-gray-700/50 border-gray-200/50 dark:border-gray-600/50">
+                  <Eye className="w-3.5 h-3.5 text-green-500" />
+                  <span className="text-xs font-medium">
                     {data.viewCount.toLocaleString()} lượt xem
                   </span>
                 </div>
-                {/* tag */}
               </div>
-
-              {/* Enhanced Files section */}
-              {data.files.length > 0 && (
-                <div className="p-4 bg-gradient-to-r rounded-xl border backdrop-blur-sm from-gray-50/50 to-blue-50/30 dark:from-gray-800/50 dark:to-blue-900/20 border-gray-200/50 dark:border-gray-700/50">
-                  <h4 className="flex gap-2 items-center mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
-                    <FileText className="w-4 h-4 text-blue-500" />
-                    Tệp đính kèm
-                  </h4>
-                  <div className="space-y-2">
-                    {data.files.slice(0, 2).map((file, index) => (
-                      <div
-                        key={file.id}
-                        className="group/file flex items-center justify-between p-3 bg-white/70 dark:bg-gray-700/50 rounded-lg border border-gray-200/50 dark:border-gray-600/50 cursor-pointer hover:bg-white dark:hover:bg-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md transition-all duration-300 transform hover:scale-[1.02]"
-                        style={{ animationDelay: `${index * 100}ms` }}
-                      >
-                        <div className="flex flex-1 gap-3 items-center min-w-0">
-                          <span className="text-xl">
-                            {getFileIcon(file.fileType)}
-                          </span>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-gray-800 truncate transition-colors dark:text-gray-200 group-hover/file:text-blue-600 dark:group-hover/file:text-blue-400">
-                              {file.fileName}
-                            </p>
-                            <p className="text-xs text-gray-500 dark:text-gray-400">
-                              {file.fileType.toUpperCase()} •{" "}
-                              {formatFileSize(file.fileSize)}
-                            </p>
-                          </div>
-                        </div>
-                        <Download className="w-4 h-4 text-gray-400 opacity-0 transition-all duration-300 transform translate-x-2 group-hover/file:text-blue-500 group-hover/file:opacity-100 group-hover/file:translate-x-0" />
-                      </div>
-                    ))}
-                    {data.files.length > 2 && (
-                      <div className="py-2 text-center">
-                        <span className="px-3 py-1.5 text-xs text-gray-500 bg-gray-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
-                          và {data.files.length - 2} tệp khác...
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
             </div>
 
+            {/* Compact Files section */}
+            {hasFiles && (
+              <div className="flex gap-2 items-center p-2 mt-2 bg-gradient-to-r rounded-lg border backdrop-blur-sm from-gray-50/50 to-blue-50/30 dark:from-gray-800/50 dark:to-blue-900/20 border-gray-200/50 dark:border-gray-700/50">
+                <FileText className="flex-shrink-0 w-4 h-4 text-blue-500" />
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-gray-800 truncate dark:text-gray-200">
+                    {data.files.length} tệp đính kèm
+                  </p>
+                </div>
+              </div>
+            )}
+
             {/* Enhanced Action button */}
-            <div className="flex justify-start pt-6">
+            <div className="flex justify-start pt-4">
               <button
-                className="group/btn relative px-6 py-3 text-sm sm:text-base bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transform transition-all duration-300 hover:scale-[1.02] overflow-hidden min-w-[140px]"
+                className="group/btn relative px-5 py-2.5 text-sm sm:text-base bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transform transition-all duration-300 hover:scale-[1.02] overflow-hidden min-w-[120px]"
                 onClick={() => navigate(`/detail-post/${data.id}`)}
               >
                 {/* Animated background */}

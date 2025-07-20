@@ -5,6 +5,7 @@ import {
   selectDetailPost,
   selectTotalItemsPosts,
   selectTotalPagesPosts,
+  statusGetPosts,
   selectContentPosts,
 } from "../slice/base-post.selector";
 import { useState } from "react";
@@ -12,10 +13,10 @@ import { IRequestSearchArticlePublic } from "@/core/api/posts/types";
 
 export const useBasePost = () => {
   const dispatch = useDispatch();
-  const statusGetStudentPost = useSelector(statusGetDetailPost);
+  const statusGetPost = useSelector(statusGetPosts);
   // lấy chi tiết bài viết liên quan đến sinh viên
   const postDetail = useSelector(selectDetailPost);
-  const statusGetStudentPostDetail = useSelector(statusGetDetailPost);
+  const statusGetPostDetail = useSelector(statusGetDetailPost);
   const posts = useSelector(selectContentPosts);
   const totalPages = useSelector(selectTotalPagesPosts);
   const totalItems = useSelector(selectTotalItemsPosts);
@@ -24,7 +25,6 @@ export const useBasePost = () => {
     page: 0,
     size: 9,
   });
-  console.log("posts", posts);
 
   const getPostsAction = (
     filter: IRequestSearchArticlePublic,
@@ -43,8 +43,8 @@ export const useBasePost = () => {
   return {
     posts,
     getPostsAction,
-    statusGetStudentPost,
-    statusGetStudentPostDetail,
+    statusGetPost,
+    statusGetPostDetail,
     postDetail,
     filter,
     setFilter,

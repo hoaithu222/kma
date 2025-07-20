@@ -1,5 +1,5 @@
 import React from "react";
-import { Calendar, BookOpen, Tag, User } from "lucide-react";
+import { Calendar, BookOpen, Tag, User, Clock } from "lucide-react";
 import { ITag } from "@/core/api/posts/types";
 import { formatDateTwo } from "@/shared/utils/formatDate";
 
@@ -23,78 +23,103 @@ const PostHero: React.FC<PostHeroProps> = ({
   summary,
   tags,
 }) => (
-  <div className="overflow-hidden mb-8 rounded-3xl shadow-2xl sm:mb-12 bg-background-elevated">
-    <div className="overflow-hidden relative h-60 bg-background-overlay sm:h-64 md:h-80 lg:h-96">
-      <div className="absolute top-3 right-3 z-10 sm:top-6 sm:right-6">
-        <div className="px-2 py-1 rounded-2xl border shadow-lg backdrop-blur-md sm:px-4 sm:py-2 bg-background-overlay border-border-primary">
-          <span className="text-xs font-medium sm:text-sm text-text-primary">
+  <div className="overflow-hidden mb-8 rounded-3xl border shadow-2xl backdrop-blur-sm sm:mb-12 bg-white/90 dark:bg-gray-900/90 border-gray-200/50 dark:border-gray-700/50">
+    {/* Hero Image Section */}
+    <div className="overflow-hidden relative h-64 sm:h-72 md:h-80 lg:h-96">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
+
+      {/* Category badge */}
+      <div className="absolute top-4 right-4 z-20">
+        <div className="px-4 py-2 rounded-2xl border shadow-lg backdrop-blur-md bg-white/90 dark:bg-gray-800/90 border-gray-200/50 dark:border-gray-600/50">
+          <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
             {categoryName}
           </span>
         </div>
       </div>
+
+      {/* Main image */}
       <img
         src={thumbnail}
         alt="thumbnail"
         className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
       />
-      <div className="absolute inset-0 bg-black/5"></div>
+
+      {/* Bottom gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent from-black/30"></div>
     </div>
 
-    <div className="p-4 sm:p-6 md:p-8 lg:p-12">
-      <h3 className="mb-4 text-lg font-bold leading-tight sm:mb-8 md:text-xl lg:text-2xl text-text-primary">
+    {/* Content Section */}
+    <div className="p-6 sm:p-8 md:p-10 lg:p-12">
+      {/* Title */}
+      <h2 className="mb-6 text-2xl font-bold leading-tight text-gray-900 sm:mb-8 md:text-3xl lg:text-4xl dark:text-white">
         {title}
-      </h3>
+      </h2>
 
-      <div className="flex flex-wrap gap-2 justify-between items-center mb-4 sm:gap-4 sm:mb-8">
-        <div className="flex gap-1 items-center px-2 py-1 rounded-2xl sm:gap-2 sm:px-4 sm:py-2 bg-background-elevated">
-          <Calendar className="w-3 h-3 sm:w-4 sm:h-4 text-secondary" />
-          <span className="text-xs font-medium sm:text-sm text-secondary">
-            {formatDateTwo(publishedAt)}
-          </span>
+      {/* Meta Information */}
+      <div className="flex flex-wrap gap-4 justify-between items-center mb-6 sm:mb-8">
+        <div className="flex gap-4 items-center">
+          <div className="flex gap-2 items-center px-3 py-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border dark:from-blue-900/30 dark:to-purple-900/30 border-blue-200/50 dark:border-blue-700/50">
+            <Calendar className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+              {formatDateTwo(publishedAt)}
+            </span>
+          </div>
+
+          <div className="flex gap-2 items-center px-3 py-2 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border dark:from-green-900/30 dark:to-emerald-900/30 border-green-200/50 dark:border-green-700/50">
+            <User className="w-4 h-4 text-green-600 dark:text-green-400" />
+            <span className="text-sm font-medium text-green-700 dark:text-green-300">
+              {authorName}
+            </span>
+          </div>
         </div>
 
-        <div className="flex gap-1 items-center px-2 py-1 rounded-2xl sm:gap-2 sm:px-4 sm:py-2 bg-background-elevated">
-          <User className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
-          <span className="text-xs font-medium sm:text-sm text-primary">
-            {authorName}
+        <div className="flex gap-2 items-center px-3 py-2 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border dark:from-orange-900/30 dark:to-red-900/30 border-orange-200/50 dark:border-orange-700/50">
+          <Clock className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+          <span className="text-sm font-medium text-orange-700 dark:text-orange-300">
+            {formatDateTwo(publishedAt)}
           </span>
         </div>
       </div>
 
+      {/* Summary Section */}
       {summary && (
-        <div className="overflow-hidden relative p-4 mb-4 bg-gradient-to-br rounded-3xl border-l-4 sm:p-6 md:p-8 sm:mb-8 border-primary from-primary/5 to-accent/5">
-          <div className="absolute top-0 right-0 w-16 h-16 rounded-full translate-x-8 -translate-y-8 sm:w-24 md:w-32 sm:h-24 md:h-32 sm:translate-x-12 md:translate-x-16 sm:-translate-y-12 md:-translate-y-16 bg-primary/5"></div>
-          <div className="absolute bottom-0 left-0 w-12 h-12 rounded-full -translate-x-6 translate-y-6 sm:w-16 md:w-24 sm:h-16 md:h-24 sm:-translate-x-8 md:-translate-x-12 sm:translate-y-8 md:translate-y-12 bg-accent/5"></div>
+        <div className="overflow-hidden relative p-6 mb-8 bg-gradient-to-br rounded-3xl border-l-4 border-blue-500 from-blue-50/50 via-purple-50/30 to-pink-50/50 dark:from-blue-900/20 dark:via-purple-900/20 dark:to-pink-900/20 sm:p-8 md:p-10">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br rounded-full translate-x-10 -translate-y-10 from-blue-400/20 to-purple-400/20"></div>
+          <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-br rounded-full -translate-x-8 translate-y-8 from-purple-400/20 to-pink-400/20"></div>
+
           <div className="relative">
-            <div className="flex gap-2 items-center mb-2 sm:gap-3 sm:mb-4">
-              <div className="p-1.5 sm:p-2 bg-primary/10 rounded-xl">
-                <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+            <div className="flex gap-3 items-center mb-4">
+              <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl shadow-lg">
+                <BookOpen className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-base font-semibold sm:text-lg text-text-primary">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-gray-200">
                 Tóm tắt nội dung
               </h3>
             </div>
-            <p className="text-sm font-medium leading-relaxed sm:text-base md:text-lg text-text-secondary">
+            <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300 sm:text-lg">
               {summary}
             </p>
           </div>
         </div>
       )}
 
+      {/* Tags Section */}
       {tags && tags.length > 0 && (
-        <div className="flex gap-2 items-start mb-4 sm:gap-4 sm:mb-8">
-          <div className="p-2 mt-1 bg-gradient-to-br rounded-xl sm:p-3 from-primary/10 to-accent/10">
-            <Tag className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+        <div className="flex gap-4 items-start">
+          <div className="p-3 bg-gradient-to-br rounded-xl border from-purple-500/10 to-pink-500/10 border-purple-200/50 dark:border-purple-700/50">
+            <Tag className="w-5 h-5 text-purple-600 dark:text-purple-400" />
           </div>
           <div className="flex-1">
-            <h4 className="mb-2 text-xs font-semibold tracking-wide uppercase sm:mb-3 sm:text-sm text-text-primary">
+            <h4 className="mb-3 text-sm font-semibold tracking-wide text-gray-700 uppercase dark:text-gray-300">
               Từ khóa
             </h4>
-            <div className="flex flex-wrap gap-1 sm:gap-2">
+            <div className="flex flex-wrap gap-2">
               {tags.map((tag: ITag, index: number) => (
                 <span
                   key={index}
-                  className="inline-flex items-center px-2 py-1 text-xs font-medium rounded-2xl border transition-all duration-200 cursor-pointer sm:px-4 sm:py-2 sm:text-sm text-text-secondary border-border-primary bg-background-base hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 hover:text-primary hover:scale-105 hover:shadow-md hover:border-primary"
+                  className="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-2xl border transition-all duration-200 cursor-pointer text-gray-700 dark:text-gray-300 border-gray-300/50 dark:border-gray-600/50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-600"
                 >
                   #{tag.name}
                 </span>
