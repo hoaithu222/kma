@@ -68,7 +68,7 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({ item }) => {
   };
 
   const childNavClass = ({ isActive }: { isActive: boolean }) => {
-    return `block px-4 py-3 text-sm transition-colors duration-200 ${
+    return `block px-3 py-2 text-sm transition-colors duration-200 ${
       isActive
         ? "bg-button-outline-hover text-primary font-medium"
         : "text-text-primary hover:bg-background-surface hover:text-primary"
@@ -135,7 +135,7 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({ item }) => {
       <>
         <div
           key={`${child.label}-${child.path}-parent`}
-          className={`block px-4 py-3 text-sm font-medium bg-gradient-to-r border-l-4 border-transparent transition-all duration-200 cursor-pointer text-text-primary hover:bg-background-surface hover:text-primary hover:border-primary hover:from-primary/5 hover:to-transparent select-none text-left ${isActive ? "font-semibold text-primary border-primary bg-primary/5" : ""}`}
+          className={`block px-3 py-2 text-sm font-medium bg-gradient-to-r border-l-4 border-transparent transition-all duration-200 cursor-pointer text-text-primary hover:bg-background-surface hover:text-primary hover:border-primary hover:from-primary/5 hover:to-transparent select-none text-left ${isActive ? "font-semibold text-primary border-primary bg-primary/5" : ""}`}
           onClick={() => handleToggleChild(child.label)}
         >
           <div className="flex justify-between items-center">
@@ -247,16 +247,16 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({ item }) => {
 
       {/* Dropdown Content với improved styling */}
       {isOpen && item.children && item.children.length > 0 && (
-        <div className="absolute left-0 top-full mt-2 min-w-[360px] max-w-[500px] bg-background-elevated rounded-xl shadow-2xl border border-border-primary z-[9999] transition-all duration-300 transform origin-top backdrop-blur-sm visible opacity-100 scale-100 translate-y-0">
+        <div className="absolute left-0 top-full mt-2 min-w-[320px] max-w-[450px] bg-background-elevated rounded-xl shadow-2xl border border-border-primary z-[9999] transition-all duration-300 transform origin-top backdrop-blur-sm visible opacity-100 scale-100 translate-y-0">
           {/* Dropdown header với gradient */}
-          <div className="px-4 py-3 bg-gradient-to-r rounded-t-xl border-b from-primary/10 to-primary/5 border-border-primary">
+          <div className="px-3 py-2 bg-gradient-to-r rounded-t-xl border-b from-primary/10 to-primary/5 border-border-primary">
             <h3 className="text-sm font-medium text-left opacity-80 text-text-primary">
               {getTranslation(item.label)}
             </h3>
           </div>
 
           {/* Dropdown content */}
-          <div className="py-2 max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-border-primary scrollbar-track-transparent">
+          <div className="py-1 max-h-[500px] overflow-y-auto scrollbar-thin scrollbar-thumb-border-primary scrollbar-track-transparent">
             {renderFlatChildren(item.children)}
           </div>
 
