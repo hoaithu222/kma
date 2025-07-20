@@ -41,7 +41,7 @@ const BasePostPage = () => {
   }
   if (posts.length === 0) {
     return (
-      <div className="min-h-screen mt-30 md:mt-20 lg:mt-28">
+      <div className="min-h-screen mt-30 md:mt-20 lg:mt-48">
         <Empty variant="data" title="Không có dữ liệu" />
       </div>
     );

@@ -16,15 +16,12 @@ interface NavbarDropdownHoverProps {
   level?: number;
 }
 
-const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
-  item,
-  level = 0,
-}) => {
+const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [openChild, setOpenChild] = useState<string | null>(null); // State cho mục con đang mở
   const { t } = useTranslation("navbar");
-  const timeoutRef = useRef<NodeJS.Timeout>();
   const location = useLocation();
-  console.log(level);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Helper function to safely get translation or fallback to label
   const getTranslation = (key: string) => {
@@ -32,26 +29,36 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
     return translation === key ? key : translation;
   };
 
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    setIsOpen(true);
+  // Toggle dropdown on click
+  const handleToggleDropdown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsOpen((prev) => !prev);
   };
 
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 200);
+  // Toggle child dropdown
+  const handleToggleChild = (label: string) => {
+    setOpenChild((prev) => (prev === label ? null : label));
   };
 
+  // Close dropdown when clicking outside
   useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
       }
     };
-  }, []);
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const navClass = () => {
     const isExactMatch = location.pathname === item.path;
@@ -66,6 +73,15 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
         ? "bg-button-outline-hover text-primary font-medium"
         : "text-text-primary hover:bg-background-surface hover:text-primary"
     }`;
+  };
+
+  // Hàm kiểm tra đệ quy xem có con nào active không
+  const isAnyChildActive = (item: NavbarItem): boolean => {
+    if (item.path && location.pathname === item.path) return true;
+    if (item.children && item.children.length > 0) {
+      return item.children.some(isAnyChildActive);
+    }
+    return false;
   };
 
   // Render simple menu item (no children) với cải thiện indentation
@@ -99,7 +115,7 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
         )}
 
         <span
-          className="flex-1 md:text-sm xl:text-base"
+          className="flex-1 text-left md:text-sm xl:text-base"
           style={{
             marginLeft: currentLevel > 0 ? `${currentLevel * 20}px` : "0",
             fontWeight: currentLevel === 0 ? "500" : "400",
@@ -111,27 +127,41 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
     </NavLink>
   );
 
-  // Render parent item với style đặc biệt
-  const renderParentItem = (child: NavbarItem, currentLevel = 0) => (
-    <NavLink
-      key={`${child.label}-${child.path}-parent`}
-      to={child.path}
-      className="block px-4 py-3 text-sm font-medium bg-gradient-to-r border-l-4 border-transparent transition-all duration-200 cursor-pointer text-text-primary hover:bg-background-surface hover:text-primary hover:border-primary hover:from-primary/5 hover:to-transparent"
-    >
-      <div className="flex justify-between items-center">
-        <div className="flex items-center">
-          <div
-            className="mr-3 w-2 h-2 rounded-full opacity-70 bg-primary"
-            style={{ marginLeft: `${currentLevel * 20}px` }}
-          />
-          <span className="flex-1 text-base font-medium">
-            {getTranslation(child.label)}
-          </span>
+  // Render parent item với style đặc biệt và click để mở children
+  const renderParentItem = (child: NavbarItem, currentLevel = 0) => {
+    const isChildOpen = openChild === child.label;
+    const isActive = isAnyChildActive(child);
+    return (
+      <>
+        <div
+          key={`${child.label}-${child.path}-parent`}
+          className={`block px-4 py-3 text-sm font-medium bg-gradient-to-r border-l-4 border-transparent transition-all duration-200 cursor-pointer text-text-primary hover:bg-background-surface hover:text-primary hover:border-primary hover:from-primary/5 hover:to-transparent select-none text-left ${isActive ? "font-semibold text-primary border-primary bg-primary/5" : ""}`}
+          onClick={() => handleToggleChild(child.label)}
+        >
+          <div className="flex justify-between items-center">
+            <div className="flex items-center">
+              <div
+                className="mr-3 w-2 h-2 rounded-full opacity-70 bg-primary"
+                style={{ marginLeft: `${currentLevel * 20}px` }}
+              />
+              <span className="flex-1 text-base font-medium text-left">
+                {getTranslation(child.label)}
+              </span>
+            </div>
+            <ChevronRight
+              className={`ml-2 w-4 h-4 text-text-secondary transition-transform ${isChildOpen ? "rotate-90 text-primary" : ""}`}
+            />
+          </div>
         </div>
-        <ChevronRight className="ml-2 w-4 h-4 text-text-secondary" />
-      </div>
-    </NavLink>
-  );
+        {/* Render children nếu đang mở */}
+        {isChildOpen && child.children && child.children.length > 0 && (
+          <div className="pl-4 ml-2 border-l border-border-primary">
+            {renderFlatChildren(child.children, currentLevel + 1)}
+          </div>
+        )}
+      </>
+    );
+  };
 
   // Render category separator
   const renderCategorySeparator = (label: string) => (
@@ -168,8 +198,8 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
         // Add separator after parent
         elements.push(renderCategorySeparator(child.label));
 
-        // Recursively add children with increased level
-        elements.push(...renderFlatChildren(child.children, currentLevel + 1));
+        // Không render children ở đây nữa, đã render trong renderParentItem nếu mở
+        // elements.push(...renderFlatChildren(child.children, currentLevel + 1));
 
         // Add spacing after group (only for top level)
         if (currentLevel === 0) {
@@ -195,15 +225,14 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
     );
   }
 
-  // Render dropdown with hover functionality
+  // Render dropdown with click functionality
   return (
-    <div
-      className="relative group"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="relative" ref={dropdownRef}>
       {/* Dropdown Trigger */}
-      <div className="flex items-center cursor-pointer">
+      <div
+        className="flex items-center cursor-pointer select-none"
+        onClick={handleToggleDropdown}
+      >
         <div className={navClass()}>
           <span className="md:text-sm xl:text-base">
             {getTranslation(item.label)}
@@ -217,17 +246,11 @@ const NavbarDropdownHover: React.FC<NavbarDropdownHoverProps> = ({
       </div>
 
       {/* Dropdown Content với improved styling */}
-      {item.children && item.children.length > 0 && (
-        <div
-          className={`absolute left-0 top-full mt-2 min-w-[360px] max-w-[500px] bg-background-elevated rounded-xl shadow-2xl border border-border-primary z-[9999] transition-all duration-300 transform origin-top backdrop-blur-sm ${
-            isOpen
-              ? "visible opacity-100 scale-100 translate-y-0"
-              : "invisible opacity-0 scale-95 -translate-y-2"
-          }`}
-        >
+      {isOpen && item.children && item.children.length > 0 && (
+        <div className="absolute left-0 top-full mt-2 min-w-[360px] max-w-[500px] bg-background-elevated rounded-xl shadow-2xl border border-border-primary z-[9999] transition-all duration-300 transform origin-top backdrop-blur-sm visible opacity-100 scale-100 translate-y-0">
           {/* Dropdown header với gradient */}
           <div className="px-4 py-3 bg-gradient-to-r rounded-t-xl border-b from-primary/10 to-primary/5 border-border-primary">
-            <h3 className="text-sm font-medium opacity-80 text-text-primary">
+            <h3 className="text-sm font-medium text-left opacity-80 text-text-primary">
               {getTranslation(item.label)}
             </h3>
           </div>
