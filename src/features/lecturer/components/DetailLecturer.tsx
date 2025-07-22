@@ -17,6 +17,7 @@ import {
 import { stripHtml } from "@/shared/utils/stripHtml";
 
 import Button from "@/foundation/components/buttons/Button";
+import RichHtmlBox from "@/foundation/components/inputs/RichHtmlBox";
 
 const DetailLecturer = () => {
   const { id } = useParams();
@@ -187,12 +188,7 @@ const DetailLecturer = () => {
                         <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                         Giới thiệu nhanh
                       </h4>
-                      <p
-                        className="text-xs leading-relaxed text-gray-700 sm:text-sm line-clamp-4"
-                        dangerouslySetInnerHTML={{
-                          __html: detailLecturer.bio,
-                        }}
-                      ></p>
+                      <RichHtmlBox html={detailLecturer.bio} />
                     </div>
                   )}
                 </div>
@@ -226,12 +222,7 @@ const DetailLecturer = () => {
                 <div className="flex-1 h-px bg-gradient-to-r to-transparent from-background-subtle"></div>
               </h3>
               <div className="relative p-2 bg-gradient-to-br rounded-lg border-2 shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 from-purple-50/50 to-pink-50/50 sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-purple-200/30">
-                <p
-                  className="text-sm font-medium leading-relaxed text-gray-700 whitespace-pre-line sm:text-base"
-                  dangerouslySetInnerHTML={{
-                    __html: detailLecturer.bio,
-                  }}
-                ></p>
+                <RichHtmlBox html={detailLecturer.bio} />
               </div>
             </div>
           )}
@@ -246,12 +237,7 @@ const DetailLecturer = () => {
                 Học vấn
               </h3>
               <div className="p-2 bg-gradient-to-br rounded-lg border-2 shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
-                <p
-                  className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary"
-                  dangerouslySetInnerHTML={{
-                    __html: detailLecturer.education,
-                  }}
-                ></p>
+                <RichHtmlBox html={detailLecturer.education} />
               </div>
             </div>
           )}
@@ -266,12 +252,7 @@ const DetailLecturer = () => {
                 Lĩnh vực nghiên cứu
               </h3>
               <div className="p-2 bg-gradient-to-br rounded-lg border-2 shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
-                <p
-                  className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary"
-                  dangerouslySetInnerHTML={{
-                    __html: detailLecturer.researchInterests,
-                  }}
-                ></p>
+                <RichHtmlBox html={detailLecturer.researchInterests} />
               </div>
             </div>
           )}
@@ -286,9 +267,7 @@ const DetailLecturer = () => {
                 Lĩnh vực giảng dạy
               </h3>
               <div className="p-2 bg-gradient-to-br rounded-lg border-2 shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
-                <p className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary">
-                  {stripHtml(detailLecturer.teachingAreas)}
-                </p>
+                <RichHtmlBox html={detailLecturer.teachingAreas} />
               </div>
             </div>
           )}
@@ -303,12 +282,7 @@ const DetailLecturer = () => {
                 Công trình khoa học
               </h3>
               <div className="p-2 bg-gradient-to-br rounded-lg border-2 shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
-                <p
-                  className="text-sm font-medium leading-relaxed sm:text-base text-text-secondary"
-                  dangerouslySetInnerHTML={{
-                    __html: detailLecturer.scientificWorks,
-                  }}
-                ></p>
+                <RichHtmlBox html={detailLecturer.scientificWorks} />
               </div>
             </div>
           )}
@@ -324,12 +298,7 @@ const DetailLecturer = () => {
                 <div className="flex-1 h-px bg-gradient-to-r to-transparent from-background-subtle"></div>
               </h3>
               <div className="p-2 bg-gradient-to-br rounded-lg border-2 shadow-inner sm:px-3 sm:py-5 md:px-4 md:py-8 lg:px-6 lg:py-12 from-background-surface to-background-elevated sm:rounded-xl md:rounded-2xl lg:rounded-3xl border-border-primary">
-                <p
-                  className="text-sm font-semibold leading-relaxed sm:text-base text-text-secondary"
-                  dangerouslySetInnerHTML={{
-                    __html: detailLecturer.awards,
-                  }}
-                ></p>
+                <RichHtmlBox html={detailLecturer.awards} />
               </div>
             </div>
           )}

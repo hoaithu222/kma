@@ -37,4 +37,5 @@ module.exports = {
     // ... keep existing animations
     "gradient-x": "gradient-x 3s ease infinite",
   },
+  plugins: [require('@tailwindcss/typography')],
 };
